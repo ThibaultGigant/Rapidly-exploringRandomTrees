@@ -3,7 +3,6 @@
 
 #include <QVector>
 #include "vertex.h"
-using namespace std;
 
 class Quadrant
 {

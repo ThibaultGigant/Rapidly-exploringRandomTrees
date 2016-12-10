@@ -13,24 +13,34 @@ TEMPLATE = app
 
 
 SOURCES +=\
-    src/classes/vertex.cpp \
+    src/classes/environment/vertex.cpp \
     src/app/main.cpp \
     src/app/mainwindow.cpp \
-    src/classes/quadrant.cpp \
+    src/classes/environment/quadrant.cpp \
     src/classes/metrics/euclidiandistance.cpp \
-    src/classes/environment.cpp \
+    src/classes/environment/environment.cpp \
     src/classes/metrics/manhattandistance.cpp \
     src/classes/metrics/metric.cpp \
-    src/classes/session.cpp
+    src/classes/session.cpp \
+    src/classes/heightmap.cpp \
+    src/app/heightmapframe.cpp \
+    src/app/heightmapsuppanel.cpp \
+    src/app/heightmapsubpanel.cpp \
+    src/classes/generators/treegenerator.cpp
 
 HEADERS  += \
-    src/classes/vertex.h \
+    src/classes/environment/vertex.h \
     src/app/mainwindow.h \
-    src/classes/quadrant.h \
+    src/classes/environment/quadrant.h \
     src/classes/metrics/euclidiandistance.h \
-    src/classes/environment.h \
+    src/classes/environment/environment.h \
     src/classes/metrics/metric.h \
     src/classes/metrics/manhattandistance.h \
-    src/classes/session.h
+    src/classes/session.h \
+    src/classes/heightmap.h \
+    src/app/heightmapframe.h \
+    src/app/heightmapsuppanel.h \
+    src/app/heightmapsubpanel.h \
+    src/classes/generators/treegenerator.h
 
 FORMS    += mainwindow.ui
