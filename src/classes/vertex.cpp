@@ -1,34 +1,34 @@
 #include "vertex.h"
 
 /**
- * @brief Vertex::Vertex Constructeur
- * @param position Position du Sommet dans l'espace
- * @param parent Sommet parent dans l'arbre
+ * @brief Constructor
+ * @param position Vertex's Position in the environment
+ * @param parent Vertex's parent in the tree
  */
-Vertex::Vertex(vector<double> position, Vertex* parent)
+Vertex::Vertex(QPointF position, Vertex* parent)
 {
     this->parent = parent;
     this->position = position;
 }
 
 /**
- * @brief Vertex::~Vertex Destructeur
+ * @brief Vertex::~Vertex Destructor
  */
 Vertex::~Vertex()
 {
 }
 
 /**
- * @brief Vertex::getPosition Getter de la position
- * @return Position du Sommet
+ * @brief Getter of the position
+ * @return Vertex's position
  */
-vector<double> Vertex::getPosition()
+QPointF Vertex::getPosition()
 {
     return this->position;
 }
 
 /**
- * @brief Vertex::getParent Getter du parent
+ * @brief Getter of the parent
  * @return Parent du sommet dans l'arbre
  */
 Vertex* Vertex::getParent()

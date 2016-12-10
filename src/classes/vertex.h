@@ -3,20 +3,19 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <vector>
-using namespace std;
+#include <QPointF>
 
 class Vertex
 {
 
 public:
-    Vertex(vector<double> position, Vertex* parent);
+    Vertex(QPointF position, Vertex* parent);
     ~Vertex();
-    vector<double> getPosition();
+    QPointF getPosition();
     Vertex* getParent();
 
 private:
-    vector<double> position;
+    QPointF position;
     Vertex* parent;
 
 };

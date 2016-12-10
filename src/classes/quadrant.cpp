@@ -1,40 +1,40 @@
 #include "quadrant.h"
 
 /**
- * @brief Quadrant::Quadrant Constructeur
+ * @brief Constructor
  */
 Quadrant::Quadrant()
 {
 
-    this->vertices = vector<Vertex *>();
+    this->vertices = QVector<Vertex *>();
 }
 
 /**
- * @brief Quadrant::~Quadrant
+ * @brief Destructor
  */
 Quadrant::~Quadrant()
 {
 
 
-    for (vector<Vertex *>::iterator v = this->vertices.begin(); v != this->vertices.end(); ++v)
-        delete(*v);
+    for (int i = 0; i < this->vertices.size(); i++)
+        delete(this->vertices[i]);
     this->vertices.clear();
 }
 
 /**
- * @brief Quadrant::addVertex Ajoute un sommet au quadrant
- * @param vertex Sommet à ajouter
+ * @brief Adds a vertex to the quadrant
+ * @param vertex Vertex to add
  */
 void Quadrant::addVertex(Vertex* vertex)
 {
-    this->vertices.push_back(vertex);
+    this->vertices.append(vertex);
 }
 
 /**
- * @brief Quadrant::getVertices Renvoie les sommets du quadrant
- * @return Pointeur vers le vector contenant les sommets du quadrant
+ * @brief Returns all vertices inside the quadrant
+ * @return QVector of those vertices pointers
  */
-vector<Vertex*>* Quadrant::getVertices()
+QVector<Vertex*> Quadrant::getVertices()
 {
-    return &(this->vertices);
+    return this->vertices;
 }

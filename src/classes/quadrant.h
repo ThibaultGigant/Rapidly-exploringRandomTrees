@@ -1,7 +1,7 @@
 #ifndef QUADRANT_H
 #define QUADRANT_H
 
-#include <vector>
+#include <QVector>
 #include "vertex.h"
 using namespace std;
 
@@ -11,10 +11,10 @@ public:
     Quadrant();
     ~Quadrant();
     void addVertex(Vertex* vertex);
-    vector<Vertex*>* getVertices();
+    QVector<Vertex*> getVertices();
 
 private:
-    vector<Vertex*> vertices;
+    QVector<Vertex*> vertices;
 };
 
 #endif // QUADRANT_H
