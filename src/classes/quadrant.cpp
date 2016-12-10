@@ -5,6 +5,8 @@
  */
 Quadrant::Quadrant()
 {
+
+    this->vertices = vector<Vertex *>();
 }
 
 /**
@@ -12,9 +14,10 @@ Quadrant::Quadrant()
  */
 Quadrant::~Quadrant()
 {
-    //for (int i = 0; i < this->vertices.size(); i++)
-    for (auto v = this->vertices.begin(); v != this->vertices.end(); ++v)
-        free(*v);
+
+
+    for (vector<Vertex *>::iterator v = this->vertices.begin(); v != this->vertices.end(); ++v)
+        delete(*v);
     this->vertices.clear();
 }
 

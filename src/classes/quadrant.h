@@ -14,7 +14,7 @@ public:
     vector<Vertex*>* getVertices();
 
 private:
-    vector<Vertex*> vertices = vector<Vertex*>();
+    vector<Vertex*> vertices;
 };
 
 #endif // QUADRANT_H

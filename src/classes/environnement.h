@@ -13,7 +13,7 @@ public:
 
 private:
     Vertex* startVertex;
-    vector<vector<Quadrant>> quadrants;
+    vector<vector<Quadrant> > quadrants;
 };
 
 #endif // ENVIRONNEMENT_H
