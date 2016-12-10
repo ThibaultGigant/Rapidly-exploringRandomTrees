@@ -17,12 +17,20 @@ SOURCES +=\
     src/app/main.cpp \
     src/app/mainwindow.cpp \
     src/classes/quadrant.cpp \
-    src/classes/environnement.cpp
+    src/classes/environnement.cpp \
+    src/classes/heightmap.cpp \
+    src/app/heightmapframe.cpp \
+    src/app/heightmapsuppanel.cpp \
+    src/app/heightmapsubpanel.cpp
 
 HEADERS  += \
     src/classes/vertex.h \
     src/app/mainwindow.h \
     src/classes/quadrant.h \
-    src/classes/environnement.h
+    src/classes/environnement.h \
+    src/classes/heightmap.h \
+    src/app/heightmapframe.h \
+    src/app/heightmapsuppanel.h \
+    src/app/heightmapsubpanel.h
 
 FORMS    += mainwindow.ui
