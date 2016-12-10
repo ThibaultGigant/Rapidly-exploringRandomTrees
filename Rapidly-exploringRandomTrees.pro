@@ -13,14 +13,16 @@ TEMPLATE = app
 
 
 SOURCES +=\
-    src/lib/vertex.cpp \
+    src/classes/vertex.cpp \
     src/app/main.cpp \
     src/app/mainwindow.cpp \
-    src/lib/quadrant.cpp
+    src/classes/quadrant.cpp \
+    src/classes/environnement.cpp
 
 HEADERS  += \
-    src/lib/vertex.h \
+    src/classes/vertex.h \
     src/app/mainwindow.h \
-    src/lib/quadrant.h
+    src/classes/quadrant.h \
+    src/classes/environnement.h
 
 FORMS    += mainwindow.ui
