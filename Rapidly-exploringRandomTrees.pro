@@ -31,7 +31,8 @@ SOURCES +=\
     src/classes/endmethods/endmethod.cpp \
     src/classes/endmethods/verticesnumber.cpp \
     src/classes/endmethods/timelimit.cpp \
-    src/classes/generators/randomtreegenerator.cpp
+    src/classes/generators/randomtreegenerator.cpp \
+    src/classes/generators/rrtgenerator.cpp
 
 HEADERS  += \
     src/classes/environment/vertex.h \
@@ -51,6 +52,7 @@ HEADERS  += \
     src/classes/endmethods/endmethod.h \
     src/classes/endmethods/verticesnumber.h \
     src/classes/endmethods/timelimit.h \
-    src/classes/generators/randomtreegenerator.h
+    src/classes/generators/randomtreegenerator.h \
+    src/classes/generators/rrtgenerator.h
 
 FORMS    += mainwindow.ui

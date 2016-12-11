@@ -17,14 +17,19 @@ class Session
 public:
     Session(double delta_t, Environment* environment, Metric* metric, TreeGenerator* generator, HeightMap* map);
     ~Session();
+
     double getDeltaT();
     Environment* getEnvironment();
     Metric* getMetric();
     TreeGenerator* getGenerator();
     HeightMap* getMap();
+
     bool isObstacle(QPointF point);
     Vertex* getRandomVertex();
     Vertex* getClosestVertex(QPointF point);
+    int getWidth();
+    int getHeight();
+    double distance(QPointF from, QPointF to);
 
 private:
     // Attributes

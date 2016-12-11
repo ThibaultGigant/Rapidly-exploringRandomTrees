@@ -2,6 +2,7 @@
 #include "generators/treegenerator.h"
 #include "endmethods/endmethod.h"
 #include "environment/environment.h"
+#include "src/classes/metrics/metric.h"
 #include "heightmap.h"
 
 /**
@@ -30,6 +31,24 @@ Session::Session(double delta_t, Environment* environment, Metric* metric, TreeG
 double Session::getDeltaT()
 {
     return this->delta_t;
+}
+
+/**
+ * @brief Returns the map's width
+ * @return Map's width
+ */
+int Session::getWidth()
+{
+    return this->map->getWidth();
+}
+
+/**
+ * @brief Returns the map's height
+ * @return Map's Height
+ */
+int Session::getHeight()
+{
+    return this->map->getHeight();
 }
 
 /**
@@ -105,4 +124,15 @@ Vertex* Session::getRandomVertex()
 Vertex* Session::getClosestVertex(QPointF point)
 {
     return this->environment->getClosest(point);
+}
+
+/**
+ * @brief Calculates the distance between 2 points according to the metric
+ * @param from First point
+ * @param to Second point
+ * @return Distance between the first and second points
+ */
+double Session::distance(QPointF from, QPointF to)
+{
+    return this->metric->distance(from, to);
 }

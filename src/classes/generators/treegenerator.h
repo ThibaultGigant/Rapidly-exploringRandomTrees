@@ -2,6 +2,7 @@
 #define TREEGENERATOR_H
 
 #include "src/classes/environment/vertex.h"
+#include <QPointF>
 
 class Session;
 
