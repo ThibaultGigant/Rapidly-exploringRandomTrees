@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['addvertex',['addVertex',['../class_quadrant.html#a9ca7b1a0353e8fb18ce65fbec2f47d73',1,'Quadrant']]]
+  ['addelement',['addElement',['../class_environment.html#a19fd3d5851f3331336bb73b344e236ca',1,'Environment']]],
+  ['addvertex',['addVertex',['../class_quadrant.html#a0ecc25b7b75c6d68671faed84a6e8add',1,'Quadrant']]]
 ];

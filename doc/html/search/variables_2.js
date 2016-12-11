@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['vertices',['vertices',['../class_quadrant.html#af60f843ddde4437caa59710095c2ed4b',1,'Quadrant']]]
+  ['generator',['generator',['../class_session.html#adefa49dc36073e6468b08002996dc3d4',1,'Session']]]
 ];

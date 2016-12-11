@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['vertices',['vertices',['../classclasses_1_1tree_1_1_quadrant.html#a9ca5be3fdf566304dd3815cdf29db695',1,'classes::tree::Quadrant']]]
+  ['parent',['parent',['../class_vertex.html#afb92de2e5329acfe640cbf771b5ce197',1,'Vertex']]],
+  ['position',['position',['../class_vertex.html#a63e5ff14f58997e262c47664ac558cc1',1,'Vertex']]]
 ];
