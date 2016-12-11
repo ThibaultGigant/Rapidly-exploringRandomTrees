@@ -46,12 +46,9 @@ HEADERS  += \
     src/app/heightmapsuppanel.h \
     src/app/heightmapsubpanel.h \
     src/classes/generators/treegenerator.h \
-<<<<<<< HEAD
     src/app/heightmapviewpanel.h
-=======
     src/classes/endmethods/endmethod.h \
     src/classes/endmethods/verticesnumber.h \
     src/classes/endmethods/timelimit.h
->>>>>>> origin/master
 
 FORMS    += mainwindow.ui
