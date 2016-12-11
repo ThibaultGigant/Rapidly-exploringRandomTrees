@@ -1,2 +1,6 @@
 <map id="HeightMapFrame" name="HeightMapFrame">
+<area shape="rect" id="node3" href="$class_height_map_view_panel.html" title="HeightMapViewPanel" alt="" coords="25,95,170,121"/>
+<area shape="rect" id="node4" href="$class_height_map_sub_panel.html" title="HeightMapSubPanel" alt="" coords="194,95,334,121"/>
+<area shape="rect" id="node5" href="$class_height_map_sup_panel.html" title="HeightMapSupPanel" alt="" coords="358,95,498,121"/>
+<area shape="rect" id="node6" href="$class_height_map.html" title="HeightMap" alt="" coords="386,5,470,32"/>
 </map>

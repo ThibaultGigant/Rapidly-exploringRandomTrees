@@ -106,6 +106,24 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae5885c98d7b141cf6a0f08de946ca878"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_height_map.html">HeightMap</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_session.html#ae5885c98d7b141cf6a0f08de946ca878">getMap</a> ()</td></tr>
 <tr class="memdesc:ae5885c98d7b141cf6a0f08de946ca878"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the map of the space.  <a href="#ae5885c98d7b141cf6a0f08de946ca878">More...</a><br /></td></tr>
 <tr class="separator:ae5885c98d7b141cf6a0f08de946ca878"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1787a909d4098ff1e701e3ebb02aa6f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_session.html#ae1787a909d4098ff1e701e3ebb02aa6f">isObstacle</a> (QPointF point)</td></tr>
+<tr class="memdesc:ae1787a909d4098ff1e701e3ebb02aa6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uses the heightmap to determine if a point is an obstacle.  <a href="#ae1787a909d4098ff1e701e3ebb02aa6f">More...</a><br /></td></tr>
+<tr class="separator:ae1787a909d4098ff1e701e3ebb02aa6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec316372528360ad27863ad59bf72945"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_vertex.html">Vertex</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_session.html#aec316372528360ad27863ad59bf72945">getRandomVertex</a> ()</td></tr>
+<tr class="memdesc:aec316372528360ad27863ad59bf72945"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a random vertex of the tree, using the environment.  <a href="#aec316372528360ad27863ad59bf72945">More...</a><br /></td></tr>
+<tr class="separator:aec316372528360ad27863ad59bf72945"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae058d4c36d94b1e6351496c0a1892842"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_vertex.html">Vertex</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_session.html#ae058d4c36d94b1e6351496c0a1892842">getClosestVertex</a> (QPointF point)</td></tr>
+<tr class="memdesc:ae058d4c36d94b1e6351496c0a1892842"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the closest vertex of the tree from the given point.  <a href="#ae058d4c36d94b1e6351496c0a1892842">More...</a><br /></td></tr>
+<tr class="separator:ae058d4c36d94b1e6351496c0a1892842"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b5e8793254b3b09db74fc3a3a88e356"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_session.html#a2b5e8793254b3b09db74fc3a3a88e356">getWidth</a> ()</td></tr>
+<tr class="memdesc:a2b5e8793254b3b09db74fc3a3a88e356"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the map's width.  <a href="#a2b5e8793254b3b09db74fc3a3a88e356">More...</a><br /></td></tr>
+<tr class="separator:a2b5e8793254b3b09db74fc3a3a88e356"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b9839f3f888c11f503bad6eb3355181"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_session.html#a9b9839f3f888c11f503bad6eb3355181">getHeight</a> ()</td></tr>
+<tr class="memdesc:a9b9839f3f888c11f503bad6eb3355181"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the map's height.  <a href="#a9b9839f3f888c11f503bad6eb3355181">More...</a><br /></td></tr>
+<tr class="separator:a9b9839f3f888c11f503bad6eb3355181"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3c3edb4db96789b8e9ad8650dda1109"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_session.html#ac3c3edb4db96789b8e9ad8650dda1109">distance</a> (QPointF from, QPointF to)</td></tr>
+<tr class="memdesc:ac3c3edb4db96789b8e9ad8650dda1109"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the distance between 2 points according to the metric.  <a href="#ac3c3edb4db96789b8e9ad8650dda1109">More...</a><br /></td></tr>
+<tr class="separator:ac3c3edb4db96789b8e9ad8650dda1109"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -206,6 +224,44 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="ac3c3edb4db96789b8e9ad8650dda1109"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3c3edb4db96789b8e9ad8650dda1109">&sect;&nbsp;</a></span>distance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Session::distance </td>
+          <td>(</td>
+          <td class="paramtype">QPointF&#160;</td>
+          <td class="paramname"><em>from</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QPointF&#160;</td>
+          <td class="paramname"><em>to</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calculates the distance between 2 points according to the metric. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">from</td><td>First point </td></tr>
+    <tr><td class="paramname">to</td><td>Second point </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Distance between the first and second points </dd></dl>
+
+</div>
+</div>
 <a id="a0a16e967b4b4b1b48a426ec7a9a9864a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0a16e967b4b4b1b48a426ec7a9a9864a">&sect;&nbsp;</a></span>generate()</h2>
 
@@ -228,6 +284,33 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae058d4c36d94b1e6351496c0a1892842"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae058d4c36d94b1e6351496c0a1892842">&sect;&nbsp;</a></span>getClosestVertex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_vertex.html">Vertex</a> * Session::getClosestVertex </td>
+          <td>(</td>
+          <td class="paramtype">QPointF&#160;</td>
+          <td class="paramname"><em>point</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the closest vertex of the tree from the given point. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">point</td><td>Point of the environment </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Closest vertex </dd></dl>
 
 </div>
 </div>
@@ -291,6 +374,26 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a9b9839f3f888c11f503bad6eb3355181"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b9839f3f888c11f503bad6eb3355181">&sect;&nbsp;</a></span>getHeight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Session::getHeight </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the map's height. </p>
+<dl class="section return"><dt>Returns</dt><dd>Map's Height </dd></dl>
+
+</div>
+</div>
 <a id="ae5885c98d7b141cf6a0f08de946ca878"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae5885c98d7b141cf6a0f08de946ca878">&sect;&nbsp;</a></span>getMap()</h2>
 
@@ -328,6 +431,72 @@ Private Attributes</h2></td></tr>
 
 <p>Returns the metric used to calculate distance between points. </p>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_metric.html">Metric</a> used </dd></dl>
+
+</div>
+</div>
+<a id="aec316372528360ad27863ad59bf72945"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec316372528360ad27863ad59bf72945">&sect;&nbsp;</a></span>getRandomVertex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_vertex.html">Vertex</a> * Session::getRandomVertex </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns a random vertex of the tree, using the environment. </p>
+<dl class="section return"><dt>Returns</dt><dd>Random vertex </dd></dl>
+
+</div>
+</div>
+<a id="a2b5e8793254b3b09db74fc3a3a88e356"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b5e8793254b3b09db74fc3a3a88e356">&sect;&nbsp;</a></span>getWidth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Session::getWidth </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the map's width. </p>
+<dl class="section return"><dt>Returns</dt><dd>Map's width </dd></dl>
+
+</div>
+</div>
+<a id="ae1787a909d4098ff1e701e3ebb02aa6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1787a909d4098ff1e701e3ebb02aa6f">&sect;&nbsp;</a></span>isObstacle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Session::isObstacle </td>
+          <td>(</td>
+          <td class="paramtype">QPointF&#160;</td>
+          <td class="paramname"><em>point</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Uses the heightmap to determine if a point is an obstacle. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">point</td><td>Point to test </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

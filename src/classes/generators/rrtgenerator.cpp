@@ -5,7 +5,7 @@
  * @brief Constructor
  * @param session Session using this generator
  */
-RRTGenerator::RRTGenerator(Session* session) : TreeGenerator(Session* session)
+RRTGenerator::RRTGenerator(Session* session) : TreeGenerator(session)
 {
 }
 

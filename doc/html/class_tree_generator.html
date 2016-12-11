@@ -62,13 +62,22 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-attribs">Private Attributes</a>  </div>
+<a href="#pro-attribs">Protected Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">TreeGenerator Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="treegenerator_8h_source.html">treegenerator.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for TreeGenerator:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_tree_generator__inherit__graph.png" border="0" usemap="#_tree_generator_inherit__map" alt="Inheritance graph"/></div>
+<map name="_tree_generator_inherit__map" id="_tree_generator_inherit__map">
+<area shape="rect" id="node2" href="class_random_tree_generator.html" title="RandomTreeGenerator" alt="" coords="5,80,157,107"/>
+<area shape="rect" id="node3" href="class_r_r_t_generator.html" title="RRTGenerator" alt="" coords="181,80,285,107"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for TreeGenerator:</div>
 <div class="dyncontent">
@@ -89,13 +98,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:abb4f2dffaff47fd7e70bc572a8cead32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#abb4f2dffaff47fd7e70bc572a8cead32">More...</a><br /></td></tr>
 <tr class="separator:abb4f2dffaff47fd7e70bc572a8cead32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22db0a20939307c57231b09eac252a1c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tree_generator.html#a22db0a20939307c57231b09eac252a1c">~TreeGenerator</a> ()</td></tr>
+<tr class="memdesc:a22db0a20939307c57231b09eac252a1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <a href="#a22db0a20939307c57231b09eac252a1c">More...</a><br /></td></tr>
 <tr class="separator:a22db0a20939307c57231b09eac252a1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3181ad96338631258583b1f176991469"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_vertex.html">Vertex</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tree_generator.html#a3181ad96338631258583b1f176991469">generate</a> ()</td></tr>
 <tr class="memdesc:a3181ad96338631258583b1f176991469"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a new vertex according to the wanted strategy.  <a href="#a3181ad96338631258583b1f176991469">More...</a><br /></td></tr>
 <tr class="separator:a3181ad96338631258583b1f176991469"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
-Private Attributes</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
 <tr class="memitem:a0d4bf0426d99f232a1b3df1688714445"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_session.html">Session</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tree_generator.html#a0d4bf0426d99f232a1b3df1688714445">session</a></td></tr>
 <tr class="separator:a0d4bf0426d99f232a1b3df1688714445"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -117,6 +127,12 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">session</td><td><a class="el" href="class_session.html">Session</a> using this generator </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -134,6 +150,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Destructor. </p>
 
 </div>
 </div>
@@ -164,6 +182,8 @@ Private Attributes</h2></td></tr>
 <p>Generates a new vertex according to the wanted strategy. </p>
 <dl class="section return"><dt>Returns</dt><dd>New <a class="el" href="class_vertex.html">Vertex</a> generated, to be added </dd></dl>
 
+<p>Reimplemented in <a class="el" href="class_random_tree_generator.html#adec913001da775c6d1955ed510d2e572">RandomTreeGenerator</a>, and <a class="el" href="class_r_r_t_generator.html#ab4b2b7aeaa5223a0a4b73891d47f72da">RRTGenerator</a>.</p>
+
 </div>
 </div>
 <h2 class="groupheader">Field Documentation</h2>
@@ -182,7 +202,7 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

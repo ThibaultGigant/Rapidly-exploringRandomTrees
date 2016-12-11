@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['vertex',['Vertex',['../class_vertex.html',1,'']]],
-  ['verticesnumber',['VerticesNumber',['../class_vertices_number.html',1,'']]]
+  ['timelimit',['TimeLimit',['../class_time_limit.html',1,'']]],
+  ['treegenerator',['TreeGenerator',['../class_tree_generator.html',1,'']]]
 ];

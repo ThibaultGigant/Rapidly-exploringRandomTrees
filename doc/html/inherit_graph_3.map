@@ -1,5 +1,6 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node2" href="$class_height_map_frame.html" title="HeightMapFrame" alt="" coords="136,5,257,32"/>
-<area shape="rect" id="node3" href="$class_height_map_sub_panel.html" title="HeightMapSubPanel" alt="" coords="127,56,267,83"/>
-<area shape="rect" id="node4" href="$class_height_map_sup_panel.html" title="HeightMapSupPanel" alt="" coords="127,107,267,133"/>
+<area shape="rect" id="node2" href="$class_height_map_frame.html" title="HeightMapFrame" alt="" coords="139,5,260,32"/>
+<area shape="rect" id="node3" href="$class_height_map_sub_panel.html" title="HeightMapSubPanel" alt="" coords="129,56,269,83"/>
+<area shape="rect" id="node4" href="$class_height_map_sup_panel.html" title="HeightMapSupPanel" alt="" coords="129,107,269,133"/>
+<area shape="rect" id="node5" href="$class_height_map_view_panel.html" title="HeightMapViewPanel" alt="" coords="127,157,272,184"/>
 </map>

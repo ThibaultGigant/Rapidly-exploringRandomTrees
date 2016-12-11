@@ -1,0 +1,9 @@
+<map id="RandomTreeGenerator" name="RandomTreeGenerator">
+<area shape="rect" id="node2" href="$class_tree_generator.html" title="TreeGenerator" alt="" coords="73,5,177,32"/>
+<area shape="rect" id="node3" href="$class_session.html" title="Session" alt="" coords="260,95,329,121"/>
+<area shape="rect" id="node6" href="$class_environment.html" title="Environment" alt="" coords="288,184,381,211"/>
+<area shape="rect" id="node4" href="$class_end_method.html" title="EndMethod" alt="" coords="245,5,333,32"/>
+<area shape="rect" id="node5" href="$class_height_map.html" title="HeightMap" alt="" coords="358,5,442,32"/>
+<area shape="rect" id="node7" href="$class_vertex.html" title="Vertex" alt="" coords="409,95,469,121"/>
+<area shape="rect" id="node8" href="$class_metric.html" title="Metric" alt="" coords="467,5,525,32"/>
+</map>

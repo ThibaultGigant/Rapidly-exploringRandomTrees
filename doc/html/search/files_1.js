@@ -7,5 +7,7 @@ var searchData=
   ['heightmapsubpanel_2ecpp',['heightmapsubpanel.cpp',['../heightmapsubpanel_8cpp.html',1,'']]],
   ['heightmapsubpanel_2eh',['heightmapsubpanel.h',['../heightmapsubpanel_8h.html',1,'']]],
   ['heightmapsuppanel_2ecpp',['heightmapsuppanel.cpp',['../heightmapsuppanel_8cpp.html',1,'']]],
-  ['heightmapsuppanel_2eh',['heightmapsuppanel.h',['../heightmapsuppanel_8h.html',1,'']]]
+  ['heightmapsuppanel_2eh',['heightmapsuppanel.h',['../heightmapsuppanel_8h.html',1,'']]],
+  ['heightmapviewpanel_2ecpp',['heightmapviewpanel.cpp',['../heightmapviewpanel_8cpp.html',1,'']]],
+  ['heightmapviewpanel_2eh',['heightmapviewpanel.h',['../heightmapviewpanel_8h.html',1,'']]]
 ];
