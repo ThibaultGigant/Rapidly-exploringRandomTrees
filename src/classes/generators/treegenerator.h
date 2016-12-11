@@ -10,7 +10,7 @@ class TreeGenerator
 public:
     TreeGenerator(Session* session);
     ~TreeGenerator();
-    virtual Vertex generate();
+    virtual Vertex* generate();
 
 private:
     Session* session;
