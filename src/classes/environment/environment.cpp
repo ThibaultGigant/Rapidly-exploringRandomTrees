@@ -1,4 +1,5 @@
 #include "environment.h"
+#include "src/classes/metrics/metric.h"
 
 /**
  * @brief Constructor
@@ -239,3 +240,11 @@ Vertex* Environment::getClosest(QPointF point)
 }
 
 
+Vertex* Environment::getRandomVertex()
+{
+    int line = rand() % this->nbLines;
+    int column = rand() % this->nbColumns;
+    QVector<Vertex*> vertices = this->quadrants[column][line].getVertices();
+    int elementIndex = rand() % vertices.size();
+    return vertices[elementIndex];
+}

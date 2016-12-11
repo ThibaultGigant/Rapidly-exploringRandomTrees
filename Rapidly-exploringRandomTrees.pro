@@ -30,7 +30,8 @@ SOURCES +=\
     src/app/heightmapviewpanel.cpp
     src/classes/endmethods/endmethod.cpp \
     src/classes/endmethods/verticesnumber.cpp \
-    src/classes/endmethods/timelimit.cpp
+    src/classes/endmethods/timelimit.cpp \
+    src/classes/generators/randomtreegenerator.cpp
 
 HEADERS  += \
     src/classes/environment/vertex.h \
@@ -49,6 +50,7 @@ HEADERS  += \
     src/app/heightmapviewpanel.h
     src/classes/endmethods/endmethod.h \
     src/classes/endmethods/verticesnumber.h \
-    src/classes/endmethods/timelimit.h
+    src/classes/endmethods/timelimit.h \
+    src/classes/generators/randomtreegenerator.h
 
 FORMS    += mainwindow.ui

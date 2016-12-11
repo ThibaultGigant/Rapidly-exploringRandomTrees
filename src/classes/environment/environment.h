@@ -4,6 +4,7 @@
 #include <QVector>
 #include <QPointF>
 #include <cmath>
+#include <cstdlib>
 #include "vertex.h"
 #include "quadrant.h"
 #include "src/classes/session.h"
@@ -15,6 +16,7 @@ public:
     ~Environment();
     void addElement(Vertex *vertex);
     Vertex* getClosest(QPointF point);
+    Vertex* getRandomVertex();
 
 private:
     int width;

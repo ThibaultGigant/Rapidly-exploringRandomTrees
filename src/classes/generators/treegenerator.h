@@ -12,7 +12,7 @@ public:
     ~TreeGenerator();
     virtual Vertex* generate();
 
-private:
+protected:
     Session* session;
 };
 

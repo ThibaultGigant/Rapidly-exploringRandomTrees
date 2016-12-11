@@ -1,12 +1,16 @@
 #ifndef SESSION_H
 #define SESSION_H
 
-#include "src/classes/metrics/metric.h"
+#include <QPointF>
+#include <ctime>
+#include <cstdlib>
 
 class Environment;
 class TreeGenerator;
 class HeightMap;
 class EndMethod;
+class Metric;
+class Vertex;
 
 class Session
 {
@@ -18,6 +22,8 @@ public:
     Metric* getMetric();
     TreeGenerator* getGenerator();
     HeightMap* getMap();
+    bool isObstacle(QPointF point);
+    Vertex* getRandomVertex();
 
 private:
     // Attributes

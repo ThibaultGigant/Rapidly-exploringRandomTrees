@@ -2,6 +2,7 @@
 #include "generators/treegenerator.h"
 #include "endmethods/endmethod.h"
 #include "environment/environment.h"
+#include "heightmap.h"
 
 /**
  * @brief Constructor
@@ -19,7 +20,7 @@ Session::Session(double delta_t, Environment* environment, Metric* metric, TreeG
     this->metric = metric;
     this->generator = generator;
     this->map = map;
-
+    srand(time(NULL));
 }
 
 /**
@@ -76,4 +77,22 @@ void Session::generate()
 
         this->isOver = this->endMethod->isOver();
     }
+}
+
+/**
+ * @brief Uses the heightmap to determine if a point is an obstacle
+ * @param point Point to test
+ */
+bool Session::isObstacle(QPointF point)
+{
+    return this->map->isObstacle(point);
+}
+
+/**
+ * @brief Returns a random vertex of the tree, using the environment
+ * @return Random vertex
+ */
+Vertex* Session::getRandomVertex()
+{
+    return this->environment->getRandomVertex();
 }
