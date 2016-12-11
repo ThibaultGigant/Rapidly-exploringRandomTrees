@@ -3,4 +3,6 @@
 HeightMapFrame::HeightMapFrame(QWidget *parent) :
     QWidget(parent)
 {
+
+
 }

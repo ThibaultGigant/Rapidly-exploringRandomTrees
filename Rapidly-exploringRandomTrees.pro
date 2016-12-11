@@ -26,7 +26,8 @@ SOURCES +=\
     src/app/heightmapframe.cpp \
     src/app/heightmapsuppanel.cpp \
     src/app/heightmapsubpanel.cpp \
-    src/classes/generators/treegenerator.cpp
+    src/classes/generators/treegenerator.cpp \
+    src/app/heightmapviewpanel.cpp
 
 HEADERS  += \
     src/classes/environment/vertex.h \
@@ -41,6 +42,7 @@ HEADERS  += \
     src/app/heightmapframe.h \
     src/app/heightmapsuppanel.h \
     src/app/heightmapsubpanel.h \
-    src/classes/generators/treegenerator.h
+    src/classes/generators/treegenerator.h \
+    src/app/heightmapviewpanel.h
 
 FORMS    += mainwindow.ui
