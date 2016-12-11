@@ -96,3 +96,13 @@ Vertex* Session::getRandomVertex()
 {
     return this->environment->getRandomVertex();
 }
+
+/**
+ * @brief Returns the closest vertex of the tree from the given point
+ * @param point Point of the environment
+ * @return Closest vertex
+ */
+Vertex* Session::getClosestVertex(QPointF point)
+{
+    return this->environment->getClosest(point);
+}

@@ -239,7 +239,10 @@ Vertex* Environment::getClosest(QPointF point)
     return vertex;
 }
 
-
+/**
+ * @brief Returns a random vertex of the tree
+ * @return Random Vertex
+ */
 Vertex* Environment::getRandomVertex()
 {
     int line = rand() % this->nbLines;

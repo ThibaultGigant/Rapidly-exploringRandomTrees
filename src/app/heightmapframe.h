@@ -2,6 +2,7 @@
 #define HEIGHTMAPFRAME_H
 
 #include <QWidget>
+#include <QVBoxLayout>
 #include "heightmapsubpanel.h"
 #include "heightmapsuppanel.h"
 #include "heightmapviewpanel.h"
@@ -14,9 +15,9 @@ public:
 
 private :
 
-   HeighMapSubPanel hmSubPanel;
-   HeighMapViewPanel hmViewPanel;
-   HeighMapSupPanel hmSupPanel;
+   HeightMapSubPanel hmSubPanel;
+   HeightMapViewPanel hmViewPanel;
+   HeightMapSupPanel hmSupPanel;
 
    QVBoxLayout layout;
 

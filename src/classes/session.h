@@ -24,6 +24,7 @@ public:
     HeightMap* getMap();
     bool isObstacle(QPointF point);
     Vertex* getRandomVertex();
+    Vertex* getClosestVertex(QPointF point);
 
 private:
     // Attributes

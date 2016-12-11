@@ -3,7 +3,6 @@
 
 #include <QWidget>
 #include <QPushButton>
-#include "heightmapframe.h"
 #include "../classes/heightmap.h"
 
 

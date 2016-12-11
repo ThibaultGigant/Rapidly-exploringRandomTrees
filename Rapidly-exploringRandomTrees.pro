@@ -27,7 +27,7 @@ SOURCES +=\
     src/app/heightmapsuppanel.cpp \
     src/app/heightmapsubpanel.cpp \
     src/classes/generators/treegenerator.cpp \
-    src/app/heightmapviewpanel.cpp
+    src/app/heightmapviewpanel.cpp \
     src/classes/endmethods/endmethod.cpp \
     src/classes/endmethods/verticesnumber.cpp \
     src/classes/endmethods/timelimit.cpp \
@@ -47,7 +47,7 @@ HEADERS  += \
     src/app/heightmapsuppanel.h \
     src/app/heightmapsubpanel.h \
     src/classes/generators/treegenerator.h \
-    src/app/heightmapviewpanel.h
+    src/app/heightmapviewpanel.h \
     src/classes/endmethods/endmethod.h \
     src/classes/endmethods/verticesnumber.h \
     src/classes/endmethods/timelimit.h \
