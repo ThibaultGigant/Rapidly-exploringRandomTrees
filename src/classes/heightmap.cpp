@@ -129,7 +129,17 @@ QString HeightMap::toFileString(){
     return str;
 }
 
-
+/**
+ * @brief Verifies if a point is in an obstacle
+ * @param point Point to test
+ * @return true if it's an obstacle, false otherwise
+ */
+bool HeightMap::isObstacle(QPointF point)
+{
+    int colonne = (int) (point.x() / width);
+    int ligne = (int) (point.y() / height);
+    return this->map[colonne][ligne] > 0;
+}
 
 
 

@@ -1,4 +1,7 @@
 #include "session.h"
+#include "generators/treegenerator.h"
+#include "endmethods/endmethod.h"
+#include "environment/environment.h"
 
 /**
  * @brief Constructor
@@ -62,4 +65,15 @@ TreeGenerator* Session::getGenerator()
 HeightMap* Session::getMap()
 {
     return this->map;
+}
+
+void Session::generate()
+{
+    if (!this->isOver)
+    {
+        Vertex* vertex = this->generator->generate();
+        this->environment->addElement(vertex);
+
+        this->isOver = this->endMethod->isOver();
+    }
 }

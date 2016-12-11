@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['vertex',['Vertex',['../classclasses_1_1tree_1_1_vertex.html',1,'classes::tree']]]
+  ['vertex',['Vertex',['../class_vertex.html',1,'']]],
+  ['verticesnumber',['VerticesNumber',['../class_vertices_number.html',1,'']]]
 ];

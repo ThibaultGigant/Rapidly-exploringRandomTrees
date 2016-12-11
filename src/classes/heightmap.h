@@ -25,6 +25,8 @@ public:
     QPointF getEnd();
     QString getName();
 
+    bool isObstacle(QPointF point);
+
 private:
 
     int width;

@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['vertex',['Vertex',['../class_vertex.html',1,'']]]
+  ['mainwindow',['MainWindow',['../class_main_window.html',1,'']]],
+  ['manhattandistance',['ManhattanDistance',['../class_manhattan_distance.html',1,'']]],
+  ['metric',['Metric',['../class_metric.html',1,'']]]
 ];

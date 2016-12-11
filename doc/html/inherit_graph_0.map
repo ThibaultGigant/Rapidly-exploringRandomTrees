@@ -1,3 +1,5 @@
-<map id="Graphe hiérarchique des classes" name="Graphe hiérarchique des classes">
-<area shape="rect" id="node2" href="$class_main_window.html" title="MainWindow" alt="" coords="163,5,261,32"/>
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$class_end_method.html" title="EndMethod" alt="" coords="5,31,93,57"/>
+<area shape="rect" id="node2" href="$class_time_limit.html" title="TimeLimit" alt="" coords="159,5,238,32"/>
+<area shape="rect" id="node3" href="$class_vertices_number.html" title="VerticesNumber" alt="" coords="141,56,256,83"/>
 </map>
