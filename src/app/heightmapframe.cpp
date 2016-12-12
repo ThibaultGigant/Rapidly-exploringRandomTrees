@@ -18,3 +18,7 @@ HeightMapFrame::HeightMapFrame(QWidget *parent, Config * config) :
 
     this->setLayout(layout);
 }
+
+void HeightMapFrame::drawLine(QPointF p1, QPointF p2){
+
+}

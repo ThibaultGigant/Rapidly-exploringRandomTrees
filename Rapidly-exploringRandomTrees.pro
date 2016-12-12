@@ -30,14 +30,11 @@ SOURCES +=\
     src/classes/endmethods/endmethod.cpp \
     src/classes/endmethods/verticesnumber.cpp \
     src/classes/endmethods/timelimit.cpp \
-<<<<<<< Updated upstream
     src/classes/generators/randomtreegenerator.cpp \
-    src/classes/generators/rrtgenerator.cpp
-=======
+    src/classes/generators/rrtgenerator.cpp \
     src/app/heightmapfilepanel.cpp \
     src/app/centralwidget.cpp \
     src/classes/config.cpp
->>>>>>> Stashed changes
 
 HEADERS  += \
     src/classes/environment/vertex.h \
@@ -56,13 +53,10 @@ HEADERS  += \
     src/classes/endmethods/endmethod.h \
     src/classes/endmethods/verticesnumber.h \
     src/classes/endmethods/timelimit.h \
-<<<<<<< Updated upstream
     src/classes/generators/randomtreegenerator.h \
-    src/classes/generators/rrtgenerator.h
-=======
+    src/classes/generators/rrtgenerator.h \
     src/app/heightmapfilepanel.h \
     src/app/centralwidget.h \
     src/classes/config.h
->>>>>>> Stashed changes
 
 FORMS    += mainwindow.ui

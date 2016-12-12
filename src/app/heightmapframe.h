@@ -16,13 +16,9 @@ public:
 
 private :
 
-<<<<<<< Updated upstream
-   HeightMapSubPanel hmSubPanel;
-   HeightMapViewPanel hmViewPanel;
-   HeightMapSupPanel hmSupPanel;
-=======
+
     Config *config;
->>>>>>> Stashed changes
+
 
     HeightMapSubPanel *hmSubPanel;
     HeightMapViewPanel *hmViewPanel;
@@ -33,6 +29,8 @@ private :
 signals:
 
 public slots:
+
+    void drawLine(QPointF p1, QPointF p2);
 
 };
 

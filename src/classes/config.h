@@ -2,6 +2,7 @@
 #define CONFIG_H
 
 #include "heightmap.h"
+#include "src/app/heightmapviewpanel.h"
 
 
 class Config
@@ -9,12 +10,25 @@ class Config
 public:
     Config();
 
-    HeightMap *getViewMap();
-    void setViewMap(HeightMap * map);
+    HeightMap *getCurrentMap();
+    void setCurrentMap(HeightMap * map);
+
+    HeightMapViewPanel getHeightMapViewPanel();
+    void setHeightMapViewPanel( HeightMapViewPanel hmViewPanel);
+
+public slots:
+
+    void startRun();
+    void stopRun();
+
 
 private :
 
-    HeightMap *viewMap;
+    bool isRunning;
+
+    HeightMap *currentMap;
+    HeightMapViewPanel hmViemPanel;
+
 
 };
 
