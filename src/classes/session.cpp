@@ -13,14 +13,16 @@
  * @param generator Generator of new vertices at every iteration
  * @param map Map of the space
  */
-Session::Session(double delta_t, Environment* environment, Metric* metric, TreeGenerator* generator, HeightMap* map)
+Session::Session(double delta_t, Metric* metric, TreeGenerator* generator, HeightMap* map, Config* config)
 {
     // Initialization of attributes
     this->delta_t = delta_t;
-    this->environment = environment;
+    Vertex *startVertex = new Vertex(map->getStart(), NULL);
+    this->environment = new Environment(this, map->getWidth(), map->getHeight(), startVertex);
     this->metric = metric;
     this->generator = generator;
     this->map = map;
+    this->config = config;
     srand(time(NULL));
 }
 
@@ -89,7 +91,7 @@ HeightMap* Session::getMap()
 
 void Session::generate()
 {
-    if (!this->isOver)
+    while (!this->isOver)
     {
         Vertex* vertex = this->generator->generate();
         this->environment->addElement(vertex);

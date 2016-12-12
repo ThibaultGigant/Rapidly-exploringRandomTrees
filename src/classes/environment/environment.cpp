@@ -15,6 +15,7 @@ Environment::Environment(Session* session, int width, int height,Vertex* vertex)
     this->startVertex = vertex;
     this->width = width;
     this->height = height;
+    // nbLines and nbColumns are calculated so each quadrant's side should have a length of delta_t
     this->nbLines = ceil(height/this->session->getDeltaT());
     this->nbColumns = ceil(width/this->session->getDeltaT());
 
@@ -49,22 +50,22 @@ void Environment::addElement(Vertex *vertex)
     int ligne;
     int colonne;
     QPointF p = vertex->getPosition();
-    ligne = (int) (p.x() / this->width);
-    colonne = (int) (p.y() / this->height);
+    ligne = (int) (p.x() / this->width) * this->session->getDeltaT();
+    colonne = (int) (p.y() / this->height) * this->session->getDeltaT();
 
     this->quadrants[colonne][ligne].addVertex(vertex);
 }
 
 /**
- * @brief Return the closest vertex of a given point
+ * @brief Returns the closest vertex of a given point
  * @param point Point of the environment
  * @return Closest vertex of the given point
  */
 Vertex* Environment::getClosest(QPointF point)
 {
     // Initialization of variables
-    double min_distance = width + height;
-    double temp_distance;
+    double minDistance = width + height;
+    double tempDistance;
     Vertex* vertex;
     int pointLine = (int) (point.y() / height);
     int pointColumn = (int) (point.x() / width);
@@ -120,10 +121,10 @@ Vertex* Environment::getClosest(QPointF point)
             vertices = this->quadrants[pointColumn - j][pointLine - i].getVertices();
             for (int k = 0; k < vertices.size(); k++)
             {
-                temp_distance = this->session->getMetric()->distance(vertices[k]->getPosition(), point) < min_distance;
-                if (temp_distance < min_distance)
+                tempDistance = this->session->getMetric()->distance(vertices[k]->getPosition(), point) < minDistance;
+                if (tempDistance < minDistance)
                 {
-                    min_distance = temp_distance;
+                    minDistance = tempDistance;
                     vertex = vertices[k];
                 }
             }
@@ -135,10 +136,10 @@ Vertex* Environment::getClosest(QPointF point)
             vertices = this->quadrants[pointColumn + j][pointLine - i].getVertices();
             for (int k = 0; k < vertices.size(); k++)
             {
-                temp_distance = this->session->getMetric()->distance(vertices[k]->getPosition(), point) < min_distance;
-                if (temp_distance < min_distance)
+                tempDistance = this->session->getMetric()->distance(vertices[k]->getPosition(), point) < minDistance;
+                if (tempDistance < minDistance)
                 {
-                    min_distance = temp_distance;
+                    minDistance = tempDistance;
                     vertex = vertices[k];
                 }
             }
@@ -150,10 +151,10 @@ Vertex* Environment::getClosest(QPointF point)
             vertices = this->quadrants[pointColumn - j][pointLine + i].getVertices();
             for (int k = 0; k < vertices.size(); k++)
             {
-                temp_distance = this->session->getMetric()->distance(vertices[k]->getPosition(), point) < min_distance;
-                if (temp_distance < min_distance)
+                tempDistance = this->session->getMetric()->distance(vertices[k]->getPosition(), point) < minDistance;
+                if (tempDistance < minDistance)
                 {
-                    min_distance = temp_distance;
+                    minDistance = tempDistance;
                     vertex = vertices[k];
                 }
             }
@@ -165,10 +166,10 @@ Vertex* Environment::getClosest(QPointF point)
             vertices = this->quadrants[pointColumn + j][pointLine + i].getVertices();
             for (int k = 0; k < vertices.size(); k++)
             {
-                temp_distance = this->session->getMetric()->distance(vertices[k]->getPosition(), point) < min_distance;
-                if (temp_distance < min_distance)
+                tempDistance = this->session->getMetric()->distance(vertices[k]->getPosition(), point) < minDistance;
+                if (tempDistance < minDistance)
                 {
-                    min_distance = temp_distance;
+                    minDistance = tempDistance;
                     vertex = vertices[k];
                 }
             }
@@ -180,10 +181,10 @@ Vertex* Environment::getClosest(QPointF point)
             vertices = this->quadrants[pointColumn - i][pointLine - j].getVertices();
             for (int k = 0; k < vertices.size(); k++)
             {
-                temp_distance = this->session->getMetric()->distance(vertices[k]->getPosition(), point) < min_distance;
-                if (temp_distance < min_distance)
+                tempDistance = this->session->getMetric()->distance(vertices[k]->getPosition(), point) < minDistance;
+                if (tempDistance < minDistance)
                 {
-                    min_distance = temp_distance;
+                    minDistance = tempDistance;
                     vertex = vertices[k];
                 }
             }
@@ -195,10 +196,10 @@ Vertex* Environment::getClosest(QPointF point)
             vertices = this->quadrants[pointColumn + i][pointLine - j].getVertices();
             for (int k = 0; k < vertices.size(); k++)
             {
-                temp_distance = this->session->getMetric()->distance(vertices[k]->getPosition(), point) < min_distance;
-                if (temp_distance < min_distance)
+                tempDistance = this->session->getMetric()->distance(vertices[k]->getPosition(), point) < minDistance;
+                if (tempDistance < minDistance)
                 {
-                    min_distance = temp_distance;
+                    minDistance = tempDistance;
                     vertex = vertices[k];
                 }
             }
@@ -210,10 +211,10 @@ Vertex* Environment::getClosest(QPointF point)
             vertices = this->quadrants[pointColumn - i][pointLine + j].getVertices();
             for (int k = 0; k < vertices.size(); k++)
             {
-                temp_distance = this->session->getMetric()->distance(vertices[k]->getPosition(), point) < min_distance;
-                if (temp_distance < min_distance)
+                tempDistance = this->session->getMetric()->distance(vertices[k]->getPosition(), point) < minDistance;
+                if (tempDistance < minDistance)
                 {
-                    min_distance = temp_distance;
+                    minDistance = tempDistance;
                     vertex = vertices[k];
                 }
             }
@@ -225,15 +226,49 @@ Vertex* Environment::getClosest(QPointF point)
             vertices = this->quadrants[pointColumn + i][pointLine + j].getVertices();
             for (int k = 0; k < vertices.size(); k++)
             {
-                temp_distance = this->session->getMetric()->distance(vertices[k]->getPosition(), point) < min_distance;
-                if (temp_distance < min_distance)
+                tempDistance = this->session->getMetric()->distance(vertices[k]->getPosition(), point) < minDistance;
+                if (tempDistance < minDistance)
                 {
-                    min_distance = temp_distance;
+                    minDistance = tempDistance;
                     vertex = vertices[k];
                 }
             }
         }
 
+    }
+
+    return vertex;
+}
+
+/**
+ * @brief Returns the closest vertex of a given point, by going through all of the vertices in the environment
+ * @param point Point of the environment
+ * @return Closest vertex of the given point
+ */
+Vertex* Environment::getClosestNaive(QPointF point)
+{
+    // Initialization of variables
+    double minDistance = width + height;
+    double tempDistance;
+    Vertex* vertex, *tempVertex;
+
+    // Going through every vertex of every quadrant
+    for (int i = 0; i < this->quadrants.size(); i++)
+    {
+        for (int j = 0; j < this->quadrants[i].size(); j++)
+        {
+            for (int k = 0; k < this->quadrants[i][j].getVertices().size(); k++)
+            {
+                tempVertex = this->quadrants[i][j].getVertices()[k];
+                tempDistance = this->session->distance(point, tempVertex->getPosition());
+                // Change the closest vertex if applicable
+                if (tempDistance < minDistance)
+                {
+                    minDistance = tempDistance;
+                    vertex = tempVertex;
+                }
+            }
+        }
     }
 
     return vertex;

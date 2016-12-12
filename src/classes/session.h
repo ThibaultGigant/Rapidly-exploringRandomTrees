@@ -11,11 +11,12 @@ class HeightMap;
 class EndMethod;
 class Metric;
 class Vertex;
+class Config;
 
 class Session
 {
 public:
-    Session(double delta_t, Environment* environment, Metric* metric, TreeGenerator* generator, HeightMap* map);
+    Session(double delta_t, Metric* metric, TreeGenerator* generator, HeightMap* map, Config* config);
     ~Session();
 
     double getDeltaT();
@@ -39,6 +40,8 @@ private:
     TreeGenerator* generator;
     HeightMap* map;
     EndMethod* endMethod;
+    Config* config;
+
     bool isOver;
 
     // Methods
