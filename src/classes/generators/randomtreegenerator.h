@@ -2,7 +2,6 @@
 #define RANDOMTREEGENERATOR_H
 
 #include "treegenerator.h"
-#include <cmath>
 
 class RandomTreeGenerator : public TreeGenerator
 {

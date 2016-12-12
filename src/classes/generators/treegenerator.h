@@ -3,6 +3,7 @@
 
 #include "src/classes/environment/vertex.h"
 #include <QPointF>
+#include <cmath>
 
 class Session;
 
