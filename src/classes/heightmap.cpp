@@ -141,6 +141,24 @@ bool HeightMap::isObstacle(QPointF point)
     return this->map[colonne][ligne] > 0;
 }
 
+/**
+ * @brief Set the value of a pixel (x,y) to val
+ * @param x
+ * @param y
+ * @param val
+ */
+void HeightMap::setPixel(int x, int y, int val){
+    map[x][y] = val;
+}
+
+
+/**
+ * @brief Clear the map : set all the pixels to 0
+ */
+void HeightMap::clearMap(){
+    clearObstacles();
+}
+
 
 
 

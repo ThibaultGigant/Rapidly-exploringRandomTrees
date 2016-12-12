@@ -4,22 +4,31 @@
 #include <QWidget>
 #include <QVBoxLayout>
 #include "heightmapsubpanel.h"
-#include "heightmapsuppanel.h"
 #include "heightmapviewpanel.h"
+#include "heightmapfilepanel.h"
+#include "../classes/config.h"
 
 class HeightMapFrame : public QWidget
 {
     Q_OBJECT
 public:
-    explicit HeightMapFrame(QWidget *parent = 0);
+    explicit HeightMapFrame(QWidget *parent = 0, Config *config = 0);
 
 private :
 
+<<<<<<< Updated upstream
    HeightMapSubPanel hmSubPanel;
    HeightMapViewPanel hmViewPanel;
    HeightMapSupPanel hmSupPanel;
+=======
+    Config *config;
+>>>>>>> Stashed changes
 
-   QVBoxLayout layout;
+    HeightMapSubPanel *hmSubPanel;
+    HeightMapViewPanel *hmViewPanel;
+    HeightMapFilePanel *hmFilePanel;
+
+    QVBoxLayout *layout;
 
 signals:
 

@@ -1,12 +1,12 @@
 #ifndef HEIGHTMAP_H
 #define HEIGHTMAP_H
 
-
+#include <QObject>
 #include <QPointF>
 #include <QVector>
 #include <QString>
 
-class HeightMap
+class HeightMap : QObject
 {
 public:
 
@@ -39,6 +39,12 @@ private:
     QPointF end;
 
     void resizeMap(int width, int height);
+
+
+public slots:
+
+    void setPixel(int x,int y, int val);
+    void clearMap();
 
 };
 

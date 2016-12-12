@@ -24,15 +24,20 @@ SOURCES +=\
     src/classes/session.cpp \
     src/classes/heightmap.cpp \
     src/app/heightmapframe.cpp \
-    src/app/heightmapsuppanel.cpp \
     src/app/heightmapsubpanel.cpp \
     src/classes/generators/treegenerator.cpp \
     src/app/heightmapviewpanel.cpp \
     src/classes/endmethods/endmethod.cpp \
     src/classes/endmethods/verticesnumber.cpp \
     src/classes/endmethods/timelimit.cpp \
+<<<<<<< Updated upstream
     src/classes/generators/randomtreegenerator.cpp \
     src/classes/generators/rrtgenerator.cpp
+=======
+    src/app/heightmapfilepanel.cpp \
+    src/app/centralwidget.cpp \
+    src/classes/config.cpp
+>>>>>>> Stashed changes
 
 HEADERS  += \
     src/classes/environment/vertex.h \
@@ -45,14 +50,19 @@ HEADERS  += \
     src/classes/session.h \
     src/classes/heightmap.h \
     src/app/heightmapframe.h \
-    src/app/heightmapsuppanel.h \
     src/app/heightmapsubpanel.h \
     src/classes/generators/treegenerator.h \
     src/app/heightmapviewpanel.h \
     src/classes/endmethods/endmethod.h \
     src/classes/endmethods/verticesnumber.h \
     src/classes/endmethods/timelimit.h \
+<<<<<<< Updated upstream
     src/classes/generators/randomtreegenerator.h \
     src/classes/generators/rrtgenerator.h
+=======
+    src/app/heightmapfilepanel.h \
+    src/app/centralwidget.h \
+    src/classes/config.h
+>>>>>>> Stashed changes
 
 FORMS    += mainwindow.ui
