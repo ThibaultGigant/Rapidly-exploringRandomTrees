@@ -28,10 +28,6 @@ private :
 
 signals:
 
-public slots:
-
-    void drawLine(QPointF p1, QPointF p2);
-
 };
 
 #endif // HEIGHTMAPFRAME_H

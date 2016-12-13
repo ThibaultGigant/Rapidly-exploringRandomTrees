@@ -1,5 +1,6 @@
 #include "config.h"
 
+
 Config::Config()
 {
 
@@ -38,10 +39,10 @@ void Config::stopRun(){
  * @brief getHeightMapViewPanel
  * @return
  */
-HeightMapViewPanel Config::getHeightMapViewPanel(){
+HeightMapViewPanel* Config::getHeightMapViewPanel(){
     return hmViemPanel;
 }
 
-void Config::setHeightMapViewPanel( HeightMapViewPanel hmViewPanel){
+void Config::setHeightMapViewPanel(HeightMapViewPanel* hmViewPanel){
     this->hmViemPanel = hmViewPanel;
 }

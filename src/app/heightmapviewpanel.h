@@ -15,9 +15,16 @@ public:
 private :
     Config *config;
 
+    QPoint toScreenPix(QPointF p);
+    QPointF toHeightMapPoint(QPoint p);
+
 signals:
 
 public slots:
+
+    void drawLine(QPointF p1, QPointF p2);
+
+
 };
 
 #endif // HEIGHTMAPVIEWPANEL_H
