@@ -22,7 +22,7 @@ RRTGenerator::~RRTGenerator()
  */
 Vertex* RRTGenerator::generate()
 {
-    qDebug() << "Generation RRT";
+
     // Initializing variables
     Vertex* vertex;
     double angle, newX, newY;
@@ -30,24 +30,22 @@ Vertex* RRTGenerator::generate()
 
     do
     {
-        qDebug() << "Avant random";
+
         // Determining a random point
         newX = (rand() / (double) RAND_MAX) * this->session->getWidth();
         newY = (rand() / (double) RAND_MAX) * this->session->getHeight();
         point = QPointF(newX, newY);
 
-        qDebug() << "Avant getclosest";
         vertex = this->session->getClosestVertex(point);
 
-        qDebug() << "Avant distance";
-        if (this->session->distance(point, vertex->getPosition()))
+        if (this->session->distance(point, vertex->getPosition()) < this->session->getDeltaT())
             return new Vertex(point, vertex);
 
         newX -= vertex->getPosition().x();
         newY -= vertex->getPosition().y();
         angle = atan2(newY, newX);
-        newX = vertex->getPosition().x() + cos(angle);
-        newY = vertex->getPosition().y() + sin(angle);
+        newX = vertex->getPosition().x() + cos(angle) * this->getSession()->getDeltaT();
+        newY = vertex->getPosition().y() + sin(angle) * this->getSession()->getDeltaT();
         point = QPointF(newX, newY);
     } while (this->session->isObstacle(point));
     return new Vertex(point, vertex);

@@ -1,4 +1,5 @@
 #include "heightmap.h"
+#include <random>
 
 /**
  * @brief HeightMap::HeightMap
@@ -22,8 +23,12 @@ HeightMap::HeightMap(QString name, int width, int height, QPointF start, QPointF
         QVector<int> column;
         this->map.append(column);
         for(int j = 0;j < height ; j++){
+            //this->map.last().append(rand()%256);
             this->map.last().append(0);
         }
+    }
+    for (int i = 50; i< width-50 ; i ++){
+        this->map[i][this->getHeight() * 2/ 3] = 255;
     }
 }
 

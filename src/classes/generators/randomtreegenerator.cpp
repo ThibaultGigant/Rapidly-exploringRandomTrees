@@ -28,8 +28,8 @@ Vertex* RandomTreeGenerator::generate()
     do
     {
         angle = (rand() / (double) RAND_MAX) * (double) 2 * M_PI;
-        newX = vertex->getPosition().x() + cos(angle);
-        newY = vertex->getPosition().y() + sin(angle);
+        newX = vertex->getPosition().x() + cos(angle) * this->getSession()->getDeltaT();
+        newY = vertex->getPosition().y() + sin(angle) * this->getSession()->getDeltaT();
         point = QPointF(newX, newY);
     } while (this->session->isObstacle(point));
     return new Vertex(point, vertex);

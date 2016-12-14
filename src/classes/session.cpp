@@ -29,6 +29,8 @@ Session::Session(double delta_t, Config* config)
     this->endMethod = config->getEndMethod();
     this->config = config;
     srand(time(NULL));
+
+    connect(this, SIGNAL(emitDrawElement(Vertex*)), config, SLOT(receiveDrawElement(Vertex*)));
 }
 
 /**
@@ -96,17 +98,12 @@ HeightMap* Session::getMap()
 
 void Session::generate()
 {
-    qDebug() << "Generation Started";
+
     while (!this->endMethod->isOver())
     {
-        qDebug() << "Before generation";
         Vertex* vertex = this->generator->generate();
-        qDebug() << "Vertex generated";
         this->environment->addElement(vertex);
-        qDebug() << "Vertex element added";
-
         emit emitDrawElement(vertex);
-        qDebug() << "Signal emitted";
     }
 }
 

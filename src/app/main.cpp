@@ -4,19 +4,21 @@
 #include "src/classes/session.h"
 #include "src/classes/metrics/euclidiandistance.h"
 #include "src/classes/generators/rrtgenerator.h"
+#include "src/classes/generators/randomtreegenerator.h"
 #include "src/classes/endmethods/verticesnumber.h"
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     Config *config = new Config();
-    RRTGenerator *rrt = new RRTGenerator();
+    //TreeGenerator *generator = new RandomTreeGenerator();
+    TreeGenerator *generator = new RRTGenerator();
 
     config->setMetric(new EuclidianDistance());
-    config->setGenerator(rrt);
-    config->setEndMethod(new VerticesNumber(10));
-    Session *session = new Session(5, config);
-    rrt->setSession(session);
+    config->setGenerator(generator);
+    config->setEndMethod(new VerticesNumber(500));
+    Session *session = new Session(20, config);
+    generator->setSession(session);
 
     MainWindow *w = new MainWindow(NULL, config);
     w->show();

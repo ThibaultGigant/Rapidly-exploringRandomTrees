@@ -24,11 +24,6 @@ HeightMapViewPanel::HeightMapViewPanel(QWidget *parent, Config *config) : QWidge
 void HeightMapViewPanel::paintEvent(QPaintEvent *event)
 {
     QPainter painter(this);
-    QRectF rectangle(10.0, 20.0, 80.0, 60.0);
-    int startAngle = 30 * 16;
-    int spanAngle = 120 * 16;
-    painter.drawArc(rectangle, startAngle, spanAngle);
-
     painter.drawImage(0, 0, view);
 }
 
@@ -67,7 +62,9 @@ void HeightMapViewPanel::drawElement(Vertex *vertex)
     point1 = vertex->getPosition();
     point2 = vertex->getParent()->getPosition();
     painter.drawLine(point1, point2);
-    painter.drawEllipse(point1, 5, 5);
+    painter.drawEllipse(point1, 2, 2);
 
     painter.end();
+    this->view.setPixelColor(200, 200, QColor(255, 0, 0, 255));
+    update();
 }

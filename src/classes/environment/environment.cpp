@@ -29,7 +29,6 @@ Environment::Environment(Session* session, int width, int height,Vertex* vertex)
         this->quadrants.append(vecColonne);
         for (int ligne = 0; ligne < this->nbLines; ligne++)
         {
-            qDebug() << "Generation quadrant " << ligne << " " << colonne;
             this->quadrants.last().append(Quadrant());
         }
     }
@@ -255,20 +254,14 @@ Vertex* Environment::getClosestNaive(QPointF point)
     double minDistance = width + height;
     double tempDistance;
     Vertex* vertex, *tempVertex;
-    qDebug() << "entrée getclosest";
-    qDebug() << this->quadrants.size();
-    qDebug() << " getclosest size";
 
     // Going through every vertex of every quadrant
     for (int i = 0; i < this->quadrants.size(); i++)
     {
-        qDebug() << "debug i";
         for (int j = 0; j < this->quadrants[i].size(); j++)
         {
-            qDebug() << "debug j";
             for (int k = 0; k < this->quadrants[i][j].getVertices().size(); k++)
             {
-                qDebug() << "debug k";
                 tempVertex = this->quadrants[i][j].getVertices()[k];
                 tempDistance = this->session->distance(point, tempVertex->getPosition());
                 // Change the closest vertex if applicable
@@ -290,9 +283,13 @@ Vertex* Environment::getClosestNaive(QPointF point)
  */
 Vertex* Environment::getRandomVertex()
 {
-    int line = rand() % this->nbLines;
-    int column = rand() % this->nbColumns;
-    QVector<Vertex*> vertices = this->quadrants[column][line].getVertices();
+    QVector<Vertex*> vertices;
+    do
+    {
+        int line = rand() % this->nbLines;
+        int column = rand() % this->nbColumns;
+        vertices = this->quadrants[column][line].getVertices();
+    } while (vertices.isEmpty());
     int elementIndex = rand() % vertices.size();
     return vertices[elementIndex];
 }
