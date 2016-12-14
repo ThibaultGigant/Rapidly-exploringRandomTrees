@@ -10,18 +10,18 @@
  */
 HeightMap::HeightMap(QString name, int width, int height, QPointF start, QPointF end){
 
+    cout << "this is a test";
+
     this->name = name;
     this->width = width;
     this->height = height;
     this->start = start;
     this->end = end;
 
-    this->map = QVector<QVector<int> >(height);
-
     for (int i = 0; i< width ; i ++){
-        this->map[i] = QVector<int>(height);
+        this->map.append(QVector<int>());
         for(int j = 0;j < height ; i ++){
-            this->map[i][j] = 0;
+            this->map[i].append(0);
         }
     }
 

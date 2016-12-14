@@ -96,6 +96,8 @@ void Session::generate()
         Vertex* vertex = this->generator->generate();
         this->environment->addElement(vertex);
 
+
+
         this->isOver = this->endMethod->isOver();
     }
 }

@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QHBoxLayout>
+#include <iostream>
 #include "heightmapframe.h"
 #include "centralwidget.h"
 #include "../classes/config.h"

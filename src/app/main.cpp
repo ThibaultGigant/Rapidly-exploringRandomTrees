@@ -4,8 +4,9 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    MainWindow w;
-    w.show();
+    Config *config = new Config();
+    MainWindow *w = new MainWindow(NULL, config);
+    w->show();
 
     return a.exec();
 }

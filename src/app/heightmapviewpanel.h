@@ -3,6 +3,8 @@
 
 #include <QObject>
 #include <QWidget>
+#include <QPainter>
+#include <QPointF>
 #include "../classes/config.h"
 
 class HeightMapViewPanel : public QWidget
@@ -14,15 +16,18 @@ public:
 
 private :
     Config *config;
+    QImage view;
 
     QPoint toScreenPix(QPointF p);
     QPointF toHeightMapPoint(QPoint p);
 
+protected:
+    void paintEvent(QPaintEvent* event);
+
 signals:
 
 public slots:
-
-    void drawLine(QPointF p1, QPointF p2);
+    void drawElement(Vertex *vertex);
 
 
 };

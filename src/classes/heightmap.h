@@ -5,6 +5,9 @@
 #include <QPointF>
 #include <QVector>
 #include <QString>
+#include <iostream>
+
+using namespace std;
 
 class HeightMap : QObject
 {

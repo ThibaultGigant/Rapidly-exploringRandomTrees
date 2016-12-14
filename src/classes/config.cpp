@@ -3,8 +3,7 @@
 
 Config::Config()
 {
-
-
+    setCurrentMap(new HeightMap(NAME, WIDTH, HEIGHT, START_POINT, END_POINT));
 }
 /**
  * @brief Config::getCurrentMap
@@ -38,11 +37,16 @@ void Config::stopRun(){
 /**
  * @brief getHeightMapViewPanel
  * @return
- */
+ *//*
 HeightMapViewPanel* Config::getHeightMapViewPanel(){
     return hmViemPanel;
 }
 
 void Config::setHeightMapViewPanel(HeightMapViewPanel* hmViewPanel){
     this->hmViemPanel = hmViewPanel;
+}*/
+
+void Config::receiveDrawElement(Vertex *vertex)
+{
+    emit emitDrawElement(vertex);
 }
