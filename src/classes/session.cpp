@@ -110,10 +110,21 @@ void Session::generate()
 /**
  * @brief Uses the heightmap to determine if a point is an obstacle
  * @param point Point to test
- */
+ *//*
 bool Session::isObstacle(QPointF point)
 {
     return this->map->isObstacle(point);
+}*/
+
+/**
+ * @brief Uses the heightmap to determine if a path is free of obstacles
+ * @param point1 Starting point of the path
+ * @param point2 Arrival point of the path
+ * @return true if the path is obstacle free, false otherwise
+ */
+bool Session::isPathFree(QPointF point1, QPointF point2)
+{
+    return this->map->isPathFree(point1, point2);
 }
 
 /**

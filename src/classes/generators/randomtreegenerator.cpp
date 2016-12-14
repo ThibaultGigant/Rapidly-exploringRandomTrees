@@ -21,16 +21,17 @@ RandomTreeGenerator::~RandomTreeGenerator()
  */
 Vertex* RandomTreeGenerator::generate()
 {
-    Vertex* vertex = this->session->getRandomVertex();
+    Vertex* vertex;
     double angle, newX, newY;
     QPointF point;
 
     do
     {
+        vertex = this->session->getRandomVertex();
         angle = (rand() / (double) RAND_MAX) * (double) 2 * M_PI;
         newX = vertex->getPosition().x() + cos(angle) * this->getSession()->getDeltaT();
         newY = vertex->getPosition().y() + sin(angle) * this->getSession()->getDeltaT();
         point = QPointF(newX, newY);
-    } while (this->session->isObstacle(point));
+    } while (!(this->session->isPathFree(vertex->getPosition(), point)));
     return new Vertex(point, vertex);
 }

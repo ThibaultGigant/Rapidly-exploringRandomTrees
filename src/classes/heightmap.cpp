@@ -1,5 +1,4 @@
 #include "heightmap.h"
-#include <random>
 
 /**
  * @brief HeightMap::HeightMap
@@ -147,9 +146,42 @@ QString HeightMap::toFileString(){
  */
 bool HeightMap::isObstacle(QPointF point)
 {
-    int colonne = (int) (point.x() / width);
-    int ligne = (int) (point.y() / height);
+    int colonne = (int) point.x();
+    int ligne = (int) point.y();
     return this->map[colonne][ligne] > 0;
+}
+
+/**
+ * @brief Determines if the path between 2 points is obstacle free
+ * @param point1 Starting point of the path
+ * @param point2 Arrival point of the path
+ * @return true if the path is free of obstacles, false otherwise
+ */
+bool HeightMap::isPathFree(QPointF point1, QPointF point2)
+{
+    // If the second point is already on an obstacle, no need to go further
+    if (this->isObstacle(point2))
+        return false;
+
+    double angle, newX, newY;
+    QPointF tempPoint;
+
+    newX = point2.x() - point1.x();
+    newY = point2.y() - point1.y();
+    angle = atan2(newY, newX);
+
+    tempPoint = point1;
+
+    // Verification of each pixel between the 2 points
+    while (sqrt(pow(point2.x() - tempPoint.x(), 2) + pow(point2.y() - tempPoint.y(), 2)) >= 1)
+    {
+        if (isObstacle(tempPoint))
+            return false;
+        newX = tempPoint.x() + cos(angle);
+        newY = tempPoint.y() + sin(angle);
+        tempPoint = QPointF(newX, newY);
+    }
+    return true;
 }
 
 /**

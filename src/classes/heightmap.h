@@ -7,6 +7,8 @@
 #include <QString>
 #include <iostream>
 #include <QDebug>
+#include <random>
+#include <cmath>
 
 using namespace std;
 
@@ -30,6 +32,7 @@ public:
     QString getName();
 
     bool isObstacle(QPointF point);
+    bool isPathFree(QPointF point1, QPointF point2);
 
 private:
 

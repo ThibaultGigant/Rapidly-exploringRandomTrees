@@ -28,7 +28,8 @@ public:
     TreeGenerator* getGenerator();
     HeightMap* getMap();
 
-    bool isObstacle(QPointF point);
+    //bool isObstacle(QPointF point);
+    bool isPathFree(QPointF point1, QPointF point2);
     Vertex* getRandomVertex();
     Vertex* getClosestVertex(QPointF point);
     int getWidth();

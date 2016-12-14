@@ -38,7 +38,8 @@ Vertex* RRTGenerator::generate()
 
         vertex = this->session->getClosestVertex(point);
 
-        if (this->session->distance(point, vertex->getPosition()) < this->session->getDeltaT())
+        if (this->session->distance(point, vertex->getPosition()) < this->session->getDeltaT() &&
+                this->session->isPathFree(vertex->getPosition(), point))
             return new Vertex(point, vertex);
 
         newX -= vertex->getPosition().x();
@@ -47,7 +48,7 @@ Vertex* RRTGenerator::generate()
         newX = vertex->getPosition().x() + cos(angle) * this->getSession()->getDeltaT();
         newY = vertex->getPosition().y() + sin(angle) * this->getSession()->getDeltaT();
         point = QPointF(newX, newY);
-    } while (this->session->isObstacle(point));
+    } while (!(this->session->isPathFree(vertex->getPosition(), point)));
     return new Vertex(point, vertex);
 }
 
