@@ -5,7 +5,7 @@
  * @brief Constructor
  * @param session Session using this generator
  */
-RandomTreeGenerator::RandomTreeGenerator(Session* session) : TreeGenerator(session)
+RandomTreeGenerator::RandomTreeGenerator() : TreeGenerator()
 {
 }
 

@@ -35,7 +35,7 @@ void Config::stopRun(){
     this->isRunning = false;
 }
 
-EndMethod *Config::getEndMethod() const
+EndMethod *Config::getEndMethod()
 {
     return endMethod;
 }

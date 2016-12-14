@@ -31,7 +31,7 @@ public:
     TreeGenerator* getGenerator();
     void setGenerator(TreeGenerator *generator);
 
-    EndMethod *getEndMethod() const;
+    EndMethod *getEndMethod();
     void setEndMethod(EndMethod *value);
 
 public slots:

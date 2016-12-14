@@ -6,7 +6,7 @@
 class RandomTreeGenerator : public TreeGenerator
 {
 public:
-    RandomTreeGenerator(Session* session);
+    RandomTreeGenerator();
     ~RandomTreeGenerator();
     virtual Vertex* generate();
 };

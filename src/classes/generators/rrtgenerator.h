@@ -6,7 +6,7 @@
 class RRTGenerator : public TreeGenerator
 {
 public:
-    RRTGenerator(Session* session);
+    RRTGenerator();
     ~RRTGenerator();
     virtual Vertex* generate();
 };

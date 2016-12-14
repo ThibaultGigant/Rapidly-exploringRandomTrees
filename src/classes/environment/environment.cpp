@@ -20,6 +20,8 @@ Environment::Environment(Session* session, int width, int height,Vertex* vertex)
     this->nbLines = ceil(height/this->session->getDeltaT());
     this->nbColumns = ceil(width/this->session->getDeltaT());
 
+    this->quadrants = QVector<QVector<Quadrant> >();
+
     // Initialization of the quadrants
     for (int colonne = 0; colonne < this->nbColumns; colonne++)
     {
@@ -27,6 +29,7 @@ Environment::Environment(Session* session, int width, int height,Vertex* vertex)
         this->quadrants.append(vecColonne);
         for (int ligne = 0; ligne < this->nbLines; ligne++)
         {
+            qDebug() << "Generation quadrant " << ligne << " " << colonne;
             this->quadrants.last().append(Quadrant());
         }
     }
@@ -254,6 +257,7 @@ Vertex* Environment::getClosestNaive(QPointF point)
     Vertex* vertex, *tempVertex;
     qDebug() << "entrée getclosest";
     qDebug() << this->quadrants.size();
+    qDebug() << " getclosest size";
 
     // Going through every vertex of every quadrant
     for (int i = 0; i < this->quadrants.size(); i++)

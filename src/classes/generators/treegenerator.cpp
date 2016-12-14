@@ -4,9 +4,8 @@
  * @brief Constructor
  * @param session Session using this generator
  */
-TreeGenerator::TreeGenerator(Session* session)
+TreeGenerator::TreeGenerator()
 {
-    this->session = session;
 }
 
 /**
@@ -21,4 +20,14 @@ TreeGenerator::~TreeGenerator()
  */
 Vertex* TreeGenerator::generate(){
     return new Vertex(QPointF(0, 0), NULL);
+}
+
+Session *TreeGenerator::getSession() const
+{
+    return session;
+}
+
+void TreeGenerator::setSession(Session *value)
+{
+    session = value;
 }

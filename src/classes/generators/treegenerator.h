@@ -10,9 +10,12 @@ class Session;
 class TreeGenerator
 {
 public:
-    TreeGenerator(Session* session);
+    TreeGenerator();
     ~TreeGenerator();
     virtual Vertex* generate();
+
+    Session *getSession() const;
+    void setSession(Session *value);
 
 protected:
     Session* session;

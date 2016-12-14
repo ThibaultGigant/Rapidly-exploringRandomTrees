@@ -107,7 +107,6 @@ void Session::generate()
 
         emit emitDrawElement(vertex);
         qDebug() << "Signal emitted";
-        QThread::msleep(300);
     }
 }
 

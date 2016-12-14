@@ -10,18 +10,14 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     Config *config = new Config();
+    RRTGenerator *rrt = new RRTGenerator();
 
-    qDebug() << "Avant creation session";
-    Session *session;
-    qDebug() << "Avant creation euclide";
     config->setMetric(new EuclidianDistance());
-    qDebug() << "Avant creation generator";
-    config->setGenerator(new RRTGenerator(session));
-    qDebug() << "Avant creation endmethod";
+    config->setGenerator(rrt);
     config->setEndMethod(new VerticesNumber(10));
-    qDebug() << "Avant vraie creation session";
-    session = new Session(5, config);
-    qDebug() << "Avant mainwindow";
+    Session *session = new Session(5, config);
+    rrt->setSession(session);
+
     MainWindow *w = new MainWindow(NULL, config);
     w->show();
 
