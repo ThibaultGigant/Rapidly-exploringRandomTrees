@@ -11,13 +11,13 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     Config *config = new Config();
-    TreeGenerator *generator = new RandomTreeGenerator();
+    //TreeGenerator *generator = new RandomTreeGenerator();
     TreeGenerator *generator = new RRTGenerator();
 
     config->setMetric(new EuclidianDistance());
     config->setGenerator(generator);
-    config->setEndMethod(new VerticesNumber(5000));
-    Session *session = new Session(50, config);
+    config->setEndMethod(new VerticesNumber(1500));
+    Session *session = new Session(20, config);
     generator->setSession(session);
 
     MainWindow *w = new MainWindow(NULL, config);

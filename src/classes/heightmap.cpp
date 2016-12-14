@@ -146,6 +146,14 @@ QString HeightMap::toFileString(){
  */
 bool HeightMap::isObstacle(QPointF point)
 {
+    // If the point is outside the map, then it passed an obstacle
+    if (point.x() >= this->width ||
+            point.x() < 0 ||
+            point.y() < 0 ||
+            point.y() >= this->height)
+        return true;
+
+    //
     int colonne = (int) point.x();
     int ligne = (int) point.y();
     return this->map[colonne][ligne] > 0;

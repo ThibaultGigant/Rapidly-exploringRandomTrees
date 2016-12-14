@@ -65,6 +65,5 @@ void HeightMapViewPanel::drawElement(Vertex *vertex)
     painter.drawEllipse(point1, 2, 2);
 
     painter.end();
-    this->view.setPixelColor(200, 200, QColor(255, 0, 0, 255));
     update();
 }

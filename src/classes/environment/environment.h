@@ -18,6 +18,8 @@ public:
     Vertex* getClosest(QPointF point);
     Vertex* getClosestNaive(QPointF point);
     Vertex* getRandomVertex();
+    QVector<Vertex *> getVertices() const;
+    void setVertices(const QVector<Vertex *> &value);
 
 private:
     int width;
@@ -26,6 +28,7 @@ private:
     int nbColumns;
     Session* session;
     Vertex* startVertex;
+    QVector<Vertex *> vertices;
     QVector<QVector<Quadrant> > quadrants;
 };
 

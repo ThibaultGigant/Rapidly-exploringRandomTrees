@@ -19,6 +19,7 @@ Environment::Environment(Session* session, int width, int height,Vertex* vertex)
     // nbLines and nbColumns are calculated so each quadrant's side should have a length of delta_t
     this->nbLines = ceil(height/this->session->getDeltaT());
     this->nbColumns = ceil(width/this->session->getDeltaT());
+    this->vertices = QVector<Vertex *>();
 
     this->quadrants = QVector<QVector<Quadrant> >();
 
@@ -56,7 +57,9 @@ void Environment::addElement(Vertex *vertex)
     ligne = (int) (p.x() / this->width) * this->session->getDeltaT();
     colonne = (int) (p.y() / this->height) * this->session->getDeltaT();
 
+    // Add the vertex to the right quadrant and the set of all vertices
     this->quadrants[colonne][ligne].addVertex(vertex);
+    this->vertices.append(vertex);
 }
 
 /**
@@ -283,13 +286,24 @@ Vertex* Environment::getClosestNaive(QPointF point)
  */
 Vertex* Environment::getRandomVertex()
 {
-    QVector<Vertex*> vertices;
-    do
-    {
-        int line = rand() % this->nbLines;
-        int column = rand() % this->nbColumns;
-        vertices = this->quadrants[column][line].getVertices();
-    } while (vertices.isEmpty());
-    int elementIndex = rand() % vertices.size();
-    return vertices[elementIndex];
+    int elementIndex = rand() % this->vertices.size();
+    return this->vertices[elementIndex];
+}
+
+/**
+ * @brief Getter of the vertices in the environment
+ * @return A vector of vertices
+ */
+QVector<Vertex *> Environment::getVertices() const
+{
+    return vertices;
+}
+
+/**
+ * @brief Sets the vertices of the environment
+ * @param value A vector of vertices
+ */
+void Environment::setVertices(const QVector<Vertex *> &value)
+{
+    vertices = value;
 }

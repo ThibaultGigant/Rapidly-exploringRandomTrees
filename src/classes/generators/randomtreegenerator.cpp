@@ -1,5 +1,6 @@
 #include "randomtreegenerator.h"
 #include "src/classes/session.h"
+#include <QDebug>
 
 /**
  * @brief Constructor
