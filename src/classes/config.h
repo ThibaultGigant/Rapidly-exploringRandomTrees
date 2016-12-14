@@ -6,16 +6,19 @@
 
 class HeightMapViewPanel;
 class Vertex;
+class Metric;
+class TreeGenerator;
+class EndMethod;
 
 class Config: public QObject
 {
     Q_OBJECT
 public:
     int WIDTH = 600;
-    int HEIGHT = 400;
+    int HEIGHT = 600;
     QString NAME = "name";
-    QPointF START_POINT = QPointF (0,0);
-    QPointF END_POINT = QPointF (WIDTH / 2, HEIGHT / 2);
+    QPointF START_POINT = QPointF (WIDTH / 2, HEIGHT / 2);
+    QPointF END_POINT = QPointF (0, 0);
 
 
 
@@ -23,9 +26,13 @@ public:
 
     HeightMap *getCurrentMap();
     void setCurrentMap(HeightMap * map);
+    Metric* getMetric();
+    void setMetric(Metric *metric);
+    TreeGenerator* getGenerator();
+    void setGenerator(TreeGenerator *generator);
 
-    HeightMapViewPanel* getHeightMapViewPanel();
-    void setHeightMapViewPanel(HeightMapViewPanel* hmViewPanel);
+    EndMethod *getEndMethod() const;
+    void setEndMethod(EndMethod *value);
 
 public slots:
     void receiveDrawElement(Vertex *vertex);
@@ -42,6 +49,9 @@ private :
     bool isRunning;
 
     HeightMap *currentMap;
+    Metric *metric;
+    TreeGenerator *generator;
+    EndMethod *endMethod;
 
 
 

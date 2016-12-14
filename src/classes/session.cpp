@@ -4,6 +4,8 @@
 #include "environment/environment.h"
 #include "src/classes/metrics/metric.h"
 #include "heightmap.h"
+#include "src/classes/config.h"
+#include <QDebug>
 
 /**
  * @brief Constructor
@@ -13,15 +15,18 @@
  * @param generator Generator of new vertices at every iteration
  * @param map Map of the space
  */
-Session::Session(double delta_t, Metric* metric, TreeGenerator* generator, HeightMap* map, Config* config)
+Session::Session(double delta_t, Config* config)
 {
+    qDebug() << "Avant creation session";
     // Initialization of attributes
     this->delta_t = delta_t;
-    Vertex *startVertex = new Vertex(map->getStart(), NULL);
-    this->environment = new Environment(this, map->getWidth(), map->getHeight(), startVertex);
-    this->metric = metric;
-    this->generator = generator;
-    this->map = map;
+    Vertex *startVertex = new Vertex(config->getCurrentMap()->getStart(), NULL);
+    qDebug() << "Generation Started";
+    this->environment = new Environment(this, config->getCurrentMap()->getWidth(), config->getCurrentMap()->getHeight(), startVertex);
+    this->metric = config->getMetric();
+    this->generator = config->getGenerator();
+    this->map = config->getCurrentMap();
+    this->endMethod = config->getEndMethod();
     this->config = config;
     srand(time(NULL));
 }
@@ -91,14 +96,18 @@ HeightMap* Session::getMap()
 
 void Session::generate()
 {
-    while (!this->isOver)
+    qDebug() << "Generation Started";
+    while (!this->endMethod->isOver())
     {
+        qDebug() << "Before generation";
         Vertex* vertex = this->generator->generate();
+        qDebug() << "Vertex generated";
         this->environment->addElement(vertex);
+        qDebug() << "Vertex element added";
 
-
-
-        this->isOver = this->endMethod->isOver();
+        emit emitDrawElement(vertex);
+        qDebug() << "Signal emitted";
+        QThread::msleep(300);
     }
 }
 
@@ -127,7 +136,7 @@ Vertex* Session::getRandomVertex()
  */
 Vertex* Session::getClosestVertex(QPointF point)
 {
-    return this->environment->getClosest(point);
+    return this->environment->getClosestNaive(point);
 }
 
 /**

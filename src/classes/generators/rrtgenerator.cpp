@@ -1,5 +1,6 @@
 #include "rrtgenerator.h"
 #include "src/classes/session.h"
+#include <QDebug>
 
 /**
  * @brief Constructor
@@ -21,6 +22,7 @@ RRTGenerator::~RRTGenerator()
  */
 Vertex* RRTGenerator::generate()
 {
+    qDebug() << "Generation RRT";
     // Initializing variables
     Vertex* vertex;
     double angle, newX, newY;
@@ -28,13 +30,16 @@ Vertex* RRTGenerator::generate()
 
     do
     {
+        qDebug() << "Avant random";
         // Determining a random point
         newX = (rand() / (double) RAND_MAX) * this->session->getWidth();
         newY = (rand() / (double) RAND_MAX) * this->session->getHeight();
         point = QPointF(newX, newY);
 
+        qDebug() << "Avant getclosest";
         vertex = this->session->getClosestVertex(point);
 
+        qDebug() << "Avant distance";
         if (this->session->distance(point, vertex->getPosition()))
             return new Vertex(point, vertex);
 

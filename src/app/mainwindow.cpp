@@ -12,7 +12,7 @@ MainWindow::MainWindow(QWidget *parent, Config * config) :
 
     cWidget = new CentralWidget(this,config);
     setCentralWidget(cWidget);
-    setFixedSize(800,600); // Should not be declared that way
+    //setFixedSize(800,600); // Should not be declared that way
 }
 
 MainWindow::~MainWindow()

@@ -10,22 +10,23 @@
  */
 HeightMap::HeightMap(QString name, int width, int height, QPointF start, QPointF end){
 
-    cout << "this is a test";
-
+    //qDebug() << "This is a test";
     this->name = name;
     this->width = width;
     this->height = height;
     this->start = start;
     this->end = end;
+    this->map = QVector< QVector<int> >();
 
     for (int i = 0; i< width ; i ++){
-        this->map.append(QVector<int>());
-        for(int j = 0;j < height ; i ++){
-            this->map[i].append(0);
+        QVector<int> column;
+        this->map.append(column);
+        for(int j = 0;j < height ; j++){
+            this->map.last().append(0);
         }
     }
-
 }
+
 
 /**
  * @brief HeightMap::resizeMap
@@ -39,7 +40,7 @@ void HeightMap::resizeMap(int width, int height){
 
     for (int i = 0; i< width ; i ++){
         temp[i] = QVector<int>(height);
-        for(int j = 0;j < height ; i ++){
+        for(int j = 0;j < height ; j ++){
             if ( i < this->width && j < this->height){
                 temp[i][j] = map[i][j];
             }else{
@@ -60,7 +61,7 @@ void HeightMap::resizeMap(int width, int height){
  */
 void HeightMap::clearObstacles(){
     for (int i = 0; i< width ; i ++){
-        for(int j = 0;j < height ; i ++){
+        for(int j = 0;j < height ; j ++){
             map[i][j] = 0;
         }
     }
@@ -104,6 +105,11 @@ QPointF HeightMap::getStart(){
  */
 QPointF HeightMap::getEnd(){
     return end;
+}
+
+QVector<QVector<int> > HeightMap::getMap()
+{
+    return this->map;
 }
 
 /**

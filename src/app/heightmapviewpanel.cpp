@@ -3,15 +3,18 @@
 HeightMapViewPanel::HeightMapViewPanel(QWidget *parent, Config *config) : QWidget(parent)
 {
 
+    int c;
     this->config = config;
     //this->config->setHeightMapViewPanel(this);
 
-    uchar content[config->WIDTH * config->HEIGHT];
-    for (int i = 0; i < config->WIDTH * config->HEIGHT; i++)
-        content[i] = 0;
+    this->view = QImage(config->getCurrentMap()->getWidth(), config->getCurrentMap()->getHeight(), QImage::Format_ARGB32_Premultiplied);
 
-    this->view = QImage(content, config->WIDTH, config->HEIGHT, QImage::Format_ARGB32_Premultiplied);
-
+    for (int i = 0; i < config->WIDTH; i++)
+        for (int j = 0; j < config->HEIGHT; j++)
+        {
+            c = 255 - config->getCurrentMap()->getMap()[i][j];
+            this->view.setPixelColor(i, j, QColor(c, c, c, 255));
+        }
     connect(config, SIGNAL(emitDrawElement(Vertex*)), this, SLOT(drawElement(Vertex*)));
 }
 
@@ -34,6 +37,14 @@ QPoint HeightMapViewPanel::toScreenPix(QPointF p){
 
     int x = p.x() * this->width() / config->getCurrentMap()->getWidth();
     int y = p.y() * this->height() / config->getCurrentMap()->getHeight();
+
+    return QPoint(x,y);
+}
+
+QPoint HeightMapViewPanel::toScreenPix(QPoint p){
+
+    int x = p.x() * 600 / config->getCurrentMap()->getWidth();
+    int y = p.y() * 400 / config->getCurrentMap()->getHeight();
 
     return QPoint(x,y);
 }

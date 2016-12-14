@@ -1,9 +1,11 @@
 #ifndef SESSION_H
 #define SESSION_H
 
+#include <QObject>
 #include <QPointF>
 #include <ctime>
 #include <cstdlib>
+#include <QThread>
 
 class Environment;
 class TreeGenerator;
@@ -13,11 +15,12 @@ class Metric;
 class Vertex;
 class Config;
 
-class Session
+class Session: public QObject
 {
+    Q_OBJECT
 public:
-    Session(double delta_t, Metric* metric, TreeGenerator* generator, HeightMap* map, Config* config);
-    ~Session();
+    Session(double delta_t, Config* config);
+    //~Session();
 
     double getDeltaT();
     Environment* getEnvironment();
@@ -31,6 +34,7 @@ public:
     int getWidth();
     int getHeight();
     double distance(QPointF from, QPointF to);
+    void generate();
 
 private:
     // Attributes
@@ -42,10 +46,11 @@ private:
     EndMethod* endMethod;
     Config* config;
 
-    bool isOver;
-
     // Methods
-    void generate();
+
+signals:
+    void emitDrawElement(Vertex *vertex);
+
 };
 
 #endif // SESSION_H

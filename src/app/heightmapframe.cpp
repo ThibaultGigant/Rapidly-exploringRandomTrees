@@ -7,12 +7,12 @@ HeightMapFrame::HeightMapFrame(QWidget *parent, Config * config) :
     this->config = config;
 
     layout = new QVBoxLayout;
-    hmFilePanel = new HeightMapFilePanel(this,config);
+    //hmFilePanel = new HeightMapFilePanel(this,config);
     hmViewPanel = new HeightMapViewPanel(this,config);
     //hmSubPanel = new HeightMapSubPanel;
 
 
-    layout->addWidget(hmFilePanel);
+    //layout->addWidget(hmFilePanel);
     layout->addWidget(hmViewPanel);
     //layout->addWidget(hmSubPanel);
 

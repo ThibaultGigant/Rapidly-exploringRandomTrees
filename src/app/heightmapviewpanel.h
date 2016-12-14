@@ -5,6 +5,7 @@
 #include <QWidget>
 #include <QPainter>
 #include <QPointF>
+#include <QColor>
 #include "../classes/config.h"
 
 class HeightMapViewPanel : public QWidget
@@ -19,6 +20,7 @@ private :
     QImage view;
 
     QPoint toScreenPix(QPointF p);
+    QPoint toScreenPix(QPoint p);
     QPointF toHeightMapPoint(QPoint p);
 
 protected:

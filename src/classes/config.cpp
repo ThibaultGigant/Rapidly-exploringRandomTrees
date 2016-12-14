@@ -34,6 +34,16 @@ void Config::startRun(){
 void Config::stopRun(){
     this->isRunning = false;
 }
+
+EndMethod *Config::getEndMethod() const
+{
+    return endMethod;
+}
+
+void Config::setEndMethod(EndMethod *value)
+{
+    endMethod = value;
+}
 /**
  * @brief getHeightMapViewPanel
  * @return
@@ -49,4 +59,25 @@ void Config::setHeightMapViewPanel(HeightMapViewPanel* hmViewPanel){
 void Config::receiveDrawElement(Vertex *vertex)
 {
     emit emitDrawElement(vertex);
+}
+
+
+Metric* Config::getMetric()
+{
+    return this->metric;
+}
+
+void Config::setMetric(Metric *metric)
+{
+    this->metric = metric;
+}
+
+TreeGenerator* Config::getGenerator()
+{
+    return this->generator;
+}
+
+void Config::setGenerator(TreeGenerator *generator)
+{
+    this->generator = generator;
 }

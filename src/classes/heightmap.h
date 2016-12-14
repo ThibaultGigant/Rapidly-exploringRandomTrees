@@ -6,10 +6,11 @@
 #include <QVector>
 #include <QString>
 #include <iostream>
+#include <QDebug>
 
 using namespace std;
 
-class HeightMap : QObject
+class HeightMap : public QObject
 {
 public:
 

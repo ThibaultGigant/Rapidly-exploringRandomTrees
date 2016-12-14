@@ -1,5 +1,6 @@
 #include "environment.h"
 #include "src/classes/metrics/metric.h"
+#include <QDebug>
 
 /**
  * @brief Constructor
@@ -26,7 +27,7 @@ Environment::Environment(Session* session, int width, int height,Vertex* vertex)
         this->quadrants.append(vecColonne);
         for (int ligne = 0; ligne < this->nbLines; ligne++)
         {
-            this->quadrants[colonne].append(Quadrant());
+            this->quadrants.last().append(Quadrant());
         }
     }
 
@@ -251,14 +252,19 @@ Vertex* Environment::getClosestNaive(QPointF point)
     double minDistance = width + height;
     double tempDistance;
     Vertex* vertex, *tempVertex;
+    qDebug() << "entrée getclosest";
+    qDebug() << this->quadrants.size();
 
     // Going through every vertex of every quadrant
     for (int i = 0; i < this->quadrants.size(); i++)
     {
+        qDebug() << "debug i";
         for (int j = 0; j < this->quadrants[i].size(); j++)
         {
+            qDebug() << "debug j";
             for (int k = 0; k < this->quadrants[i][j].getVertices().size(); k++)
             {
+                qDebug() << "debug k";
                 tempVertex = this->quadrants[i][j].getVertices()[k];
                 tempDistance = this->session->distance(point, tempVertex->getPosition());
                 // Change the closest vertex if applicable
