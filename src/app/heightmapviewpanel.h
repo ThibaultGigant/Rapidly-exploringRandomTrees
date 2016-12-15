@@ -41,7 +41,7 @@ private :
     void drawLineTo(const QPoint &endPoint);
 
 
-    void drawVertices(QPainter painter);
+    void drawVertices();
     void drawHeightMap();
     void drawImageOnHeightMap();
 

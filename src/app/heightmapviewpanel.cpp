@@ -86,12 +86,6 @@ void HeightMapViewPanel::drawLineTo(const QPoint &endPoint)
 
 void HeightMapViewPanel::updateImage()
 {
-
-    QPainter painter(&this->view);
-
-    painter.setRenderHint(QPainter::Antialiasing);
-    painter.setBrush(brush);
-
     brush.setColor(Qt::black);
     edgePen.setColor(Qt::black);
 
@@ -99,13 +93,18 @@ void HeightMapViewPanel::updateImage()
 
     drawHeightMap();
 
-    drawVertices(painter);
+    drawVertices();
 
     // Finalize
     update();
 }
 
-void HeightMapViewPanel::drawVertices(QPainter painter){
+void HeightMapViewPanel::drawVertices(){
+
+    QPainter painter(&this->view);
+    //painter.begin()
+    painter.setRenderHint(QPainter::Antialiasing);
+    painter.setBrush(brush);
 
     QPointF point1, point2;
     painter.setPen(edgePen);
@@ -123,9 +122,14 @@ void HeightMapViewPanel::drawVertices(QPainter painter){
         painter.drawLine(point1, point2);
         painter.drawEllipse(point1, 3, 3);
     }
+    painter.end(); // ???
 }
 
 void HeightMapViewPanel::drawHeightMap(){
+
+    QPainter painter(&this->view);
+    painter.setRenderHint(QPainter::Antialiasing);
+    painter.setBrush(brush);
 
     int c;
     for (int i = 0; i < config->WIDTH; i++)
@@ -134,6 +138,8 @@ void HeightMapViewPanel::drawHeightMap(){
             c = 255 - config->getCurrentMap()->getMap()[i][j];
             this->view.setPixelColor(i, j, QColor(c, c, c, 255));
         }
+
+    painter.end(); // ???
 }
 
 
