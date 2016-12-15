@@ -14,8 +14,8 @@ class Config: public QObject
 {
     Q_OBJECT
 public:
-    int WIDTH = 600;
-    int HEIGHT = 600;
+    int WIDTH = 800;
+    int HEIGHT = 800;
     QString NAME = "name";
     QPointF START_POINT = QPointF (WIDTH / 2, HEIGHT / 2);
     QPointF END_POINT = QPointF (0, 0);
