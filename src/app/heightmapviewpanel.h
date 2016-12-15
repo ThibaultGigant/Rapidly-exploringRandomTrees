@@ -7,9 +7,12 @@
 #include <QBrush>
 #include <QPointF>
 #include <QColor>
+#include <QPen>
 #include <QScrollArea>
+#include <QVector>
 #include <QMouseEvent>
 #include "../classes/config.h"
+#include "../classes/environment/vertex.h"
 
 class HeightMapViewPanel : public QWidget
 {
@@ -22,15 +25,25 @@ private :
     Config *config;
     QImage view;
 
-    QBrush edgeBrush;
-    QBrush vertexBrush;
+    QVector<Vertex*> vertexList;
 
-    int vertexCount;
+    bool drawingAllowed;
+
+    QPen hmPen;
+    QPen edgePen;
+    QBrush brush;
+
     bool scribbling;
     QPoint lastPoint;
 
-    void updateViewImage();
+    void setupPens();
+
     void drawLineTo(const QPoint &endPoint);
+
+
+    void drawVertices(QPainter painter);
+    void drawHeightMap();
+    void drawImageOnHeightMap();
 
     QPoint toScreenPix(QPointF p);
     QPoint toScreenPix(QPoint p);
@@ -45,7 +58,12 @@ protected:
 signals:
 
 public slots:
-    void drawElement(Vertex *vertex);
+
+    void updateImage();
+    void addElement(Vertex *vertex);
+    void clear(bool doUpdateImage);
+    void setDrawPermission(bool isDrawingAllowed);
+
 
 
 };
