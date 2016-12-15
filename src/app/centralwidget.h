@@ -3,8 +3,8 @@
 
 #include <QWidget>
 #include <QHBoxLayout>
-#include "heightmapframe.h"
-#include "../classes/config.h"
+#include "src/app/heightmappanel/heightmapframe.h"
+#include "src/classes/config.h"
 
 class CentralWidget : public QWidget
 {

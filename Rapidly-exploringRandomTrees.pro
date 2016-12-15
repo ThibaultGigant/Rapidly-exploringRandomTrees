@@ -23,16 +23,16 @@ SOURCES +=\
     src/classes/metrics/metric.cpp \
     src/classes/session.cpp \
     src/classes/heightmap.cpp \
-    src/app/heightmapframe.cpp \
-    src/app/heightmapsubpanel.cpp \
     src/classes/generators/treegenerator.cpp \
-    src/app/heightmapviewpanel.cpp \
     src/classes/endmethods/endmethod.cpp \
     src/classes/generators/randomtreegenerator.cpp \
     src/classes/generators/rrtgenerator.cpp \
-    src/app/heightmapfilepanel.cpp \
     src/app/centralwidget.cpp \
-    src/classes/config.cpp
+    src/classes/config.cpp \
+    src/app/heightmappanel/heightmapfilepanel.cpp \
+    src/app/heightmappanel/heightmapframe.cpp \
+    src/app/heightmappanel/heightmapsubpanel.cpp \
+    src/app/heightmappanel/heightmapviewpanel.cpp
 
 HEADERS  += \
     src/classes/environment/vertex.h \
@@ -44,15 +44,15 @@ HEADERS  += \
     src/classes/metrics/manhattandistance.h \
     src/classes/session.h \
     src/classes/heightmap.h \
-    src/app/heightmapframe.h \
-    src/app/heightmapsubpanel.h \
     src/classes/generators/treegenerator.h \
-    src/app/heightmapviewpanel.h \
     src/classes/endmethods/endmethod.h \
     src/classes/generators/randomtreegenerator.h \
     src/classes/generators/rrtgenerator.h \
-    src/app/heightmapfilepanel.h \
     src/app/centralwidget.h \
-    src/classes/config.h
+    src/classes/config.h \
+    src/app/heightmappanel/heightmapfilepanel.h \
+    src/app/heightmappanel/heightmapframe.h \
+    src/app/heightmappanel/heightmapsubpanel.h \
+    src/app/heightmappanel/heightmapviewpanel.h
 
 FORMS    += mainwindow.ui

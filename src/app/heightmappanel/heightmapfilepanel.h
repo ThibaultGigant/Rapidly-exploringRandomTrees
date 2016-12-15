@@ -8,7 +8,7 @@
 #include <QLabel>
 #include <QPushButton>
 
-#include "../classes/config.h"
+#include "src/classes/config.h"
 
 class HeightMapFilePanel : public QWidget
 {

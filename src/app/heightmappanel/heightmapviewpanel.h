@@ -11,8 +11,8 @@
 #include <QScrollArea>
 #include <QVector>
 #include <QMouseEvent>
-#include "../classes/config.h"
-#include "../classes/environment/vertex.h"
+#include "src/classes/config.h"
+#include "src/classes/environment/vertex.h"
 
 class HeightMapViewPanel : public QWidget
 {

@@ -9,7 +9,7 @@
 #include "heightmapsubpanel.h"
 #include "heightmapviewpanel.h"
 #include "heightmapfilepanel.h"
-#include "../classes/config.h"
+#include "src/classes/config.h"
 
 class HeightMapFrame : public QWidget
 {

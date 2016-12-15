@@ -4,9 +4,9 @@
 #include <QMainWindow>
 #include <QHBoxLayout>
 #include <iostream>
-#include "heightmapframe.h"
+#include "src/app/heightmappanel/heightmapframe.h"
 #include "centralwidget.h"
-#include "../classes/config.h"
+#include "src/classes/config.h"
 
 namespace Ui {
 class MainWindow;
