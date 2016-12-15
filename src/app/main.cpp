@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 
     config->setMetric(new EuclidianDistance());
     config->setGenerator(generator);
-    config->setEndMethod(new VerticesNumber(1500));
+    config->setEndMethod(new VerticesNumber(1000));
     Session *session = new Session(20, config);
     generator->setSession(session);
 

@@ -3,6 +3,9 @@
 
 #include <QWidget>
 #include <QVBoxLayout>
+#include <QScrollArea>
+#include <QSize>
+#include <QSizePolicy>
 #include "heightmapsubpanel.h"
 #include "heightmapviewpanel.h"
 #include "heightmapfilepanel.h"
@@ -23,6 +26,8 @@ private :
     HeightMapSubPanel *hmSubPanel;
     HeightMapViewPanel *hmViewPanel;
     HeightMapFilePanel *hmFilePanel;
+
+    QScrollArea *viewScroller;
 
     QVBoxLayout *layout;
 
