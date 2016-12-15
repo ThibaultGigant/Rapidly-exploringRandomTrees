@@ -32,7 +32,12 @@ SOURCES +=\
     src/app/heightmappanel/heightmapfilepanel.cpp \
     src/app/heightmappanel/heightmapframe.cpp \
     src/app/heightmappanel/heightmapsubpanel.cpp \
-    src/app/heightmappanel/heightmapviewpanel.cpp
+    src/app/heightmappanel/heightmapviewpanel.cpp \
+    src/app/configpanel/configpanel.cpp \
+    src/app/configpanel/endmethodwidget.cpp \
+    src/app/configpanel/generatorwidget.cpp \
+    src/app/configpanel/metricwidget.cpp \
+    src/app/configpanel/additionalinfoswidget.cpp
 
 HEADERS  += \
     src/classes/environment/vertex.h \
@@ -53,6 +58,11 @@ HEADERS  += \
     src/app/heightmappanel/heightmapfilepanel.h \
     src/app/heightmappanel/heightmapframe.h \
     src/app/heightmappanel/heightmapsubpanel.h \
-    src/app/heightmappanel/heightmapviewpanel.h
+    src/app/heightmappanel/heightmapviewpanel.h \
+    src/app/configpanel/configpanel.h \
+    src/app/configpanel/endmethodwidget.h \
+    src/app/configpanel/generatorwidget.h \
+    src/app/configpanel/metricwidget.h \
+    src/app/configpanel/additionalinfoswidget.h
 
 FORMS    += mainwindow.ui
