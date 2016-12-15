@@ -28,8 +28,6 @@ SOURCES +=\
     src/classes/generators/treegenerator.cpp \
     src/app/heightmapviewpanel.cpp \
     src/classes/endmethods/endmethod.cpp \
-    src/classes/endmethods/verticesnumber.cpp \
-    src/classes/endmethods/timelimit.cpp \
     src/classes/generators/randomtreegenerator.cpp \
     src/classes/generators/rrtgenerator.cpp \
     src/app/heightmapfilepanel.cpp \
@@ -51,8 +49,6 @@ HEADERS  += \
     src/classes/generators/treegenerator.h \
     src/app/heightmapviewpanel.h \
     src/classes/endmethods/endmethod.h \
-    src/classes/endmethods/verticesnumber.h \
-    src/classes/endmethods/timelimit.h \
     src/classes/generators/randomtreegenerator.h \
     src/classes/generators/rrtgenerator.h \
     src/app/heightmapfilepanel.h \

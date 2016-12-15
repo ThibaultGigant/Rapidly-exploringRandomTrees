@@ -26,7 +26,7 @@ HeightMap::HeightMap(QString name, int width, int height, QPointF start, QPointF
             this->map.last().append(0);
         }
     }
-    for (int i = 50; i< width-50 ; i ++){
+    for (int i = 100; i< width-100 ; i ++){
         this->map[i][this->getHeight() * 2/ 3] = 255;
         this->map[i][1+this->getHeight() * 2/ 3] = 255;
     }
