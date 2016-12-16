@@ -17,11 +17,9 @@
  */
 Session::Session(double delta_t, Config* config)
 {
-    qDebug() << "Avant creation session";
     // Initialization of attributes
     this->delta_t = delta_t;
     Vertex *startVertex = new Vertex(config->getCurrentMap()->getStart(), NULL);
-    qDebug() << "Generation Started";
     this->environment = new Environment(this, config->getCurrentMap()->getWidth(), config->getCurrentMap()->getHeight(), startVertex);
     this->metric = config->getMetric();
     this->generator = config->getGenerator();
@@ -31,6 +29,7 @@ Session::Session(double delta_t, Config* config)
     srand(time(NULL));
 
     connect(this, SIGNAL(emitDrawElement(Vertex*)), config, SLOT(receiveDrawElement(Vertex*)));
+    connect(this, SIGNAL(emitUpdateImage()), config, SLOT(receiveUpdateImage()));
 }
 
 /**
@@ -105,6 +104,8 @@ void Session::generate()
         this->environment->addElement(vertex);
         emit emitDrawElement(vertex);
     }
+
+    emit emitUpdateImage();
 }
 
 /**

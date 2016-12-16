@@ -11,8 +11,8 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     Config *config = new Config();
-    //TreeGenerator *generator = new RandomTreeGenerator();
-    TreeGenerator *generator = new RRTGenerator();
+    TreeGenerator *generator = new RandomTreeGenerator();
+    //TreeGenerator *generator = new RRTGenerator();
 
     config->setMetric(new EuclidianDistance());
     config->setGenerator(generator);
@@ -22,6 +22,7 @@ int main(int argc, char *argv[])
 
     MainWindow *w = new MainWindow(NULL, config);
     w->show();
+
 
     session->generate();
     return a.exec();

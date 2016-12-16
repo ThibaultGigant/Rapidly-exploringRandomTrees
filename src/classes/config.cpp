@@ -44,23 +44,15 @@ void Config::setEndMethod(EndMethod *value)
 {
     endMethod = value;
 }
-/**
- * @brief getHeightMapViewPanel
- * @return
- *//*
-HeightMapViewPanel* Config::getHeightMapViewPanel(){
-    return hmViemPanel;
-}
-
-void Config::setHeightMapViewPanel(HeightMapViewPanel* hmViewPanel){
-    this->hmViemPanel = hmViewPanel;
-}*/
 
 void Config::receiveDrawElement(Vertex *vertex)
 {
     emit emitDrawElement(vertex);
 }
 
+void Config::receiveUpdateImage(){
+    emit emitUpdateImage();
+}
 
 Metric* Config::getMetric()
 {
