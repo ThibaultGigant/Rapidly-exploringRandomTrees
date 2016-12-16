@@ -3,10 +3,10 @@
 
 #include <QWidget>
 #include <QVBoxLayout>
-#include "endmethodwidget.h"
-#include "generatorwidget.h"
-#include "metricwidget.h"
-#include "additionalinfoswidget.h"
+#include "endmethodwidget/endmethodwidget.h"
+#include "generatorwidget/generatorwidget.h"
+#include "metricwidget/metricwidget.h"
+#include "additionalinfoswidget/additionalinfoswidget.h"
 
 class ConfigPanel : public QWidget
 {

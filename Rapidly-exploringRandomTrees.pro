@@ -34,10 +34,12 @@ SOURCES +=\
     src/app/heightmappanel/heightmapsubpanel.cpp \
     src/app/heightmappanel/heightmapviewpanel.cpp \
     src/app/configpanel/configpanel.cpp \
-    src/app/configpanel/endmethodwidget.cpp \
-    src/app/configpanel/generatorwidget.cpp \
-    src/app/configpanel/metricwidget.cpp \
-    src/app/configpanel/additionalinfoswidget.cpp
+    src/app/configpanel/additionalinfoswidget/additionalinfoswidget.cpp \
+    src/app/configpanel/endmethodwidget/endmethodwidget.cpp \
+    src/app/configpanel/generatorwidget/generatorwidget.cpp \
+    src/app/configpanel/metricwidget/metricwidget.cpp \
+    src/app/configpanel/endmethodwidget/nbverticeslimitwidget.cpp \
+    src/app/configpanel/endmethodwidget/timelimitwidget.cpp
 
 HEADERS  += \
     src/classes/environment/vertex.h \
@@ -60,9 +62,11 @@ HEADERS  += \
     src/app/heightmappanel/heightmapsubpanel.h \
     src/app/heightmappanel/heightmapviewpanel.h \
     src/app/configpanel/configpanel.h \
-    src/app/configpanel/endmethodwidget.h \
-    src/app/configpanel/generatorwidget.h \
-    src/app/configpanel/metricwidget.h \
-    src/app/configpanel/additionalinfoswidget.h
+    src/app/configpanel/additionalinfoswidget/additionalinfoswidget.h \
+    src/app/configpanel/endmethodwidget/endmethodwidget.h \
+    src/app/configpanel/generatorwidget/generatorwidget.h \
+    src/app/configpanel/metricwidget/metricwidget.h \
+    src/app/configpanel/endmethodwidget/nbverticeslimitwidget.h \
+    src/app/configpanel/endmethodwidget/timelimitwidget.h
 
 FORMS    += mainwindow.ui
