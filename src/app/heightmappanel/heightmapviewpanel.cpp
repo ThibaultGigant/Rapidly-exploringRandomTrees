@@ -15,6 +15,7 @@ HeightMapViewPanel::HeightMapViewPanel(QWidget *parent, Config *config) : QWidge
 
     //Connexions
     connect(config, SIGNAL(emitDrawElement(Vertex*)), this, SLOT(addElement(Vertex*)));
+    connect(config, SIGNAL(emitUpdateImage()), this, SLOT(updateImage()));
 }
 
 void HeightMapViewPanel::setupPens(){

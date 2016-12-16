@@ -34,15 +34,16 @@ public:
     EndMethod *getEndMethod();
     void setEndMethod(EndMethod *value);
 
+
 public slots:
     void receiveDrawElement(Vertex *vertex);
-
+    void receiveUpdateImage();
     void startRun();
     void stopRun();
 
 signals:
     void emitDrawElement(Vertex *vertex);
-
+    void emitUpdateImage();
 
 private :
 

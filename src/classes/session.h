@@ -51,7 +51,7 @@ private:
 
 signals:
     void emitDrawElement(Vertex *vertex);
-
+    void emitUpdateImage();
 };
 
 #endif // SESSION_H
