@@ -14,36 +14,28 @@ class Config: public QObject
 {
     Q_OBJECT
 public:
-    int WIDTH = 800;
-    int HEIGHT = 800;
-    QString NAME = "name";
-    QPointF START_POINT = QPointF (WIDTH / 2, HEIGHT / 2);
-    QPointF END_POINT = QPointF (0, 0);
-
-
-
     Config();
 
+    // Getters and setters
     HeightMap *getCurrentMap();
     void setCurrentMap(HeightMap * map);
     Metric* getMetric();
     void setMetric(Metric *metric);
     TreeGenerator* getGenerator();
     void setGenerator(TreeGenerator *generator);
-
     EndMethod *getEndMethod();
     void setEndMethod(EndMethod *value);
+    int getNbRuns() const;
+    void setNbRuns(int value);
+    int getSleepTime() const;
+    void setSleepTime(int value);
+    double getDelta_t() const;
+    void setDelta_t(double value);
 
-
-public slots:
+    // Other methods
     void receiveDrawElement(Vertex *vertex);
     void receiveUpdateImage();
-    void startRun();
-    void stopRun();
 
-signals:
-    void emitDrawElement(Vertex *vertex);
-    void emitUpdateImage();
 
 private :
 
@@ -54,8 +46,17 @@ private :
     TreeGenerator *generator;
     EndMethod *endMethod;
 
+    int nbRuns;
+    int sleepTime;
+    double delta_t;
 
+public slots:
+    void startRun();
+    void stopRun();
 
+signals:
+    void emitDrawElement(Vertex *vertex);
+    void emitUpdateImage();
 
 };
 

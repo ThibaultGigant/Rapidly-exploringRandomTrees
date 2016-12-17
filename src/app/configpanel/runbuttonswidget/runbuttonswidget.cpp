@@ -17,6 +17,10 @@ RunButtonsWidget::RunButtonsWidget(QWidget *parent) : QFrame(parent)
 
     // Displaying the layout
     this->setLayout(this->layout);
+
+    // Connection to the parent
+    connect(this->addButton, SIGNAL(clicked(bool)), parent, SLOT(addConfig()));
+    connect(this->runButton, SIGNAL(clicked(bool)), parent, SLOT(start()));
 }
 
 /**

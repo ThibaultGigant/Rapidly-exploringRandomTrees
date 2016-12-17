@@ -8,18 +8,16 @@
 #include <QLabel>
 #include <QPushButton>
 
-#include "src/classes/config.h"
+class CentralWidget;
 
 class HeightMapFilePanel : public QWidget
 {
     Q_OBJECT
 public:
-    explicit HeightMapFilePanel(QWidget *parent = 0, Config *config = 0);
+    explicit HeightMapFilePanel(CentralWidget *centralWidget, QWidget *parent = 0);
 
 private:
-
-    Config *config;
-
+    CentralWidget *centralWidget;
     QHBoxLayout *layout;
 
     QPushButton *saveButton;

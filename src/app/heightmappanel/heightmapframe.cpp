@@ -1,25 +1,25 @@
 #include "heightmapframe.h"
+#include "src/app/centralwidget.h"
 
-HeightMapFrame::HeightMapFrame(QWidget *parent, Config * config) :
+HeightMapFrame::HeightMapFrame(CentralWidget *centralWidget, QWidget *parent) :
     QWidget(parent)
 {
-
-    this->config = config;
-
-    layout = new QVBoxLayout;
+    // Variables initialization
+    this->centralWidget = centralWidget;
+    layout = new QVBoxLayout();
 
     // Creating file Panel (Top)
-    hmFilePanel = new HeightMapFilePanel(this,config);
+    hmFilePanel = new HeightMapFilePanel(this->centralWidget);
     hmFilePanel->setSizePolicy(QSizePolicy::Maximum,QSizePolicy::Maximum);
     // Creating view Panel (Middle)
-    hmViewPanel = new HeightMapViewPanel(this,config);
+    hmViewPanel = new HeightMapViewPanel(this->centralWidget);
 
-    viewScroller = new QScrollArea;
+    viewScroller = new QScrollArea();
     viewScroller->setBackgroundRole(QPalette::Dark);
 
     QSize AdjustSize = hmViewPanel->size();
-    AdjustSize.setWidth(config->WIDTH);
-    AdjustSize.setHeight(config->HEIGHT);
+    AdjustSize.setWidth(this->centralWidget->getCurrentMap()->getWidth());
+    AdjustSize.setHeight(this->centralWidget->getCurrentMap()->getHeight());
     qDebug() << AdjustSize.width();
 
 
@@ -28,8 +28,8 @@ HeightMapFrame::HeightMapFrame(QWidget *parent, Config * config) :
     viewScroller->setWidget(hmViewPanel);
     viewScroller->ensureWidgetVisible(hmViewPanel,hmViewPanel->width(),hmViewPanel->height());
     viewScroller->setWidgetResizable(true);
-    viewScroller->setMaximumWidth(config->WIDTH);
-    viewScroller->setMaximumHeight(config->HEIGHT);
+    viewScroller->setMaximumWidth(this->centralWidget->getCurrentMap()->getWidth());
+    viewScroller->setMaximumHeight(this->centralWidget->getCurrentMap()->getHeight());
 
     // Creating Pen Panel (Bottom)
     //hmSubPanel = new HeightMapSubPanel;

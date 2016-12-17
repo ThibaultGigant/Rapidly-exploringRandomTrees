@@ -46,3 +46,8 @@ time_t EndMethodWidget::getTimeLimit()
 {
     return this->timeLimitFrame->getTimeLimit();
 }
+
+EndMethod* EndMethodWidget::getEndMethod()
+{
+    return new EndMethod(this->getMaxNbVertices(), this->getTimeLimit());
+}

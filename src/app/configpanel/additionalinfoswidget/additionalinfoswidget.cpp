@@ -8,10 +8,12 @@ AdditionalInfosWidget::AdditionalInfosWidget(QWidget *parent) : QFrame(parent)
 {
     // Widgets initialization
     this->globalLayout = new QVBoxLayout(this);
+    this->deltaTFrame = new DeltaTFrame();
     this->nbRunsFrame = new NbRunsFrame();
     this->sleepTimeFrame = new SleepTimeFrame();
 
     // Adding widgets to layouts
+    this->globalLayout->addWidget(this->deltaTFrame);
     this->globalLayout->addWidget(this->nbRunsFrame);
     this->globalLayout->addWidget(this->sleepTimeFrame);
 
@@ -24,7 +26,19 @@ AdditionalInfosWidget::AdditionalInfosWidget(QWidget *parent) : QFrame(parent)
  */
 AdditionalInfosWidget::~AdditionalInfosWidget()
 {
+    delete this->deltaTFrame;
+    delete this->nbRunsFrame;
+    delete this->sleepTimeFrame;
     delete this->globalLayout;
+}
+
+/**
+ * @brief Returns the delta_t chosen by the user
+ * @return delta_t chosen
+ */
+double AdditionalInfosWidget::getDeltaT()
+{
+    return this->deltaTFrame->getDeltaT();
 }
 
 /**

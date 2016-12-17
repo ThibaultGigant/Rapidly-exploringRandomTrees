@@ -15,10 +15,10 @@
  * @param generator Generator of new vertices at every iteration
  * @param map Map of the space
  */
-Session::Session(double delta_t, Config* config)
+Session::Session(Config* config)
 {
     // Initialization of attributes
-    this->delta_t = delta_t;
+    this->delta_t = config->getDelta_t();
     Vertex *startVertex = new Vertex(config->getCurrentMap()->getStart(), NULL);
     this->environment = new Environment(this, config->getCurrentMap()->getWidth(), config->getCurrentMap()->getHeight(), startVertex);
     this->metric = config->getMetric();
@@ -28,8 +28,8 @@ Session::Session(double delta_t, Config* config)
     this->config = config;
     srand(time(NULL));
 
-    connect(this, SIGNAL(emitDrawElement(Vertex*)), config, SLOT(receiveDrawElement(Vertex*)));
-    connect(this, SIGNAL(emitUpdateImage()), config, SLOT(receiveUpdateImage()));
+    //connect(this, SIGNAL(emitDrawElement(Vertex*)), config, SLOT(receiveDrawElement(Vertex*)));
+    //connect(this, SIGNAL(emitUpdateImage()), config, SLOT(receiveUpdateImage()));
 }
 
 /**
@@ -100,12 +100,21 @@ void Session::generate()
 
     while (!this->endMethod->isOver())
     {
+        qDebug() << "Vertex to generate";
         Vertex* vertex = this->generator->generate();
+        qDebug() << "Vertex generated";
         this->environment->addElement(vertex);
-        emit emitDrawElement(vertex);
+        qDebug() << "Vertex added";
+        this->config->receiveDrawElement(vertex);
+        qDebug() << "signal draw sent";
+        this->config->receiveUpdateImage();
+        qDebug() << "signal update sent";
+        //emit emitDrawElement(vertex);
+        //QThread::msleep(this->config->getSleepTime());
     }
 
-    emit emitUpdateImage();
+    this->config->receiveUpdateImage();
+    //emit emitUpdateImage();
 }
 
 /**

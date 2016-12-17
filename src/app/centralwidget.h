@@ -3,28 +3,52 @@
 
 #include <QWidget>
 #include <QHBoxLayout>
-#include "src/app/heightmappanel/heightmapframe.h"
+#include <QVector>
 #include "src/classes/config.h"
 #include "src/app/configpanel/configpanel.h"
+#include "src/classes/heightmap.h"
+#include "src/classes/session.h"
+
+class HeightMapFrame;
 
 class CentralWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit CentralWidget(QWidget *parent = 0, Config *config = 0);
+    // Default variables
+    int WIDTH = 800;
+    int HEIGHT = 800;
+    QString NAME = "Default Map";
+    QPointF START_POINT = QPointF (WIDTH / 2, HEIGHT / 2);
+    QPointF END_POINT = QPointF (0, 0);
+
+    // Constructor-Destructor
+    explicit CentralWidget(QWidget *parent = 0);
+    ~CentralWidget();
+
+    // Getters and setters
+    HeightMap *getCurrentMap();
+
+    // Other
+    void addConfig(Config *config);
+    void start();
 
 private :
-
-    Config *config;
+    // Interface
     QHBoxLayout *layout;
     HeightMapFrame *hmFrame;
     ConfigPanel *configPanel;
+    // Variables
+    QVector<Config*> configs;
+    HeightMap *currentMap;
 
 signals:
-
-
+    void emitDrawElement(Vertex *vertex);
+    void emitUpdateImage();
 
 public slots:
+    void receiveDrawElement(Vertex *vertex);
+    void receiveUpdateImage();
 };
 
 #endif // CENTRALWIDGET_H

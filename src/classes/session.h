@@ -19,7 +19,7 @@ class Session: public QObject
 {
     Q_OBJECT
 public:
-    Session(double delta_t, Config* config);
+    Session(Config* config);
     //~Session();
 
     double getDeltaT();
@@ -50,8 +50,10 @@ private:
     // Methods
 
 signals:
+    /*
     void emitDrawElement(Vertex *vertex);
     void emitUpdateImage();
+    */
 };
 
 #endif // SESSION_H

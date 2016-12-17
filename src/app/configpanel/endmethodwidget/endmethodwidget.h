@@ -7,6 +7,7 @@
 #include <QCheckBox>
 #include "nbverticeslimitwidget.h"
 #include "timelimitwidget.h"
+#include "src/classes/endmethods/endmethod.h"
 
 class EndMethodWidget : public QFrame
 {
@@ -17,6 +18,7 @@ public:
 
     qint64 getMaxNbVertices();
     time_t getTimeLimit();
+    EndMethod *getEndMethod();
 
 private:
     QVBoxLayout *globalLayout;

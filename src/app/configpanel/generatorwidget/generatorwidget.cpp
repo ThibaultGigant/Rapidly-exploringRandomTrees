@@ -36,10 +36,17 @@ GeneratorWidget::~GeneratorWidget()
 }
 
 /**
- * @brief Returns the index of the tree generator chosen by the user
- * @return Index of the generator
+ * @brief Returns the tree generator chosen by the user
+ * @return TreeGenerator to use during the simulation
  */
-int GeneratorWidget::getGenerator()
+TreeGenerator* GeneratorWidget::getGenerator()
 {
-    return this->comboBox->currentIndex();
+    switch (this->comboBox->currentIndex()) {
+    case 0:
+        return new RandomTreeGenerator();
+    case 1:
+        return new RRTGenerator();
+    default:
+        return new RRTGenerator();
+    }
 }

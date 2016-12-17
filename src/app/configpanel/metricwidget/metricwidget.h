@@ -5,6 +5,8 @@
 #include <QLabel>
 #include <QComboBox>
 #include <QHBoxLayout>
+#include "src/classes/metrics/euclidiandistance.h"
+#include "src/classes/metrics/manhattandistance.h"
 
 class MetricWidget : public QFrame
 {
@@ -12,7 +14,7 @@ class MetricWidget : public QFrame
 public:
     explicit MetricWidget(QWidget *parent = 0);
     ~MetricWidget();
-    int getMetric();
+    Metric* getMetric();
 
 private:
     QHBoxLayout *layout;

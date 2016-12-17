@@ -11,18 +11,16 @@
 #include "heightmapfilepanel.h"
 #include "src/classes/config.h"
 
+class CentralWidget;
+
 class HeightMapFrame : public QWidget
 {
     Q_OBJECT
 public:
-    explicit HeightMapFrame(QWidget *parent = 0, Config *config = 0);
+    explicit HeightMapFrame(CentralWidget *centralWidget, QWidget *parent = 0);
 
 private :
-
-
-    Config *config;
-
-
+    CentralWidget *centralWidget;
     HeightMapSubPanel *hmSubPanel;
     HeightMapViewPanel *hmViewPanel;
     HeightMapFilePanel *hmFilePanel;

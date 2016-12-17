@@ -11,18 +11,19 @@
 #include <QScrollArea>
 #include <QVector>
 #include <QMouseEvent>
-#include "src/classes/config.h"
 #include "src/classes/environment/vertex.h"
+
+class CentralWidget;
 
 class HeightMapViewPanel : public QWidget
 {
     Q_OBJECT
 public:
-    explicit HeightMapViewPanel(QWidget *parent = 0, Config *config = 0);
+    explicit HeightMapViewPanel(CentralWidget *centralWidget, QWidget *parent = 0);
 
 
 private :
-    Config *config;
+    CentralWidget *centralWidget;
     QImage view;
 
     QVector<Vertex*> vertexList;
@@ -50,7 +51,7 @@ private :
     QPointF toHeightMapPoint(QPoint p);
 
 protected:
-    void paintEvent(QPaintEvent* event);
+    void paintEvent(QPaintEvent* event) Q_DECL_OVERRIDE;
     void mousePressEvent(QMouseEvent *event) Q_DECL_OVERRIDE;
     void mouseMoveEvent(QMouseEvent *event) Q_DECL_OVERRIDE;
     void mouseReleaseEvent(QMouseEvent *event) Q_DECL_OVERRIDE;

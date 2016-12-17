@@ -1,11 +1,11 @@
 #include "heightmapfilepanel.h"
+#include "src/app/centralwidget.h"
 
-HeightMapFilePanel::HeightMapFilePanel(QWidget *parent, Config *config) : QWidget(parent)
+HeightMapFilePanel::HeightMapFilePanel(CentralWidget *centralWidget, QWidget *parent) :
+    QWidget(parent)
 {
-
-    this->config = config;
-
-    // Constructors
+    // Variables initialization
+    this->centralWidget = centralWidget;
 
     layout = new QHBoxLayout;
 

@@ -1,6 +1,8 @@
 #include "heightmapsubpanel.h"
+#include "src/app/centralwidget.h"
 
-HeightMapSubPanel::HeightMapSubPanel(QWidget *parent) :
+HeightMapSubPanel::HeightMapSubPanel(CentralWidget *centralWidget, QWidget *parent) :
     QWidget(parent)
 {
+    this->centralWidget = centralWidget;
 }

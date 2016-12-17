@@ -35,3 +35,19 @@ MetricWidget::~MetricWidget()
     delete this->comboBox;
     delete this->layout;
 }
+
+/**
+ * @brief Returns the metric to use to calculate the distances during the simulation
+ * @return Metric to use
+ */
+Metric* MetricWidget::getMetric()
+{
+    switch (this->comboBox->currentIndex()) {
+    case 0:
+        return new EuclidianDistance();
+    case 1:
+        return new ManhattanDistance();
+    default:
+        return new EuclidianDistance();
+    }
+}

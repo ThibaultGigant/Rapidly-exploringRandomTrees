@@ -5,13 +5,16 @@
 #include <QLabel>
 #include <QPushButton>
 
+class CentralWidget;
+
 class HeightMapSubPanel : public QWidget
 {
     Q_OBJECT
 public:
-    explicit HeightMapSubPanel(QWidget *parent = 0);
+    explicit HeightMapSubPanel(CentralWidget *centralWidget, QWidget *parent = 0);
 
 private:
+    CentralWidget *centralWidget;
 
     QPushButton *penMode;
     QPushButton *circleMode;

@@ -1,21 +1,25 @@
 #include "heightmapviewpanel.h"
+#include "src/app/centralwidget.h"
 
-HeightMapViewPanel::HeightMapViewPanel(QWidget *parent, Config *config) : QWidget(parent)
+HeightMapViewPanel::HeightMapViewPanel(CentralWidget *centralWidget, QWidget *parent) :
+    QWidget(parent)
 {
-
-    this->config = config;
+    // Variables initialization
+    this->centralWidget = centralWidget;
     this->vertexList = QVector<Vertex*>();
     this->drawingAllowed = true;
 
     //Image stuff
-    this->view = QImage(config->getCurrentMap()->getWidth(), config->getCurrentMap()->getHeight(), QImage::Format_ARGB32_Premultiplied);
+    this->view = QImage(this->centralWidget->getCurrentMap()->getWidth(),
+                        this->centralWidget->getCurrentMap()->getHeight(),
+                        QImage::Format_ARGB32_Premultiplied);
     setupPens();
     updateImage();
     this->scribbling = false;
 
     //Connexions
-    connect(config, SIGNAL(emitDrawElement(Vertex*)), this, SLOT(addElement(Vertex*)));
-    connect(config, SIGNAL(emitUpdateImage()), this, SLOT(updateImage()));
+    connect(this->centralWidget, SIGNAL(emitDrawElement(Vertex*)), this, SLOT(addElement(Vertex*)));
+    connect(this->centralWidget, SIGNAL(emitUpdateImage()), this, SLOT(updateImage()));
 }
 
 void HeightMapViewPanel::setupPens(){
@@ -35,8 +39,11 @@ void HeightMapViewPanel::setupPens(){
 
 void HeightMapViewPanel::paintEvent(QPaintEvent *event)
 {
-    QPainter painter(this);
-    painter.drawImage(0, 0, view);
+    if (event->isAccepted())
+    {
+        QPainter painter(this);
+        painter.drawImage(0, 0, view);
+    }
 }
 
 
@@ -133,10 +140,10 @@ void HeightMapViewPanel::drawHeightMap(){
     painter.setBrush(brush);
 
     int c;
-    for (int i = 0; i < config->WIDTH; i++)
-        for (int j = 0; j < config->HEIGHT; j++)
+    for (int i = 0; i < this->centralWidget->getCurrentMap()->getWidth(); i++)
+        for (int j = 0; j < this->centralWidget->getCurrentMap()->getHeight(); j++)
         {
-            c = 255 - config->getCurrentMap()->getMap()[i][j];
+            c = 255 - this->centralWidget->getCurrentMap()->getMap()[i][j];
             this->view.setPixelColor(i, j, QColor(c, c, c, 255));
         }
 
@@ -147,11 +154,11 @@ void HeightMapViewPanel::drawHeightMap(){
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ SAVE HEIGHT MAP @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 void HeightMapViewPanel::drawImageOnHeightMap(){
-    for (int i = 0; i< config->WIDTH;i++){
-        for (int j = 0; j< config->HEIGHT;j++){
+    for (int i = 0; i< this->centralWidget->getCurrentMap()->getWidth();i++){
+        for (int j = 0; j< this->centralWidget->getCurrentMap()->getHeight();j++){
             QColor c = view.pixelColor(i,j);
             int pix = c.red() + c.blue() + c.green();
-            config->getCurrentMap()->getMap()[i][j] = (pix > 0)?255:0;
+            this->centralWidget->getCurrentMap()->getMap()[i][j] = (pix > 0)?255:0;
         }
     }
 }
@@ -188,24 +195,24 @@ void HeightMapViewPanel::setDrawPermission(bool isDrawingAllowed)
 
 QPoint HeightMapViewPanel::toScreenPix(QPointF p){
 
-    int x = p.x() * this->width() / config->getCurrentMap()->getWidth();
-    int y = p.y() * this->height() / config->getCurrentMap()->getHeight();
+    int x = p.x() * this->width() / this->centralWidget->getCurrentMap()->getWidth();
+    int y = p.y() * this->height() / this->centralWidget->getCurrentMap()->getHeight();
 
     return QPoint(x,y);
 }
 
 QPoint HeightMapViewPanel::toScreenPix(QPoint p){
 
-    int x = p.x() * 600 / config->getCurrentMap()->getWidth();
-    int y = p.y() * 400 / config->getCurrentMap()->getHeight();
+    int x = p.x() * 600 / this->centralWidget->getCurrentMap()->getWidth();
+    int y = p.y() * 400 / this->centralWidget->getCurrentMap()->getHeight();
 
     return QPoint(x,y);
 }
 
 QPointF HeightMapViewPanel::toHeightMapPoint(QPoint p){
 
-    qreal x = p.x() * config->getCurrentMap()->getWidth() / this->width();
-    qreal y = p.y() * config->getCurrentMap()->getHeight() / this->height();
+    qreal x = p.x() * this->centralWidget->getCurrentMap()->getWidth() / this->width();
+    qreal y = p.y() * this->centralWidget->getCurrentMap()->getHeight() / this->height();
 
     return QPointF(x,y);
 }

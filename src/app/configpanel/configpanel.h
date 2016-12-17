@@ -9,24 +9,30 @@
 #include "additionalinfoswidget/additionalinfoswidget.h"
 #include "runbuttonswidget/runbuttonswidget.h"
 
+class CentralWidget;
+
 class ConfigPanel : public QWidget
 {
     Q_OBJECT
 public:
     explicit ConfigPanel(QWidget *parent = 0);
+    ~ConfigPanel();
 
 private:
+    CentralWidget *centralWidget;
     QVBoxLayout *layout;
 
-    QWidget *endMethodWidget;
-    QWidget *generatorWidget;
-    QWidget *metricWidget;
-    QWidget *additionalInfosWidget;
-    QWidget *runButtonsWidget;
+    EndMethodWidget *endMethodWidget;
+    GeneratorWidget *generatorWidget;
+    MetricWidget *metricWidget;
+    AdditionalInfosWidget *additionalInfosWidget;
+    RunButtonsWidget *runButtonsWidget;
 
 signals:
 
 public slots:
+    void addConfig();
+    void start();
 };
 
 #endif // CONFIGPANEL_H

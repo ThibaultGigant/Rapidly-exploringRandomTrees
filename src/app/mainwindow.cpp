@@ -1,16 +1,14 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-MainWindow::MainWindow(QWidget *parent, Config * config) :
+MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 
 {
     ui->setupUi(this);
 
-    this->config = config;
-
-    cWidget = new CentralWidget(this,config);
+    cWidget = new CentralWidget(this);
     setCentralWidget(cWidget);
     //setFixedSize(800,600); // Should not be declared that way
 }

@@ -5,6 +5,8 @@
 #include <QLabel>
 #include <QComboBox>
 #include <QHBoxLayout>
+#include "src/classes/generators/randomtreegenerator.h"
+#include "src/classes/generators/rrtgenerator.h"
 
 class GeneratorWidget : public QFrame
 {
@@ -12,7 +14,7 @@ class GeneratorWidget : public QFrame
 public:
     explicit GeneratorWidget(QWidget *parent = 0);
     ~GeneratorWidget();
-    int getGenerator();
+    TreeGenerator* getGenerator();
 
 private:
     QHBoxLayout *layout;
