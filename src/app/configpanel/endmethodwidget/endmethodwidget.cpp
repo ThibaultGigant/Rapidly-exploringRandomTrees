@@ -8,14 +8,17 @@ EndMethodWidget::EndMethodWidget(QWidget *parent) : QFrame(parent)
 {
     // Creating widgets
     this->globalLayout = new QVBoxLayout(this);
-    this->title = new QLabel("Choose how the algorithm should stop:", this);
-    this->nbVerticesFrame = new NbVerticesLimitWidget(this);
-    this->timeLimitFrame = new TimeLimitWidget(this);
+    this->title = new QLabel("Choose how the algorithm should stop:");
+    this->nbVerticesFrame = new NbVerticesLimitWidget();
+    this->timeLimitFrame = new TimeLimitWidget();
 
     // Adding widgets to layout
     this->globalLayout->addWidget(this->title);
     this->globalLayout->addWidget(this->nbVerticesFrame);
     this->globalLayout->addWidget(this->timeLimitFrame);
+
+    // Displaying the layout
+    this->setLayout(this->globalLayout);
 }
 
 EndMethodWidget::~EndMethodWidget()

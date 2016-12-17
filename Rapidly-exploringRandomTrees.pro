@@ -39,7 +39,10 @@ SOURCES +=\
     src/app/configpanel/generatorwidget/generatorwidget.cpp \
     src/app/configpanel/metricwidget/metricwidget.cpp \
     src/app/configpanel/endmethodwidget/nbverticeslimitwidget.cpp \
-    src/app/configpanel/endmethodwidget/timelimitwidget.cpp
+    src/app/configpanel/endmethodwidget/timelimitwidget.cpp \
+    src/app/configpanel/additionalinfoswidget/nbrunsframe.cpp \
+    src/app/configpanel/additionalinfoswidget/sleeptimeframe.cpp \
+    src/app/configpanel/runbuttonswidget/runbuttonswidget.cpp
 
 HEADERS  += \
     src/classes/environment/vertex.h \
@@ -67,6 +70,9 @@ HEADERS  += \
     src/app/configpanel/generatorwidget/generatorwidget.h \
     src/app/configpanel/metricwidget/metricwidget.h \
     src/app/configpanel/endmethodwidget/nbverticeslimitwidget.h \
-    src/app/configpanel/endmethodwidget/timelimitwidget.h
+    src/app/configpanel/endmethodwidget/timelimitwidget.h \
+    src/app/configpanel/additionalinfoswidget/nbrunsframe.h \
+    src/app/configpanel/additionalinfoswidget/sleeptimeframe.h \
+    src/app/configpanel/runbuttonswidget/runbuttonswidget.h
 
 FORMS    += mainwindow.ui

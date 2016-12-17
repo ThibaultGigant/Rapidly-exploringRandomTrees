@@ -5,6 +5,7 @@
 #include <QHBoxLayout>
 #include "src/app/heightmappanel/heightmapframe.h"
 #include "src/classes/config.h"
+#include "src/app/configpanel/configpanel.h"
 
 class CentralWidget : public QWidget
 {
@@ -17,6 +18,7 @@ private :
     Config *config;
     QHBoxLayout *layout;
     HeightMapFrame *hmFrame;
+    ConfigPanel *configPanel;
 
 signals:
 

@@ -7,6 +7,7 @@
 #include "generatorwidget/generatorwidget.h"
 #include "metricwidget/metricwidget.h"
 #include "additionalinfoswidget/additionalinfoswidget.h"
+#include "runbuttonswidget/runbuttonswidget.h"
 
 class ConfigPanel : public QWidget
 {
@@ -21,6 +22,7 @@ private:
     QWidget *generatorWidget;
     QWidget *metricWidget;
     QWidget *additionalInfosWidget;
+    QWidget *runButtonsWidget;
 
 signals:
 

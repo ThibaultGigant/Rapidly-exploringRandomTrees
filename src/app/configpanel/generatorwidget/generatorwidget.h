@@ -4,7 +4,7 @@
 #include <QFrame>
 #include <QLabel>
 #include <QComboBox>
-#include <QVBoxLayout>
+#include <QHBoxLayout>
 
 class GeneratorWidget : public QFrame
 {
@@ -15,7 +15,7 @@ public:
     int getGenerator();
 
 private:
-    QVBoxLayout *layout;
+    QHBoxLayout *layout;
     QLabel *title;
     QComboBox *comboBox;
 

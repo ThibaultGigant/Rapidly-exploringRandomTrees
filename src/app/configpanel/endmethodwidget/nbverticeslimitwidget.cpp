@@ -39,9 +39,15 @@ NbVerticesLimitWidget::~NbVerticesLimitWidget()
 void NbVerticesLimitWidget::manageSpinbox(int toDisplay)
 {
     if (toDisplay)
+    {
         this->layout->addWidget(this->spinBox);
+        this->spinBox->show();
+    }
     else
+    {
         this->layout->removeWidget(this->spinBox);
+        this->spinBox->hide();
+    }
 }
 
 /**

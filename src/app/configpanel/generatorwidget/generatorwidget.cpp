@@ -7,7 +7,7 @@
 GeneratorWidget::GeneratorWidget(QWidget *parent) : QFrame(parent)
 {
     // Widgets initialization
-    this->layout = new QVBoxLayout(this);
+    this->layout = new QHBoxLayout(this);
     this->title = new QLabel("Choose a tree generation algorithm :");
     this->comboBox = new QComboBox();
 
@@ -20,6 +20,9 @@ GeneratorWidget::GeneratorWidget(QWidget *parent) : QFrame(parent)
     // Adding widgets to layout
     this->layout->addWidget(this->title);
     this->layout->addWidget(this->comboBox);
+
+    // Displaying the layout
+    this->setLayout(this->layout);
 }
 
 /**

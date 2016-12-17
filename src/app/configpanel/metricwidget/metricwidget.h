@@ -4,7 +4,7 @@
 #include <QFrame>
 #include <QLabel>
 #include <QComboBox>
-#include <QVBoxLayout>
+#include <QHBoxLayout>
 
 class MetricWidget : public QFrame
 {
@@ -15,7 +15,7 @@ public:
     int getMetric();
 
 private:
-    QVBoxLayout *layout;
+    QHBoxLayout *layout;
     QLabel *title;
     QComboBox *comboBox;
 

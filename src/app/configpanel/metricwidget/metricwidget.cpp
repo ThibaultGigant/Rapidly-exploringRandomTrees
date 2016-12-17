@@ -7,7 +7,7 @@
 MetricWidget::MetricWidget(QWidget *parent) : QFrame(parent)
 {
     // Widgets initialization
-    this->layout = new QVBoxLayout(this);
+    this->layout = new QHBoxLayout(this);
     this->title = new QLabel("Choose a metric :");
     this->comboBox = new QComboBox();
 
@@ -15,11 +15,15 @@ MetricWidget::MetricWidget(QWidget *parent) : QFrame(parent)
     this->comboBox->addItem("Euclidian distance");
     this->comboBox->addItem("Manhattan distance");
 
-    this->comboBox->setCurrentIndex(0); // Set combobox to a default value
+    // Set combobox to a default value
+    this->comboBox->setCurrentIndex(0);
 
     // Adding widgets to layout
     this->layout->addWidget(this->title);
     this->layout->addWidget(this->comboBox);
+
+    // Displaying the layout
+    this->setLayout(this->layout);
 }
 
 /**

@@ -1,13 +1,24 @@
 #ifndef ADDITIONALINFOSWIDGET_H
 #define ADDITIONALINFOSWIDGET_H
 
-#include <QWidget>
+#include <QFrame>
+#include <QVBoxLayout>
+#include "nbrunsframe.h"
+#include "sleeptimeframe.h"
 
-class AdditionalInfosWidget : public QWidget
+class AdditionalInfosWidget : public QFrame
 {
     Q_OBJECT
 public:
     explicit AdditionalInfosWidget(QWidget *parent = 0);
+    ~AdditionalInfosWidget();
+    int getNbRuns();
+    int getSleepTime();
+
+private:
+    QVBoxLayout *globalLayout;
+    NbRunsFrame *nbRunsFrame;
+    SleepTimeFrame *sleepTimeFrame;
 
 signals:
 

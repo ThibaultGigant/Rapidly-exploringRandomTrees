@@ -14,7 +14,7 @@ TimeLimitWidget::TimeLimitWidget(QWidget *parent) : QFrame(parent)
     // Setting spinbox values
     this->spinBox->setRange(1, 3600);
     this->spinBox->setValue(0);
-    this->spinBox->setSuffix("seconds");
+    this->spinBox->setSuffix(" s");
 
     // Adding widget
     this->layout->addWidget(this->checkBox);
@@ -40,9 +40,15 @@ TimeLimitWidget::~TimeLimitWidget()
 void TimeLimitWidget::manageSpinbox(int toDisplay)
 {
     if (toDisplay)
+    {
         this->layout->addWidget(this->spinBox);
+        this->spinBox->show();
+    }
     else
+    {
         this->layout->removeWidget(this->spinBox);
+        this->spinBox->hide();
+    }
 }
 
 /**
