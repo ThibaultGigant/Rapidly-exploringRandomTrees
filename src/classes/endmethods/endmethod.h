@@ -14,13 +14,13 @@ public:
     bool isTimeOver();
     bool isNbVerticesOver();
 
-    // Getters
+    // Getters and setters
     quint64 getMaxNumber() const;
     time_t getLimitTime() const;
     quint64 getNbVertices() const;
-
-    // Setters
     void setMaxNumber(const quint64 &value);
+
+    void reset();
 
 private:
     quint64 nbVertices;

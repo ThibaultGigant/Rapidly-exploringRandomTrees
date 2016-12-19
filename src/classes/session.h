@@ -20,7 +20,7 @@ class Session: public QObject
     Q_OBJECT
 public:
     Session(Config* config);
-    //~Session();
+    ~Session();
 
     double getDeltaT();
     Environment* getEnvironment();

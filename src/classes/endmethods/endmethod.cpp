@@ -95,3 +95,12 @@ bool EndMethod::isNbVerticesOver()
         return true;
     return false;
 }
+
+/**
+ * @brief Resets the endmethod to it's original value
+ */
+void EndMethod::reset()
+{
+    this->nbVertices = 0;
+    this->startTime = 0;
+}

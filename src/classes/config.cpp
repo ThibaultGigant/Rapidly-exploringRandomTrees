@@ -1,5 +1,5 @@
 #include "config.h"
-
+#include "endmethods/endmethod.h"
 
 Config::Config()
 {
@@ -19,6 +19,14 @@ HeightMap* Config::getCurrentMap(){
  */
 void Config::setCurrentMap(HeightMap * map){
     this->currentMap = map;
+}
+
+/**
+ * @brief Resets everything so a new run can be performed
+ */
+void Config::reset()
+{
+    this->endMethod->reset();
 }
 
 /**

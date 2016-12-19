@@ -14,10 +14,6 @@ Quadrant::Quadrant()
  */
 Quadrant::~Quadrant()
 {
-
-
-    for (int i = 0; i < this->vertices.size(); i++)
-        delete(this->vertices[i]);
     this->vertices.clear();
 }
 

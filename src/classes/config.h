@@ -35,6 +35,7 @@ public:
     // Other methods
     void receiveDrawElement(Vertex *vertex);
     void receiveUpdateImage();
+    void reset();
 
 
 private :

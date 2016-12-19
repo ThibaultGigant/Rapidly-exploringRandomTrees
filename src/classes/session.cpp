@@ -33,6 +33,14 @@ Session::Session(Config* config)
 }
 
 /**
+ * @brief Destructor
+ */
+Session::~Session()
+{
+    delete this->environment;
+}
+
+/**
  * @brief Returns the time (so distance, in our case) between 2 points in the tree
  * @return Movement distance
  */

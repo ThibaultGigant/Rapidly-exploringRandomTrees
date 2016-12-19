@@ -43,6 +43,11 @@ Environment::Environment(Session* session, int width, int height,Vertex* vertex)
  */
 Environment::~Environment()
 {
+    Vertex *vertex;
+    foreach (vertex, this->vertices) {
+        delete vertex;
+    }
+    this->quadrants.clear();
 }
 
 /**
