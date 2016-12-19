@@ -22,7 +22,7 @@ RunButtonsWidget::RunButtonsWidget(QWidget *parent) : QFrame(parent)
 
     // Connections
     ConfigPanel *p = (ConfigPanel *) parent;
-    //connect(this->addButton, SIGNAL(clicked(bool)), p->getCentralWidget(), SLOT(receiveImageToHeightMap()));
+    connect(this->addButton, SIGNAL(clicked(bool)), p->getCentralWidget(), SLOT(receiveImageToHeightMap()));
     connect(this->addButton, SIGNAL(clicked(bool)), parent, SLOT(addConfig()));
     connect(this->runButton, SIGNAL(clicked(bool)), parent, SLOT(start()));
 }

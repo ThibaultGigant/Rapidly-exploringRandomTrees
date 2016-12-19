@@ -47,12 +47,23 @@ HeightMap* CentralWidget::getCurrentMap()
 }
 
 /**
+ * @brief Setter of the current map
+ * @param map Map to use
+ */
+void CentralWidget::setCurrentMap(HeightMap *map)
+{
+    this->currentMap = map;
+}
+
+/**
  * @brief Adds a config to the list of configs
  * @param config Config to add
  */
 void CentralWidget::addConfig(Config *config)
 {
     this->configs.append(config);
+    this->currentMap = new HeightMap(this->NAME, this->WIDTH, this->HEIGHT, this->START_POINT, this->END_POINT);
+    emit clearImage(0);
 }
 
 /**

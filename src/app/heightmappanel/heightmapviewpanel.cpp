@@ -116,6 +116,7 @@ void HeightMapViewPanel::drawHeightMap(){
                 data[4 * (i * w + j)    ] = c;
                 data[4 * (i * w + j) + 1] = c;
                 data[4 * (i * w + j) + 2] = c;
+                data[4 * (i * w + j) + 3] = 255;
             }
         }
 
@@ -130,10 +131,12 @@ void HeightMapViewPanel::drawImageOnHeightMap(){
     for (int i = 0; i< w;i++){
         for (int j = 0; j< h;j++){
             QColor c = view.pixelColor(i,j);
-            int pix = c.red() + c.blue() + c.green();
-            map[i][j] = (pix > 0)?255:0;
+            int pix = c.red()+c.blue()+c.green();//data[i*w + j] + data[i*w + j + 1] + data[i*w + j + 2];
+            map[i][j] = (pix > 0)?0:255;
         }
     }
+
+    this->centralWidget->getCurrentMap()->setMap(map);
 }
 
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

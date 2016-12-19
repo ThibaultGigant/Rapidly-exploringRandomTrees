@@ -17,6 +17,7 @@ void ThreadGenerator::run()
     foreach (config, this->configs) {
         for (int i = 0; i < config->getNbRuns(); i++)
         {
+            this->cw->setCurrentMap(config->getCurrentMap());
             if (config->getEndMethod()->getMaxNumber() > 0 && config->getEndMethod()->getLimitTime() > 0)
                 expectedNbVertices = std::min((int) config->getEndMethod()->getMaxNumber(), (int) config->getEndMethod()->getLimitTime() * 1000 / config->getSleepTime());
             else if (config->getEndMethod()->getMaxNumber() > 0)

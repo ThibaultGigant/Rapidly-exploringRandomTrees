@@ -29,6 +29,7 @@ public:
 
     // Getters and setters
     HeightMap *getCurrentMap();
+    void setCurrentMap(HeightMap *map);
 
     // Other
     void addConfig(Config *config);

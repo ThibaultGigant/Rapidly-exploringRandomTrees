@@ -26,10 +26,10 @@ HeightMap::HeightMap(QString name, int width, int height, QPointF start, QPointF
             this->map.last().append(0);
         }
     }
-    for (int i = 100; i< width-100 ; i ++){
-        this->map[i][this->getHeight() * 2/ 3] = 255;
-        this->map[i][1+this->getHeight() * 2/ 3] = 255;
-    }
+//    for (int i = 100; i< width-100 ; i ++){
+//        this->map[i][this->getHeight() * 2/ 3] = 255;
+//        this->map[i][1+this->getHeight() * 2/ 3] = 255;
+//    }
 }
 
 
@@ -112,9 +112,22 @@ QPointF HeightMap::getEnd(){
     return end;
 }
 
+/**
+ * @brief Getter of the map
+ * @return Map
+ */
 QVector<QVector<int> > HeightMap::getMap()
 {
     return this->map;
+}
+
+/**
+ * @brief Setter of map
+ * @param map New Map
+ */
+void HeightMap::setMap(QVector<QVector<int> > map)
+{
+    this->map = map;
 }
 
 /**

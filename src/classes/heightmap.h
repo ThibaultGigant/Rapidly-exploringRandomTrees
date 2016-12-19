@@ -23,6 +23,7 @@ public:
     void loadFromString(QString fileString);
 
     QVector<QVector<int> > getMap();
+    void setMap(QVector<QVector<int> > map);
 
     int getHeight();
     int getWidth();
