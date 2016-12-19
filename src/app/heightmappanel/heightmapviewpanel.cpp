@@ -98,12 +98,20 @@ void HeightMapViewPanel::updateImage()
     brush.setColor(Qt::black);
     edgePen.setColor(Qt::black);
 
+<<<<<<< Updated upstream
 
 
+=======
+    view.fill(QColor(Qt::white));
+    int a;
+    drawHeightMap();
+    int ab;
+>>>>>>> Stashed changes
     drawVertices();
-
+    int bc;
     // Finalize
     update();
+    int abcd;
 }
 
 void HeightMapViewPanel::drawVertices(){
@@ -139,10 +147,15 @@ void HeightMapViewPanel::drawHeightMap(){
         for (int j = 0; j < this->centralWidget->getCurrentMap()->getHeight(); j++)
         {/*
             c = 255 - this->centralWidget->getCurrentMap()->getMap()[i][j];
+<<<<<<< Updated upstream
             if (c != 255)
                 this->view.setPixelColor(i, j, QColor(c, c, c, 255));
         */}
 
+=======
+            //this->view.setPixelColor(i, j, QColor(c, c, c, 255));
+        }
+>>>>>>> Stashed changes
 
 }
 
