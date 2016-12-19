@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QVBoxLayout>
+#include <QMessageBox>
 #include "endmethodwidget/endmethodwidget.h"
 #include "generatorwidget/generatorwidget.h"
 #include "metricwidget/metricwidget.h"
