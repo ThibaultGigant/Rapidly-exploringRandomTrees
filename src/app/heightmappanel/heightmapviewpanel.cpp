@@ -20,6 +20,7 @@ HeightMapViewPanel::HeightMapViewPanel(CentralWidget *centralWidget, QWidget *pa
     //Connexions
     connect(this->centralWidget, SIGNAL(emitDrawElement(Vertex*)), this, SLOT(addElement(Vertex*)));
     connect(this->centralWidget, SIGNAL(emitUpdateImage()), this, SLOT(updateImage()));
+    connect(this->centralWidget, SIGNAL(clearImage(int)), this, SLOT(clear(int)));
 }
 
 void HeightMapViewPanel::setupPens(){
@@ -97,9 +98,7 @@ void HeightMapViewPanel::updateImage()
     brush.setColor(Qt::black);
     edgePen.setColor(Qt::black);
 
-    view.fill(QColor(Qt::white));
 
-    drawHeightMap();
 
     drawVertices();
 
@@ -110,7 +109,6 @@ void HeightMapViewPanel::updateImage()
 void HeightMapViewPanel::drawVertices(){
 
     QPainter painter(&this->view);
-    //painter.begin()
     painter.setRenderHint(QPainter::Antialiasing);
     painter.setBrush(brush);
 
@@ -120,7 +118,7 @@ void HeightMapViewPanel::drawVertices(){
     for (int i = 0;i < vertexList.size();i++){
         Vertex *vertex = vertexList[i];
         QColor red = QColor((int)(255.0 / vertexList.size() * i),0,0,255);
-
+        qDebug() << red;
         brush.setColor(red);
         edgePen.setColor(red);
 
@@ -130,24 +128,22 @@ void HeightMapViewPanel::drawVertices(){
         painter.drawLine(point1, point2);
         painter.drawEllipse(point1, 3, 3);
     }
-    painter.end(); // ???
 }
 
 void HeightMapViewPanel::drawHeightMap(){
 
-    QPainter painter(&this->view);
-    painter.setRenderHint(QPainter::Antialiasing);
-    painter.setBrush(brush);
+
 
     int c;
     for (int i = 0; i < this->centralWidget->getCurrentMap()->getWidth(); i++)
         for (int j = 0; j < this->centralWidget->getCurrentMap()->getHeight(); j++)
-        {
+        {/*
             c = 255 - this->centralWidget->getCurrentMap()->getMap()[i][j];
-            this->view.setPixelColor(i, j, QColor(c, c, c, 255));
-        }
+            if (c != 255)
+                this->view.setPixelColor(i, j, QColor(c, c, c, 255));
+        */}
 
-    painter.end(); // ???
+
 }
 
 
@@ -173,11 +169,35 @@ void HeightMapViewPanel::drawImageOnHeightMap(){
 
 void HeightMapViewPanel::addElement(Vertex *vertex){
     vertexList.append(vertex);
+
+    QPainter painter(&this->view);
+    painter.setRenderHint(QPainter::Antialiasing);
+    painter.setBrush(brush);
+
+    QPointF point1, point2;
+    painter.setPen(edgePen);
+
+//    QColor red = QColor((int)(255.0 / vertexList.size() * i),0,0,255);
+//    qDebug() << red;
+//    brush.setColor(red);
+//    edgePen.setColor(red);
+
+    point1 = vertex->getPosition();
+    point2 = vertex->getParent()->getPosition();
+
+    painter.drawLine(point1, point2);
+    painter.drawEllipse(point1, 3, 3);
+
+    int rad = 5;
+    update(QRect(point1.toPoint(), point2.toPoint()).normalized().adjusted(-rad, -rad, +rad, +rad));
+
 }
 
-void HeightMapViewPanel::clear(bool doUpdateImage){
+void HeightMapViewPanel::clear(int count){
     vertexList.clear();
-    if (doUpdateImage) updateImage();
+    view.fill(QColor(Qt::white));
+    drawHeightMap();
+    update();
 }
 
 void HeightMapViewPanel::setDrawPermission(bool isDrawingAllowed)

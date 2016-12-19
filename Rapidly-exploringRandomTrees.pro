@@ -8,7 +8,7 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = Rapidly-exploringRandomTreess
+TARGET = Rapidly-exploringRandomTrees
 TEMPLATE = app
 
 
@@ -43,7 +43,8 @@ SOURCES +=\
     src/app/configpanel/additionalinfoswidget/nbrunsframe.cpp \
     src/app/configpanel/additionalinfoswidget/sleeptimeframe.cpp \
     src/app/configpanel/runbuttonswidget/runbuttonswidget.cpp \
-    src/app/configpanel/additionalinfoswidget/deltatframe.cpp
+    src/app/configpanel/additionalinfoswidget/deltatframe.cpp \
+    src/classes/threadgenerator.cpp
 
 HEADERS  += \
     src/classes/environment/vertex.h \
@@ -75,6 +76,7 @@ HEADERS  += \
     src/app/configpanel/additionalinfoswidget/nbrunsframe.h \
     src/app/configpanel/additionalinfoswidget/sleeptimeframe.h \
     src/app/configpanel/runbuttonswidget/runbuttonswidget.h \
-    src/app/configpanel/additionalinfoswidget/deltatframe.h
+    src/app/configpanel/additionalinfoswidget/deltatframe.h \
+    src/classes/threadgenerator.h
 
 FORMS    += mainwindow.ui

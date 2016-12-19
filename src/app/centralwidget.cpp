@@ -1,5 +1,6 @@
 #include "centralwidget.h"
 #include "heightmappanel/heightmapframe.h"
+#include "src/classes/threadgenerator.h"
 
 /**
  * @brief Constructor
@@ -22,7 +23,6 @@ CentralWidget::CentralWidget(QWidget *parent) : QWidget(parent)
 
     // Displaying layout
     setLayout(layout);
-
 }
 
 /**
@@ -34,6 +34,7 @@ CentralWidget::~CentralWidget()
     delete configPanel;
     delete hmFrame;
     delete layout;
+    delete t;
 }
 
 /**
@@ -59,20 +60,12 @@ void CentralWidget::addConfig(Config *config)
  */
 void CentralWidget::start()
 {
-    Session *session;
-    Config *config;
-    foreach (config, this->configs) {
-        for (int i = 0; i < config->getNbRuns(); i++)
-        {
-            connect(config, SIGNAL(emitDrawElement(Vertex*)), this, SLOT(receiveDrawElement(Vertex*)));
-            connect(config, SIGNAL(emitUpdateImage()), this, SLOT(receiveUpdateImage()));
-            session = new Session(config);
-            config->getGenerator()->setSession(session);
-            session->generate();
-            disconnect(config, SIGNAL(emitDrawElement(Vertex*)), this, SLOT(receiveDrawElement(Vertex*)));
-            disconnect(config, SIGNAL(emitUpdateImage()), this, SLOT(receiveUpdateImage()));
-        }
-    }
+
+    t = new ThreadGenerator(this, this->configs);
+    connect(this, SIGNAL(startThread()), t, SLOT(start()));
+    connect(t, SIGNAL(finished()), this, SLOT(receiveUpdateImage()));
+    emit startThread();
+    //t.start();
 }
 
 /**
@@ -90,4 +83,9 @@ void CentralWidget::receiveDrawElement(Vertex *vertex)
 void CentralWidget::receiveUpdateImage()
 {
     emit emitUpdateImage();
+}
+
+void CentralWidget::receiveClearImage(int count)
+{
+    emit clearImage(count);
 }

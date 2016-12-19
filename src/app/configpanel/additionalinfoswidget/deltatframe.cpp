@@ -10,12 +10,12 @@ DeltaTFrame::DeltaTFrame(QWidget *parent) : QFrame(parent)
     this->layout = new QHBoxLayout(this);
 
     // Widgets initialization
-    this->label = new QLabel(QString::fromUtf8("CEB4") + " :");
+    this->label = new QLabel("delta_t :");
     this->spinBox = new QDoubleSpinBox();
 
     // Setting up spinbox
     this->spinBox->setRange(1, 100);
-    this->spinBox->setValue(10);
+    this->spinBox->setValue(20);
 
     // Adding widgets to layouts
     this->layout->addWidget(this->label);

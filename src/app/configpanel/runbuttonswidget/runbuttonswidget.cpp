@@ -1,4 +1,6 @@
 #include "runbuttonswidget.h"
+#include "../configpanel.h"
+#include "src/app/centralwidget.h"
 
 /**
  * @brief Constructor

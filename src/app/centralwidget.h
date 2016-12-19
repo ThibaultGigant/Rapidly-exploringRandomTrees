@@ -10,6 +10,7 @@
 #include "src/classes/session.h"
 
 class HeightMapFrame;
+class ThreadGenerator;
 
 class CentralWidget : public QWidget
 {
@@ -41,14 +42,18 @@ private :
     // Variables
     QVector<Config*> configs;
     HeightMap *currentMap;
+    ThreadGenerator *t;
 
 signals:
     void emitDrawElement(Vertex *vertex);
     void emitUpdateImage();
+    void startThread();
+    void clearImage(int count);
 
 public slots:
     void receiveDrawElement(Vertex *vertex);
     void receiveUpdateImage();
+    void receiveClearImage(int count);
 };
 
 #endif // CENTRALWIDGET_H

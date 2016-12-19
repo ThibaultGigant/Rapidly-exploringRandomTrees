@@ -13,7 +13,7 @@ TimeLimitWidget::TimeLimitWidget(QWidget *parent) : QFrame(parent)
 
     // Setting spinbox values
     this->spinBox->setRange(1, 3600);
-    this->spinBox->setValue(0);
+    this->spinBox->setValue(10);
     this->spinBox->setSuffix(" s");
 
     // Adding widget

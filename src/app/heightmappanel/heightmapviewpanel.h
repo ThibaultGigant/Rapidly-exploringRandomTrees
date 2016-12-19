@@ -37,6 +37,8 @@ private :
     bool scribbling;
     QPoint lastPoint;
 
+    int count;
+
     void setupPens();
 
     void drawLineTo(const QPoint &endPoint);
@@ -62,7 +64,7 @@ public slots:
 
     void updateImage();
     void addElement(Vertex *vertex);
-    void clear(bool doUpdateImage);
+    void clear(int count);
     void setDrawPermission(bool isDrawingAllowed);
 
 

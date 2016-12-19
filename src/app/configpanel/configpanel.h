@@ -18,6 +18,8 @@ public:
     explicit ConfigPanel(QWidget *parent = 0);
     ~ConfigPanel();
 
+    CentralWidget *getCentralWidget() const;
+
 private:
     CentralWidget *centralWidget;
     QVBoxLayout *layout;

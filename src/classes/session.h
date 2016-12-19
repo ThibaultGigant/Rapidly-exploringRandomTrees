@@ -50,10 +50,8 @@ private:
     // Methods
 
 signals:
-    /*
-    void emitDrawElement(Vertex *vertex);
-    void emitUpdateImage();
-    */
+
+public slots:
 };
 
 #endif // SESSION_H

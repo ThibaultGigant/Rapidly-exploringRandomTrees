@@ -42,6 +42,15 @@ ConfigPanel::~ConfigPanel()
 }
 
 /**
+ * @brief Returns the central Widget
+ * @return Central Widget
+ */
+CentralWidget *ConfigPanel::getCentralWidget() const
+{
+    return centralWidget;
+}
+
+/**
  * @brief Receives a signal to add the current config to the list of configs
  * Creates a configuration according to the current configuration, then gives it to the central widget
  */
