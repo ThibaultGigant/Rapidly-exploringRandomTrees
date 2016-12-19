@@ -11,6 +11,9 @@ EndMethod::EndMethod(quint64 maxNumber, time_t duration)
     this->maxNumber = maxNumber;
     this->duration = duration;
     this->startTime = 0;
+
+    if (this->maxNumber == 0 && this->duration == 0)
+        this->maxNumber = 1;
 }
 
 /**

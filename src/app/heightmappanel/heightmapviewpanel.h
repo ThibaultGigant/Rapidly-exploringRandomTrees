@@ -20,6 +20,7 @@ class HeightMapViewPanel : public QWidget
     Q_OBJECT
 public:
     explicit HeightMapViewPanel(CentralWidget *centralWidget, QWidget *parent = 0);
+    void drawImageOnHeightMap();
 
 
 private :
@@ -48,7 +49,6 @@ private :
 
 
     void drawHeightMap();
-    void drawImageOnHeightMap();
 
     QPoint toScreenPix(QPointF p);
     QPoint toScreenPix(QPoint p);

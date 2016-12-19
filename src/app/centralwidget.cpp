@@ -89,3 +89,11 @@ void CentralWidget::receiveClearImage(int count)
 {
     emit clearImage(count);
 }
+
+/**
+ * @brief Receives the signal that will trigger a saving of the image drawn into the heightmap
+ */
+void CentralWidget::receiveImageToHeightMap()
+{
+    this->hmFrame->getHeightMapViewPanel()->drawImageOnHeightMap();
+}

@@ -17,7 +17,13 @@ void ThreadGenerator::run()
     foreach (config, this->configs) {
         for (int i = 0; i < config->getNbRuns(); i++)
         {
-            expectedNbVertices = std::min((int) config->getEndMethod()->getMaxNumber(), (int) config->getEndMethod()->getLimitTime() * 1000 / config->getSleepTime());
+            if (config->getEndMethod()->getMaxNumber() > 0 && config->getEndMethod()->getLimitTime() > 0)
+                expectedNbVertices = std::min((int) config->getEndMethod()->getMaxNumber(), (int) config->getEndMethod()->getLimitTime() * 1000 / config->getSleepTime());
+            else if (config->getEndMethod()->getMaxNumber() > 0)
+                expectedNbVertices = config->getEndMethod()->getMaxNumber();
+            else
+                expectedNbVertices = config->getEndMethod()->getLimitTime() * 1000 / config->getSleepTime();
+
             emit emitClearImage(expectedNbVertices);
             connect(config, SIGNAL(emitDrawElement(Vertex*)), this->cw, SLOT(receiveDrawElement(Vertex*)));
            // connect(config, SIGNAL(emitUpdateImage()), this->cw, SLOT(receiveUpdateImage()));

@@ -54,6 +54,7 @@ public slots:
     void receiveDrawElement(Vertex *vertex);
     void receiveUpdateImage();
     void receiveClearImage(int count);
+    void receiveImageToHeightMap();
 };
 
 #endif // CENTRALWIDGET_H

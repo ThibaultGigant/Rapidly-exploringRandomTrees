@@ -20,7 +20,9 @@ RunButtonsWidget::RunButtonsWidget(QWidget *parent) : QFrame(parent)
     // Displaying the layout
     this->setLayout(this->layout);
 
-    // Connection to the parent
+    // Connections
+    ConfigPanel *p = (ConfigPanel *) parent;
+    //connect(this->addButton, SIGNAL(clicked(bool)), p->getCentralWidget(), SLOT(receiveImageToHeightMap()));
     connect(this->addButton, SIGNAL(clicked(bool)), parent, SLOT(addConfig()));
     connect(this->runButton, SIGNAL(clicked(bool)), parent, SLOT(start()));
 }

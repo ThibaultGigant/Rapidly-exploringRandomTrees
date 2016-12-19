@@ -44,3 +44,8 @@ HeightMapFrame::HeightMapFrame(CentralWidget *centralWidget, QWidget *parent) :
 
     this->setLayout(layout);
 }
+
+HeightMapViewPanel* HeightMapFrame::getHeightMapViewPanel()
+{
+    return this->hmViewPanel;
+}

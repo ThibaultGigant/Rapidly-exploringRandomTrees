@@ -18,6 +18,7 @@ class HeightMapFrame : public QWidget
     Q_OBJECT
 public:
     explicit HeightMapFrame(CentralWidget *centralWidget, QWidget *parent = 0);
+    HeightMapViewPanel *getHeightMapViewPanel();
 
 private :
     CentralWidget *centralWidget;
