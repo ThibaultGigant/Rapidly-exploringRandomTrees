@@ -7,6 +7,9 @@
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QPushButton>
+#include <QFileDialog>
+#include <QDebug>
+#include <QMessageBox>
 
 class CentralWidget;
 
@@ -16,14 +19,15 @@ class HeightMapFilePanel : public QWidget
 public:
     explicit HeightMapFilePanel(CentralWidget *centralWidget, QWidget *parent = 0);
 
+
 private:
-    CentralWidget *centralWidget;
+    CentralWidget *cw;
     QHBoxLayout *layout;
 
     QPushButton *saveButton;
     QPushButton *newButton;
     QPushButton *loadButton;
-    QPushButton *deleteButton;
+    QPushButton *clearButton;
 
     QLabel *mapName;
     QLabel *mapWidth;
@@ -32,7 +36,14 @@ private:
 
 signals:
 
+    void sendClearImage(int count);
+
 public slots:
+
+    void receiveClickClear();
+    void saveMap();
+    void loadMap();
+
 };
 
 #endif // HEIGHTMAPFILEPANEL_H

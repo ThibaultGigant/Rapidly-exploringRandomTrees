@@ -40,7 +40,6 @@ HeightMap::HeightMap(QString name, int width, int height, QPointF start, QPointF
  */
 void HeightMap::resizeMap(int width, int height){
 
-
     QVector<QVector<int> > temp = QVector<QVector<int> >(height);
 
     for (int i = 0; i< width ; i ++){
@@ -136,21 +135,54 @@ void HeightMap::setMap(QVector<QVector<int> > map)
  */
 QString HeightMap::toFileString(){
     QString str = QString();
+
     str += name+"/n";
-    str += QString::number(width) + " ";
-    str += QString::number(height) + "/n";
-    str += QString::number(start.x()) + " ";
-    str += QString::number(start.y())  + "/n";
-    str += QString::number(end.x()) + " ";
-    str += QString::number(end.y())  + "/n";
+    str += QString::number(width) + "\n";
+    str += QString::number(height) + "\n";
+    str += QString::number(start.x()) + "\n";
+    str += QString::number(start.y())  + "\n";
+    str += QString::number(end.x()) + "\n";
+    str += QString::number(end.y())  + "\n";
 
     for (int i = 0; i< width ; i ++){
-        for(int j = 0;j < height ; i ++){
+        for(int j = 0;j < height ; j ++){
             str+= QString::number(map[i][j]) + " ";
         }
-        str+="/n";
+        str+="\n";
     }
     return str;
+}
+
+
+HeightMap* HeightMap::hmFromFile(QString fileName){
+    QFile inputFile(fileName);
+    if (inputFile.open(QIODevice::ReadOnly))
+    {
+       QTextStream in(&inputFile);
+
+       QString name = in.readLine();
+       int w = in.readLine().toInt();
+       int h = in.readLine().toInt();
+       QPointF start(in.readLine().toDouble(),in.readLine().toDouble());
+       QPointF end = QPointF(in.readLine().toDouble(),in.readLine().toDouble());
+
+       HeightMap * newMap = new HeightMap(name,w,h,start,end);
+
+
+       for (int i = 0; i< w ; i ++){
+           QStringList tmp = in.readLine().split(" ");
+           for(int j = 0;j < h ; j ++){
+               newMap->getMap()[i][j]= ((QString)(tmp[j])).toInt();
+           }
+       }
+
+       inputFile.close();
+
+       return newMap;
+
+    }else{
+        return Q_NULLPTR;
+    }
 }
 
 /**

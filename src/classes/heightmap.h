@@ -5,10 +5,12 @@
 #include <QPointF>
 #include <QVector>
 #include <QString>
+#include <QFile>
 #include <iostream>
 #include <QDebug>
 #include <random>
 #include <cmath>
+
 
 using namespace std;
 
@@ -21,7 +23,7 @@ public:
     void clearObstacles();
     QString toFileString();
     void loadFromString(QString fileString);
-
+    static HeightMap* hmFromFile(QString fileName);
     QVector<QVector<int> > getMap();
     void setMap(QVector<QVector<int> > map);
 

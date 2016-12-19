@@ -119,8 +119,6 @@ void HeightMapViewPanel::drawHeightMap(){
                 data[4 * (i * w + j) + 3] = 255;
             }
         }
-
-    int a;
 }
 
 
@@ -152,15 +150,18 @@ void HeightMapViewPanel::addElement(Vertex *vertex){
 
     QPainter painter(&this->view);
     painter.setRenderHint(QPainter::Antialiasing);
-    painter.setBrush(brush);
+
 
     QPointF point1, point2;
-    painter.setPen(edgePen);
 
-//    QColor red = QColor((int)(255.0 / vertexList.size() * i),0,0,255);
-//    qDebug() << red;
-//    brush.setColor(red);
-//    edgePen.setColor(red);
+    int r = (int)(200.0 / count * vertexList.size());
+
+    QColor red = QColor(0,r,0,255);
+
+    brush.setColor(red);
+    edgePen.setColor(red);
+    painter.setPen(edgePen);
+    painter.setBrush(brush);
 
     point1 = vertex->getPosition();
     point2 = vertex->getParent()->getPosition();
@@ -174,6 +175,7 @@ void HeightMapViewPanel::addElement(Vertex *vertex){
 }
 
 void HeightMapViewPanel::clear(int count){
+    this->count = count;
     vertexList.clear();
     view.fill(Qt::white);
     drawHeightMap();

@@ -5,18 +5,18 @@ HeightMapFilePanel::HeightMapFilePanel(CentralWidget *centralWidget, QWidget *pa
     QWidget(parent)
 {
     // Variables initialization
-    this->centralWidget = centralWidget;
+    this->cw = centralWidget;
 
     layout = new QHBoxLayout;
 
-    mapName = new QLabel("Map Name");
-    mapWidth = new QLabel("W : 250");
-    mapHeight = new QLabel("H : 230");
+    mapName = new QLabel(cw->getCurrentMap()->getName());
+    mapWidth = new QLabel(""+cw->getCurrentMap()->getWidth());
+    mapHeight = new QLabel(""+cw->getCurrentMap()->getHeight());
 
     saveButton = new QPushButton("Save");
     newButton = new QPushButton("New");
     loadButton = new QPushButton("Load");
-    deleteButton = new QPushButton("Del");
+    clearButton = new QPushButton("Clear");
 
     // Interface Construction
 
@@ -29,12 +29,64 @@ HeightMapFilePanel::HeightMapFilePanel(CentralWidget *centralWidget, QWidget *pa
     layout->addWidget(saveButton);
     layout->addWidget(newButton);
     layout->addWidget(loadButton);
-    layout->addWidget(deleteButton);
+    layout->addWidget(clearButton);
 
     setLayout(layout);
 
     // Connexions
 
+    connect(clearButton,SIGNAL(clicked(bool)),this,SLOT(receiveClickClear()));
+    connect(this,SIGNAL(sendClearImage(int)),cw,SLOT(receiveClearImage(int)));
+
+
+    connect(saveButton,SIGNAL(clicked(bool)),cw,SLOT(receiveImageToHeightMap()));
+    connect(saveButton,SIGNAL(clicked(bool)),this,SLOT(saveMap()));
+
+    connect(loadButton,SIGNAL(clicked(bool)),this,SLOT(loadMap()));
+
     // Connect Buttons To HeightMap
 
 }
+
+void HeightMapFilePanel::receiveClickClear(){
+    emit sendClearImage(0);
+}
+
+void HeightMapFilePanel::saveMap(){
+    QString fileName = QFileDialog::getSaveFileName(this,
+        tr("Save Height Map"), cw->getCurrentMap()->getName(), tr("HeightMapFile (*.hmf)"));
+
+    if (fileName.isEmpty())
+        return;
+
+    QFile file(fileName);
+    if (!file.open(QIODevice::WriteOnly)) {
+        QMessageBox::information(this, tr("Unable to save file"),
+            file.errorString());
+        return;
+    }
+
+    QDataStream out(&file);
+    out.setVersion(QDataStream::Qt_4_5);
+    out << cw->getCurrentMap()->toFileString();
+    file.close();
+
+}
+
+void HeightMapFilePanel::loadMap(){
+
+    QString fileName = QFileDialog::getOpenFileName(this,
+        tr("Load Height Map"), tr("HeightMapFile (*.hmf)"));
+
+    HeightMap * newMap = HeightMap::hmFromFile(fileName);
+
+    if (newMap != Q_NULLPTR){
+        receiveClickClear();
+        delete(cw->getCurrentMap());
+        cw->setCurrentMap(newMap);
+    }else{
+        QMessageBox::information(this, tr("Unable to open file"),"Something bad happened :(");
+    }
+
+}
+

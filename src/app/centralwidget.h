@@ -54,7 +54,7 @@ signals:
 public slots:
     void receiveDrawElement(Vertex *vertex);
     void receiveUpdateImage();
-    void receiveClearImage(int count);
+    void receiveClearImage(int count = 0);
     void receiveImageToHeightMap();
 };
 

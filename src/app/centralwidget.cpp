@@ -66,6 +66,7 @@ void CentralWidget::addConfig(Config *config)
     emit clearImage(0);
 }
 
+
 /**
  * @brief Starts the simulations for each configuration
  */
