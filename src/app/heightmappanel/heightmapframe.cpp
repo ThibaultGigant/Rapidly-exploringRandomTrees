@@ -14,6 +14,9 @@ HeightMapFrame::HeightMapFrame(CentralWidget *centralWidget, QWidget *parent) :
     // Creating view Panel (Middle)
     hmViewPanel = new HeightMapViewPanel(this->centralWidget);
 
+    //Creating sub Panel (Bottom)
+    hmSubPanel = new HeightMapSubPanel(this->centralWidget, this->hmViewPanel);
+
     viewScroller = new QScrollArea();
     viewScroller->setBackgroundRole(QPalette::Dark);
 
@@ -40,7 +43,7 @@ HeightMapFrame::HeightMapFrame(CentralWidget *centralWidget, QWidget *parent) :
     // Adding all widgets
     layout->addWidget(hmFilePanel);
     layout->addWidget(viewScroller);
-    //layout->addWidget(hmSubPanel);
+    layout->addWidget(hmSubPanel);
 
     this->setLayout(layout);
 }

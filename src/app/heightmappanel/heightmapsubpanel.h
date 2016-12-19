@@ -4,6 +4,8 @@
 #include <QWidget>
 #include <QLabel>
 #include <QPushButton>
+#include <QHBoxLayout>
+#include "src/app/heightmappanel/heightmapviewpanel.h"
 
 class CentralWidget;
 
@@ -11,25 +13,29 @@ class HeightMapSubPanel : public QWidget
 {
     Q_OBJECT
 public:
-    explicit HeightMapSubPanel(CentralWidget *centralWidget, QWidget *parent = 0);
+    explicit HeightMapSubPanel(CentralWidget *centralWidget, HeightMapViewPanel *viewPanel,QWidget *parent = 0);
 
 private:
     CentralWidget *centralWidget;
+    HeightMapViewPanel *viewPanel;
 
-    QPushButton *penMode;
-    QPushButton *circleMode;
-    QPushButton *squareMode;
+    QLabel *size;
+    QPushButton *increaseButton;
+    QPushButton *decreaseButton;
+    QPushButton *eraser;
 
-    QPushButton *clearMap;
+   QHBoxLayout *layout;
 
-    QPushButton *plusButton;
-    QLabel *penSize;
-    QPushButton *minusButton;
 
 
 signals:
+    void increasePenSize();
+    void decreasePenSize();
+    void goEraser();
 
 public slots:
+
+    void majSizeLabel(int s);
 
 };
 

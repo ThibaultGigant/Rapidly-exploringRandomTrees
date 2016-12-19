@@ -19,11 +19,17 @@ class HeightMapViewPanel : public QWidget
 {
     Q_OBJECT
 public:
+
+    int MAX_SIZE = 30;
+    int MIN_SIZE = 2;
+
     explicit HeightMapViewPanel(CentralWidget *centralWidget, QWidget *parent = 0);
     void drawImageOnHeightMap();
+    int getPenSize();
 
 
 private :
+
     CentralWidget *centralWidget;
     QImage view;
     unsigned char *data;
@@ -41,6 +47,8 @@ private :
     QPoint lastPoint;
 
     int count;
+    int penSize;
+
 
     void setupPens();
     void setupImage();
@@ -62,13 +70,16 @@ protected:
 
 signals:
 
+    void sendPenSize(int);
+
 public slots:
 
     void addElement(Vertex *vertex);
     void clear(int count);
     void setDrawPermission(bool isDrawingAllowed);
 
-
+    void increasePenSize();
+    void decreasePenSize();
 
 };
 

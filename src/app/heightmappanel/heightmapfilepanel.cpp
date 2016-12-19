@@ -10,8 +10,8 @@ HeightMapFilePanel::HeightMapFilePanel(CentralWidget *centralWidget, QWidget *pa
     layout = new QHBoxLayout;
 
     mapName = new QLabel(cw->getCurrentMap()->getName());
-    mapWidth = new QLabel(""+cw->getCurrentMap()->getWidth());
-    mapHeight = new QLabel(""+cw->getCurrentMap()->getHeight());
+    mapWidth = new QLabel(QString::number(cw->getCurrentMap()->getWidth()));
+    mapHeight = new QLabel(QString::number(cw->getCurrentMap()->getHeight()));
 
     saveButton = new QPushButton("Save");
     newButton = new QPushButton("New");

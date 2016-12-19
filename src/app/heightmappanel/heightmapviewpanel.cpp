@@ -21,11 +21,12 @@ HeightMapViewPanel::HeightMapViewPanel(CentralWidget *centralWidget, QWidget *pa
 }
 
 void HeightMapViewPanel::setupPens(){
+    this->penSize = 10;
     this->edgePen = QPen();
     this->hmPen = QPen();
     this->brush = QBrush(Qt::black);
-    this->hmPen.setWidth(2);
-    this->edgePen.setWidth(2);
+    this->hmPen.setWidth(penSize);
+    this->edgePen.setWidth(penSize);
 }
 
 void HeightMapViewPanel::setupImage(){ // Don't forget to free the data
@@ -88,6 +89,7 @@ void HeightMapViewPanel::mouseReleaseEvent(QMouseEvent *event)
 void HeightMapViewPanel::drawLineTo(const QPoint &endPoint)
 {
     QPainter painter(&this->view);
+    painter.setRenderHint(QPainter::Antialiasing);
     painter.setBrush(brush);
     painter.setPen(hmPen);
     painter.drawLine(lastPoint, endPoint);
@@ -139,7 +141,7 @@ void HeightMapViewPanel::drawImageOnHeightMap(){
 
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-//                                   SIGNALS
+//                                   SLOTS
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
@@ -149,6 +151,7 @@ void HeightMapViewPanel::addElement(Vertex *vertex){
     vertexList.append(vertex);
 
     QPainter painter(&this->view);
+
     painter.setRenderHint(QPainter::Antialiasing);
 
 
@@ -160,6 +163,7 @@ void HeightMapViewPanel::addElement(Vertex *vertex){
 
     brush.setColor(red);
     edgePen.setColor(red);
+    edgePen.setWidth(2);
     painter.setPen(edgePen);
     painter.setBrush(brush);
 
@@ -171,7 +175,7 @@ void HeightMapViewPanel::addElement(Vertex *vertex){
 
     int rad = 5;
     update(QRect(point1.toPoint(), point2.toPoint()).normalized().adjusted(-rad, -rad, +rad, +rad));
-
+    edgePen.setWidth(penSize); // WHY I HAVE TO DO THIS ?! I USED TWO PENS !!!
 }
 
 void HeightMapViewPanel::clear(int count){
@@ -186,6 +190,27 @@ void HeightMapViewPanel::setDrawPermission(bool isDrawingAllowed)
 {
     this->drawingAllowed = isDrawingAllowed;
 }
+
+void HeightMapViewPanel::increasePenSize(){
+    penSize = std::min(MAX_SIZE,penSize+1);
+    hmPen.setWidth(penSize);
+    emit sendPenSize(penSize);
+}
+
+void HeightMapViewPanel::decreasePenSize(){
+    penSize = std::max(MIN_SIZE,penSize-1);
+    hmPen.setWidth(penSize);
+    emit sendPenSize(penSize);
+}
+
+
+
+//@@@@@@@@@@@@@@@@@@@@@ GET / SET @@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+int HeightMapViewPanel::getPenSize(){
+    return penSize;
+}
+
 
 
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
