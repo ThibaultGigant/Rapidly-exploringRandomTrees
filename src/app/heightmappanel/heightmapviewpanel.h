@@ -25,6 +25,8 @@ public:
 private :
     CentralWidget *centralWidget;
     QImage view;
+    unsigned char *data;
+    int w,h;
 
     QVector<Vertex*> vertexList;
 
@@ -40,11 +42,11 @@ private :
     int count;
 
     void setupPens();
+    void setupImage();
 
     void drawLineTo(const QPoint &endPoint);
 
 
-    void drawVertices();
     void drawHeightMap();
     void drawImageOnHeightMap();
 
@@ -62,7 +64,6 @@ signals:
 
 public slots:
 
-    void updateImage();
     void addElement(Vertex *vertex);
     void clear(int count);
     void setDrawPermission(bool isDrawingAllowed);

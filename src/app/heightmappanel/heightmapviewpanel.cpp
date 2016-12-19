@@ -10,16 +10,13 @@ HeightMapViewPanel::HeightMapViewPanel(CentralWidget *centralWidget, QWidget *pa
     this->drawingAllowed = true;
 
     //Image stuff
-    this->view = QImage(this->centralWidget->getCurrentMap()->getWidth(),
-                        this->centralWidget->getCurrentMap()->getHeight(),
-                        QImage::Format_ARGB32_Premultiplied);
     setupPens();
-    updateImage();
+    setupImage();
+    clear(0);
     this->scribbling = false;
 
     //Connexions
     connect(this->centralWidget, SIGNAL(emitDrawElement(Vertex*)), this, SLOT(addElement(Vertex*)));
-    connect(this->centralWidget, SIGNAL(emitUpdateImage()), this, SLOT(updateImage()));
     connect(this->centralWidget, SIGNAL(clearImage(int)), this, SLOT(clear(int)));
 }
 
@@ -29,6 +26,16 @@ void HeightMapViewPanel::setupPens(){
     this->brush = QBrush(Qt::black);
     this->hmPen.setWidth(2);
     this->edgePen.setWidth(2);
+}
+
+void HeightMapViewPanel::setupImage(){ // Don't forget to free the data
+    this->w = this->centralWidget->getCurrentMap()->getWidth();
+    this->h = this->centralWidget->getCurrentMap()->getHeight();
+
+    data = new unsigned char[4 * w * h ];
+
+    this->view = QImage(this->data, w, h, QImage::Format_RGB32);
+
 }
 
 
@@ -88,67 +95,43 @@ void HeightMapViewPanel::drawLineTo(const QPoint &endPoint)
     int rad = (hmPen.width() / 2) + 2;
     update(QRect(lastPoint, endPoint).normalized().adjusted(-rad, -rad, +rad, +rad));
     lastPoint = endPoint;
+    painter.end();
 }
 
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ UPDATE IMAGE @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 
-void HeightMapViewPanel::updateImage()
-{
-    brush.setColor(Qt::black);
-    edgePen.setColor(Qt::black);
-    view.fill(QColor(Qt::white));
-    drawHeightMap();
-    drawVertices();
-    update();
-}
-
-void HeightMapViewPanel::drawVertices(){
-
-    QPainter painter(&this->view);
-    painter.setRenderHint(QPainter::Antialiasing);
-    painter.setBrush(brush);
-
-    QPointF point1, point2;
-    painter.setPen(edgePen);
-
-    for (int i = 0;i < vertexList.size();i++){
-        Vertex *vertex = vertexList[i];
-        QColor red = QColor((int)(255.0 / vertexList.size() * i),0,0,255);
-        qDebug() << red;
-        brush.setColor(red);
-        edgePen.setColor(red);
-
-        point1 = vertex->getPosition();
-        point2 = vertex->getParent()->getPosition();
-
-        painter.drawLine(point1, point2);
-        painter.drawEllipse(point1, 3, 3);
-    }
-}
 
 void HeightMapViewPanel::drawHeightMap(){
 
+    unsigned char c;
 
-    int c;
-    for (int i = 0; i < this->centralWidget->getCurrentMap()->getWidth(); i++)
-        for (int j = 0; j < this->centralWidget->getCurrentMap()->getHeight(); j++)
+    QVector<QVector<int> > map = this->centralWidget->getCurrentMap()->getMap();
+
+    for (int i = 0; i < w; i++)
+        for (int j = 0; j < h; j++)
         {
-
+            c = (map[j][i] == 0)?255:0;
+            if(c!=255){
+                data[4 * (i * w + j)    ] = c;
+                data[4 * (i * w + j) + 1] = c;
+                data[4 * (i * w + j) + 2] = c;
+            }
         }
 
-
+    int a;
 }
 
 
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ SAVE HEIGHT MAP @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 void HeightMapViewPanel::drawImageOnHeightMap(){
-    for (int i = 0; i< this->centralWidget->getCurrentMap()->getWidth();i++){
-        for (int j = 0; j< this->centralWidget->getCurrentMap()->getHeight();j++){
+    QVector<QVector<int> > map = this->centralWidget->getCurrentMap()->getMap();
+    for (int i = 0; i< w;i++){
+        for (int j = 0; j< h;j++){
             QColor c = view.pixelColor(i,j);
             int pix = c.red() + c.blue() + c.green();
-            this->centralWidget->getCurrentMap()->getMap()[i][j] = (pix > 0)?255:0;
+            map[i][j] = (pix > 0)?255:0;
         }
     }
 }
@@ -189,7 +172,7 @@ void HeightMapViewPanel::addElement(Vertex *vertex){
 
 void HeightMapViewPanel::clear(int count){
     vertexList.clear();
-    view.fill(QColor(Qt::white));
+    view.fill(Qt::white);
     drawHeightMap();
     update();
 }
