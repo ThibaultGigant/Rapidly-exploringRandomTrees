@@ -30,7 +30,8 @@ void HeightMapViewPanel::setupPens(){
     this->edgePen.setWidth(penSize);
 }
 
-void HeightMapViewPanel::setupImage(){ // Don't forget to free the data
+void HeightMapViewPanel::setupImage(){
+
     this->w = this->centralWidget->getCurrentMap()->getWidth();
     this->h = this->centralWidget->getCurrentMap()->getHeight();
 
