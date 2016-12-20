@@ -7,7 +7,7 @@ HeightMapViewPanel::HeightMapViewPanel(CentralWidget *centralWidget, QWidget *pa
     // Variables initialization
     this->centralWidget = centralWidget;
     this->vertexList = QVector<Vertex*>();
-    this->drawingAllowed = true;
+    this->modifAllowed = true;
 
     //Image stuff
     setupPens();
@@ -58,7 +58,7 @@ void HeightMapViewPanel::paintEvent(QPaintEvent *event)
 
 void HeightMapViewPanel::mousePressEvent(QMouseEvent *event)
 {
-    if (event->button() == Qt::LeftButton && drawingAllowed) {
+    if (event->button() == Qt::LeftButton && modifAllowed) {
         lastPoint = event->pos();
         scribbling = true;
     }
@@ -66,13 +66,13 @@ void HeightMapViewPanel::mousePressEvent(QMouseEvent *event)
 
 void HeightMapViewPanel::mouseMoveEvent(QMouseEvent *event)
 {
-    if ((event->buttons() & Qt::LeftButton) && scribbling && drawingAllowed)
+    if ((event->buttons() & Qt::LeftButton) && scribbling && modifAllowed)
         drawLineTo(event->pos());
 }
 
 void HeightMapViewPanel::mouseReleaseEvent(QMouseEvent *event)
 {
-    if (event->button() == Qt::LeftButton && scribbling && drawingAllowed) {
+    if (event->button() == Qt::LeftButton && scribbling && modifAllowed) {
         drawLineTo(event->pos());
         scribbling = false;
     }
@@ -157,7 +157,7 @@ void HeightMapViewPanel::addElement(Vertex *vertex){
 
     QPointF point1, point2;
 
-    int r = (int)(200.0 / count * vertexList.size());
+    int r = (int)(200.0 / ( 1 + (count * vertexList.size())) );
 
     QColor red = QColor(0,r,0,255);
 
@@ -186,9 +186,10 @@ void HeightMapViewPanel::clear(int count){
     update();
 }
 
-void HeightMapViewPanel::setDrawPermission(bool isDrawingAllowed)
+void HeightMapViewPanel::setModifPermission(bool isModifAllowed)
 {
-    this->drawingAllowed = isDrawingAllowed;
+    this->modifAllowed = isModifAllowed;
+    emit sendModifAllowed(isModifAllowed);
 }
 
 void HeightMapViewPanel::increasePenSize(){

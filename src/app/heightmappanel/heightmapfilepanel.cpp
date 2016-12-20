@@ -1,7 +1,7 @@
 #include "heightmapfilepanel.h"
 #include "src/app/centralwidget.h"
 
-HeightMapFilePanel::HeightMapFilePanel(CentralWidget *centralWidget, QWidget *parent) :
+HeightMapFilePanel::HeightMapFilePanel(CentralWidget *centralWidget, HeightMapViewPanel* viewPanel, QWidget *parent) :
     QWidget(parent)
 {
     // Variables initialization
@@ -43,6 +43,8 @@ HeightMapFilePanel::HeightMapFilePanel(CentralWidget *centralWidget, QWidget *pa
     connect(saveButton,SIGNAL(clicked(bool)),this,SLOT(saveMap()));
 
     connect(loadButton,SIGNAL(clicked(bool)),this,SLOT(loadMap()));
+
+    connect(viewPanel,SIGNAL(sendModifAllowed(bool)),this,SLOT(receiveModifAllowed(bool)));
 
     // Connect Buttons To HeightMap
 
@@ -89,4 +91,13 @@ void HeightMapFilePanel::loadMap(){
     }
 
 }
+
+void HeightMapFilePanel::receiveModifAllowed(bool modifAllowed){
+    saveButton->setEnabled(modifAllowed);
+    newButton->setEnabled(modifAllowed);
+    loadButton->setEnabled(modifAllowed);
+    clearButton->setEnabled(modifAllowed);
+}
+
+
 

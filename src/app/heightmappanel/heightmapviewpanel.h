@@ -37,7 +37,7 @@ private :
 
     QVector<Vertex*> vertexList;
 
-    bool drawingAllowed;
+    bool modifAllowed;
 
     QPen hmPen;
     QPen edgePen;
@@ -71,12 +71,13 @@ protected:
 signals:
 
     void sendPenSize(int);
+    void sendModifAllowed(bool);
 
 public slots:
 
     void addElement(Vertex *vertex);
     void clear(int count);
-    void setDrawPermission(bool isDrawingAllowed);
+    void setModifPermission(bool isModifAllowed);
 
     void increasePenSize();
     void decreasePenSize();
