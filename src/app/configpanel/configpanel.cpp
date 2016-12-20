@@ -26,6 +26,8 @@ ConfigPanel::ConfigPanel(QWidget *parent) : QWidget(parent)
 
     // displaying the layout
     this->setLayout(this->layout);
+
+
 }
 
 /**

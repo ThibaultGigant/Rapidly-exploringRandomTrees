@@ -113,7 +113,6 @@ Vertex* Session::generate()
 
     while (!this->endMethod->isOver())
     {
-        //QThread::msleep(1 + this->config->getSleepTime());
         vertex = this->generator->generate();
         this->environment->addElement(vertex);
         this->config->receiveDrawElement(vertex);
