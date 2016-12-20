@@ -49,6 +49,7 @@ signals:
     void emitDrawElement(Vertex *vertex);
     void emitUpdateImage();
     void startThread();
+    void stopThread();
     void clearImage(int count);
     void emitModifAllowed(bool b);
 

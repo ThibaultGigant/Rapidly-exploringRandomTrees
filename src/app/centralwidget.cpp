@@ -65,7 +65,7 @@ void CentralWidget::addConfig(Config *config)
 {
     this->configs.append(config);
     this->currentMap = new HeightMap(this->NAME, this->WIDTH, this->HEIGHT, this->START_POINT, this->END_POINT);
-    emit clearImage(0);
+    //emit clearImage(0);
 }
 
 
@@ -78,6 +78,7 @@ void CentralWidget::start()
     t = new ThreadGenerator(this, this->configs);
     connect(this, SIGNAL(startThread()), t, SLOT(start()));
     connect(t, SIGNAL(finished()), this, SLOT(receiveUpdateImage()));
+    connect(this, SIGNAL(stopThread()), t, SLOT(quit()));
     emit startThread();
     //t.start();
 }
@@ -128,5 +129,5 @@ void CentralWidget::receiveModifAllowed(bool b){
 
 void CentralWidget::stop()
 {
-    this->t->quit();
+    emit stopThread();
 }

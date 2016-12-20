@@ -21,11 +21,11 @@ void ThreadGenerator::run()
             config->reset();
             this->cw->setCurrentMap(config->getCurrentMap());
             if (config->getEndMethod()->getMaxNumber() > 0 && config->getEndMethod()->getLimitTime() > 0)
-                expectedNbVertices = std::min((int) config->getEndMethod()->getMaxNumber(), (int) config->getEndMethod()->getLimitTime() * 1000 / config->getSleepTime());
+                expectedNbVertices = std::min((int) config->getEndMethod()->getMaxNumber(), (int) config->getEndMethod()->getLimitTime() * 1000 / std::max(config->getSleepTime(), 1));
             else if (config->getEndMethod()->getMaxNumber() > 0)
                 expectedNbVertices = config->getEndMethod()->getMaxNumber();
             else
-                expectedNbVertices = config->getEndMethod()->getLimitTime() * 1000 / config->getSleepTime();
+                expectedNbVertices = config->getEndMethod()->getLimitTime() * 1000 / std::max(config->getSleepTime(), 1);
 
             emit emitClearImage(expectedNbVertices);
 

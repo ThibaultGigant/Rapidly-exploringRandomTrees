@@ -57,10 +57,8 @@ CentralWidget *ConfigPanel::getCentralWidget() const
 void ConfigPanel::addConfig()
 {
     EndMethod *endMethod = this->endMethodWidget->getEndMethod();
-    qDebug() << "here " << endMethod->getMaxNumber() << " " << endMethod->getLimitTime();
     if (endMethod->getMaxNumber() <= 1 && endMethod->getLimitTime() == 0)
     {
-        qDebug() << "this is it";
         QMessageBox msgBox(QMessageBox::Critical, "Error: Wrong End Method",
                            "Please select a correct End Method", QMessageBox::Close);
         msgBox.exec();

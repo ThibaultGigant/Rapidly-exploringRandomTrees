@@ -9,7 +9,7 @@ HeightMapFrame::HeightMapFrame(CentralWidget *centralWidget, QWidget *parent) :
     layout = new QVBoxLayout();
 
     // Creating view Panel (Middle)
-    hmViewPanel = new HeightMapViewPanel(this->centralWidget, this->hmViewPanel);
+    hmViewPanel = new HeightMapViewPanel(this->centralWidget, this);
 
     // Creating file Panel (Top)
     hmFilePanel = new HeightMapFilePanel(this->centralWidget, this->hmViewPanel);
