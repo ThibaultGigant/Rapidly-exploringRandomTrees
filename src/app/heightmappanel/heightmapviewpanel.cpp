@@ -18,6 +18,7 @@ HeightMapViewPanel::HeightMapViewPanel(CentralWidget *centralWidget, QWidget *pa
     //Connexions
     connect(this->centralWidget, SIGNAL(emitDrawElement(Vertex*)), this, SLOT(addElement(Vertex*)));
     connect(this->centralWidget, SIGNAL(clearImage(int)), this, SLOT(clear(int)));
+    connect(this->centralWidget,SIGNAL(emitModifAllowed(bool)),this,SLOT(setModifPermission(bool)));
 }
 
 void HeightMapViewPanel::setupPens(){

@@ -5,6 +5,8 @@
 #include <QPushButton>
 #include <QHBoxLayout>
 
+class CentralWidget;
+
 class RunButtonsWidget : public QFrame
 {
     Q_OBJECT
@@ -16,11 +18,13 @@ private:
     QHBoxLayout *layout;
     QPushButton *addButton;
     QPushButton *runButton;
+    CentralWidget *cw;
 
 signals:
+    void isRunning(bool b);
 
 public slots:
-    void run(bool isRunning);
+    void isRun(bool b);
 };
 
 #endif // RUNBUTTONSWIDGET_H

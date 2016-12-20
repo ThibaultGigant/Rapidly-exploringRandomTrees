@@ -10,7 +10,7 @@ RunButtonsWidget::RunButtonsWidget(QWidget *parent) : QFrame(parent)
 {
     // Widgets initialization
     this->layout = new QHBoxLayout(this);
-    this->addButton = new QPushButton("Add to list");
+    this->addButton = new QPushButton("Add");
     this->runButton = new QPushButton("Run");
 
     // Adding widgets to the layout
@@ -22,9 +22,12 @@ RunButtonsWidget::RunButtonsWidget(QWidget *parent) : QFrame(parent)
 
     // Connections
     ConfigPanel *p = (ConfigPanel *) parent;
-    connect(this->addButton, SIGNAL(clicked(bool)), p->getCentralWidget(), SLOT(receiveImageToHeightMap()));
+    this->cw = p->getCentralWidget();
+
+    connect(this->addButton, SIGNAL(clicked(bool)), this->cw, SLOT(receiveImageToHeightMap()));
     connect(this->addButton, SIGNAL(clicked(bool)), parent, SLOT(addConfig()));
     connect(this->runButton, SIGNAL(clicked(bool)), parent, SLOT(start()));
+    connect(this, SIGNAL(isRunning(bool)), SLOT(this->cw->receiveModifAllowed(bool)));
 }
 
 /**
@@ -39,53 +42,34 @@ RunButtonsWidget::~RunButtonsWidget()
 
 /**
  * @brief Changes the buttons according to the status : running or not
- * @param isRunning Boolean stating if ther's a simulation running or not
+ * @param b Boolean stating if ther's a simulation running or not
  */
-void RunButtonsWidget::isRun(bool isRunning)
+void RunButtonsWidget::isRun(bool b)
 {
-    //delete widgets and connections
-    this->layout->removeWidget(this->addButton);
-    this->layout->removeWidget(this->runButton);
+    emit isRunning(!b);
     this->addButton->disconnect();
     this->runButton->disconnect();
-    delete this->addButton;
-    delete this->runButton;
 
     if (isRunning)
     {
-        this->addButton = new QPushButton("Add to list");
-        this->runButton = new QPushButton("Run");
+        this->addButton->setText("Next");
+        this->runButton->setText("Stop");
 
-        // Adding widgets to the layout
-        this->layout->addWidget(this->addButton);
-        this->layout->addWidget(this->runButton);
-
-        // Displaying the layout
-        this->setLayout(this->layout);
-
-        // Connections
-        ConfigPanel *p = (ConfigPanel *) parent;
         connect(this->addButton, SIGNAL(clicked(bool)), p->getCentralWidget(), SLOT(receiveImageToHeightMap()));
         connect(this->addButton, SIGNAL(clicked(bool)), parent, SLOT(addConfig()));
         connect(this->runButton, SIGNAL(clicked(bool)), parent, SLOT(start()));
     }
     else
     {
-        this->addButton = new QPushButton("Add to list");
-        this->runButton = new QPushButton("Run");
-
-        // Adding widgets to the layout
-        this->layout->addWidget(this->addButton);
-        this->layout->addWidget(this->runButton);
-
-        // Displaying the layout
-        this->setLayout(this->layout);
+        this->addButton->setText("Add");
+        this->runButton->setText("Run");
 
         // Connections
-        ConfigPanel *p = (ConfigPanel *) parent;
-        connect(this->addButton, SIGNAL(clicked(bool)), p->getCentralWidget(), SLOT(receiveImageToHeightMap()));
-        connect(this->addButton, SIGNAL(clicked(bool)), parent, SLOT(addConfig()));
-        connect(this->runButton, SIGNAL(clicked(bool)), parent, SLOT(start()));
+        connect(this->addButton, SIGNAL(clicked(bool)), this->cw, SLOT(receiveImageToHeightMap()));
+        connect(this->addButton, SIGNAL(clicked(bool)), this->parent(), SLOT(addConfig()));
+        connect(this->runButton, SIGNAL(clicked(bool)), this->parent(), SLOT(start()));
+
     }
+
 
 }

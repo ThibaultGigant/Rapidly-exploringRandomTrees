@@ -50,6 +50,7 @@ signals:
     void emitUpdateImage();
     void startThread();
     void clearImage(int count);
+    void emitModifAllowed(bool b);
 
 public slots:
     void receiveDrawElement(Vertex *vertex);
@@ -57,6 +58,7 @@ public slots:
     void receiveClearImage(int count = 0);
     void receiveImageToHeightMap();
     void done();
+    void receiveModifAllowed(bool b);
 };
 
 #endif // CENTRALWIDGET_H
