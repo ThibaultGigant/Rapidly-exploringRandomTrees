@@ -10,6 +10,7 @@
 #include <QFileDialog>
 #include <QDebug>
 #include <QMessageBox>
+#include "src/app/heightmappanel/heightmapviewpanel.h"
 
 class CentralWidget;
 
@@ -17,7 +18,7 @@ class HeightMapFilePanel : public QWidget
 {
     Q_OBJECT
 public:
-    explicit HeightMapFilePanel(CentralWidget *centralWidget, QWidget *parent = 0);
+    explicit HeightMapFilePanel(CentralWidget *centralWidget, HeightMapViewPanel *viewPanel, QWidget *parent = 0);
 
 
 private:
@@ -43,6 +44,7 @@ public slots:
     void receiveClickClear();
     void saveMap();
     void loadMap();
+    void receiveModifAllowed(bool modifAllowed);
 
 };
 

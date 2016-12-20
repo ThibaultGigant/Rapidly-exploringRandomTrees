@@ -22,7 +22,7 @@ private:
     QLabel *size;
     QPushButton *increaseButton;
     QPushButton *decreaseButton;
-    QPushButton *eraser;
+    QPushButton *eraserButton;
 
    QHBoxLayout *layout;
 
@@ -36,6 +36,7 @@ signals:
 public slots:
 
     void majSizeLabel(int s);
+    void receiveModifAllowed(bool isModifAllowed);
 
 };
 

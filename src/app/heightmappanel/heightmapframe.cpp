@@ -8,11 +8,13 @@ HeightMapFrame::HeightMapFrame(CentralWidget *centralWidget, QWidget *parent) :
     this->centralWidget = centralWidget;
     layout = new QVBoxLayout();
 
-    // Creating file Panel (Top)
-    hmFilePanel = new HeightMapFilePanel(this->centralWidget);
-    hmFilePanel->setSizePolicy(QSizePolicy::Maximum,QSizePolicy::Maximum);
     // Creating view Panel (Middle)
-    hmViewPanel = new HeightMapViewPanel(this->centralWidget);
+    hmViewPanel = new HeightMapViewPanel(this->centralWidget, this->hmViewPanel);
+
+    // Creating file Panel (Top)
+    hmFilePanel = new HeightMapFilePanel(this->centralWidget, this->hmViewPanel);
+    hmFilePanel->setSizePolicy(QSizePolicy::Maximum,QSizePolicy::Maximum);
+
 
     //Creating sub Panel (Bottom)
     hmSubPanel = new HeightMapSubPanel(this->centralWidget, this->hmViewPanel);
