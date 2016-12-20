@@ -13,6 +13,7 @@ void ThreadGenerator::run()
 {
     Session *session;
     Config *config;
+    Vertex *vertex;
     int expectedNbVertices;
 
     foreach (config, this->configs) {
@@ -33,11 +34,24 @@ void ThreadGenerator::run()
            // connect(config, SIGNAL(emitUpdateImage()), this->cw, SLOT(receiveUpdateImage()));
             session = new Session(config);
             config->getGenerator()->setSession(session);
-            session->generate();
+            vertex = session->generate();
+
+            // Verification if the display is over before continue
+            while (vertex != lastVertexDrawn)
+                QThread::msleep(1);
+
+
+
             disconnect(config, SIGNAL(emitDrawElement(Vertex*)), this->cw, SLOT(receiveDrawElement(Vertex*)));
             //disconnect(config, SIGNAL(emitUpdateImage()), this->cw, SLOT(receiveUpdateImage()));
+
             delete session;
         }
     }
     emit emitDone();
+}
+
+void ThreadGenerator::getVertexDrawn(Vertex *v)
+{
+    this->lastVertexDrawn = v;
 }

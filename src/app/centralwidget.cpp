@@ -79,6 +79,7 @@ void CentralWidget::start()
     connect(this, SIGNAL(startThread()), t, SLOT(start()));
     connect(t, SIGNAL(finished()), this, SLOT(receiveUpdateImage()));
     connect(this, SIGNAL(stopThread()), t, SLOT(quit()));
+    connect(this->hmFrame->getHeightMapViewPanel(), SIGNAL(lastVertexDrawn(Vertex*)), this->t, SLOT(getVertexDrawn(Vertex*)));
     emit startThread();
     //t.start();
 }
@@ -88,9 +89,12 @@ void CentralWidget::start()
  */
 void CentralWidget::done()
 {
+    emit emitDone();
     QMessageBox doneBox(QMessageBox::Information, "Done",
                         "All simulations are done", QMessageBox::Close);
     doneBox.exec();
+    t->disconnect();
+    delete t;
 }
 
 /**

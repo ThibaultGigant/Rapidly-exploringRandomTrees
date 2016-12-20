@@ -35,7 +35,7 @@ public:
     int getWidth();
     int getHeight();
     double distance(QPointF from, QPointF to);
-    void generate();
+    Vertex* generate();
 
 private:
     // Attributes

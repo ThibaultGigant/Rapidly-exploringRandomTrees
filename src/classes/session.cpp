@@ -105,14 +105,16 @@ HeightMap* Session::getMap()
 
 /**
  * @brief Generates the tree by calling the tree generator, and stops according to the endmethod
+ * @return Last vertex created
  */
-void Session::generate()
+Vertex* Session::generate()
 {
+    Vertex *vertex;
 
     while (!this->endMethod->isOver())
     {
-        QThread::msleep(1 + this->config->getSleepTime());
-        Vertex* vertex = this->generator->generate();
+        //QThread::msleep(1 + this->config->getSleepTime());
+        vertex = this->generator->generate();
         this->environment->addElement(vertex);
         this->config->receiveDrawElement(vertex);
        // this->config->receiveUpdateImage();
@@ -121,6 +123,7 @@ void Session::generate()
 
     //this->config->receiveUpdateImage();
     //emit emitUpdateImage();
+    return vertex;
 }
 
 /**

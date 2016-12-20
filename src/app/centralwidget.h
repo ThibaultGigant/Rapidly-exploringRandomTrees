@@ -52,6 +52,7 @@ signals:
     void stopThread();
     void clearImage(int count);
     void emitModifAllowed(bool b);
+    void emitDone();
 
 public slots:
     void receiveDrawElement(Vertex *vertex);

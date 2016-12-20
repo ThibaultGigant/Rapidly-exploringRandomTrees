@@ -1,5 +1,6 @@
 #include "heightmapviewpanel.h"
 #include "src/app/centralwidget.h"
+#include "src/classes/threadgenerator.h"
 
 HeightMapViewPanel::HeightMapViewPanel(CentralWidget *centralWidget, QWidget *parent) :
     QWidget(parent)
@@ -177,6 +178,8 @@ void HeightMapViewPanel::addElement(Vertex *vertex){
     int rad = 5;
     update(QRect(point1.toPoint(), point2.toPoint()).normalized().adjusted(-rad, -rad, +rad, +rad));
     edgePen.setWidth(penSize); // WHY I HAVE TO DO THIS ?! I USED TWO PENS !!!
+
+    emit lastVertexDrawn(vertex);
 }
 
 void HeightMapViewPanel::clear(int count){

@@ -72,6 +72,7 @@ signals:
 
     void sendPenSize(int);
     void sendModifAllowed(bool);
+    void lastVertexDrawn(Vertex *);
 
 public slots:
 

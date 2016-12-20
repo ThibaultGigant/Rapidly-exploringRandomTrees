@@ -29,6 +29,7 @@ RunButtonsWidget::RunButtonsWidget(QWidget *parent) : QFrame(parent)
     connect(this->runButton, SIGNAL(clicked(bool)), parent, SLOT(start()));
     connect(this->runButton, SIGNAL(clicked(bool)), this, SLOT(toRun()));
     connect(this, SIGNAL(isRunning(bool)), this->cw, SLOT(receiveModifAllowed(bool)));
+    connect(this->cw, SIGNAL(emitDone()), this, SLOT(toStop()));
 }
 
 /**

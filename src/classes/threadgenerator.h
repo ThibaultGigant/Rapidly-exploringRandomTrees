@@ -16,6 +16,7 @@ public:
 private:
     QVector<Config *> configs;
     CentralWidget *cw;
+    Vertex *lastVertexDrawn;
 
 protected:
     void run();
@@ -25,7 +26,7 @@ signals:
     void emitDone();
 
 public slots:
-
+    void getVertexDrawn(Vertex* v);
 };
 
 #endif // THREADGENERATOR_H
