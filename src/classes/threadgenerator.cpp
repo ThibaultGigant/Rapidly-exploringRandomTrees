@@ -6,6 +6,7 @@ ThreadGenerator::ThreadGenerator(CentralWidget *cw, QVector<Config *> configs)
     this->configs = configs;
     this->cw = cw;
     connect(this, SIGNAL(emitClearImage(int)), this->cw, SLOT(receiveClearImage(int)));
+    connect(this, SIGNAL(emitDone()), this->cw, SLOT(done()));
 }
 
 void ThreadGenerator::run()
@@ -38,4 +39,5 @@ void ThreadGenerator::run()
             delete session;
         }
     }
+    emit emitDone();
 }

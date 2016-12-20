@@ -22,6 +22,7 @@ protected:
 
 signals:
     void emitClearImage(int);
+    void emitDone();
 };
 
 #endif // THREADGENERATOR_H

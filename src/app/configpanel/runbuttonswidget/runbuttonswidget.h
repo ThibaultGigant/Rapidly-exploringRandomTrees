@@ -20,6 +20,7 @@ private:
 signals:
 
 public slots:
+    void run(bool isRunning);
 };
 
 #endif // RUNBUTTONSWIDGET_H

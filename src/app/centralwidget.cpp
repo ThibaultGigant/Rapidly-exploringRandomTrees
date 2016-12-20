@@ -17,6 +17,8 @@ CentralWidget::CentralWidget(QWidget *parent) : QWidget(parent)
     hmFrame = new HeightMapFrame(this);
     this->configPanel = new ConfigPanel(this);
 
+    this->configPanel->setMaximumWidth(300);
+
     // Adding widgets to layout
     layout->addWidget(hmFrame);
     layout->addWidget(this->configPanel);
@@ -78,6 +80,16 @@ void CentralWidget::start()
     connect(t, SIGNAL(finished()), this, SLOT(receiveUpdateImage()));
     emit startThread();
     //t.start();
+}
+
+/**
+ * @brief Displays a message signaling the simulations are done
+ */
+void CentralWidget::done()
+{
+    QMessageBox doneBox(QMessageBox::Information, "Done",
+                        "All simulations are done", QMessageBox::Close);
+    doneBox.exec();
 }
 
 /**

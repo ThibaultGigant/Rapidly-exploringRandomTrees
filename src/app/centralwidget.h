@@ -56,6 +56,7 @@ public slots:
     void receiveUpdateImage();
     void receiveClearImage(int count = 0);
     void receiveImageToHeightMap();
+    void done();
 };
 
 #endif // CENTRALWIDGET_H
