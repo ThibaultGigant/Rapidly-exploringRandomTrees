@@ -13,6 +13,7 @@ class RunButtonsWidget : public QFrame
 public:
     explicit RunButtonsWidget(QWidget *parent = 0);
     ~RunButtonsWidget();
+    void isRun(bool b);
 
 private:
     QHBoxLayout *layout;
@@ -24,7 +25,8 @@ signals:
     void isRunning(bool b);
 
 public slots:
-    void isRun(bool b);
+    void toRun();
+    void toStop();
 };
 
 #endif // RUNBUTTONSWIDGET_H

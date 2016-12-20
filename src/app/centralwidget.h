@@ -59,6 +59,7 @@ public slots:
     void receiveImageToHeightMap();
     void done();
     void receiveModifAllowed(bool b);
+    void stop();
 };
 
 #endif // CENTRALWIDGET_H

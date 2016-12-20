@@ -122,6 +122,11 @@ void CentralWidget::receiveImageToHeightMap()
     this->hmFrame->getHeightMapViewPanel()->drawImageOnHeightMap();
 }
 
-void receiveModifAllowed(bool b){
+void CentralWidget::receiveModifAllowed(bool b){
     emit emitModifAllowed(b);
+}
+
+void CentralWidget::stop()
+{
+    this->t->quit();
 }

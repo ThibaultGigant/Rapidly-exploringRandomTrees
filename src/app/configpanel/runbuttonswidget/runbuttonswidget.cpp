@@ -8,6 +8,9 @@
  */
 RunButtonsWidget::RunButtonsWidget(QWidget *parent) : QFrame(parent)
 {
+    ConfigPanel *p = (ConfigPanel *) parent;
+    this->cw = p->getCentralWidget();
+
     // Widgets initialization
     this->layout = new QHBoxLayout(this);
     this->addButton = new QPushButton("Add");
@@ -21,13 +24,11 @@ RunButtonsWidget::RunButtonsWidget(QWidget *parent) : QFrame(parent)
     this->setLayout(this->layout);
 
     // Connections
-    ConfigPanel *p = (ConfigPanel *) parent;
-    this->cw = p->getCentralWidget();
-
     connect(this->addButton, SIGNAL(clicked(bool)), this->cw, SLOT(receiveImageToHeightMap()));
     connect(this->addButton, SIGNAL(clicked(bool)), parent, SLOT(addConfig()));
     connect(this->runButton, SIGNAL(clicked(bool)), parent, SLOT(start()));
-    connect(this, SIGNAL(isRunning(bool)), SLOT(this->cw->receiveModifAllowed(bool)));
+    connect(this->runButton, SIGNAL(clicked(bool)), this, SLOT(toRun()));
+    connect(this, SIGNAL(isRunning(bool)), this->cw, SLOT(receiveModifAllowed(bool)));
 }
 
 /**
@@ -40,6 +41,16 @@ RunButtonsWidget::~RunButtonsWidget()
     delete layout;
 }
 
+void RunButtonsWidget::toRun()
+{
+    this->isRun(true);
+}
+
+void RunButtonsWidget::toStop()
+{
+    this->isRun(false);
+}
+
 /**
  * @brief Changes the buttons according to the status : running or not
  * @param b Boolean stating if ther's a simulation running or not
@@ -50,14 +61,13 @@ void RunButtonsWidget::isRun(bool b)
     this->addButton->disconnect();
     this->runButton->disconnect();
 
-    if (isRunning)
+    if (b)
     {
         this->addButton->setText("Next");
         this->runButton->setText("Stop");
 
-        connect(this->addButton, SIGNAL(clicked(bool)), p->getCentralWidget(), SLOT(receiveImageToHeightMap()));
-        connect(this->addButton, SIGNAL(clicked(bool)), parent, SLOT(addConfig()));
-        connect(this->runButton, SIGNAL(clicked(bool)), parent, SLOT(start()));
+        connect(this->runButton, SIGNAL(clicked(bool)), this->cw, SLOT(stop()));
+        connect(this->runButton, SIGNAL(clicked(bool)), this, SLOT(toStop()));
     }
     else
     {
@@ -68,6 +78,7 @@ void RunButtonsWidget::isRun(bool b)
         connect(this->addButton, SIGNAL(clicked(bool)), this->cw, SLOT(receiveImageToHeightMap()));
         connect(this->addButton, SIGNAL(clicked(bool)), this->parent(), SLOT(addConfig()));
         connect(this->runButton, SIGNAL(clicked(bool)), this->parent(), SLOT(start()));
+        connect(this->runButton, SIGNAL(clicked(bool)), this, SLOT(toRun()));
 
     }
 
