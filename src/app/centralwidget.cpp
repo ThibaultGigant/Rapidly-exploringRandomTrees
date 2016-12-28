@@ -77,8 +77,9 @@ void CentralWidget::start()
 
     t = new ThreadGenerator(this, this->configs);
     connect(this, SIGNAL(startThread()), t, SLOT(start()));
+    connect(this, SIGNAL(skipSimulation()), t, SLOT(skipToNext()));
+    connect(this, SIGNAL(stopThread()), t, SLOT(stop()));
     connect(t, SIGNAL(finished()), this, SLOT(receiveUpdateImage()));
-    connect(this, SIGNAL(stopThread()), t, SLOT(quit()));
     connect(this->hmFrame->getHeightMapViewPanel(), SIGNAL(lastVertexDrawn(Vertex*)), this->t, SLOT(getVertexDrawn(Vertex*)));
     emit startThread();
     //t.start();
@@ -114,6 +115,10 @@ void CentralWidget::receiveUpdateImage()
     emit emitUpdateImage();
 }
 
+/**
+ * @brief Receives the signal to clear the image
+ * @param count Expected number of vertices to draw
+ */
 void CentralWidget::receiveClearImage(int count)
 {
     emit clearImage(count);
@@ -127,10 +132,25 @@ void CentralWidget::receiveImageToHeightMap()
     this->hmFrame->getHeightMapViewPanel()->drawImageOnHeightMap();
 }
 
+/**
+ * @brief Receives the signal stating if modifications on the heightmap are allowed
+ * @param b Modifications allowed or not
+ */
 void CentralWidget::receiveModifAllowed(bool b){
     emit emitModifAllowed(b);
 }
 
+/**
+ * @brief Receive the signal telling the generation thread to go to the next simulation
+ */
+void CentralWidget::nextSimulation()
+{
+    emit skipSimulation();
+}
+
+/**
+ * @brief Receive the signal telling the generation thread to stop the generation
+ */
 void CentralWidget::stop()
 {
     emit stopThread();

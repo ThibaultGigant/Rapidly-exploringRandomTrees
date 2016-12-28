@@ -67,6 +67,7 @@ void RunButtonsWidget::isRun(bool b)
         this->addButton->setText("Next");
         this->runButton->setText("Stop");
 
+        connect(this->addButton, SIGNAL(clicked(bool)), this->cw, SLOT(nextSimulation()));
         connect(this->runButton, SIGNAL(clicked(bool)), this->cw, SLOT(stop()));
         connect(this->runButton, SIGNAL(clicked(bool)), this, SLOT(toStop()));
     }

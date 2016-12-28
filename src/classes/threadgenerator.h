@@ -17,6 +17,7 @@ private:
     QVector<Config *> configs;
     CentralWidget *cw;
     Vertex *lastVertexDrawn;
+    bool stopSimulations;
 
 protected:
     void run();
@@ -24,9 +25,12 @@ protected:
 signals:
     void emitClearImage(int);
     void emitDone();
+    void emitStop();
 
 public slots:
     void getVertexDrawn(Vertex* v);
+    void skipToNext();
+    void stop();
 };
 
 #endif // THREADGENERATOR_H

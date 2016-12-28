@@ -49,6 +49,7 @@ signals:
     void emitDrawElement(Vertex *vertex);
     void emitUpdateImage();
     void startThread();
+    void skipSimulation();
     void stopThread();
     void clearImage(int count);
     void emitModifAllowed(bool b);
@@ -61,6 +62,7 @@ public slots:
     void receiveImageToHeightMap();
     void done();
     void receiveModifAllowed(bool b);
+    void nextSimulation();
     void stop();
 };
 

@@ -26,6 +26,7 @@ Session::Session(Config* config)
     this->map = config->getCurrentMap();
     this->endMethod = config->getEndMethod();
     this->config = config;
+    this->next = false;
     srand(time(NULL));
 
     //connect(this, SIGNAL(emitDrawElement(Vertex*)), config, SLOT(receiveDrawElement(Vertex*)));
@@ -111,7 +112,7 @@ Vertex* Session::generate()
 {
     Vertex *vertex;
 
-    while (!this->endMethod->isOver())
+    while (!this->endMethod->isOver() && !this->next)
     {
         vertex = this->generator->generate();
         this->environment->addElement(vertex);
@@ -174,4 +175,13 @@ Vertex* Session::getClosestVertex(QPointF point)
 double Session::distance(QPointF from, QPointF to)
 {
     return this->metric->distance(from, to);
+}
+
+/**
+ * @brief Slot receiving a signal to stop the current generation
+ */
+void Session::stop()
+{
+    qDebug() << "stop signal received in session";
+    this->next = true;
 }

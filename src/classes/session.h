@@ -46,12 +46,14 @@ private:
     HeightMap* map;
     EndMethod* endMethod;
     Config* config;
+    bool next;
 
     // Methods
 
 signals:
 
 public slots:
+    void stop();
 };
 
 #endif // SESSION_H
