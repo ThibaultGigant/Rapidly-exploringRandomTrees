@@ -21,7 +21,6 @@ ThreadGenerator::ThreadGenerator(CentralWidget *cw, QVector<Config *> configs)
  */
 void ThreadGenerator::run()
 {
-    Session *session;
     Config *config;
     Vertex *vertex;
     int expectedNbVertices;
@@ -54,7 +53,7 @@ void ThreadGenerator::run()
 
             // Launching simulation
             session = new Session(config);
-            connect(this, SIGNAL(emitStop()), session, SLOT(stop()));
+            //connect(this, SIGNAL(emitStop()), session, SLOT(stop()));
             config->getGenerator()->setSession(session);
             vertex = session->generate();
 
@@ -65,7 +64,7 @@ void ThreadGenerator::run()
             }
 
             // Disconnection of current session
-            disconnect(this, SIGNAL(emitStop()), session, SLOT(stop()));
+            //disconnect(this, SIGNAL(emitStop()), session, SLOT(stop()));
 
             delete session;
         }
@@ -93,7 +92,8 @@ void ThreadGenerator::getVertexDrawn(Vertex *v)
 void ThreadGenerator::skipToNext()
 {
     qDebug() << "skip signal received";
-    emit emitStop();
+    this->session->stop();
+    //emit emitStop();
 }
 
 /**
@@ -103,5 +103,6 @@ void ThreadGenerator::stop()
 {
     qDebug() << "stop signal received in thread";
     this->stopSimulations = true;
-    emit emitStop();
+    this->session->stop();
+    //emit emitStop();
 }

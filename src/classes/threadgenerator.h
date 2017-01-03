@@ -18,6 +18,7 @@ private:
     CentralWidget *cw;
     Vertex *lastVertexDrawn;
     bool stopSimulations;
+    Session *session;
 
 protected:
     void run();
