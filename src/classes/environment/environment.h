@@ -16,6 +16,7 @@ public:
     ~Environment();
     void addElement(Vertex *vertex);
     Vertex* getClosest(QPointF point);
+    Vertex* getClosestAlmostNaive(QPointF point);
     Vertex* getClosestNaive(QPointF point);
     Vertex* getRandomVertex();
     QVector<Vertex *> getVertices() const;

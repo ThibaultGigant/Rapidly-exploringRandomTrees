@@ -252,6 +252,46 @@ Vertex* Environment::getClosest(QPointF point)
 }
 
 /**
+ * @brief Returns the closest vertex of a given point, by checking the nearest quadrants, and if empty, all quadrants (naive)
+ * @param point Point of the environment
+ * @return Closest vertex of the given point
+ */
+Vertex* Environment::getClosestAlmostNaive(QPointF point)
+{
+    // Initialization of variables
+    double minDistance = width + height;
+    double tempDistance;
+    Vertex* vertex, *tempVertex;
+    int ligne;
+    int colonne;
+
+    QPointF p = vertex->getPosition();
+    ligne = (int) (p.x() / this->width) * this->session->getDeltaT();
+    colonne = (int) (p.y() / this->height) * this->session->getDeltaT();
+
+    if (this->quadrants[colonne][ligne].getVertices().isEmpty())
+        return this->getClosestNaive(point);
+
+    for (int i = std::max(colonne - 1, 0); i < std::min(colonne + 1, this->width); i++)
+    {
+        for (int j = std::max(ligne - 1, 0); j < std::min(ligne + 1, this->height); j++)
+        {
+            foreach (tempVertex, this->quadrants[i][j].getVertices()) {
+                tempDistance = this->session->distance(point, tempVertex->getPosition());
+                // Change the closest vertex if applicable
+                if (tempDistance < minDistance)
+                {
+                    minDistance = tempDistance;
+                    vertex = tempVertex;
+                }
+            }
+        }
+    }
+
+    return vertex;
+}
+
+/**
  * @brief Returns the closest vertex of a given point, by going through all of the vertices in the environment
  * @param point Point of the environment
  * @return Closest vertex of the given point
@@ -263,22 +303,14 @@ Vertex* Environment::getClosestNaive(QPointF point)
     double tempDistance;
     Vertex* vertex, *tempVertex;
 
-    // Going through every vertex of every quadrant
-    for (int i = 0; i < this->quadrants.size(); i++)
-    {
-        for (int j = 0; j < this->quadrants[i].size(); j++)
+    // Going through every vertex
+    foreach (tempVertex, this->vertices) {
+        tempDistance = this->session->distance(point, tempVertex->getPosition());
+        // Change the closest vertex if applicable
+        if (tempDistance < minDistance)
         {
-            for (int k = 0; k < this->quadrants[i][j].getVertices().size(); k++)
-            {
-                tempVertex = this->quadrants[i][j].getVertices()[k];
-                tempDistance = this->session->distance(point, tempVertex->getPosition());
-                // Change the closest vertex if applicable
-                if (tempDistance < minDistance)
-                {
-                    minDistance = tempDistance;
-                    vertex = tempVertex;
-                }
-            }
+            minDistance = tempDistance;
+            vertex = tempVertex;
         }
     }
 
