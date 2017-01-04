@@ -2,6 +2,7 @@
 #define HEIGHTMAPFILEPANEL_H
 
 #include <QObject>
+#include <QDir>
 #include <QWidget>
 #include <QVBoxLayout>
 #include <QHBoxLayout>

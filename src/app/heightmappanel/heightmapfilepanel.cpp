@@ -56,8 +56,7 @@ void HeightMapFilePanel::receiveClickClear(){
 }
 
 void HeightMapFilePanel::saveMap(){
-    QString fileName = QFileDialog::getSaveFileName(this,
-        tr("Save Height Map"), cw->getCurrentMap()->getName(), tr("HeightMapFile (*.hmf)"));
+    QString fileName = QFileDialog::getSaveFileName(this, tr("Save Height Map"), QDir::homePath()+"/"+cw->getCurrentMap()->getName(), tr("HeightMapFile (*.hmf)"));
 
     if (fileName.isEmpty())
         return;
@@ -77,8 +76,7 @@ void HeightMapFilePanel::saveMap(){
 
 void HeightMapFilePanel::loadMap(){
 
-    QString fileName = QFileDialog::getOpenFileName(this,
-        tr("Load Height Map"), tr("HeightMapFile (*.hmf)"));
+    QString fileName = QFileDialog::getOpenFileName(this, tr("Load Height Map"), QDir::homePath(), tr("HeightMapFile (*.hmf)"));
 
     qDebug() << "map received : " << fileName;
 
