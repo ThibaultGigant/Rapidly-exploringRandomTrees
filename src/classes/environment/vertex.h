@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <QPointF>
+#include <QVector>
 
 class Vertex
 {
@@ -13,10 +14,13 @@ public:
     ~Vertex();
     QPointF getPosition();
     Vertex* getParent();
+    void addChild(Vertex *child);
+    QVector<Vertex *> getChildren() const;
 
 private:
     QPointF position;
     Vertex* parent;
+    QVector<Vertex *> children;
 
 };
 

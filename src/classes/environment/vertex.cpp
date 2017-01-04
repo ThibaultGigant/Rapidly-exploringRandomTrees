@@ -9,6 +9,10 @@ Vertex::Vertex(QPointF position, Vertex* parent)
 {
     this->parent = parent;
     this->position = position;
+    this->children = QVector<Vertex*>();
+
+    if (parent)
+        parent->addChild(this);
 }
 
 /**
@@ -16,6 +20,7 @@ Vertex::Vertex(QPointF position, Vertex* parent)
  */
 Vertex::~Vertex()
 {
+    this->children.clear();
 }
 
 /**
@@ -34,4 +39,22 @@ QPointF Vertex::getPosition()
 Vertex* Vertex::getParent()
 {
     return this->parent;
+}
+
+/**
+ * @brief Adds a child to the vertex
+ * @param child Child vertex to add
+ */
+void Vertex::addChild(Vertex *child)
+{
+    this->children.append(child);
+}
+
+/**
+ * @brief Returns the list of children of the vertex
+ * @return List of children
+ */
+QVector<Vertex *> Vertex::getChildren() const
+{
+    return children;
 }

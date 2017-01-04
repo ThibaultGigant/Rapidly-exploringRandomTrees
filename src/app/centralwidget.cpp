@@ -182,4 +182,5 @@ void CentralWidget::removeConfig(int index)
 void CentralWidget::clearConfigs()
 {
     this->configs.clear();
+    this->nbConfigs = 0;
 }
