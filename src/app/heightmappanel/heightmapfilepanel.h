@@ -10,6 +10,7 @@
 #include <QFileDialog>
 #include <QDebug>
 #include <QMessageBox>
+#include <QTextStream>
 #include "src/app/heightmappanel/heightmapviewpanel.h"
 
 class CentralWidget;
@@ -44,6 +45,7 @@ public slots:
     void receiveClickClear();
     void saveMap();
     void loadMap();
+    void newMap();
     void receiveModifAllowed(bool modifAllowed);
 
 };

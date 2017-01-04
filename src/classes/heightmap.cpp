@@ -10,7 +10,6 @@
  */
 HeightMap::HeightMap(QString name, int width, int height, QPointF start, QPointF end){
 
-    //qDebug() << "This is a test";
     this->name = name;
     this->width = width;
     this->height = height;
@@ -136,7 +135,8 @@ void HeightMap::setMap(QVector<QVector<int> > map)
 QString HeightMap::toFileString(){
     QString str = QString();
 
-    str += name+"/n";
+    str+="HMFILE\n";
+    str += name+"\n";
     str += QString::number(width) + "\n";
     str += QString::number(height) + "\n";
     str += QString::number(start.x()) + "\n";
@@ -153,28 +153,39 @@ QString HeightMap::toFileString(){
     return str;
 }
 
+void HeightMap::setMapPixel(int x, int y, int val){
+    map[x][y] = val;
+}
 
 HeightMap* HeightMap::hmFromFile(QString fileName){
     QFile inputFile(fileName);
+
     if (inputFile.open(QIODevice::ReadOnly))
     {
        QTextStream in(&inputFile);
-
+       in.readLine();
        QString name = in.readLine();
        int w = in.readLine().toInt();
        int h = in.readLine().toInt();
        QPointF start(in.readLine().toDouble(),in.readLine().toDouble());
        QPointF end = QPointF(in.readLine().toDouble(),in.readLine().toDouble());
 
+
        HeightMap * newMap = new HeightMap(name,w,h,start,end);
 
+       int blackDots = 0;
+       int temp;
 
        for (int i = 0; i< w ; i ++){
            QStringList tmp = in.readLine().split(" ");
            for(int j = 0;j < h ; j ++){
-               newMap->getMap()[i][j]= ((QString)(tmp[j])).toInt();
+               temp = ((QString)(tmp[j])).toInt();
+               newMap->setMapPixel(i,j,temp);
+               blackDots += temp;
            }
        }
+
+       qDebug() << blackDots;
 
        inputFile.close();
 

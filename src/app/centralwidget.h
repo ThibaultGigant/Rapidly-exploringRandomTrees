@@ -19,7 +19,7 @@ public:
     // Default variables
     int WIDTH = 800;
     int HEIGHT = 800;
-    QString NAME = "Default Map";
+    QString NAME = "DefaultMapName";
     QPointF START_POINT = QPointF (WIDTH / 2, HEIGHT / 2);
     QPointF END_POINT = QPointF (0, 0);
 

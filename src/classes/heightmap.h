@@ -21,8 +21,11 @@ public:
     HeightMap(QString name, int width, int height, QPointF start = QPointF(0,0), QPointF end = QPointF(0,0));
 
     void clearObstacles();
+
     QString toFileString();
     void loadFromString(QString fileString);
+
+
     static HeightMap* hmFromFile(QString fileName);
     QVector<QVector<int> > getMap();
     void setMap(QVector<QVector<int> > map);
@@ -36,6 +39,8 @@ public:
 
     bool isObstacle(QPointF point);
     bool isPathFree(QPointF point1, QPointF point2);
+
+    void setMapPixel(int x, int y, int val);
 
 private:
 
