@@ -9,6 +9,7 @@
 #include "metricwidget/metricwidget.h"
 #include "additionalinfoswidget/additionalinfoswidget.h"
 #include "runbuttonswidget/runbuttonswidget.h"
+#include "listwidget/listwidget.h"
 
 class CentralWidget;
 
@@ -30,6 +31,7 @@ private:
     MetricWidget *metricWidget;
     AdditionalInfosWidget *additionalInfosWidget;
     RunButtonsWidget *runButtonsWidget;
+    ListWidget *listWidget;
 
 signals:
 

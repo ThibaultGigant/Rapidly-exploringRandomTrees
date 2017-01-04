@@ -182,6 +182,6 @@ double Session::distance(QPointF from, QPointF to)
  */
 void Session::stop()
 {
-    qDebug() << "stop signal received in session";
+    //qDebug() << "stop signal received in session";
     this->next = true;
 }

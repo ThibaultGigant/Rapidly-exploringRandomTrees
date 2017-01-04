@@ -11,6 +11,7 @@ CentralWidget::CentralWidget(QWidget *parent) : QWidget(parent)
     // Variables initialization
     this->configs = QVector<Config*>();
     this->currentMap = new HeightMap(NAME, WIDTH, HEIGHT, START_POINT, END_POINT);
+    this->nbConfigs = 0;
 
     // Widgets initialization
     layout = new QHBoxLayout;
@@ -154,4 +155,31 @@ void CentralWidget::nextSimulation()
 void CentralWidget::stop()
 {
     emit stopThread();
+}
+
+/**
+ * @brief Returns the number of configs in the vector
+ * @return The number of configs
+ */
+int CentralWidget::getNbConfigs()
+{
+    this->nbConfigs++;
+    return this->nbConfigs;
+}
+
+/**
+ * @brief Removes a config to the list of configs to run
+ * @param index Index of the config to remove
+ */
+void CentralWidget::removeConfig(int index)
+{
+    this->configs.removeAt(index);
+}
+
+/**
+ * @brief Deletes every config in the config list
+ */
+void CentralWidget::clearConfigs()
+{
+    this->configs.clear();
 }

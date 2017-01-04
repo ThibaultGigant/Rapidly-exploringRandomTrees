@@ -30,9 +30,11 @@ public:
     // Getters and setters
     HeightMap *getCurrentMap();
     void setCurrentMap(HeightMap *map);
+    int getNbConfigs();
 
     // Other
     void addConfig(Config *config);
+    void removeConfig(int index);
     void start();
 
 private :
@@ -44,6 +46,7 @@ private :
     QVector<Config*> configs;
     HeightMap *currentMap;
     ThreadGenerator *t;
+    int nbConfigs;
 
 signals:
     void emitDrawElement(Vertex *vertex);
@@ -64,6 +67,7 @@ public slots:
     void receiveModifAllowed(bool b);
     void nextSimulation();
     void stop();
+    void clearConfigs();
 };
 
 #endif // CENTRALWIDGET_H

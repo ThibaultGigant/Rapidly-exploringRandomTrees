@@ -91,7 +91,7 @@ void ThreadGenerator::getVertexDrawn(Vertex *v)
  */
 void ThreadGenerator::skipToNext()
 {
-    qDebug() << "skip signal received";
+    //qDebug() << "skip signal received";
     this->session->stop();
     //emit emitStop();
 }
@@ -101,7 +101,7 @@ void ThreadGenerator::skipToNext()
  */
 void ThreadGenerator::stop()
 {
-    qDebug() << "stop signal received in thread";
+    //qDebug() << "stop signal received in thread";
     this->stopSimulations = true;
     this->session->stop();
     //emit emitStop();

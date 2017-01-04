@@ -16,6 +16,7 @@ ConfigPanel::ConfigPanel(QWidget *parent) : QWidget(parent)
     this->metricWidget = new MetricWidget(this);
     this->additionalInfosWidget = new AdditionalInfosWidget(this);
     this->runButtonsWidget = new RunButtonsWidget(this);
+    this->listWidget = new ListWidget(this);
 
     // Adding widgets to the layout
     this->layout->addWidget(this->endMethodWidget);
@@ -23,6 +24,7 @@ ConfigPanel::ConfigPanel(QWidget *parent) : QWidget(parent)
     this->layout->addWidget(this->metricWidget);
     this->layout->addWidget(this->additionalInfosWidget);
     this->layout->addWidget(this->runButtonsWidget);
+    this->layout->addWidget(this->listWidget);
 
     // displaying the layout
     this->setLayout(this->layout);
@@ -78,6 +80,7 @@ void ConfigPanel::addConfig()
     config->setSleepTime(this->additionalInfosWidget->getSleepTime());
 
     this->centralWidget->addConfig(config);
+    this->listWidget->addItem("config " + QString::number(this->centralWidget->getNbConfigs()));
 }
 
 /**

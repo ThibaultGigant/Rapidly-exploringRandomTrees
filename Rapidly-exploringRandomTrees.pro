@@ -44,7 +44,8 @@ SOURCES +=\
     src/app/configpanel/additionalinfoswidget/sleeptimeframe.cpp \
     src/app/configpanel/runbuttonswidget/runbuttonswidget.cpp \
     src/app/configpanel/additionalinfoswidget/deltatframe.cpp \
-    src/classes/threadgenerator.cpp
+    src/classes/threadgenerator.cpp \
+    src/app/configpanel/listwidget/listwidget.cpp
 
 HEADERS  += \
     src/classes/environment/vertex.h \
@@ -77,6 +78,7 @@ HEADERS  += \
     src/app/configpanel/additionalinfoswidget/sleeptimeframe.h \
     src/app/configpanel/runbuttonswidget/runbuttonswidget.h \
     src/app/configpanel/additionalinfoswidget/deltatframe.h \
-    src/classes/threadgenerator.h
+    src/classes/threadgenerator.h \
+    src/app/configpanel/listwidget/listwidget.h
 
 FORMS    += mainwindow.ui
