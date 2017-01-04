@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['vertices',['vertices',['../class_quadrant.html#a16df362f0a616efeb6b65ea1747b4ad3',1,'Quadrant']]]
+  ['quadrants',['quadrants',['../class_environment.html#afd15959925bb1128d6f2c881f0efa1a5',1,'Environment']]]
 ];

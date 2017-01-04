@@ -1,0 +1,9 @@
+<map id="Config" name="Config">
+<area shape="rect" id="node5" href="$class_session.html" title="Session" alt="" coords="247,260,317,287"/>
+<area shape="rect" id="node6" href="$class_height_map.html" title="HeightMap" alt="" coords="112,81,199,108"/>
+<area shape="rect" id="node3" href="$class_end_method.html" title="EndMethod" alt="" coords="271,81,362,108"/>
+<area shape="rect" id="node4" href="$class_tree_generator.html" title="TreeGenerator" alt="" coords="79,349,189,376"/>
+<area shape="rect" id="node7" href="$class_environment.html" title="Environment" alt="" coords="337,349,435,376"/>
+<area shape="rect" id="node8" href="$class_vertex.html" title="Vertex" alt="" coords="464,260,524,287"/>
+<area shape="rect" id="node9" href="$class_metric.html" title="Metric" alt="" coords="26,81,85,108"/>
+</map>

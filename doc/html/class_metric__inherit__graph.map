@@ -1,4 +1,4 @@
 <map id="Metric" name="Metric">
-<area shape="rect" id="node2" href="$class_euclidian_distance.html" title="EuclidianDistance" alt="" coords="5,80,132,107"/>
-<area shape="rect" id="node3" href="$class_manhattan_distance.html" title="ManhattanDistance" alt="" coords="156,80,291,107"/>
+<area shape="rect" id="node2" href="$class_euclidian_distance.html" title="EuclidianDistance" alt="" coords="5,80,133,107"/>
+<area shape="rect" id="node3" href="$class_manhattan_distance.html" title="ManhattanDistance" alt="" coords="158,80,295,107"/>
 </map>

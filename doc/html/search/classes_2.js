@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['mainwindow',['MainWindow',['../class_main_window.html',1,'']]],
-  ['manhattandistance',['ManhattanDistance',['../class_manhattan_distance.html',1,'']]],
-  ['metric',['Metric',['../class_metric.html',1,'']]]
+  ['deltatframe',['DeltaTFrame',['../class_delta_t_frame.html',1,'']]]
 ];

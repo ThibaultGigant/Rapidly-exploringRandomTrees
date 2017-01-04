@@ -1,9 +1,10 @@
 <map id="RRTGenerator" name="RRTGenerator">
-<area shape="rect" id="node2" href="$class_tree_generator.html" title="TreeGenerator" alt="" coords="49,5,153,32"/>
-<area shape="rect" id="node3" href="$class_session.html" title="Session" alt="" coords="236,95,305,121"/>
-<area shape="rect" id="node6" href="$class_environment.html" title="Environment" alt="" coords="264,184,357,211"/>
-<area shape="rect" id="node4" href="$class_end_method.html" title="EndMethod" alt="" coords="221,5,309,32"/>
-<area shape="rect" id="node5" href="$class_height_map.html" title="HeightMap" alt="" coords="334,5,418,32"/>
-<area shape="rect" id="node7" href="$class_vertex.html" title="Vertex" alt="" coords="385,95,445,121"/>
-<area shape="rect" id="node8" href="$class_metric.html" title="Metric" alt="" coords="443,5,501,32"/>
+<area shape="rect" id="node2" href="$class_tree_generator.html" title="TreeGenerator" alt="" coords="151,81,260,108"/>
+<area shape="rect" id="node3" href="$class_session.html" title="Session" alt="" coords="397,260,467,287"/>
+<area shape="rect" id="node5" href="$class_config.html" title="Config" alt="" coords="527,171,587,197"/>
+<area shape="rect" id="node9" href="$class_environment.html" title="Environment" alt="" coords="442,349,539,376"/>
+<area shape="rect" id="node7" href="$class_height_map.html" title="HeightMap" alt="" coords="595,81,682,108"/>
+<area shape="rect" id="node6" href="$class_end_method.html" title="EndMethod" alt="" coords="419,81,509,108"/>
+<area shape="rect" id="node8" href="$class_metric.html" title="Metric" alt="" coords="760,81,819,108"/>
+<area shape="rect" id="node10" href="$class_vertex.html" title="Vertex" alt="" coords="541,260,601,287"/>
 </map>

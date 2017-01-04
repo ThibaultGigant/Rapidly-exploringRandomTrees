@@ -1,5 +1,11 @@
 var searchData=
 [
-  ['isobstacle',['isObstacle',['../class_height_map.html#ad4002e4b41c09dcefa00939da11aec05',1,'HeightMap::isObstacle()'],['../class_session.html#ae1787a909d4098ff1e701e3ebb02aa6f',1,'Session::isObstacle()']]],
-  ['isover',['isOver',['../class_end_method.html#a8e19e5cbb4ad02e677bf069458e0a7cd',1,'EndMethod::isOver()'],['../class_time_limit.html#a62bc9e8b86343c71222abe1a1b9d990d',1,'TimeLimit::isOver()'],['../class_vertices_number.html#ae87c69df8d062c805aba129aa5ba9d9e',1,'VerticesNumber::isOver()']]]
+  ['increasepensize',['increasePenSize',['../class_height_map_sub_panel.html#a9f2209ddc1472ad8e92f127016ca0c61',1,'HeightMapSubPanel::increasePenSize()'],['../class_height_map_view_panel.html#af48855c4d21bf68a764508e0ebc3cded',1,'HeightMapViewPanel::increasePenSize()']]],
+  ['isnbverticesover',['isNbVerticesOver',['../class_end_method.html#a4ffd2dcde69bcc25c272ee7cd3604bb6',1,'EndMethod']]],
+  ['isobstacle',['isObstacle',['../class_height_map.html#ad4002e4b41c09dcefa00939da11aec05',1,'HeightMap']]],
+  ['isover',['isOver',['../class_end_method.html#a8e19e5cbb4ad02e677bf069458e0a7cd',1,'EndMethod']]],
+  ['ispathfree',['isPathFree',['../class_height_map.html#a2d1d3e5b8d024d69940099daa9f0da92',1,'HeightMap::isPathFree()'],['../class_session.html#ac1b2f793bac64f1d6eb064dac2dc5837',1,'Session::isPathFree()']]],
+  ['isrun',['isRun',['../class_run_buttons_widget.html#a2cb3fb73182ce7553738f0c4fe57ab0d',1,'RunButtonsWidget']]],
+  ['isrunning',['isRunning',['../class_run_buttons_widget.html#a64afdbb23d6a1b0e8bcade9d37623ad7',1,'RunButtonsWidget']]],
+  ['istimeover',['isTimeOver',['../class_end_method.html#ac672f3d7e4f767d942de4d7df8fbf1a5',1,'EndMethod']]]
 ];

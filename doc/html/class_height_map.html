@@ -61,7 +61,9 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-slots">Public Slots</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle">
@@ -70,7 +72,30 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="heightmap_8h_source.html">heightmap.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for HeightMap:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_height_map__inherit__graph.png" border="0" usemap="#_height_map_inherit__map" alt="Inheritance graph"/></div>
+<map name="_height_map_inherit__map" id="_height_map_inherit__map">
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for HeightMap:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_height_map__coll__graph.png" border="0" usemap="#_height_map_coll__map" alt="Collaboration graph"/></div>
+<map name="_height_map_coll__map" id="_height_map_coll__map">
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-slots"></a>
+Public Slots</h2></td></tr>
+<tr class="memitem:a62edb06b21ac26e5f894deec28711809"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_height_map.html#a62edb06b21ac26e5f894deec28711809">setPixel</a> (int x, int y, int val)</td></tr>
+<tr class="memdesc:a62edb06b21ac26e5f894deec28711809"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the value of a pixel (x,y) to val.  <a href="#a62edb06b21ac26e5f894deec28711809">More...</a><br /></td></tr>
+<tr class="separator:a62edb06b21ac26e5f894deec28711809"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefb4cab1ba13efe4147c89f546f438ff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_height_map.html#aefb4cab1ba13efe4147c89f546f438ff">clearMap</a> ()</td></tr>
+<tr class="memdesc:aefb4cab1ba13efe4147c89f546f438ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the map : set all the pixels to 0.  <a href="#aefb4cab1ba13efe4147c89f546f438ff">More...</a><br /></td></tr>
+<tr class="separator:aefb4cab1ba13efe4147c89f546f438ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a0a37864cd200090a3f2b88b1ffa4eb61"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_height_map.html#a0a37864cd200090a3f2b88b1ffa4eb61">HeightMap</a> (QString <a class="el" href="class_height_map.html#a05d4811b141abceb23193d98bde2dcab">name</a>, int <a class="el" href="class_height_map.html#ad33d960e1dc3523a9dc8cc5c41db6c49">width</a>, int <a class="el" href="class_height_map.html#ac31a2093d5b68895ad3f6b2e945f225a">height</a>, QPointF <a class="el" href="class_height_map.html#aa0b8d7966d0933c711f8018334d5e1ec">start</a>=QPointF(0, 0), QPointF <a class="el" href="class_height_map.html#af222afcf39a990893d6ad8a68b2a2807">end</a>=QPointF(0, 0))</td></tr>
@@ -84,8 +109,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ab971580429d406979847ae7a501ff3c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1726eafaeec1a60919f4c1b15f1ad665"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_height_map.html#a1726eafaeec1a60919f4c1b15f1ad665">loadFromString</a> (QString fileString)</td></tr>
 <tr class="separator:a1726eafaeec1a60919f4c1b15f1ad665"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ad22d4d591810177eb2eafca29f292a"><td class="memItemLeft" align="right" valign="top">QVector&lt; QVector&lt; int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_height_map.html#a5ad22d4d591810177eb2eafca29f292a">getMap</a> ()</td></tr>
-<tr class="separator:a5ad22d4d591810177eb2eafca29f292a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa52f6dd779353ab67ead7068c2f3f1db"><td class="memItemLeft" align="right" valign="top">QVector&lt; QVector&lt; int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_height_map.html#aa52f6dd779353ab67ead7068c2f3f1db">getMap</a> ()</td></tr>
+<tr class="memdesc:aa52f6dd779353ab67ead7068c2f3f1db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter of the map.  <a href="#aa52f6dd779353ab67ead7068c2f3f1db">More...</a><br /></td></tr>
+<tr class="separator:aa52f6dd779353ab67ead7068c2f3f1db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89506d7c24e63c7e464a5f7af349890f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_height_map.html#a89506d7c24e63c7e464a5f7af349890f">setMap</a> (QVector&lt; QVector&lt; int &gt; &gt; <a class="el" href="class_height_map.html#a5bb1531cd6c1001c619d5151d8355e5e">map</a>)</td></tr>
+<tr class="memdesc:a89506d7c24e63c7e464a5f7af349890f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter of map.  <a href="#a89506d7c24e63c7e464a5f7af349890f">More...</a><br /></td></tr>
+<tr class="separator:a89506d7c24e63c7e464a5f7af349890f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7dfd1c52016e685204f4119fb3e5486"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_height_map.html#af7dfd1c52016e685204f4119fb3e5486">getHeight</a> ()</td></tr>
 <tr class="memdesc:af7dfd1c52016e685204f4119fb3e5486"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_height_map.html#af7dfd1c52016e685204f4119fb3e5486" title="HeightMap::getHeight. ">HeightMap::getHeight</a>.  <a href="#af7dfd1c52016e685204f4119fb3e5486">More...</a><br /></td></tr>
 <tr class="separator:af7dfd1c52016e685204f4119fb3e5486"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -104,6 +133,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad4002e4b41c09dcefa00939da11aec05"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_height_map.html#ad4002e4b41c09dcefa00939da11aec05">isObstacle</a> (QPointF point)</td></tr>
 <tr class="memdesc:ad4002e4b41c09dcefa00939da11aec05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifies if a point is in an obstacle.  <a href="#ad4002e4b41c09dcefa00939da11aec05">More...</a><br /></td></tr>
 <tr class="separator:ad4002e4b41c09dcefa00939da11aec05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d1d3e5b8d024d69940099daa9f0da92"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_height_map.html#a2d1d3e5b8d024d69940099daa9f0da92">isPathFree</a> (QPointF point1, QPointF point2)</td></tr>
+<tr class="memdesc:a2d1d3e5b8d024d69940099daa9f0da92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines if the path between 2 points is obstacle free.  <a href="#a2d1d3e5b8d024d69940099daa9f0da92">More...</a><br /></td></tr>
+<tr class="separator:a2d1d3e5b8d024d69940099daa9f0da92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a191f867afea46e5cbd6ded5a253a6dea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_height_map.html#a191f867afea46e5cbd6ded5a253a6dea">setMapPixel</a> (int x, int y, int val)</td></tr>
+<tr class="separator:a191f867afea46e5cbd6ded5a253a6dea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:aac458346f45725a88e05abea670d8f62"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_height_map.html">HeightMap</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_height_map.html#aac458346f45725a88e05abea670d8f62">hmFromFile</a> (QString fileName)</td></tr>
+<tr class="separator:aac458346f45725a88e05abea670d8f62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -186,6 +225,33 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="aefb4cab1ba13efe4147c89f546f438ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aefb4cab1ba13efe4147c89f546f438ff">&sect;&nbsp;</a></span>clearMap</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HeightMap::clearMap </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Clear the map : set all the pixels to 0. </p>
+
+</div>
+</div>
 <a id="a9e5e482398cbed809036d640dd34b98a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9e5e482398cbed809036d640dd34b98a">&sect;&nbsp;</a></span>clearObstacles()</h2>
 
@@ -245,20 +311,23 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a5ad22d4d591810177eb2eafca29f292a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5ad22d4d591810177eb2eafca29f292a">&sect;&nbsp;</a></span>getMap()</h2>
+<a id="aa52f6dd779353ab67ead7068c2f3f1db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa52f6dd779353ab67ead7068c2f3f1db">&sect;&nbsp;</a></span>getMap()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">QVector&lt;QVector&lt;int&gt; &gt; HeightMap::getMap </td>
+          <td class="memname">QVector&lt; QVector&lt; int &gt; &gt; HeightMap::getMap </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Getter of the map. </p>
+<dl class="section return"><dt>Returns</dt><dd>Map </dd></dl>
 
 </div>
 </div>
@@ -322,6 +391,32 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="aac458346f45725a88e05abea670d8f62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac458346f45725a88e05abea670d8f62">&sect;&nbsp;</a></span>hmFromFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_height_map.html">HeightMap</a> * HeightMap::hmFromFile </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>fileName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ad4002e4b41c09dcefa00939da11aec05"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad4002e4b41c09dcefa00939da11aec05">&sect;&nbsp;</a></span>isObstacle()</h2>
 
@@ -346,6 +441,44 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if it's an obstacle, false otherwise </dd></dl>
+
+</div>
+</div>
+<a id="a2d1d3e5b8d024d69940099daa9f0da92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d1d3e5b8d024d69940099daa9f0da92">&sect;&nbsp;</a></span>isPathFree()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool HeightMap::isPathFree </td>
+          <td>(</td>
+          <td class="paramtype">QPointF&#160;</td>
+          <td class="paramname"><em>point1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QPointF&#160;</td>
+          <td class="paramname"><em>point2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Determines if the path between 2 points is obstacle free. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">point1</td><td>Starting point of the path </td></tr>
+    <tr><td class="paramname">point2</td><td>Arrival point of the path </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the path is free of obstacles, false otherwise </dd></dl>
 
 </div>
 </div>
@@ -406,6 +539,118 @@ Private Attributes</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">width</td><td></td></tr>
     <tr><td class="paramname">height</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a89506d7c24e63c7e464a5f7af349890f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89506d7c24e63c7e464a5f7af349890f">&sect;&nbsp;</a></span>setMap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HeightMap::setMap </td>
+          <td>(</td>
+          <td class="paramtype">QVector&lt; QVector&lt; int &gt; &gt;&#160;</td>
+          <td class="paramname"><em>map</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Setter of map. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">map</td><td>New Map </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a191f867afea46e5cbd6ded5a253a6dea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a191f867afea46e5cbd6ded5a253a6dea">&sect;&nbsp;</a></span>setMapPixel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HeightMap::setMapPixel </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>val</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a62edb06b21ac26e5f894deec28711809"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62edb06b21ac26e5f894deec28711809">&sect;&nbsp;</a></span>setPixel</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HeightMap::setPixel </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>val</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the value of a pixel (x,y) to val. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td></td></tr>
+    <tr><td class="paramname">y</td><td></td></tr>
+    <tr><td class="paramname">val</td><td></td></tr>
   </table>
   </dd>
 </dl>
@@ -566,8 +811,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>F:/GitHub/Rapidly-exploringRandomTrees/src/classes/<a class="el" href="heightmap_8h_source.html">heightmap.h</a></li>
-<li>F:/GitHub/Rapidly-exploringRandomTrees/src/classes/<a class="el" href="heightmap_8cpp.html">heightmap.cpp</a></li>
+<li>/Users/Tigig/Documents/Travail/M2/Rapidly-exploringRandomTrees/src/classes/<a class="el" href="heightmap_8h_source.html">heightmap.h</a></li>
+<li>/Users/Tigig/Documents/Travail/M2/Rapidly-exploringRandomTrees/src/classes/<a class="el" href="heightmap_8cpp.html">heightmap.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

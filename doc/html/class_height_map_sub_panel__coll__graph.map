@@ -1,2 +1,27 @@
 <map id="HeightMapSubPanel" name="HeightMapSubPanel">
+<area shape="rect" id="node4" href="$class_height_map_frame.html" title="HeightMapFrame" alt="" coords="444,663,569,689"/>
+<area shape="rect" id="node3" href="$class_central_widget.html" title="CentralWidget" alt="" coords="747,752,853,779"/>
+<area shape="rect" id="node5" href="$class_height_map_file_panel.html" title="HeightMapFilePanel" alt="" coords="1055,593,1197,620"/>
+<area shape="rect" id="node6" href="$class_height_map_view_panel.html" title="HeightMapViewPanel" alt="" coords="1051,808,1201,835"/>
+<area shape="rect" id="node7" href="$class_config_panel.html" title="ConfigPanel" alt="" coords="1381,397,1476,424"/>
+<area shape="rect" id="node15" href="$class_list_widget.html" title="ListWidget" alt="" coords="1599,352,1683,379"/>
+<area shape="rect" id="node18" href="$class_sleep_time_frame.html" title="SleepTimeFrame" alt="" coords="296,271,420,297"/>
+<area shape="rect" id="node8" href="$class_run_buttons_widget.html" title="RunButtonsWidget" alt="" coords="1059,481,1193,508"/>
+<area shape="rect" id="node20" href="$class_thread_generator.html" title="ThreadGenerator" alt="" coords="1064,1025,1188,1052"/>
+<area shape="rect" id="node10" href="$class_generator_widget.html" title="GeneratorWidget" alt="" coords="903,253,1027,280"/>
+<area shape="rect" id="node11" href="$class_metric_widget.html" title="MetricWidget" alt="" coords="915,305,1015,332"/>
+<area shape="rect" id="node12" href="$class_end_method_widget.html" title="EndMethodWidget" alt="" coords="1060,397,1192,424"/>
+<area shape="rect" id="node13" href="$class_nb_vertices_limit_widget.html" title="NbVerticesLimitWidget" alt="" coords="721,397,879,424"/>
+<area shape="rect" id="node14" href="$class_time_limit_widget.html" title="TimeLimitWidget" alt="" coords="739,347,861,373"/>
+<area shape="rect" id="node16" href="$class_additional_infos_widget.html" title="AdditionalInfosWidget" alt="" coords="1051,144,1201,171"/>
+<area shape="rect" id="node17" href="$class_nb_runs_frame.html" title="NbRunsFrame" alt="" coords="745,144,855,171"/>
+<area shape="rect" id="node19" href="$class_delta_t_frame.html" title="DeltaTFrame" alt="" coords="750,195,850,221"/>
+<area shape="rect" id="node22" href="$class_vertex.html" title="Vertex" alt="" coords="170,1116,230,1143"/>
+<area shape="rect" id="node30" href="$class_environment.html" title="Environment" alt="" coords="458,1203,555,1229"/>
+<area shape="rect" id="node23" href="$class_session.html" title="Session" alt="" coords="765,1327,835,1353"/>
+<area shape="rect" id="node27" href="$class_tree_generator.html" title="TreeGenerator" alt="" coords="1071,1389,1181,1416"/>
+<area shape="rect" id="node25" href="$class_config.html" title="Config" alt="" coords="1399,1352,1459,1379"/>
+<area shape="rect" id="node28" href="$class_height_map.html" title="HeightMap" alt="" coords="463,1139,550,1165"/>
+<area shape="rect" id="node26" href="$class_end_method.html" title="EndMethod" alt="" coords="461,1305,552,1332"/>
+<area shape="rect" id="node29" href="$class_metric.html" title="Metric" alt="" coords="477,1435,536,1461"/>
 </map>

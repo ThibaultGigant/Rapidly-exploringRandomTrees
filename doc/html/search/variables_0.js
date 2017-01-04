@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['deletebutton',['deleteButton',['../class_height_map_sup_panel.html#a8a8d743d375fdc86b2748b1a80a2190c',1,'HeightMapSupPanel']]],
-  ['delta_5ft',['delta_t',['../class_session.html#acad881de9d817c2eed31bc9752a0db35',1,'Session']]]
+  ['addbutton',['addButton',['../class_run_buttons_widget.html#aa2903ce6ba849d93e38ef0269412d2f8',1,'RunButtonsWidget']]],
+  ['additionalinfoswidget',['additionalInfosWidget',['../class_config_panel.html#a1bcee29dc38484a447bdcb0df38706c2',1,'ConfigPanel']]]
 ];

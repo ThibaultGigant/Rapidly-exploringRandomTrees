@@ -73,6 +73,8 @@ $(function() {
 Collaboration diagram for Vertex:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_vertex__coll__graph.png" border="0" usemap="#_vertex_coll__map" alt="Collaboration graph"/></div>
+<map name="_vertex_coll__map" id="_vertex_coll__map">
+</map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -89,6 +91,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae148d787e1342ea883abfc48d89e1d8e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_vertex.html">Vertex</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vertex.html#ae148d787e1342ea883abfc48d89e1d8e">getParent</a> ()</td></tr>
 <tr class="memdesc:ae148d787e1342ea883abfc48d89e1d8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter of the parent.  <a href="#ae148d787e1342ea883abfc48d89e1d8e">More...</a><br /></td></tr>
 <tr class="separator:ae148d787e1342ea883abfc48d89e1d8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abacbbbc7fb83c6615bd0a541f37bf51b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vertex.html#abacbbbc7fb83c6615bd0a541f37bf51b">addChild</a> (<a class="el" href="class_vertex.html">Vertex</a> *child)</td></tr>
+<tr class="memdesc:abacbbbc7fb83c6615bd0a541f37bf51b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a child to the vertex.  <a href="#abacbbbc7fb83c6615bd0a541f37bf51b">More...</a><br /></td></tr>
+<tr class="separator:abacbbbc7fb83c6615bd0a541f37bf51b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4ddc346d16650fbb2f38b0c86e09d71"><td class="memItemLeft" align="right" valign="top">QVector&lt; <a class="el" href="class_vertex.html">Vertex</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vertex.html#ab4ddc346d16650fbb2f38b0c86e09d71">getChildren</a> () const</td></tr>
+<tr class="memdesc:ab4ddc346d16650fbb2f38b0c86e09d71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the list of children of the vertex.  <a href="#ab4ddc346d16650fbb2f38b0c86e09d71">More...</a><br /></td></tr>
+<tr class="separator:ab4ddc346d16650fbb2f38b0c86e09d71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -96,6 +104,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a63e5ff14f58997e262c47664ac558cc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb92de2e5329acfe640cbf771b5ce197"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_vertex.html">Vertex</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vertex.html#afb92de2e5329acfe640cbf771b5ce197">parent</a></td></tr>
 <tr class="separator:afb92de2e5329acfe640cbf771b5ce197"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1674c2fc4ee4057d2bc0c4e0cb85b8b"><td class="memItemLeft" align="right" valign="top">QVector&lt; <a class="el" href="class_vertex.html">Vertex</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vertex.html#ab1674c2fc4ee4057d2bc0c4e0cb85b8b">children</a></td></tr>
+<tr class="separator:ab1674c2fc4ee4057d2bc0c4e0cb85b8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="af56e873f8701bfed75e89391c91aae03"></a>
@@ -155,6 +165,52 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="abacbbbc7fb83c6615bd0a541f37bf51b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abacbbbc7fb83c6615bd0a541f37bf51b">&sect;&nbsp;</a></span>addChild()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Vertex::addChild </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_vertex.html">Vertex</a> *&#160;</td>
+          <td class="paramname"><em>child</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adds a child to the vertex. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">child</td><td>Child vertex to add </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab4ddc346d16650fbb2f38b0c86e09d71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4ddc346d16650fbb2f38b0c86e09d71">&sect;&nbsp;</a></span>getChildren()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVector&lt; <a class="el" href="class_vertex.html">Vertex</a> * &gt; Vertex::getChildren </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the list of children of the vertex. </p>
+<dl class="section return"><dt>Returns</dt><dd>List of children </dd></dl>
+
+</div>
+</div>
 <a id="ae148d787e1342ea883abfc48d89e1d8e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae148d787e1342ea883abfc48d89e1d8e">&sect;&nbsp;</a></span>getParent()</h2>
 
@@ -196,6 +252,28 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Field Documentation</h2>
+<a id="ab1674c2fc4ee4057d2bc0c4e0cb85b8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1674c2fc4ee4057d2bc0c4e0cb85b8b">&sect;&nbsp;</a></span>children</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVector&lt;<a class="el" href="class_vertex.html">Vertex</a> *&gt; Vertex::children</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="afb92de2e5329acfe640cbf771b5ce197"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afb92de2e5329acfe640cbf771b5ce197">&sect;&nbsp;</a></span>parent</h2>
 
@@ -241,8 +319,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>F:/GitHub/Rapidly-exploringRandomTrees/src/classes/environment/<a class="el" href="vertex_8h_source.html">vertex.h</a></li>
-<li>F:/GitHub/Rapidly-exploringRandomTrees/src/classes/environment/<a class="el" href="vertex_8cpp.html">vertex.cpp</a></li>
+<li>/Users/Tigig/Documents/Travail/M2/Rapidly-exploringRandomTrees/src/classes/environment/<a class="el" href="vertex_8h_source.html">vertex.h</a></li>
+<li>/Users/Tigig/Documents/Travail/M2/Rapidly-exploringRandomTrees/src/classes/environment/<a class="el" href="vertex_8cpp.html">vertex.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

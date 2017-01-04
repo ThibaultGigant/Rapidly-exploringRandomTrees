@@ -1,9 +1,10 @@
 var searchData=
 [
-  ['map',['map',['../class_height_map_sup_panel.html#a7e32b738bf6761ff805cbdc2f1341f2a',1,'HeightMapSupPanel::map()'],['../class_height_map.html#a5bb1531cd6c1001c619d5151d8355e5e',1,'HeightMap::map()'],['../class_session.html#afc2890a4d1c621da4931e69074a3efbf',1,'Session::map()']]],
-  ['mapheight',['mapHeight',['../class_height_map_sup_panel.html#a8b8bacaee020c96c1abb8e85cf1833cb',1,'HeightMapSupPanel']]],
-  ['mapname',['mapName',['../class_height_map_sup_panel.html#ae66e9dbecefbd3e732f82978b5d725af',1,'HeightMapSupPanel']]],
-  ['mapwidth',['mapWidth',['../class_height_map_sup_panel.html#acf323c2497c4ee542b7d5483282b1118',1,'HeightMapSupPanel']]],
-  ['maxnumber',['maxNumber',['../class_vertices_number.html#a15828353cf05a838addeb75abbd0a0b3',1,'VerticesNumber']]],
-  ['metric',['metric',['../class_session.html#ac36548f1aca2dc548ba350130f7bcb6a',1,'Session']]]
+  ['h',['h',['../class_height_map_view_panel.html#a846b2e2ba1f5179def0071b556a7c768',1,'HeightMapViewPanel']]],
+  ['height',['HEIGHT',['../class_central_widget.html#a87536b9e42624f7090ed341ae0bb5b7b',1,'CentralWidget::HEIGHT()'],['../class_environment.html#a72e3e1ad7f136932fe2d0fae06b50f9a',1,'Environment::height()'],['../class_height_map.html#ac31a2093d5b68895ad3f6b2e945f225a',1,'HeightMap::height()']]],
+  ['hmfilepanel',['hmFilePanel',['../class_height_map_frame.html#a55d225d31997eda3e1fd096b8f08ef2f',1,'HeightMapFrame']]],
+  ['hmframe',['hmFrame',['../class_central_widget.html#a441e075f9db85055c0aa5c36a49e6613',1,'CentralWidget']]],
+  ['hmpen',['hmPen',['../class_height_map_view_panel.html#aadc6873ba7d079b24f69ceacb2616ef6',1,'HeightMapViewPanel']]],
+  ['hmsubpanel',['hmSubPanel',['../class_height_map_frame.html#af6042c1b6ab3d78d8f8f67a7169fa52a',1,'HeightMapFrame']]],
+  ['hmviewpanel',['hmViewPanel',['../class_height_map_frame.html#a9243984547c2ed129e10cff15b1457b5',1,'HeightMapFrame']]]
 ];

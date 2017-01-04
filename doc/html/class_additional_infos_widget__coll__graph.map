@@ -1,0 +1,5 @@
+<map id="AdditionalInfosWidget" name="AdditionalInfosWidget">
+<area shape="rect" id="node3" href="$class_nb_runs_frame.html" title="NbRunsFrame" alt="" coords="22,81,131,108"/>
+<area shape="rect" id="node6" href="$class_delta_t_frame.html" title="DeltaTFrame" alt="" coords="156,81,256,108"/>
+<area shape="rect" id="node4" href="$class_sleep_time_frame.html" title="SleepTimeFrame" alt="" coords="280,81,404,108"/>
+</map>

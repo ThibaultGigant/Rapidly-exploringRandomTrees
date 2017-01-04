@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['randomtreegenerator_2ecpp',['randomtreegenerator.cpp',['../randomtreegenerator_8cpp.html',1,'']]],
-  ['randomtreegenerator_2eh',['randomtreegenerator.h',['../randomtreegenerator_8h.html',1,'']]],
-  ['rrtgenerator_2ecpp',['rrtgenerator.cpp',['../rrtgenerator_8cpp.html',1,'']]],
-  ['rrtgenerator_2eh',['rrtgenerator.h',['../rrtgenerator_8h.html',1,'']]]
+  ['generatorwidget_2ecpp',['generatorwidget.cpp',['../generatorwidget_8cpp.html',1,'']]],
+  ['generatorwidget_2eh',['generatorwidget.h',['../generatorwidget_8h.html',1,'']]]
 ];
