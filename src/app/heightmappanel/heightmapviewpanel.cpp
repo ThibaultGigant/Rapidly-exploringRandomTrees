@@ -2,6 +2,7 @@
 #include "src/app/centralwidget.h"
 #include "src/classes/threadgenerator.h"
 
+
 HeightMapViewPanel::HeightMapViewPanel(CentralWidget *centralWidget, QWidget *parent) :
     QWidget(parent)
 {
@@ -9,6 +10,11 @@ HeightMapViewPanel::HeightMapViewPanel(CentralWidget *centralWidget, QWidget *pa
     this->centralWidget = centralWidget;
     this->vertexList = QVector<Vertex*>();
     this->modifAllowed = true;
+
+    this->start = new DragWidget(this,centralWidget->getCurrentMap()->getStart(), Qt::blue);
+    this->end = new DragWidget(this,centralWidget->getCurrentMap()->getStart(), Qt::blue);
+
+
 
     //Image stuff
     setupPens();
@@ -21,6 +27,7 @@ HeightMapViewPanel::HeightMapViewPanel(CentralWidget *centralWidget, QWidget *pa
     connect(this->centralWidget, SIGNAL(clearImage(int)), this, SLOT(clear(int)));
     connect(this->centralWidget,SIGNAL(emitModifAllowed(bool)),this,SLOT(setModifPermission(bool)));
 }
+
 
 void HeightMapViewPanel::setupPens(){
     this->penSize = 10;

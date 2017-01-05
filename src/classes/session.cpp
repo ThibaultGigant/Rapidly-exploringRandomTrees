@@ -19,7 +19,7 @@ Session::Session(Config* config)
 {
     // Initialization of attributes
     this->delta_t = config->getDelta_t();
-    Vertex *startVertex = new Vertex(config->getCurrentMap()->getStart(), NULL);
+    Vertex *startVertex = new Vertex(*config->getCurrentMap()->getStart(), NULL);
     this->environment = new Environment(this, config->getCurrentMap()->getWidth(), config->getCurrentMap()->getHeight(), startVertex);
     this->metric = config->getMetric();
     this->generator = config->getGenerator();

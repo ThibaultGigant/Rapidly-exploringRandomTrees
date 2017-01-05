@@ -12,8 +12,10 @@
 #include <QVector>
 #include <QMouseEvent>
 #include "src/classes/environment/vertex.h"
+#include "src/app/heightmappanel/dragwidget.h"
 
 class CentralWidget;
+
 
 class HeightMapViewPanel : public QWidget
 {
@@ -49,9 +51,12 @@ private :
     int count;
     int penSize;
 
+    DragWidget *start;
+    DragWidget *end;
 
     void setupPens();
     void setupImage();
+
 
     void drawLineTo(const QPoint &endPoint);
 

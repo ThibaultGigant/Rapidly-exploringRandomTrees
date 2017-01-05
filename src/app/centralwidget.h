@@ -20,8 +20,8 @@ public:
     int WIDTH = 800;
     int HEIGHT = 800;
     QString NAME = "DefaultMapName";
-    QPointF START_POINT = QPointF (WIDTH / 2, HEIGHT / 2);
-    QPointF END_POINT = QPointF (0, 0);
+    QPointF *START_POINT = new QPointF (WIDTH / 2, HEIGHT / 2);
+    QPointF *END_POINT = new QPointF (0, 0);
 
     // Constructor-Destructor
     explicit CentralWidget(QWidget *parent = 0);

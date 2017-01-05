@@ -45,7 +45,8 @@ SOURCES +=\
     src/app/configpanel/runbuttonswidget/runbuttonswidget.cpp \
     src/app/configpanel/additionalinfoswidget/deltatframe.cpp \
     src/classes/threadgenerator.cpp \
-    src/app/configpanel/listwidget/listwidget.cpp
+    src/app/configpanel/listwidget/listwidget.cpp \
+    src/app/heightmappanel/dragwidget.cpp
 
 HEADERS  += \
     src/classes/environment/vertex.h \
@@ -79,6 +80,7 @@ HEADERS  += \
     src/app/configpanel/runbuttonswidget/runbuttonswidget.h \
     src/app/configpanel/additionalinfoswidget/deltatframe.h \
     src/classes/threadgenerator.h \
-    src/app/configpanel/listwidget/listwidget.h
+    src/app/configpanel/listwidget/listwidget.h \
+    src/app/heightmappanel/dragwidget.h
 
 FORMS    += mainwindow.ui

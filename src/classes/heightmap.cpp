@@ -8,7 +8,7 @@
  * @param start
  * @param end
  */
-HeightMap::HeightMap(QString name, int width, int height, QPointF start, QPointF end){
+HeightMap::HeightMap(QString name, int width, int height, QPointF* start, QPointF* end){
 
     this->name = name;
     this->width = width;
@@ -98,7 +98,7 @@ int HeightMap::getWidth(){
  * @brief HeightMap::getStart
  * @return
  */
-QPointF HeightMap::getStart(){
+QPointF* HeightMap::getStart(){
     return start;
 }
 
@@ -106,7 +106,7 @@ QPointF HeightMap::getStart(){
  * @brief HeightMap::getEnd
  * @return
  */
-QPointF HeightMap::getEnd(){
+QPointF* HeightMap::getEnd(){
     return end;
 }
 
@@ -139,10 +139,10 @@ QString HeightMap::toFileString(){
     str += name+"\n";
     str += QString::number(width) + "\n";
     str += QString::number(height) + "\n";
-    str += QString::number(start.x()) + "\n";
-    str += QString::number(start.y())  + "\n";
-    str += QString::number(end.x()) + "\n";
-    str += QString::number(end.y())  + "\n";
+    str += QString::number(start->x()) + "\n";
+    str += QString::number(start->y())  + "\n";
+    str += QString::number(end->x()) + "\n";
+    str += QString::number(end->y())  + "\n";
 
     for (int i = 0; i< width ; i ++){
         for(int j = 0;j < height ; j ++){
@@ -167,8 +167,8 @@ HeightMap* HeightMap::hmFromFile(QString fileName){
        QString name = in.readLine();
        int w = in.readLine().toInt();
        int h = in.readLine().toInt();
-       QPointF start(in.readLine().toDouble(),in.readLine().toDouble());
-       QPointF end = QPointF(in.readLine().toDouble(),in.readLine().toDouble());
+       QPointF *start = new QPointF(in.readLine().toDouble(),in.readLine().toDouble());
+       QPointF *end = new QPointF(in.readLine().toDouble(),in.readLine().toDouble());
 
 
        HeightMap * newMap = new HeightMap(name,w,h,start,end);
