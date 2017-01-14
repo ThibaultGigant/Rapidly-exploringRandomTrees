@@ -2,6 +2,7 @@
 #define THREADGENERATOR_H
 
 #include <QThread>
+#include <QDir>
 #include "config.h"
 #include "session.h"
 #include "generators/treegenerator.h"
@@ -19,6 +20,18 @@ private:
     Vertex *lastVertexDrawn;
     bool stopSimulations;
     Session *session;
+    QString dirPath;
+    QVector<HeightMap*> savedMaps;
+
+    bool save;
+
+    int configCount = 0;
+    int runCount = 0;
+
+    bool saveConfig();
+    bool saveRunFile(Session *);
+    bool ThreadGenerator::saveHeightMap(HeightMap *map);
+
 
 protected:
     void run();

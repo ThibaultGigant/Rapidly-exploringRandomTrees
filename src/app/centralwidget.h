@@ -37,6 +37,7 @@ public:
     void removeConfig(int index);
     void start();
 
+
 private :
     // Interface
     QHBoxLayout *layout;
