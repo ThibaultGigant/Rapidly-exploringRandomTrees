@@ -9,6 +9,7 @@ public:
     RandomTreeGenerator();
     ~RandomTreeGenerator();
     virtual Vertex* generate();
+    virtual QString toString();
 };
 
 #endif // RANDOMTREEGENERATOR_H

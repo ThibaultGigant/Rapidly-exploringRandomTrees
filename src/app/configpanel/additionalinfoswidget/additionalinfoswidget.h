@@ -3,6 +3,7 @@
 
 #include <QFrame>
 #include <QVBoxLayout>
+#include <QCheckBox>
 #include "deltatframe.h"
 #include "nbrunsframe.h"
 #include "sleeptimeframe.h"
@@ -16,12 +17,14 @@ public:
     double getDeltaT();
     int getNbRuns();
     int getSleepTime();
+    Qt::CheckState getSaveState();
 
 private:
     QVBoxLayout *globalLayout;
     DeltaTFrame *deltaTFrame;
     NbRunsFrame *nbRunsFrame;
     SleepTimeFrame *sleepTimeFrame;
+    QCheckBox *saveCheckBox;
 
 signals:
 

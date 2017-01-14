@@ -14,6 +14,7 @@ GeneratorWidget::GeneratorWidget(QWidget *parent) : QFrame(parent)
     // Adding items to the combobox
     this->comboBox->addItem("Random Tree Generator");
     this->comboBox->addItem("Rapidly-exploring Random Tree");
+    this->comboBox->addItem("Probabilistic RoadMap");
 
     this->comboBox->setCurrentIndex(1); // Set combobox to a default value
 
@@ -46,6 +47,8 @@ TreeGenerator* GeneratorWidget::getGenerator()
         return new RandomTreeGenerator();
     case 1:
         return new RRTGenerator();
+    case 2:
+        return new PRMGenerator();
     default:
         return new RRTGenerator();
     }

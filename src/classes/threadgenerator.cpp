@@ -1,5 +1,6 @@
 #include "threadgenerator.h"
 #include <algorithm>
+#include "src/classes/environment/environment.h"
 
 /**
  * @brief Constructor
@@ -15,7 +16,7 @@ ThreadGenerator::ThreadGenerator(CentralWidget *cw, QVector<Config *> configs, Q
     save = dirPath != "";
     configCount = 0;
     runCount = 0;
-    this->savedMaps = QVector();
+    this->savedMaps = QVector<HeightMap*>();
 
 
     connect(this, SIGNAL(emitClearImage(int)), this->cw, SLOT(receiveClearImage(int)));
@@ -41,7 +42,7 @@ void ThreadGenerator::run()
         // Connecting the current config to the central widget
         connect(config, SIGNAL(emitDrawElement(Vertex*)), this->cw, SLOT(receiveDrawElement(Vertex*)));
 
-        if (!saveConfig()){
+        if (!saveConfig(config)){
             qDebug() << "Config Directory Creation Failed";
         }
 
@@ -99,7 +100,8 @@ bool ThreadGenerator::saveConfig(Config * conf){
     if (!save) return true;
 
     QString dir = dirPath+"/Config_"+configCount;
-    if(!QDir::mkdir(dir)){
+    QDir d;
+    if(!d.mkdir(dir)){
         return false;
     }
 
@@ -126,7 +128,7 @@ bool ThreadGenerator::saveHeightMap(HeightMap *map){
     QString name = "HeightMap"+(savedMaps.length()+1);
     map->setName(name);
 
-    QFile file(dir +"/"+name+".cnf");
+    QFile file(dirPath +"/"+name+".cnf");
     if (!file.open(QIODevice::ReadWrite)){
         return false;
     }
@@ -137,7 +139,7 @@ bool ThreadGenerator::saveHeightMap(HeightMap *map){
     return true;
 }
 
-bool saveRunFile(Session *session){
+bool ThreadGenerator::saveRunFile(Session *session){
 
     QFile file(dirPath+"/Config_"+configCount+"/runFile"+runCount+".run");
     if (!file.open(QIODevice::ReadWrite)){

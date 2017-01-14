@@ -11,11 +11,13 @@ AdditionalInfosWidget::AdditionalInfosWidget(QWidget *parent) : QFrame(parent)
     this->deltaTFrame = new DeltaTFrame();
     this->nbRunsFrame = new NbRunsFrame();
     this->sleepTimeFrame = new SleepTimeFrame();
+    this->saveCheckBox = new QCheckBox("Save results ?");
 
     // Adding widgets to layouts
     this->globalLayout->addWidget(this->deltaTFrame);
     this->globalLayout->addWidget(this->nbRunsFrame);
     this->globalLayout->addWidget(this->sleepTimeFrame);
+    this->globalLayout->addWidget(this->saveCheckBox);
 
     // Displaying the layout
     this->setLayout(this->globalLayout);
@@ -30,6 +32,7 @@ AdditionalInfosWidget::~AdditionalInfosWidget()
     delete this->nbRunsFrame;
     delete this->sleepTimeFrame;
     delete this->globalLayout;
+    delete this->saveCheckBox;
 }
 
 /**
@@ -57,4 +60,13 @@ int AdditionalInfosWidget::getNbRuns()
 int AdditionalInfosWidget::getSleepTime()
 {
     return this->sleepTimeFrame->getSleepTime();
+}
+
+/**
+ * @brief Returns whether the "save" checkbox is checked or not
+ * @return CheckState of the save checkbox
+ */
+Qt::CheckState AdditionalInfosWidget::getSaveState()
+{
+    return this->saveCheckBox->checkState();
 }

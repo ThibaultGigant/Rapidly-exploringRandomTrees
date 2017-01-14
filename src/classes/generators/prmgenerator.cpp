@@ -1,6 +1,7 @@
 #include "prmgenerator.h"
 #include "src/classes/session.h"
 #include "src/classes/environment/vertex.h"
+#include <QDebug>
 
 /**
  * @brief Constructor
@@ -46,6 +47,8 @@ Vertex* PRMGenerator::generate()
        return new Vertex(point, NULL);
     }
 
+    qDebug() << "We have found reachable points : " << kReachables.size();
+
     vertex = new Vertex(point, kReachables.first());
     for(int i = 1; i < kReachables.size(); i++) {
         tempVertex = kReachables.at(i);
@@ -55,4 +58,13 @@ Vertex* PRMGenerator::generate()
     }
 
     return vertex;
+}
+
+/**
+ * @brief Displays the type of algorithm used for the generation of the tree
+ * @return String of the generation algorithm
+ */
+QString PRMGenerator::toString()
+{
+    return "Probabilistic RoadMap (PRM) Algorithm";
 }

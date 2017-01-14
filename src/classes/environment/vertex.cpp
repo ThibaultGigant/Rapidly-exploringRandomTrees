@@ -80,7 +80,8 @@ void Vertex::setConnectedComponentPointer(Vertex *vertex)
 
     // Else we have to change it and tell all of the connected vertices to do the same
     this->connectedComponentPointer = vertex;
-    this->parent->setConnectedComponentPointer(vertex);
+    if (parent)
+        this->parent->setConnectedComponentPointer(vertex);
     foreach (temp, this->getChildren()) {
         temp->setConnectedComponentPointer(vertex);
     }

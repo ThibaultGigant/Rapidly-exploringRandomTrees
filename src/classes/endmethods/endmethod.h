@@ -21,6 +21,7 @@ public:
     void setMaxNumber(const quint64 &value);
 
     void reset();
+    QString toString();
 
 private:
     quint64 nbVertices;

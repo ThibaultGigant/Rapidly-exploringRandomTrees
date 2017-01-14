@@ -157,7 +157,9 @@ void HeightMapViewPanel::drawImageOnHeightMap(){
 
 
 void HeightMapViewPanel::addElement(Vertex *vertex){
+    Vertex *tempVertex;
     vertexList.append(vertex);
+    float maxDistance, tempDistance;
 
     QPainter painter(&this->view);
 
@@ -179,13 +181,32 @@ void HeightMapViewPanel::addElement(Vertex *vertex){
     painter.setBrush(brush);
 
     point1 = vertex->getPosition();
-    point2 = vertex->getParent()->getPosition();
 
-    painter.drawLine(point1, point2);
+    // Adding a line between the vertex and it's parent
+    if (vertex->getParent() != NULL)
+    {
+        point2 = vertex->getParent()->getPosition();
+        painter.drawLine(point1, point2);
+        maxDistance = QPointF::dotProduct(point1, point2);
+    }
+
+    // Adding a line between the vertex and all of its children
+    foreach (tempVertex, vertex->getChildren()) {
+        painter.drawLine(point1, tempVertex->getPosition());
+        tempDistance = QPointF::dotProduct(point1, tempVertex->getPosition());
+        if (tempDistance < maxDistance)
+            maxDistance = tempDistance;
+    }
+
     painter.drawEllipse(point1, 3, 3);
 
     int rad = 5;
+    int tampon = (int) ceil(sqrt(maxDistance));
+    point2 = QPointF(point1.x() + tampon, point1.y() + tampon);
+    point1 = QPointF(point1.x() - tampon, point1.y() - tampon);
+
     update(QRect(point1.toPoint(), point2.toPoint()).normalized().adjusted(-rad, -rad, +rad, +rad));
+    //update();
     edgePen.setWidth(penSize); // WHY I HAVE TO DO THIS ?! I USED TWO PENS !!!
 
     emit lastVertexDrawn(vertex);
