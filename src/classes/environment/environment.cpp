@@ -271,3 +271,40 @@ void Environment::setVertices(const QVector<Vertex *> &value)
 {
     vertices = value;
 }
+
+QString Environment::toString(){
+    QString res = "";
+    res+=vertices.length()+"\n";
+    int edgeCount = 0;
+
+    QString vs = "";
+    QString edges = "";
+
+   for(int i = 0; i < vertices.length();i++){
+
+       Vertex *v = vertices[i];
+
+   }
+
+
+
+   }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

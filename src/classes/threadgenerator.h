@@ -14,6 +14,8 @@ class ThreadGenerator : public QThread
 public:
     ThreadGenerator(CentralWidget *cw, QVector<Config *> configs);
 
+    QString toString();
+
 private:
     QVector<Config *> configs;
     CentralWidget *cw;

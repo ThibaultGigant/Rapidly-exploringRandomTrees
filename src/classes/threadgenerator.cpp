@@ -147,8 +147,10 @@ bool saveRunFile(Session *session){
     QTextStream out(&file);
     out << session->getEnvironment()->toString();
     file.close();
-    return true;
 
+    //Save QImage and surface covered
+
+    return true;
 }
 
 
