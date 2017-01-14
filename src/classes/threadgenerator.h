@@ -12,7 +12,7 @@ class ThreadGenerator : public QThread
 {
     Q_OBJECT
 public:
-    ThreadGenerator(CentralWidget *cw, QVector<Config *> configs);
+    ThreadGenerator(CentralWidget *cw, QVector<Config *> configs, QString dirPath = NULL);
 
 private:
     QVector<Config *> configs;
@@ -28,9 +28,9 @@ private:
     int configCount = 0;
     int runCount = 0;
 
-    bool saveConfig();
-    bool saveRunFile(Session *);
-    bool ThreadGenerator::saveHeightMap(HeightMap *map);
+    bool saveConfig(Config *conf);
+    bool saveRunFile(Session *session);
+    bool saveHeightMap(HeightMap *map);
 
 
 protected:

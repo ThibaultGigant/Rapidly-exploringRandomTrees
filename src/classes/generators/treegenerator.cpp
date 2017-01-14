@@ -31,3 +31,12 @@ void TreeGenerator::setSession(Session *value)
 {
     session = value;
 }
+
+/**
+ * @brief Displays the type of algorithm used for the generation of the tree
+ * @return String of the generation algorithm
+ */
+QString TreeGenerator::toString()
+{
+    return "";
+}

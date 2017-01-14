@@ -9,6 +9,7 @@ public:
     PRMGenerator(int nbToExamine = INFINITY);
     ~PRMGenerator();
     virtual Vertex* generate();
+    virtual QString toString();
 
 private:
     /**

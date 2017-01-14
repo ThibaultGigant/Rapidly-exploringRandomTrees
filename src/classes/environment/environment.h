@@ -24,6 +24,8 @@ public:
     QVector<Vertex *> getVertices() const;
     void setVertices(const QVector<Vertex *> &value);
 
+    QString toString();
+
 private:
     int width;
     int height;

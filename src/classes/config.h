@@ -36,6 +36,7 @@ public:
     void receiveDrawElement(Vertex *vertex);
     void receiveUpdateImage();
     void reset();
+    QString toString();
 
 
 private :

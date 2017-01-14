@@ -17,6 +17,8 @@ public:
     Session *getSession() const;
     void setSession(Session *value);
 
+    virtual QString toString();
+
 protected:
     Session* session;
 };

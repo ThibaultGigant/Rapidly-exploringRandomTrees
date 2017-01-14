@@ -271,3 +271,12 @@ void Environment::setVertices(const QVector<Vertex *> &value)
 {
     vertices = value;
 }
+
+/**
+ * @brief Returns a string with the environment's info
+ * @return Environment's info
+ */
+QString Environment::toString()
+{
+    return "";
+}

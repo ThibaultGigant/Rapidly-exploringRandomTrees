@@ -52,3 +52,11 @@ Vertex* RRTGenerator::generate()
     return new Vertex(point, vertex);
 }
 
+/**
+ * @brief Displays the type of algorithm used for the generation of the tree
+ * @return String of the generation algorithm
+ */
+QString RRTGenerator::toString()
+{
+    return "RRT Algorithm";
+}

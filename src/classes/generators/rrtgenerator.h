@@ -9,6 +9,7 @@ public:
     RRTGenerator();
     ~RRTGenerator();
     virtual Vertex* generate();
+    virtual QString toString();
 };
 
 #endif // RRTGENERATOR_H

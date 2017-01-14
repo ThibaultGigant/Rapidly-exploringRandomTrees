@@ -104,3 +104,8 @@ void EndMethod::reset()
     this->nbVertices = 0;
     this->startTime = 0;
 }
+
+QString EndMethod::toString()
+{
+    return "";
+}

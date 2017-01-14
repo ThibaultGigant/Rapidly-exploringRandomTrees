@@ -1,5 +1,6 @@
 #include "config.h"
 #include "endmethods/endmethod.h"
+#include "src/classes/generators/treegenerator.h"
 
 Config::Config()
 {
@@ -12,8 +13,8 @@ QString Config::toString(){
 
     res+=currentMap->getName()+"\n";
     res+=endMethod->toString()+"\n";
-    res+=generator.toString()+"\n";
-    res+=delta_t+"\n";
+    res+=generator->toString()+"\n";
+    res+=QString::number(delta_t)+"\n";
 
 }
 

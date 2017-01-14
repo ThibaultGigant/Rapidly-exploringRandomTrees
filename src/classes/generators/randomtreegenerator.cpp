@@ -36,3 +36,12 @@ Vertex* RandomTreeGenerator::generate()
     } while (!(this->session->isPathFree(vertex->getPosition(), point)));
     return new Vertex(point, vertex);
 }
+
+/**
+ * @brief Displays the type of algorithm used for the generation of the tree
+ * @return String of the generation algorithm
+ */
+QString RandomTreeGenerator::toString()
+{
+    return "Random Tree Algorithm";
+}

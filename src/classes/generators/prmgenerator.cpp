@@ -56,3 +56,12 @@ Vertex* PRMGenerator::generate()
 
     return vertex;
 }
+
+/**
+ * @brief Displays the type of algorithm used for the generation of the tree
+ * @return String of the generation algorithm
+ */
+QString PRMGenerator::toString()
+{
+    return "Probabilistic RoadMap (PRM) Algorithm";
+}
