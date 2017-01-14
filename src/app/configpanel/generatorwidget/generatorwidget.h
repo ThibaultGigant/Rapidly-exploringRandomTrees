@@ -7,6 +7,7 @@
 #include <QHBoxLayout>
 #include "src/classes/generators/randomtreegenerator.h"
 #include "src/classes/generators/rrtgenerator.h"
+#include "src/classes/generators/prmgenerator.h"
 
 class GeneratorWidget : public QFrame
 {

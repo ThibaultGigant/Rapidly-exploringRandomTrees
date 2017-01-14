@@ -1,6 +1,7 @@
 #include "prmgenerator.h"
 #include "src/classes/session.h"
 #include "src/classes/environment/vertex.h"
+#include <QDebug>
 
 /**
  * @brief Constructor
@@ -45,6 +46,8 @@ Vertex* PRMGenerator::generate()
     {
        return new Vertex(point, NULL);
     }
+
+    qDebug() << "We have found reachable points : " << kReachables.size();
 
     vertex = new Vertex(point, kReachables.first());
     for(int i = 1; i < kReachables.size(); i++) {

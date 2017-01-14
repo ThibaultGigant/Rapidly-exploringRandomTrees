@@ -6,7 +6,7 @@
 class PRMGenerator : public TreeGenerator
 {
 public:
-    PRMGenerator(int nbToExamine = INFINITY);
+    PRMGenerator(int nbToExamine = 10);
     ~PRMGenerator();
     virtual Vertex* generate();
     virtual QString toString();

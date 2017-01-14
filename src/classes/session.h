@@ -33,7 +33,7 @@ public:
     bool isPathFree(QPointF point1, QPointF point2);
     Vertex* getRandomVertex();
     Vertex* getClosestVertex(QPointF point);
-    QVector<Vertex*> getKReachableClosest(QPointF point, int k = INFINITY);
+    QVector<Vertex*> getKReachableClosest(QPointF point, int k = 10);
     int getWidth();
     int getHeight();
     double distance(QPointF from, QPointF to);
