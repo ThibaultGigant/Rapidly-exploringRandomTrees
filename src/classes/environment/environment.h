@@ -15,6 +15,7 @@ public:
     Environment(Session* session, int width, int height,Vertex* vertex);
     ~Environment();
     void addElement(Vertex *vertex);
+    Vertex* getClosestAround(QPointF point, int radius = 1);
     Vertex* getClosest(QPointF point);
     Vertex* getClosestAlmostNaive(QPointF point);
     Vertex* getClosestNaive(QPointF point);

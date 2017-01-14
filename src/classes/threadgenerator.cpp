@@ -49,7 +49,7 @@ void ThreadGenerator::run()
                 expectedNbVertices = config->getEndMethod()->getMaxNumber();
             else
                 expectedNbVertices = config->getEndMethod()->getLimitTime() * 1000 / std::max(config->getSleepTime(), 1);
-            qDebug() << expectedNbVertices;
+            //qDebug() << expectedNbVertices;
             emit emitClearImage(expectedNbVertices);
 
             // Launching simulation

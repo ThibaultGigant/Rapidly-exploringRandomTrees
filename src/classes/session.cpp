@@ -162,6 +162,7 @@ Vertex* Session::getRandomVertex()
  */
 Vertex* Session::getClosestVertex(QPointF point)
 {
+    //return this->environment->getClosest(point);
     //return this->environment->getClosestAlmostNaive(point);
     return this->environment->getClosestNaive(point);
 }

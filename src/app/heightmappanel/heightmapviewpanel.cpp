@@ -171,7 +171,7 @@ void HeightMapViewPanel::addElement(Vertex *vertex){
 
     QColor red = QColor(0,r,0,255);
 
-    qDebug() << "Count : " << count << "Vertex size : " << vertexList.size() << " Green Value : " << red.green() << " R : " << r;
+    //qDebug() << "Count : " << count << "Vertex size : " << vertexList.size() << " Green Value : " << red.green() << " R : " << r;
 
     brush.setColor(red);
     edgePen.setColor(red);

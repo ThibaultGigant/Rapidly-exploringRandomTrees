@@ -59,8 +59,8 @@ void Environment::addElement(Vertex *vertex)
     int ligne;
     int colonne;
     QPointF p = vertex->getPosition();
-    ligne = (int) (p.x() / this->width) * this->session->getDeltaT();
-    colonne = (int) (p.y() / this->height) * this->session->getDeltaT();
+    colonne = (int) (p.x() / this->width) * this->session->getDeltaT();
+    ligne = (int) (p.y() / this->height) * this->session->getDeltaT();
 
     // Add the vertex to the right quadrant and the set of all vertices
     this->quadrants[colonne][ligne].addVertex(vertex);
@@ -68,213 +68,25 @@ void Environment::addElement(Vertex *vertex)
 }
 
 /**
- * @brief Returns the closest vertex of a given point
+ * @brief Returns the closest vertex of a given point in the 9 quadrants around the point (the one it's in, and the 8 surrounding)
  * @param point Point of the environment
- * @return Closest vertex of the given point
+ * @return Closest vertex of the given point in those 9 quadrants if it exists, null otherwise
  */
-Vertex* Environment::getClosest(QPointF point)
+Vertex* Environment::getClosestAround(QPointF point, int radius)
 {
     // Initialization of variables
-    double minDistance = width + height;
-    double tempDistance;
-    Vertex* vertex;
-    int pointLine = (int) (point.y() / height);
-    int pointColumn = (int) (point.x() / width);
-    bool flag = false;
-    QVector<Vertex*> vertices;
-
-    // Determination of how many quadrants separate the point and it's closest vertex
-    int i = 0;
-    while (i < std::max(this->nbLines, this->nbColumns))
-    {
-        // Verification on the 4 quadrants above, under, on the right and on the left, separated by i quadrants from the point's quadrant
-        if (( pointLine - i > 0 && !this->quadrants[pointColumn][pointLine - i].getVertices().isEmpty()) ||
-                (pointLine + i < nbLines && !this->quadrants[pointColumn][pointLine + i].getVertices().isEmpty()) ||
-                (pointColumn - i > 0 && !this->quadrants[pointColumn - i][pointLine].getVertices().isEmpty()) ||
-                (pointColumn + i < nbColumns && !this->quadrants[pointColumn + i][pointLine].getVertices().isEmpty()))
-            break;
-
-        // Verification of all other quadrants separated by i quadrants from the point's quadrant
-        for (int j = 1; j <= i; j++)
-        {
-            // Verification above and under
-            if (( pointLine - i > 0 && pointColumn - j > 0 && !this->quadrants[pointColumn - j][pointLine - i].getVertices().isEmpty()) ||
-                    ( pointLine + i < nbLines && pointColumn - j > 0 && !this->quadrants[pointColumn - j][pointLine + i].getVertices().isEmpty()) ||
-                    ( pointLine - i > 0 && pointColumn + j < nbColumns && !this->quadrants[pointColumn + j][pointLine - i].getVertices().isEmpty()) ||
-                    ( pointLine + i < nbLines && pointColumn + j < nbColumns && !this->quadrants[pointColumn + j][pointLine + i].getVertices().isEmpty()))
-            {
-                flag = true;
-                break;
-            }
-
-            // Verification on the left and on the right
-            if (( pointLine - j > 0 && pointColumn - i > 0 && !this->quadrants[pointColumn - i][pointLine - j].getVertices().isEmpty()) ||
-                    ( pointLine + j < nbLines && pointColumn - i > 0 && !this->quadrants[pointColumn - i][pointLine + j].getVertices().isEmpty()) ||
-                    ( pointLine - j > 0 && pointColumn + i < nbColumns && !this->quadrants[pointColumn + i][pointLine - j].getVertices().isEmpty()) ||
-                    ( pointLine + j < nbLines && pointColumn + i < nbColumns && !this->quadrants[pointColumn + i][pointLine + j].getVertices().isEmpty()))
-            {
-                flag = true;
-                break;
-            }
-
-            if (flag)
-                break;
-        }
-        i++;
-    }
-
-    // Closest Vertex in the square limited by i
-    for (int j = 0; j <= i; j++)
-    {
-        // Verification above and on the left
-        if (( pointLine - i > 0 && pointColumn - j > 0 && !this->quadrants[pointColumn - j][pointLine - i].getVertices().isEmpty()))
-        {
-            vertices = this->quadrants[pointColumn - j][pointLine - i].getVertices();
-            for (int k = 0; k < vertices.size(); k++)
-            {
-                tempDistance = this->session->getMetric()->distance(vertices[k]->getPosition(), point) < minDistance;
-                if (tempDistance < minDistance)
-                {
-                    minDistance = tempDistance;
-                    vertex = vertices[k];
-                }
-            }
-        }
-
-        // Verification above and on the right
-        if ((i != 0 && j != 0 && pointLine - i > 0 && pointColumn + j < nbColumns && !this->quadrants[pointColumn + j][pointLine - i].getVertices().isEmpty()))
-        {
-            vertices = this->quadrants[pointColumn + j][pointLine - i].getVertices();
-            for (int k = 0; k < vertices.size(); k++)
-            {
-                tempDistance = this->session->getMetric()->distance(vertices[k]->getPosition(), point) < minDistance;
-                if (tempDistance < minDistance)
-                {
-                    minDistance = tempDistance;
-                    vertex = vertices[k];
-                }
-            }
-        }
-
-        // Verification under and on the left
-        if ((i != 0 && pointLine + i < nbLines && pointColumn - j > 0 && !this->quadrants[pointColumn - j][pointLine + i].getVertices().isEmpty()))
-        {
-            vertices = this->quadrants[pointColumn - j][pointLine + i].getVertices();
-            for (int k = 0; k < vertices.size(); k++)
-            {
-                tempDistance = this->session->getMetric()->distance(vertices[k]->getPosition(), point) < minDistance;
-                if (tempDistance < minDistance)
-                {
-                    minDistance = tempDistance;
-                    vertex = vertices[k];
-                }
-            }
-        }
-
-        // Verification under and on the right
-        if ((i != 0 && j != 0 && pointLine + i < nbLines && pointColumn + j < nbColumns && !this->quadrants[pointColumn + j][pointLine + i].getVertices().isEmpty()))
-        {
-            vertices = this->quadrants[pointColumn + j][pointLine + i].getVertices();
-            for (int k = 0; k < vertices.size(); k++)
-            {
-                tempDistance = this->session->getMetric()->distance(vertices[k]->getPosition(), point) < minDistance;
-                if (tempDistance < minDistance)
-                {
-                    minDistance = tempDistance;
-                    vertex = vertices[k];
-                }
-            }
-        }
-
-        // Verification on the left and up
-        if ((i != 0 && j < i && pointLine - j > 0 && pointColumn - i > 0 && !this->quadrants[pointColumn - i][pointLine - j].getVertices().isEmpty()))
-        {
-            vertices = this->quadrants[pointColumn - i][pointLine - j].getVertices();
-            for (int k = 0; k < vertices.size(); k++)
-            {
-                tempDistance = this->session->getMetric()->distance(vertices[k]->getPosition(), point) < minDistance;
-                if (tempDistance < minDistance)
-                {
-                    minDistance = tempDistance;
-                    vertex = vertices[k];
-                }
-            }
-        }
-
-        // Verification on the right and up
-        if ((i != 0 && j < i && j != 0 && pointLine - j > 0 && pointColumn + i < nbColumns && !this->quadrants[pointColumn + i][pointLine - j].getVertices().isEmpty()))
-        {
-            vertices = this->quadrants[pointColumn + i][pointLine - j].getVertices();
-            for (int k = 0; k < vertices.size(); k++)
-            {
-                tempDistance = this->session->getMetric()->distance(vertices[k]->getPosition(), point) < minDistance;
-                if (tempDistance < minDistance)
-                {
-                    minDistance = tempDistance;
-                    vertex = vertices[k];
-                }
-            }
-        }
-
-        // Verification on the left and down
-        if ((i != 0 && j < i && pointLine + j < nbLines && pointColumn - i > 0 && !this->quadrants[pointColumn - i][pointLine + j].getVertices().isEmpty()))
-        {
-            vertices = this->quadrants[pointColumn - i][pointLine + j].getVertices();
-            for (int k = 0; k < vertices.size(); k++)
-            {
-                tempDistance = this->session->getMetric()->distance(vertices[k]->getPosition(), point) < minDistance;
-                if (tempDistance < minDistance)
-                {
-                    minDistance = tempDistance;
-                    vertex = vertices[k];
-                }
-            }
-        }
-
-        // Verification on the right and down
-        if ((i != 0 && j < i && j != 0 && pointLine + j < nbLines && pointColumn + i < nbColumns && !this->quadrants[pointColumn + i][pointLine + j].getVertices().isEmpty()))
-        {
-            vertices = this->quadrants[pointColumn + i][pointLine + j].getVertices();
-            for (int k = 0; k < vertices.size(); k++)
-            {
-                tempDistance = this->session->getMetric()->distance(vertices[k]->getPosition(), point) < minDistance;
-                if (tempDistance < minDistance)
-                {
-                    minDistance = tempDistance;
-                    vertex = vertices[k];
-                }
-            }
-        }
-
-    }
-
-    return vertex;
-}
-
-/**
- * @brief Returns the closest vertex of a given point, by checking the nearest quadrants, and if empty, all quadrants (naive)
- * @param point Point of the environment
- * @return Closest vertex of the given point
- */
-Vertex* Environment::getClosestAlmostNaive(QPointF point)
-{
-    // Initialization of variables
-    double minDistance = width + height;
+    double minDistance = INFINITY;
     double tempDistance;
     Vertex* vertex, *tempVertex;
     int ligne;
     int colonne;
 
-    QPointF p = vertex->getPosition();
-    ligne = (int) (p.x() / this->width) * this->session->getDeltaT();
-    colonne = (int) (p.y() / this->height) * this->session->getDeltaT();
+    colonne = (int) (point.x() / this->width) * this->session->getDeltaT();
+    ligne = (int) (point.y() / this->height) * this->session->getDeltaT();
 
-    if (this->quadrants[colonne][ligne].getVertices().isEmpty())
-        return this->getClosestNaive(point);
-
-    for (int i = std::max(colonne - 1, 0); i < std::min(colonne + 1, this->width); i++)
+    for (int i = std::max(colonne - radius, 0); i < std::min(colonne + radius, this->nbColumns); i++)
     {
-        for (int j = std::max(ligne - 1, 0); j < std::min(ligne + 1, this->height); j++)
+        for (int j = std::max(ligne - radius, 0); j < std::min(ligne + radius, this->nbLines); j++)
         {
             foreach (tempVertex, this->quadrants[i][j].getVertices()) {
                 tempDistance = this->session->distance(point, tempVertex->getPosition());
@@ -292,6 +104,56 @@ Vertex* Environment::getClosestAlmostNaive(QPointF point)
 }
 
 /**
+ * @brief Returns the closest vertex of a given point
+ * @param point Point of the environment
+ * @return Closest vertex of the given point
+ */
+Vertex* Environment::getClosest(QPointF point)
+{
+    // Initialization of variables
+    bool flag = false;
+    int colonne = (int) (point.x() / this->width) * this->session->getDeltaT();
+    int ligne = (int) (point.y() / this->height) * this->session->getDeltaT();
+
+    for (int i = std::max(colonne - 1, 0); i < std::min(colonne + 1, this->nbColumns); i++)
+    {
+        for (int j = std::max(ligne - 1, 0); j < std::min(ligne + 1, this->nbLines); j++)
+        {
+            if (!this->quadrants[i][j].getVertices().isEmpty())
+            {
+                flag = true;
+                break;
+            }
+        }
+    }
+
+    // If there are no vertices around, check everywhere
+    if (!flag)
+        return this->getClosestNaive(point);
+
+    return this->getClosestAround(point, 2);
+}
+
+/**
+ * @brief Returns the closest vertex of a given point, by checking the nearest quadrants, and if empty, all quadrants (naive)
+ * @param point Point of the environment
+ * @return Closest vertex of the given point
+ */
+Vertex* Environment::getClosestAlmostNaive(QPointF point)
+{
+    // Initialization of variables
+    int ligne;
+    int colonne;
+    colonne = (int) (point.x() / this->width) * this->session->getDeltaT();
+    ligne = (int) (point.y() / this->height) * this->session->getDeltaT();
+
+    if (this->quadrants[colonne][ligne].getVertices().isEmpty())
+        return this->getClosestNaive(point);
+
+    return this->getClosestAround(point, 1);
+}
+
+/**
  * @brief Returns the closest vertex of a given point, by going through all of the vertices in the environment
  * @param point Point of the environment
  * @return Closest vertex of the given point
@@ -299,7 +161,7 @@ Vertex* Environment::getClosestAlmostNaive(QPointF point)
 Vertex* Environment::getClosestNaive(QPointF point)
 {
     // Initialization of variables
-    double minDistance = width + height;
+    double minDistance = INFINITY;
     double tempDistance;
     Vertex* vertex, *tempVertex;
 
