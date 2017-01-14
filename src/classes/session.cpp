@@ -129,11 +129,11 @@ Vertex* Session::generate()
 /**
  * @brief Uses the heightmap to determine if a point is an obstacle
  * @param point Point to test
- *//*
+ */
 bool Session::isObstacle(QPointF point)
 {
     return this->map->isObstacle(point);
-}*/
+}
 
 /**
  * @brief Uses the heightmap to determine if a path is free of obstacles
@@ -165,6 +165,11 @@ Vertex* Session::getClosestVertex(QPointF point)
     //return this->environment->getClosest(point);
     //return this->environment->getClosestAlmostNaive(point);
     return this->environment->getClosestNaive(point);
+}
+
+QVector<Vertex*> Session::getKReachableClosest(QPointF point, int k)
+{
+    return this->environment->getKReachableClosest(point, k);
 }
 
 /**

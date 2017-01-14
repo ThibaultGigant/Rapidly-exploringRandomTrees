@@ -16,11 +16,15 @@ public:
     Vertex* getParent();
     void addChild(Vertex *child);
     QVector<Vertex *> getChildren() const;
+    void setConnectedComponentPointer(Vertex *vertex);
+
+    Vertex *getConnectedComponentPointer() const;
 
 private:
     QPointF position;
     Vertex* parent;
     QVector<Vertex *> children;
+    Vertex* connectedComponentPointer;
 
 };
 

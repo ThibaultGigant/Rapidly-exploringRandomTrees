@@ -46,7 +46,8 @@ SOURCES +=\
     src/app/configpanel/additionalinfoswidget/deltatframe.cpp \
     src/classes/threadgenerator.cpp \
     src/app/configpanel/listwidget/listwidget.cpp \
-    src/app/heightmappanel/dragwidget.cpp
+    src/app/heightmappanel/dragwidget.cpp \
+    src/classes/generators/prmgenerator.cpp
 
 HEADERS  += \
     src/classes/environment/vertex.h \
@@ -81,6 +82,7 @@ HEADERS  += \
     src/app/configpanel/additionalinfoswidget/deltatframe.h \
     src/classes/threadgenerator.h \
     src/app/configpanel/listwidget/listwidget.h \
-    src/app/heightmappanel/dragwidget.h
+    src/app/heightmappanel/dragwidget.h \
+    src/classes/generators/prmgenerator.h
 
 FORMS    += mainwindow.ui

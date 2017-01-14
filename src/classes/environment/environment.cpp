@@ -180,6 +180,71 @@ Vertex* Environment::getClosestNaive(QPointF point)
 }
 
 /**
+ * @brief Finds the k closest vertices of a point that are reachable (no obstacle on the path) and not in the same connected component
+ * @param point Point of
+ * @param k
+ * @return
+ */
+QVector<Vertex *> Environment::getKReachableClosest(QPointF point, int k)
+{
+    QVector<Vertex*> kReachable;
+    QVector<double> kDistances;
+
+    // Initialization of variables
+    double tempDistance;
+    Vertex *tempVertex;
+    int ligne;
+    int colonne;
+    int index, indexSame;
+
+    // Calculates the coordinates of the quadrant the vertex is in
+    colonne = (int) (point.x() / this->width) * this->session->getDeltaT();
+    ligne = (int) (point.y() / this->height) * this->session->getDeltaT();
+
+    // Looking every quadrant within delta_t distance to find the k reachable vertices from the point
+    for (int i = std::max(colonne - 1, 0); i < std::min(colonne + 1, this->nbColumns); i++)
+    {
+        for (int j = std::max(ligne - 1, 0); j < std::min(ligne + 1, this->nbLines); j++)
+        {
+            foreach (tempVertex, this->quadrants[i][j].getVertices()) {
+                tempDistance = this->session->distance(point, tempVertex->getPosition());
+                // Adds the vertex to the list if necessary
+                if (tempDistance <= this->session->getDeltaT())
+                {
+                    if (this->session->isPathFree(point, tempVertex->getPosition()))
+                    {
+                        index = k;
+                        indexSame = k;
+                        // Getting the index where we should put the vertex
+                        for (int m = 0; m < kDistances.size(); m++)
+                        {
+                            if (tempDistance < kDistances.at(m))
+                                index = m;
+                            if (tempVertex->getConnectedComponentPointer() == kReachable.at(m)->getConnectedComponentPointer())
+                                indexSame = m;
+                        }
+                        if (index < indexSame)
+                        {
+                            kReachable.insert(index, tempVertex);
+                            kDistances.insert(index, tempDistance);
+                            if (kDistances.size() > k)
+                            {
+                                kReachable.removeLast();
+                                kDistances.removeLast();
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    return kReachable;
+}
+
+
+
+/**
  * @brief Returns a random vertex of the tree
  * @return Random Vertex
  */

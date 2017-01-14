@@ -19,6 +19,7 @@ public:
     Vertex* getClosest(QPointF point);
     Vertex* getClosestAlmostNaive(QPointF point);
     Vertex* getClosestNaive(QPointF point);
+    QVector<Vertex*> getKReachableClosest(QPointF point, int k = INFINITY);
     Vertex* getRandomVertex();
     QVector<Vertex *> getVertices() const;
     void setVertices(const QVector<Vertex *> &value);

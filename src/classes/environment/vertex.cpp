@@ -12,7 +12,14 @@ Vertex::Vertex(QPointF position, Vertex* parent)
     this->children = QVector<Vertex*>();
 
     if (parent)
+    {
         parent->addChild(this);
+        this->connectedComponentPointer = this->parent->connectedComponentPointer;
+    }
+    else
+    {
+        this->connectedComponentPointer = this;
+    }
 }
 
 /**
@@ -57,4 +64,33 @@ void Vertex::addChild(Vertex *child)
 QVector<Vertex *> Vertex::getChildren() const
 {
     return children;
+}
+
+/**
+ * @brief Sets the pointer to the new connected component marker
+ * @param vertex Vertex that is the origin of the connected component
+ */
+void Vertex::setConnectedComponentPointer(Vertex *vertex)
+{
+    Vertex* temp;
+
+    // If the marker is the same, then no change is needed
+    if (this->connectedComponentPointer == vertex)
+        return;
+
+    // Else we have to change it and tell all of the connected vertices to do the same
+    this->connectedComponentPointer = vertex;
+    this->parent->setConnectedComponentPointer(vertex);
+    foreach (temp, this->getChildren()) {
+        temp->setConnectedComponentPointer(vertex);
+    }
+}
+
+/**
+ * @brief Returns the pointer of the root of the connected component
+ * @return Pointer of the root
+ */
+Vertex *Vertex::getConnectedComponentPointer() const
+{
+    return connectedComponentPointer;
 }

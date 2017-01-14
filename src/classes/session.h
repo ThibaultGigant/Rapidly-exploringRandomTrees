@@ -29,9 +29,11 @@ public:
     HeightMap* getMap();
 
     //bool isObstacle(QPointF point);
+    bool isObstacle(QPointF point);
     bool isPathFree(QPointF point1, QPointF point2);
     Vertex* getRandomVertex();
     Vertex* getClosestVertex(QPointF point);
+    QVector<Vertex*> getKReachableClosest(QPointF point, int k = INFINITY);
     int getWidth();
     int getHeight();
     double distance(QPointF from, QPointF to);
