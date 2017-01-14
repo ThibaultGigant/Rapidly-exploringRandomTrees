@@ -11,9 +11,8 @@ HeightMapViewPanel::HeightMapViewPanel(CentralWidget *centralWidget, QWidget *pa
     this->vertexList = QVector<Vertex*>();
     this->modifAllowed = true;
 
-    this->start = new DragWidget(this,centralWidget->getCurrentMap()->getStart(), Qt::blue);
-    this->end = new DragWidget(this,centralWidget->getCurrentMap()->getStart(), Qt::blue);
-
+    this->start = new DragWidget(this,centralWidget, centralWidget->getCurrentMap()->getStart(),"ressources/start.png");
+    this->end = new DragWidget(this,centralWidget,centralWidget->getCurrentMap()->getStart(), "ressources/end.jpg");
 
 
     //Image stuff

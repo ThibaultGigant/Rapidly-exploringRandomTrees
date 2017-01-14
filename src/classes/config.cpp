@@ -5,6 +5,21 @@ Config::Config()
 {
 }
 
+
+QString Config::toString(){
+
+    QString res = "";
+
+    res+=currentMap->getName()+"\n";
+    res+=endMethod->toString()+"\n";
+    res+=generator.toString()+"\n";
+    res+=delta_t+"\n";
+
+}
+
+
+
+
 /**
  * @brief Returns the map used in this configuration
  * @return Map used
@@ -111,3 +126,4 @@ void Config::setGenerator(TreeGenerator *generator)
 {
     this->generator = generator;
 }
+

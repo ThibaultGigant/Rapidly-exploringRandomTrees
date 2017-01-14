@@ -86,3 +86,6 @@ HEADERS  += \
     src/classes/generators/prmgenerator.h
 
 FORMS    += mainwindow.ui
+
+DISTFILES += \
+    ressources

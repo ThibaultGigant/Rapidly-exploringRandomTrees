@@ -37,6 +37,8 @@ public:
     QPointF* getEnd();
     QString getName();
 
+    QString setName();
+
     bool isObstacle(QPointF point);
     bool isPathFree(QPointF point1, QPointF point2);
 

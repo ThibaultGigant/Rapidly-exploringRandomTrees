@@ -25,7 +25,6 @@ HeightMapFrame::HeightMapFrame(CentralWidget *centralWidget, QWidget *parent) :
     QSize AdjustSize = hmViewPanel->size();
     AdjustSize.setWidth(this->centralWidget->getCurrentMap()->getWidth());
     AdjustSize.setHeight(this->centralWidget->getCurrentMap()->getHeight());
-    //qDebug() << AdjustSize.width();
 
 
     hmViewPanel->setMinimumSize(AdjustSize);
