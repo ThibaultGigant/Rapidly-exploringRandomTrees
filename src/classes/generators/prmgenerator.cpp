@@ -47,9 +47,10 @@ Vertex* PRMGenerator::generate()
        return new Vertex(point, NULL);
     }
 
-    qDebug() << "We have found reachable points : " << kReachables.size();
+    //qDebug() << "PRMGenerator ==> We have found reachable points : " << kReachables.size();
 
     vertex = new Vertex(point, kReachables.first());
+
     for(int i = 1; i < kReachables.size(); i++) {
         tempVertex = kReachables.at(i);
         tempVertex->setConnectedComponentPointer(vertex->getConnectedComponentPointer());

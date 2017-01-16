@@ -23,8 +23,10 @@ public:
     Vertex* getRandomVertex();
     QVector<Vertex *> getVertices() const;
     void setVertices(const QVector<Vertex *> &value);
+    Vertex *getStartVertex() const;
 
     QString toString();
+
 
 private:
     int width;
