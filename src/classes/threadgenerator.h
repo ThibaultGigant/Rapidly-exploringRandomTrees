@@ -7,6 +7,7 @@
 #include <QPainter>
 #include <QPen>
 #include <QBrush>
+#include <QPair>
 #include <QPainterPath>
 #include "config.h"
 #include "session.h"
@@ -34,6 +35,8 @@ private:
 
     int configCount = 0;
     int runCount = 0;
+
+    float surfaceRatio;
 
     bool saveConfig(Config *conf);
     bool saveRunFile(Session *session);

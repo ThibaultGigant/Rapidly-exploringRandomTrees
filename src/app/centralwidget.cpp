@@ -79,7 +79,12 @@ void CentralWidget::addConfig(Config *config)
 void CentralWidget::start()
 {
 
-    t = new ThreadGenerator(this, this->configs);
+    QString path = QFileDialog::getExistingDirectory(this, tr("Open Directory"),
+                                                    QDir::homePath(),
+                                                     QFileDialog::ShowDirsOnly
+                                                     | QFileDialog::DontResolveSymlinks);
+
+    t = new ThreadGenerator(this, this->configs,path);
     connect(this, SIGNAL(startThread()), t, SLOT(start()));
     connect(this, SIGNAL(skipSimulation()), t, SLOT(skipToNext()));
     connect(this, SIGNAL(stopThread()), t, SLOT(stop()));
