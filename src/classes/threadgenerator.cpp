@@ -101,8 +101,9 @@ bool ThreadGenerator::saveConfig(Config * conf){
 
     if (!save) return true;
 
-    QString dir = dirPath+"/Config_"+configCount;
-    QDir d;
+    QString dir = dirPath+"/Config_"+QString::number(configCount);
+    QDir d = QDir(dir);
+
     if(!d.mkdir(dir)){
         return false;
     }
@@ -111,7 +112,7 @@ bool ThreadGenerator::saveConfig(Config * conf){
         return false;
     }
 
-    QFile file(dir +"/conf"+configCount+".cnf");
+    QFile file(dir +"/conf"+QString::number(configCount)+".txt");
 
     if (!file.open(QIODevice::ReadWrite)){
         return false;
@@ -130,7 +131,7 @@ bool ThreadGenerator::saveHeightMap(HeightMap *map){
     QString name = "HeightMap"+QString::number((savedMaps.length()+1));
     map->setName(name);
 
-    QFile file(dirPath +"/"+name+".cnf");
+    QFile file(dirPath +"/"+name+".hmf");
     if (!file.open(QIODevice::ReadWrite)){
         return false;
     }
@@ -143,31 +144,34 @@ bool ThreadGenerator::saveHeightMap(HeightMap *map){
 
 bool ThreadGenerator::saveRunFile(Session *session){
 
-    QFile file(dirPath+"/Config_"+QString::number(configCount)+"/runFile"+QString::number(runCount)+".run");
+    QFile file(dirPath+"/Config_"+QString::number(configCount)+"/runFile"+QString::number(runCount)+".txt");
     if (!file.open(QIODevice::ReadWrite)){
         return false;
     }
 
+    QString path = dirPath+"/Config_"+QString::number(configCount)+"/imageResult"+QString::number(runCount)+".png";
+    bool success = generateAndSaveResultImage(session->getEnvironment()->getVertices(), session->getDeltaT()/2, session->getMap(), path);
+
     QTextStream out(&file);
+    out << QString::number(surfaceRatio)+"\n";
     out << session->getEnvironment()->toString();
     file.close();
 
-    QString path = dirPath+"/Config_"+QString::number(configCount)+"/imageResult"+QString::number(runCount)+".png";
-
-    return generateAndSaveResultImage(session->getEnvironment()->getVertices(), session->getDeltaT()/2, session->getMap(), path);
+    return success;
 }
 
 bool ThreadGenerator::generateAndSaveResultImage(QVector<Vertex*> vertices, float influence, HeightMap *map, QString path){
 
     int w, h, count, c, i;
-    unsigned char *data;
-    QImage view;
+    unsigned char *data, *dataInflu;
+    QImage view, viewInflu;
 
     QPointF point1;
     QColor blue;
 
 
-    QVector<QPainterPath> pathVertices;
+    QVector<QPair<QPainterPath,QColor>> vectPathVertices;
+    QVector<QPainterPath> vectPathInfuence;
 
     QPainterPath pathInfluenceZone;
     QPainterPath pathEdgeVertices;
@@ -182,31 +186,60 @@ bool ThreadGenerator::generateAndSaveResultImage(QVector<Vertex*> vertices, floa
     data = new unsigned char[4 * w * h ];
     view = QImage(data, w, h, QImage::Format_RGB32);
 
+    dataInflu = new unsigned char[4 * w * h ];
+    viewInflu = QImage(dataInflu, w, h, QImage::Format_RGB32);
+
     pathInfluenceZone = QPainterPath(QPointF(0,0));
 
-    for(i = 0;i < vertices.length(); i++){
+    count = vertices.length();
+
+    for(i = 0;i < count; i++){
 
         v = vertices[i];
         point1 = v->getPosition();
 
+        // Ellipse
         pathEdgeVertices = QPainterPath(point1);
-
+        c = 200.0/count*i;
+        blue = QColor(0,c,0,255);
         pathEdgeVertices.addEllipse(point1,5,5);
+        vectPathVertices.append(QPair<QPainterPath,QColor>(pathEdgeVertices,blue));
 
+        // Influence Zone
+        pathInfluenceZone = QPainterPath();
         pathInfluenceZone.addEllipse(point1, influence, influence);
 
-        foreach (Vertex *tempVertex, v->getChildren()) {
-            pathEdgeVertices.lineTo(tempVertex->getPosition());
-            //TODO:draw path in influenceZone
-        }
+        vectPathInfuence.append(pathInfluenceZone);
 
-        pathVertices.append(pathEdgeVertices);
+        //Edges
+        foreach (Vertex *tempVertex, v->getChildren()) {
+            pathEdgeVertices = QPainterPath(point1);
+            pathEdgeVertices.lineTo(tempVertex->getPosition());
+            vectPathVertices.append(QPair<QPainterPath,QColor>(pathEdgeVertices,blue));
+            //TODO:draw path in influenceZone
+
+            // Influence Zone
+            pathInfluenceZone = QPainterPath(point1);
+            pathInfluenceZone.lineTo(tempVertex->getPosition());
+
+            vectPathInfuence.append(pathInfluenceZone);
+
+
+        }
     }
 
     count = vertices.length();
 
 
     QPainter painter(&view);
+
+    QPainter painterInflu(&viewInflu);
+
+    QPen temp = QPen();
+    temp.setWidth((int)influence);
+    painterInflu.setPen(temp);
+    painter.setBrush(QBrush());
+
     painter.setRenderHint(QPainter::Antialiasing);
     blue = QColor(60,60,220,255);
     brush = QBrush(blue);
@@ -214,22 +247,45 @@ bool ThreadGenerator::generateAndSaveResultImage(QVector<Vertex*> vertices, floa
     painter.setBrush(brush);
     painter.setPen(pen);
 
-    painter.drawPath(pathInfluenceZone);
+    painter.fillRect(view.rect(),Qt::white);
 
-    for(i = 0;i < vertices.length(); i++){
-        pathEdgeVertices = pathVertices[i];
-        c = 200.0/count*i;
 
-        blue = QColor(0,c,0,255);
-        brush = QBrush(blue);
-        pen = QPen(blue);
+    foreach(QPainterPath pathInfluenceZone, vectPathInfuence){
+        painter.drawPath(pathInfluenceZone);
+        painterInflu.drawPath(pathInfluenceZone);
+    }
+
+
+    for(i = 0;i < vectPathVertices.length(); i++){
+
+        pathEdgeVertices = vectPathVertices[i].first;
+        brush = QBrush(vectPathVertices[i].second);
+        pen = QPen(vectPathVertices[i].second);
+        pen.setWidth(2);
         painter.setBrush(brush);
         painter.setPen(pen);
 
         painter.drawPath(pathEdgeVertices);
     }
 
+
     drawHeightMap(map,data);
+
+
+    //Surface Ratio Calculation
+
+    float totalSize = w*h;
+    float covered = 0;
+
+    for (int x = 0; x < w; x++){
+        for(int y = 0; y < h;y++){
+            if(viewInflu.pixelColor(x,y).red() < 0.5){
+                covered ++;
+            }
+        }
+    }
+
+    surfaceRatio = 100.0 * covered / totalSize;
 
     return view.save(path);
 
