@@ -69,3 +69,21 @@ QString PRMGenerator::toString()
 {
     return "Probabilistic RoadMap (PRM) Algorithm";
 }
+
+/**
+ * @brief Getter of the number of closest vertices to examine on every generation
+ * @return This number
+ */
+int PRMGenerator::getNbToExamine() const
+{
+    return nbToExamine;
+}
+
+/**
+ * @brief Setter of the number of closest vertices to examine on every generation
+ * @param value New vqlue of this number
+ */
+void PRMGenerator::setNbToExamine(int value)
+{
+    nbToExamine = value;
+}

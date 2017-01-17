@@ -14,7 +14,7 @@ RunButtonsWidget::RunButtonsWidget(QWidget *parent) : QFrame(parent)
     // Widgets initialization
     this->layout = new QHBoxLayout(this);
     this->addButton = new QPushButton("Add");
-    this->runButton = new QPushButton("Run");
+    this->runButton = new QPushButton("Add and Run");
 
     // Adding widgets to the layout
     this->layout->addWidget(this->addButton);
@@ -26,6 +26,7 @@ RunButtonsWidget::RunButtonsWidget(QWidget *parent) : QFrame(parent)
     // Connections
     connect(this->addButton, SIGNAL(clicked(bool)), this->cw, SLOT(receiveImageToHeightMap()));
     connect(this->addButton, SIGNAL(clicked(bool)), parent, SLOT(addConfig()));
+    connect(this->runButton, SIGNAL(clicked(bool)), parent, SLOT(addConfig()));
     connect(this->runButton, SIGNAL(clicked(bool)), parent, SLOT(start()));
     connect(this->runButton, SIGNAL(clicked(bool)), this, SLOT(toRun()));
     connect(this, SIGNAL(isRunning(bool)), this->cw, SLOT(receiveModifAllowed(bool)));
@@ -42,11 +43,17 @@ RunButtonsWidget::~RunButtonsWidget()
     delete layout;
 }
 
+/**
+ * @brief Receives a signal to change the buttons to Next and Stop buttons
+ */
 void RunButtonsWidget::toRun()
 {
     this->isRun(true);
 }
 
+/**
+ * @brief Receives a signal to change the buttons to default buttons (Add and Run)
+ */
 void RunButtonsWidget::toStop()
 {
     this->isRun(false);
@@ -64,8 +71,8 @@ void RunButtonsWidget::isRun(bool b)
 
     if (b)
     {
-        this->addButton->setText("Next");
-        this->runButton->setText("Stop");
+        this->addButton->setText("Next run");
+        this->runButton->setText("Stop all runs");
 
         connect(this->addButton, SIGNAL(clicked(bool)), this->cw, SLOT(nextSimulation()));
         connect(this->runButton, SIGNAL(clicked(bool)), this->cw, SLOT(stop()));
@@ -73,12 +80,13 @@ void RunButtonsWidget::isRun(bool b)
     }
     else
     {
-        this->addButton->setText("Add");
-        this->runButton->setText("Run");
+        this->addButton->setText("Add to list");
+        this->runButton->setText("Add and Run");
 
         // Connections
         connect(this->addButton, SIGNAL(clicked(bool)), this->cw, SLOT(receiveImageToHeightMap()));
         connect(this->addButton, SIGNAL(clicked(bool)), this->parent(), SLOT(addConfig()));
+        connect(this->runButton, SIGNAL(clicked(bool)), this->parent(), SLOT(addConfig()));
         connect(this->runButton, SIGNAL(clicked(bool)), this->parent(), SLOT(start()));
         connect(this->runButton, SIGNAL(clicked(bool)), this, SLOT(toRun()));
 

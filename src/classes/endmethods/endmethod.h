@@ -19,6 +19,7 @@ public:
     time_t getLimitTime() const;
     quint64 getNbVertices() const;
     void setMaxNumber(const quint64 &value);
+    void setDuration(const time_t &value);
 
     void reset();
     QString toString();

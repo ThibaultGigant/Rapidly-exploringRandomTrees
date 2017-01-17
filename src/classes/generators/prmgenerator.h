@@ -11,6 +11,9 @@ public:
     virtual Vertex* generate();
     virtual QString toString();
 
+    int getNbToExamine() const;
+    void setNbToExamine(int value);
+
 private:
     /**
      * @brief nbToExamine Number of closest vertices to examine on every generation
