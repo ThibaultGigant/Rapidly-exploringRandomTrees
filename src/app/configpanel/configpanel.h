@@ -37,6 +37,7 @@ private:
     ListWidget *listWidget;
 
     bool changed;
+    int currentConfigID;
 
 signals:
 
@@ -45,6 +46,7 @@ public slots:
     void start();
     void configChanged();
     void configUnChanged();
+    void loadConfig(int configIndex);
 };
 
 #endif // CONFIGPANEL_H

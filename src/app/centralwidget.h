@@ -31,12 +31,12 @@ public:
     HeightMap *getCurrentMap();
     void setCurrentMap(HeightMap *map);
     int getNbConfigs();
+    QVector<Config *> getConfigs() const;
 
     // Other
     void addConfig(Config *config);
     void removeConfig(int index);
     void start();
-
 
 private :
     // Interface

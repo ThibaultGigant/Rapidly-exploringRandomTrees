@@ -67,6 +67,7 @@ void CentralWidget::setCurrentMap(HeightMap *map)
 void CentralWidget::addConfig(Config *config)
 {
     this->configs.append(config);
+    this->nbConfigs++;
     this->currentMap = new HeightMap(this->NAME, this->WIDTH, this->HEIGHT, this->START_POINT, this->END_POINT);
     //emit clearImage(0);
 }
@@ -86,6 +87,15 @@ void CentralWidget::start()
     connect(this->hmFrame->getHeightMapViewPanel(), SIGNAL(lastVertexDrawn(Vertex*)), this->t, SLOT(getVertexDrawn(Vertex*)));
     emit startThread();
     //t.start();
+}
+
+/**
+ * @brief Returns the vector containing all configs stored
+ * @return Vector of configs
+ */
+QVector<Config *> CentralWidget::getConfigs() const
+{
+    return configs;
 }
 
 /**
@@ -165,7 +175,6 @@ void CentralWidget::stop()
  */
 int CentralWidget::getNbConfigs()
 {
-    this->nbConfigs++;
     return this->nbConfigs;
 }
 

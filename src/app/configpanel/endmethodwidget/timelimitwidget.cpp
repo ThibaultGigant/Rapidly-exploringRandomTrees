@@ -64,3 +64,18 @@ time_t TimeLimitWidget::getTimeLimit()
         return (time_t) 0;
     return (time_t) this->spinBox->value();
 }
+
+/**
+ * @brief Sets the time limit and displays it in the spinbox
+ * @param value New value of the time limit
+ */
+void TimeLimitWidget::setTimeLimit(time_t value)
+{
+    if (value > 0)
+    {
+        this->checkBox->setChecked(Qt::Checked);
+        this->spinBox->setValue((int) value);
+    }
+    else
+        this->checkBox->setChecked(Qt::Unchecked);
+}

@@ -17,6 +17,7 @@ public:
     ~GeneratorWidget();
     TreeGenerator* getGenerator();
     int getGeneratorID();
+    void setGeneratorID(int value);
 
 private:
     QHBoxLayout *layout;

@@ -123,6 +123,7 @@ void ConfigPanel::configChanged()
 {
     this->setChanged(true);
     this->runButtonsWidget->isModified();
+    this->currentConfigID = this->centralWidget->getNbConfigs();
 }
 
 /**
@@ -132,4 +133,29 @@ void ConfigPanel::configUnChanged()
 {
     this->setChanged(false);
     this->runButtonsWidget->isNotModified();
+}
+
+/**
+ * @brief Loads the config and displays it
+ * @param configIndex Index of the config to load
+ */
+void ConfigPanel::loadConfig(int configIndex)
+{
+    qDebug() << "ConfigPanel LoadConfig : loading config #" << configIndex;
+    // Storing the current config if it has changed
+    if (this->changed)
+        this->addConfig();
+
+    // Loading of the config
+    this->currentConfigID = configIndex;
+
+    Config *config = this->centralWidget->getConfigs().at(configIndex);
+
+    this->endMethodWidget->setMaxNbVertices(config->getNbVerticesLimit());
+    this->endMethodWidget->setTimeLimit(config->getTimeDuration());
+    this->generatorWidget->setGeneratorID(config->getGeneratorID());
+    this->metricWidget->setMetricID(config->getMetricID());
+    this->additionalInfosWidget->setDeltaT(config->getDelta_t());
+    this->additionalInfosWidget->setNbRuns(config->getNbRuns());
+    this->additionalInfosWidget->setSleepTime(config->getNbRuns());
 }

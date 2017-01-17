@@ -17,6 +17,7 @@ public:
     ~TimeLimitWidget();
 
     time_t getTimeLimit();
+    void setTimeLimit(time_t value);
 
 private:
     QHBoxLayout *layout;

@@ -15,8 +15,11 @@ public:
     explicit AdditionalInfosWidget(QWidget *parent = 0);
     ~AdditionalInfosWidget();
     double getDeltaT();
+    void setDeltaT(double value);
     int getNbRuns();
+    void setNbRuns(int value);
     int getSleepTime();
+    void setSleepTime(int value);
     Qt::CheckState getSaveState();
 
 private:

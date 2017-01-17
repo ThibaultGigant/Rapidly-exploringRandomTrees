@@ -65,3 +65,18 @@ qint64 NbVerticesLimitWidget::getMaxNbVertices()
         return (qint64) 0;
     return (qint64) this->spinBox->value();
 }
+
+/**
+ * @brief Sets the maximum number of vertices in the spinbox and checks the checkbox if > 0
+ * @param value Value to set
+ */
+void NbVerticesLimitWidget::setMaxNbVertices(qint64 value)
+{
+    if (value > 0)
+    {
+        this->checkBox->setChecked(Qt::Checked);
+        this->spinBox->setValue((int) value);
+    }
+    else
+        this->checkBox->setChecked(Qt::Unchecked);
+}

@@ -65,3 +65,12 @@ int MetricWidget::getMetricID()
 {
     return this->comboBox->currentIndex();
 }
+
+/**
+ * @brief Sets the current metric in the combobox
+ * @param value Index of the metric to set
+ */
+void MetricWidget::setMetricID(int value)
+{
+    this->comboBox->setCurrentIndex(value);
+}

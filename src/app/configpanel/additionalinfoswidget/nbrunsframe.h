@@ -15,6 +15,7 @@ public:
     explicit NbRunsFrame(ConfigPanel *cp,QWidget *parent = 0);
     ~NbRunsFrame();
     int getNbRuns();
+    void setNbRuns(int value);
 
 private:
     QHBoxLayout *nbRunsLayout;

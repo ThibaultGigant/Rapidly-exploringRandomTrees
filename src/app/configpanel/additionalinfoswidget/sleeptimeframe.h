@@ -15,6 +15,7 @@ public:
     explicit SleepTimeFrame(ConfigPanel *cp, QWidget *parent = 0);
     ~SleepTimeFrame();
     int getSleepTime();
+    void setSleepTime(int value);
 
 private:
     QHBoxLayout *sleepTimeLayout;

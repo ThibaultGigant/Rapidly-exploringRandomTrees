@@ -49,3 +49,12 @@ int NbRunsFrame::getNbRuns()
 {
     return this->nbRunsSpinBox->value();
 }
+
+/**
+ * @brief Sets the number of simulations to launch in the displayed spinbox
+ * @param value Value to display
+ */
+void NbRunsFrame::setNbRuns(int value)
+{
+    this->nbRunsSpinBox->setValue(value);
+}

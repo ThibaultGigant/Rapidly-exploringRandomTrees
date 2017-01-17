@@ -7,6 +7,7 @@
 #include <QListWidget>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
+#include <QMouseEvent>
 
 class ConfigPanel;
 
@@ -27,6 +28,8 @@ private:
     QListWidget *listWidget;
     QPushButton *clearButton;
     QPushButton *deleteButton;
+
+    void mouseDoubleClickEvent(QMouseEvent *e);
 
 signals:
 

@@ -16,6 +16,7 @@ public:
     ~NbVerticesLimitWidget();
 
     qint64 getMaxNbVertices();
+    void setMaxNbVertices(qint64 value);
 
 private:
     QHBoxLayout *layout;

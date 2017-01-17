@@ -16,6 +16,7 @@ public:
     ~MetricWidget();
     Metric* getMetric();
     int getMetricID();
+    void setMetricID(int value);
 
 private:
     QHBoxLayout *layout;

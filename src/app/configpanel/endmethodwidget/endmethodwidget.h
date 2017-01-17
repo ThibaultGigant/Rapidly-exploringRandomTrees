@@ -18,6 +18,8 @@ public:
 
     qint64 getMaxNbVertices();
     time_t getTimeLimit();
+    void setMaxNbVertices(qint64 value);
+    void setTimeLimit(time_t value);
     EndMethod *getEndMethod();
 
 private:

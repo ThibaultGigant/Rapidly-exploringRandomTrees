@@ -49,3 +49,12 @@ int SleepTimeFrame::getSleepTime()
 {
     return this->sleepTimeSpinBox->value();
 }
+
+/**
+ * @brief Sets the sleeptime in the displayed spinbox
+ * @param value Value to display
+ */
+void SleepTimeFrame::setSleepTime(int value)
+{
+    this->sleepTimeSpinBox->setValue(value);
+}

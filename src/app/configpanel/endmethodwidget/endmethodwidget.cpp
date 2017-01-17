@@ -50,6 +50,19 @@ time_t EndMethodWidget::getTimeLimit()
     return this->timeLimitFrame->getTimeLimit();
 }
 
+/**
+ * @brief Sets the maximum number of vertices in the spinbox
+ */
+void EndMethodWidget::setMaxNbVertices(qint64 value)
+{
+    this->nbVerticesFrame->setMaxNbVertices(value);
+}
+
+void EndMethodWidget::setTimeLimit(time_t value)
+{
+    this->timeLimitFrame->setTimeLimit(value);
+}
+
 EndMethod* EndMethodWidget::getEndMethod()
 {
     return new EndMethod(this->getMaxNbVertices(), this->getTimeLimit());

@@ -16,6 +16,7 @@ public:
     explicit DeltaTFrame(ConfigPanel* cp, QWidget *parent = 0);
     ~DeltaTFrame();
     double getDeltaT();
+    void setDeltaT(double value);
 
 private:
     QHBoxLayout *layout;

@@ -50,6 +50,15 @@ double AdditionalInfosWidget::getDeltaT()
 }
 
 /**
+ * @brief Sets the delta_t in the displayed spinbox
+ * @param value Value to display
+ */
+void AdditionalInfosWidget::setDeltaT(double value)
+{
+    this->deltaTFrame->setDeltaT(value);
+}
+
+/**
  * @brief Returns how many simulations the user wants to run
  * @return Number of runs to launch
  */
@@ -59,12 +68,30 @@ int AdditionalInfosWidget::getNbRuns()
 }
 
 /**
+ * @brief Sets the number of runs to display in the spinbox
+ * @param value Value to display
+ */
+void AdditionalInfosWidget::setNbRuns(int value)
+{
+    this->nbRunsFrame->setNbRuns(value);
+}
+
+/**
  * @brief Returns how long the user wants to wait between the generation of 2 vertices
  * @return Sleep time between two generations
  */
 int AdditionalInfosWidget::getSleepTime()
 {
     return this->sleepTimeFrame->getSleepTime();
+}
+
+/**
+ * @brief Sets the sleep time in the displayed spinbox
+ * @param value Value to display
+ */
+void AdditionalInfosWidget::setSleepTime(int value)
+{
+    this->sleepTimeFrame->setSleepTime(value);
 }
 
 /**

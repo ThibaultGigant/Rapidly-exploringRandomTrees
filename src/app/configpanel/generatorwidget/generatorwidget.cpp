@@ -67,3 +67,12 @@ int GeneratorWidget::getGeneratorID()
 {
     return this->comboBox->currentIndex();
 }
+
+/**
+ * @brief Sets the value of the combobox to the stored one
+ * @param value Index of the generator
+ */
+void GeneratorWidget::setGeneratorID(int value)
+{
+    this->comboBox->setCurrentIndex(value);
+}

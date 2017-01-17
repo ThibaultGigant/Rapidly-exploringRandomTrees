@@ -49,3 +49,12 @@ double DeltaTFrame::getDeltaT()
 {
     return this->spinBox->value();
 }
+
+/**
+ * @brief Sets the delta_t displayed in the spinbox
+ * @param value Value of the delta_t to set
+ */
+void DeltaTFrame::setDeltaT(double value)
+{
+    this->spinBox->setValue(value);
+}
