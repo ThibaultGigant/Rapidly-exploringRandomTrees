@@ -51,3 +51,12 @@ Metric* MetricWidget::getMetric()
         return new EuclidianDistance();
     }
 }
+
+/**
+ * @brief Returns the ID of the metric to use
+ * @return ID of the metric
+ */
+int MetricWidget::getMetricID()
+{
+    return this->comboBox->currentIndex();
+}
