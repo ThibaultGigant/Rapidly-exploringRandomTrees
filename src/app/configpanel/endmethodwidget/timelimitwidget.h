@@ -7,11 +7,13 @@
 #include <QHBoxLayout>
 #include <ctime>
 
+class ConfigPanel;
+
 class TimeLimitWidget : public QFrame
 {
     Q_OBJECT
 public:
-    explicit TimeLimitWidget(QWidget *parent = 0);
+    explicit TimeLimitWidget(ConfigPanel *cp, QWidget *parent = 0);
     ~TimeLimitWidget();
 
     time_t getTimeLimit();

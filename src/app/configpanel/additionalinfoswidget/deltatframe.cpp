@@ -1,11 +1,14 @@
 #include "deltatframe.h"
+#include "src/app/configpanel/configpanel.h"
 
 /**
  * @brief Constructor
  * @param parent Widget's parent
  */
-DeltaTFrame::DeltaTFrame(QWidget *parent) : QFrame(parent)
+DeltaTFrame::DeltaTFrame(ConfigPanel *cp, QWidget *parent) : QFrame(parent)
 {
+    this->cp = cp;
+
     // Layouts initialization
     this->layout = new QHBoxLayout(this);
 
@@ -23,6 +26,9 @@ DeltaTFrame::DeltaTFrame(QWidget *parent) : QFrame(parent)
 
     // Displaying the layout
     this->setLayout(this->layout);
+
+    // Connecting widgets to the configpanel
+    connect(this->spinBox, SIGNAL(valueChanged(double)), cp, SLOT(configChanged()));
 }
 
 /**

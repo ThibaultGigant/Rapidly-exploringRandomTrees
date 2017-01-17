@@ -1,10 +1,11 @@
 #include "timelimitwidget.h"
+#include "src/app/configpanel/configpanel.h"
 
 /**
  * @brief Constructor
  * @param parent Parent of the Widget
  */
-TimeLimitWidget::TimeLimitWidget(QWidget *parent) : QFrame(parent)
+TimeLimitWidget::TimeLimitWidget(ConfigPanel *cp, QWidget *parent) : QFrame(parent)
 {
     // Widgets initialization
     this->layout = new QHBoxLayout(this);
@@ -21,6 +22,8 @@ TimeLimitWidget::TimeLimitWidget(QWidget *parent) : QFrame(parent)
 
     // Adding the connection between the checkbox and the display of the spinbox
     connect(this->checkBox, SIGNAL(stateChanged(int)), this, SLOT(manageSpinbox(int)));
+    connect(this->checkBox, SIGNAL(stateChanged(int)), cp, SLOT(configChanged()));
+    connect(this->spinBox, SIGNAL(valueChanged(int)), cp, SLOT(configChanged()));
 }
 
 /**

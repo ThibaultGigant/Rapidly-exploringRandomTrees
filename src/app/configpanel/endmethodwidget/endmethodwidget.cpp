@@ -1,4 +1,5 @@
 #include "endmethodwidget.h"
+#include "src/app/configpanel/configpanel.h"
 
 /**
  * @brief Constructor
@@ -6,11 +7,13 @@
  */
 EndMethodWidget::EndMethodWidget(QWidget *parent) : QFrame(parent)
 {
+    ConfigPanel *cp = (ConfigPanel *) parent;
+
     // Creating widgets
     this->globalLayout = new QVBoxLayout(this);
     this->title = new QLabel("Choose how the algorithm should stop:");
-    this->nbVerticesFrame = new NbVerticesLimitWidget();
-    this->timeLimitFrame = new TimeLimitWidget();
+    this->nbVerticesFrame = new NbVerticesLimitWidget(cp);
+    this->timeLimitFrame = new TimeLimitWidget(cp);
 
     // Adding widgets to layout
     this->globalLayout->addWidget(this->title);

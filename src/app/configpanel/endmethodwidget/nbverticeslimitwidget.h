@@ -6,11 +6,13 @@
 #include <QSpinBox>
 #include <QHBoxLayout>
 
+class ConfigPanel;
+
 class NbVerticesLimitWidget : public QFrame
 {
     Q_OBJECT
 public:
-    explicit NbVerticesLimitWidget(QWidget *parent = 0);
+    explicit NbVerticesLimitWidget(ConfigPanel *cp, QWidget *parent = 0);
     ~NbVerticesLimitWidget();
 
     qint64 getMaxNbVertices();

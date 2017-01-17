@@ -22,6 +22,9 @@ public:
 
     CentralWidget *getCentralWidget() const;
 
+    bool getChanged() const;
+    void setChanged(bool value);
+
 private:
     CentralWidget *centralWidget;
     QVBoxLayout *layout;
@@ -33,11 +36,15 @@ private:
     RunButtonsWidget *runButtonsWidget;
     ListWidget *listWidget;
 
+    bool changed;
+
 signals:
 
 public slots:
     void addConfig();
     void start();
+    void configChanged();
+    void configUnChanged();
 };
 
 #endif // CONFIGPANEL_H

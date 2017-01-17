@@ -7,11 +7,13 @@
 #include <QDoubleSpinBox>
 #include <QString>
 
+class ConfigPanel;
+
 class DeltaTFrame : public QFrame
 {
     Q_OBJECT
 public:
-    explicit DeltaTFrame(QWidget *parent = 0);
+    explicit DeltaTFrame(ConfigPanel* cp, QWidget *parent = 0);
     ~DeltaTFrame();
     double getDeltaT();
 
@@ -19,6 +21,8 @@ private:
     QHBoxLayout *layout;
     QLabel *label;
     QDoubleSpinBox *spinBox;
+
+    ConfigPanel *cp;
 
 signals:
 

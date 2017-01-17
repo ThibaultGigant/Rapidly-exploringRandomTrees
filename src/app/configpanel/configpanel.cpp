@@ -7,6 +7,7 @@
  */
 ConfigPanel::ConfigPanel(QWidget *parent) : QWidget(parent)
 {
+    this->changed = true;
     this->centralWidget = (CentralWidget *) parent;
     this->layout = new QVBoxLayout();
 
@@ -55,6 +56,24 @@ CentralWidget *ConfigPanel::getCentralWidget() const
 }
 
 /**
+ * @brief Getter of the flag stating if the config has been changed since it has been loaded
+ * @return True if the config has been changed, false otherwise
+ */
+bool ConfigPanel::getChanged() const
+{
+    return changed;
+}
+
+/**
+ * @brief Setter of the flag stating if the config has been changed since it's been loaded
+ * @param value New value of the flag
+ */
+void ConfigPanel::setChanged(bool value)
+{
+    changed = value;
+}
+
+/**
  * @brief Receives a signal to add the current config to the list of configs
  * Creates a configuration according to the current configuration, then gives it to the central widget
  */
@@ -83,6 +102,8 @@ void ConfigPanel::addConfig()
 
     this->centralWidget->addConfig(config);
     this->listWidget->addItem("config " + QString::number(this->centralWidget->getNbConfigs()));
+
+    this->configUnChanged();
 }
 
 /**
@@ -92,4 +113,22 @@ void ConfigPanel::addConfig()
 void ConfigPanel::start()
 {
     this->centralWidget->start();
+}
+
+/**
+ * @brief Receives a signal that the config has changed
+ */
+void ConfigPanel::configChanged()
+{
+    this->setChanged(true);
+    this->runButtonsWidget->isModified();
+}
+
+/**
+ * @brief Receives a signal stating that the config hasn't changed since it's been loaded
+ */
+void ConfigPanel::configUnChanged()
+{
+    this->setChanged(false);
+    this->runButtonsWidget->isNotModified();
 }

@@ -1,4 +1,5 @@
 #include "additionalinfoswidget.h"
+#include "src/app/configpanel/configpanel.h"
 
 /**
  * @brief Constructor
@@ -6,11 +7,12 @@
  */
 AdditionalInfosWidget::AdditionalInfosWidget(QWidget *parent) : QFrame(parent)
 {
+    ConfigPanel *p = (ConfigPanel*) parent;
     // Widgets initialization
     this->globalLayout = new QVBoxLayout(this);
-    this->deltaTFrame = new DeltaTFrame();
-    this->nbRunsFrame = new NbRunsFrame();
-    this->sleepTimeFrame = new SleepTimeFrame();
+    this->deltaTFrame = new DeltaTFrame(p);
+    this->nbRunsFrame = new NbRunsFrame(p);
+    this->sleepTimeFrame = new SleepTimeFrame(p);
     this->saveCheckBox = new QCheckBox("Save results ?");
 
     // Adding widgets to layouts
@@ -21,6 +23,9 @@ AdditionalInfosWidget::AdditionalInfosWidget(QWidget *parent) : QFrame(parent)
 
     // Displaying the layout
     this->setLayout(this->globalLayout);
+
+    // Connecting the widgets to the configpanel
+    // connect(this->saveCheckBox, SIGNAL(stateChanged(int)), p, SLOT(configChanged()));
 }
 
 /**

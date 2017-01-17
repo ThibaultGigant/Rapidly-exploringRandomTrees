@@ -1,11 +1,13 @@
 #include "sleeptimeframe.h"
+#include "src/app/configpanel/configpanel.h"
 
 /**
  * @brief Constructor
  * @param parent Widget's parent
  */
-SleepTimeFrame::SleepTimeFrame(QWidget *parent) : QWidget(parent)
+SleepTimeFrame::SleepTimeFrame(ConfigPanel *cp, QWidget *parent) : QWidget(parent)
 {
+    this->cp = cp;
     // Layouts initialization
     this->sleepTimeLayout = new QHBoxLayout(this);
 
@@ -24,6 +26,9 @@ SleepTimeFrame::SleepTimeFrame(QWidget *parent) : QWidget(parent)
 
     // Displaying the layout
     this->setLayout(this->sleepTimeLayout);
+
+    // Connecting the widgets to the configpanel
+    connect(this->sleepTimeSpinBox, SIGNAL(valueChanged(int)), cp, SLOT(configChanged()));
 }
 
 /**

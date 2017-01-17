@@ -319,7 +319,7 @@ QString Environment::toString(){
    }
 
 
-
+    return res;
 }
 
 /**

@@ -1,10 +1,11 @@
 #include "nbverticeslimitwidget.h"
+#include "src/app/configpanel/configpanel.h"
 
 /**
  * @brief Constructor
  * @param parent Parent of the Widget
  */
-NbVerticesLimitWidget::NbVerticesLimitWidget(QWidget *parent) : QFrame(parent)
+NbVerticesLimitWidget::NbVerticesLimitWidget(ConfigPanel *cp, QWidget *parent) : QFrame(parent)
 {
     // Widgets initialization
     this->layout = new QHBoxLayout(this);
@@ -20,6 +21,8 @@ NbVerticesLimitWidget::NbVerticesLimitWidget(QWidget *parent) : QFrame(parent)
 
     // Adding the connection between the checkbox and the display of the spinbox
     connect(this->checkBox, SIGNAL(stateChanged(int)), this, SLOT(manageSpinbox(int)));
+    connect(this->checkBox, SIGNAL(stateChanged(int)), cp, SLOT(configChanged()));
+    connect(this->spinBox, SIGNAL(valueChanged(int)), cp, SLOT(configChanged()));
 }
 
 /**

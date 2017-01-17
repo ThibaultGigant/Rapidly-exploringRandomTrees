@@ -6,6 +6,7 @@
 #include <QHBoxLayout>
 
 class CentralWidget;
+class ConfigPanel;
 
 class RunButtonsWidget : public QFrame
 {
@@ -14,12 +15,15 @@ public:
     explicit RunButtonsWidget(QWidget *parent = 0);
     ~RunButtonsWidget();
     void isRun(bool b);
+    void isModified();
+    void isNotModified();
 
 private:
     QHBoxLayout *layout;
     QPushButton *addButton;
     QPushButton *runButton;
     CentralWidget *cw;
+    ConfigPanel *cp;
 
 signals:
     void isRunning(bool b);

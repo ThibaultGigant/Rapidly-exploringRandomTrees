@@ -8,13 +8,13 @@
  */
 RunButtonsWidget::RunButtonsWidget(QWidget *parent) : QFrame(parent)
 {
-    ConfigPanel *p = (ConfigPanel *) parent;
-    this->cw = p->getCentralWidget();
+    this->cp = (ConfigPanel *) parent;
+    this->cw = cp->getCentralWidget();
 
     // Widgets initialization
     this->layout = new QHBoxLayout(this);
     this->addButton = new QPushButton("Add");
-    this->runButton = new QPushButton("Add and Run");
+    this->runButton = new QPushButton("Run");
 
     // Adding widgets to the layout
     this->layout->addWidget(this->addButton);
@@ -25,9 +25,8 @@ RunButtonsWidget::RunButtonsWidget(QWidget *parent) : QFrame(parent)
 
     // Connections
     connect(this->addButton, SIGNAL(clicked(bool)), this->cw, SLOT(receiveImageToHeightMap()));
-    connect(this->addButton, SIGNAL(clicked(bool)), parent, SLOT(addConfig()));
-    connect(this->runButton, SIGNAL(clicked(bool)), parent, SLOT(addConfig()));
-    connect(this->runButton, SIGNAL(clicked(bool)), parent, SLOT(start()));
+    connect(this->addButton, SIGNAL(clicked(bool)), this->cp, SLOT(addConfig()));
+    connect(this->runButton, SIGNAL(clicked(bool)), this->cp, SLOT(start()));
     connect(this->runButton, SIGNAL(clicked(bool)), this, SLOT(toRun()));
     connect(this, SIGNAL(isRunning(bool)), this->cw, SLOT(receiveModifAllowed(bool)));
     connect(this->cw, SIGNAL(emitDone()), this, SLOT(toStop()));
@@ -81,16 +80,30 @@ void RunButtonsWidget::isRun(bool b)
     else
     {
         this->addButton->setText("Add to list");
-        this->runButton->setText("Add and Run");
+        this->runButton->setText("Run");
 
         // Connections
         connect(this->addButton, SIGNAL(clicked(bool)), this->cw, SLOT(receiveImageToHeightMap()));
-        connect(this->addButton, SIGNAL(clicked(bool)), this->parent(), SLOT(addConfig()));
-        connect(this->runButton, SIGNAL(clicked(bool)), this->parent(), SLOT(addConfig()));
-        connect(this->runButton, SIGNAL(clicked(bool)), this->parent(), SLOT(start()));
+        connect(this->addButton, SIGNAL(clicked(bool)), this->cp, SLOT(addConfig()));
+        connect(this->runButton, SIGNAL(clicked(bool)), this->cp, SLOT(start()));
         connect(this->runButton, SIGNAL(clicked(bool)), this, SLOT(toRun()));
-
     }
+}
 
+/**
+ * @brief Sets the run button to "Add and Run"
+ */
+void RunButtonsWidget::isModified()
+{
+    connect(this->runButton, SIGNAL(clicked(bool)), this->cp, SLOT(addConfig()));
+    this->runButton->setText("Add and Run");
+}
 
+/**
+ * @brief Sets the run button to "Run"
+ */
+void RunButtonsWidget::isNotModified()
+{
+    disconnect(this->runButton, SIGNAL(clicked(bool)), this->cp, SLOT(addConfig()));
+    this->runButton->setText("Run");
 }

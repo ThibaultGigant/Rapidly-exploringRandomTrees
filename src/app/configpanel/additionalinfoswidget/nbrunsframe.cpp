@@ -1,11 +1,14 @@
 #include "nbrunsframe.h"
+#include "src/app/configpanel/configpanel.h"
 
 /**
  * @brief Constructor
  * @param parent Widget's Parent
  */
-NbRunsFrame::NbRunsFrame(QWidget *parent) : QFrame(parent)
+NbRunsFrame::NbRunsFrame(ConfigPanel *cp, QWidget *parent) : QFrame(parent)
 {
+    this->cp = cp;
+
     // Layouts initialization
     this->nbRunsLayout = new QHBoxLayout(this);
 
@@ -23,6 +26,9 @@ NbRunsFrame::NbRunsFrame(QWidget *parent) : QFrame(parent)
 
     // Displaying the layout
     this->setLayout(this->nbRunsLayout);
+
+    // Connecting the widgets to the configpanel
+    connect(this->nbRunsSpinBox, SIGNAL(valueChanged(int)), cp, SLOT(configChanged()));
 }
 
 /**

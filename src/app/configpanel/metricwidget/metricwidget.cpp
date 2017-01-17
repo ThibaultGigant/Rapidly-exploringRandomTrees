@@ -1,4 +1,5 @@
 #include "metricwidget.h"
+#include "src/app/configpanel/configpanel.h"
 
 /**
  * @brief Constructor
@@ -6,6 +7,8 @@
  */
 MetricWidget::MetricWidget(QWidget *parent) : QFrame(parent)
 {
+    ConfigPanel *cp = (ConfigPanel *) parent;
+
     // Widgets initialization
     this->layout = new QHBoxLayout(this);
     this->title = new QLabel("Choose a metric :");
@@ -24,6 +27,8 @@ MetricWidget::MetricWidget(QWidget *parent) : QFrame(parent)
 
     // Displaying the layout
     this->setLayout(this->layout);
+
+    connect(this->comboBox, SIGNAL(currentIndexChanged(int)), cp, SLOT(configChanged()));
 }
 
 /**

@@ -29,6 +29,7 @@ QString Config::toString(){
     res+=generator->toString()+"\n";
     res+=QString::number(delta_t)+"\n";
 
+    return res;
 }
 
 /**
@@ -112,7 +113,7 @@ void Config::setKForPRM(int value)
         PRMGenerator *gene = (PRMGenerator *) this->generator;
         gene->setNbToExamine(value);
     }
-    catch (std::bad_cast& bc)
+    catch (std::exception& bc)
     {
         qDebug() << "Config : Error casting, generator isn't a PRM Generator";
     }
