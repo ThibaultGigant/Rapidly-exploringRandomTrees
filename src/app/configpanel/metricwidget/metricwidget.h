@@ -15,6 +15,7 @@ public:
     explicit MetricWidget(QWidget *parent = 0);
     ~MetricWidget();
     Metric* getMetric();
+    int getMetricID();
 
 private:
     QHBoxLayout *layout;

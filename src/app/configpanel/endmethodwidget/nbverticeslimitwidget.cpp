@@ -12,8 +12,8 @@ NbVerticesLimitWidget::NbVerticesLimitWidget(QWidget *parent) : QFrame(parent)
     this->spinBox = new QSpinBox();
 
     // Setting spinbox values
-    this->spinBox->setRange(1, 10000);
-    this->spinBox->setValue(100);
+    this->spinBox->setRange(1, 100000);
+    this->spinBox->setValue(1000);
 
     // Adding widget
     this->layout->addWidget(this->checkBox);

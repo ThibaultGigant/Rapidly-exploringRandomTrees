@@ -47,9 +47,10 @@ Vertex* PRMGenerator::generate()
        return new Vertex(point, NULL);
     }
 
-    qDebug() << "We have found reachable points : " << kReachables.size();
+    //qDebug() << "PRMGenerator ==> We have found reachable points : " << kReachables.size();
 
     vertex = new Vertex(point, kReachables.first());
+
     for(int i = 1; i < kReachables.size(); i++) {
         tempVertex = kReachables.at(i);
         tempVertex->setConnectedComponentPointer(vertex->getConnectedComponentPointer());
@@ -67,4 +68,22 @@ Vertex* PRMGenerator::generate()
 QString PRMGenerator::toString()
 {
     return "Probabilistic RoadMap (PRM) Algorithm";
+}
+
+/**
+ * @brief Getter of the number of closest vertices to examine on every generation
+ * @return This number
+ */
+int PRMGenerator::getNbToExamine() const
+{
+    return nbToExamine;
+}
+
+/**
+ * @brief Setter of the number of closest vertices to examine on every generation
+ * @param value New vqlue of this number
+ */
+void PRMGenerator::setNbToExamine(int value)
+{
+    nbToExamine = value;
 }

@@ -213,8 +213,8 @@ QVector<Vertex *> Environment::getKReachableClosest(QPointF point, int k)
                 {
                     if (this->session->isPathFree(point, tempVertex->getPosition()))
                     {
-                        index = k;
-                        indexSame = k;
+                        index = kDistances.size();
+                        indexSame = kDistances.size();
 
                         // Getting the index where we should put the vertex
                         for (int m = kDistances.size() - 1; m >= 0; m--)
@@ -224,19 +224,27 @@ QVector<Vertex *> Environment::getKReachableClosest(QPointF point, int k)
                             if (tempVertex->getConnectedComponentPointer() == kReachable.at(m)->getConnectedComponentPointer())
                                 indexSame = m;
                         }
-                        if (kDistances.isEmpty())
-                            index = 0;
-                        qDebug() << "Environment getKReachable : index = " << index << " indexSame = " << indexSame;
-                        if (index <= indexSame && index < k)
+                        //qDebug() << "Environment getKReachable : index = " << index << " indexSame = " << indexSame;
+                        if (index <= indexSame)
                         {
-                            kReachable.insert(index, tempVertex);
-                            kDistances.insert(index, tempDistance);
-                            if (index == indexSame)
+                            if (index < kDistances.size())
                             {
-                                kReachable.removeAt(index);
-                                kDistances.removeAt(index);
+                                if (indexSame <= index && index != kDistances.size())
+                                {
+                                    kReachable.removeAt(index);
+                                    kDistances.removeAt(index);
+                                }
+                                kReachable.insert(index, tempVertex);
+                                kDistances.insert(index, tempDistance);
                             }
-                            else if (kDistances.size() > k)
+                            else
+                            {
+                                kReachable.append(tempVertex);
+                                kDistances.append(tempDistance);
+                            }
+
+                            // Removing the last point (too far to be interesting)
+                            if (kDistances.size() > k)
                             {
                                 kReachable.removeLast();
                                 kDistances.removeLast();
@@ -248,7 +256,17 @@ QVector<Vertex *> Environment::getKReachableClosest(QPointF point, int k)
         }
     }
 
-    qDebug() << "Environment getKReachable : size of reachables = " << kReachable.size();
+    for (int i = 1; i < kReachable.size(); i++) {
+        for (int j = 0; j < i; j++)
+        {
+            if (kReachable.at(i)->getConnectedComponentPointer() == kReachable.at(j))
+            {
+                qDebug() << "Environnement : 2 points of the same connected component are returned";
+            }
+        }
+    }
+
+    //qDebug() << "Environment ==> getKReachable : size of reachables = " << kReachable.size();
     return kReachable;
 }
 
@@ -307,6 +325,16 @@ QString Environment::toString(){
     res+=vs;
     res+=edges;
     return res;
+}
+
+
+/**
+ * @brief Returns the starting vertex of the environment
+ * @return Starting Vertex
+ */
+Vertex *Environment::getStartVertex() const
+{
+    return startVertex;
 }
 
 

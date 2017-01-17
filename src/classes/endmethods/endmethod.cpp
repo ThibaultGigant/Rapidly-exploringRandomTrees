@@ -41,6 +41,15 @@ void EndMethod::setMaxNumber(const quint64 &value)
 }
 
 /**
+ * @brief Sets the maximum duration of the simulation
+ * @param value New value of the duration
+ */
+void EndMethod::setDuration(const time_t &value)
+{
+    duration = value;
+}
+
+/**
  * @brief Getter of the end time of the program
  * @return The end time
  */

@@ -73,8 +73,10 @@ void ConfigPanel::addConfig()
     Config *config = new Config();
     config->setCurrentMap(this->centralWidget->getCurrentMap());
     config->setEndMethod(this->endMethodWidget->getEndMethod());
-    config->setGenerator(this->generatorWidget->getGenerator());
-    config->setMetric(this->metricWidget->getMetric());
+    //config->setGenerator(this->generatorWidget->getGenerator());
+    //config->setMetric(this->metricWidget->getMetric());
+    config->setGeneratorID(this->generatorWidget->getGeneratorID());
+    config->setMetricID(this->metricWidget->getMetricID());
     config->setDelta_t(this->additionalInfosWidget->getDeltaT());
     config->setNbRuns(this->additionalInfosWidget->getNbRuns());
     config->setSleepTime(this->additionalInfosWidget->getSleepTime());

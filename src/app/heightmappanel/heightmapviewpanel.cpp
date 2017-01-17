@@ -159,7 +159,8 @@ void HeightMapViewPanel::drawImageOnHeightMap(){
 void HeightMapViewPanel::addElement(Vertex *vertex){
     Vertex *tempVertex;
     vertexList.append(vertex);
-    float maxDistance, tempDistance;
+    float maxDistance = 5, tempDistance;
+    int r = 0;
 
     QPainter painter(&this->view);
 
@@ -168,9 +169,12 @@ void HeightMapViewPanel::addElement(Vertex *vertex){
 
     QPointF point1, point2;
 
-    int r = 200.0 / count  *  vertexList.size(); //( 1.0 + (count * ));
+    if(vertexList.size()==1){
+        r = 255;
+    }
+    int g = 200.0 / count  *  vertexList.size(); //( 1.0 + (count * ));
 
-    QColor red = QColor(0,r,0,255);
+    QColor red = QColor(r,g,0,255);
 
     //qDebug() << "Count : " << count << "Vertex size : " << vertexList.size() << " Green Value : " << red.green() << " R : " << r;
 

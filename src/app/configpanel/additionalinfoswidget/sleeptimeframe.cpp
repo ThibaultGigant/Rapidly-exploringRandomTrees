@@ -14,8 +14,8 @@ SleepTimeFrame::SleepTimeFrame(QWidget *parent) : QWidget(parent)
     this->sleepTimeSpinBox = new QSpinBox();
 
     // Setting up spinboxes
-    this->sleepTimeSpinBox->setRange(0, 1000);
-    this->sleepTimeSpinBox->setValue(10);
+    this->sleepTimeSpinBox->setRange(0, 10000);
+    this->sleepTimeSpinBox->setValue(1);
     this->sleepTimeSpinBox->setSuffix(" ms");
 
     // Adding widgets to layouts

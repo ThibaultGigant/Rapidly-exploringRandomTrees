@@ -53,3 +53,12 @@ TreeGenerator* GeneratorWidget::getGenerator()
         return new RRTGenerator();
     }
 }
+
+/**
+ * @brief Returns the ID of the generator
+ * @return ID of the generator
+ */
+int GeneratorWidget::getGeneratorID()
+{
+    return this->comboBox->currentIndex();
+}

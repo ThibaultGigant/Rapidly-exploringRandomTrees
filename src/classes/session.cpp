@@ -112,6 +112,8 @@ Vertex* Session::generate()
 {
     Vertex *vertex;
 
+    this->config->receiveDrawElement(this->environment->getStartVertex());
+
     while (!this->endMethod->isOver() && !this->next)
     {
         vertex = this->generator->generate();
