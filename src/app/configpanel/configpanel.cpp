@@ -79,6 +79,7 @@ void ConfigPanel::setChanged(bool value)
  */
 void ConfigPanel::addConfig()
 {
+    //qDebug() << "ConfigPanel addConfig : starting generation of config";
     EndMethod *endMethod = this->endMethodWidget->getEndMethod();
     if (endMethod->getMaxNumber() <= 1 && endMethod->getLimitTime() == 0)
     {

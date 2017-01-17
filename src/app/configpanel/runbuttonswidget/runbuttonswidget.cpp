@@ -13,7 +13,7 @@ RunButtonsWidget::RunButtonsWidget(QWidget *parent) : QFrame(parent)
 
     // Widgets initialization
     this->layout = new QHBoxLayout(this);
-    this->addButton = new QPushButton("Add");
+    this->addButton = new QPushButton("Add to list");
     this->runButton = new QPushButton("Run");
 
     // Adding widgets to the layout
@@ -26,6 +26,7 @@ RunButtonsWidget::RunButtonsWidget(QWidget *parent) : QFrame(parent)
     // Connections
     connect(this->addButton, SIGNAL(clicked(bool)), this->cw, SLOT(receiveImageToHeightMap()));
     connect(this->addButton, SIGNAL(clicked(bool)), this->cp, SLOT(addConfig()));
+    connect(this->runButton, SIGNAL(clicked(bool)), this->cp, SLOT(addConfig()));
     connect(this->runButton, SIGNAL(clicked(bool)), this->cp, SLOT(start()));
     connect(this->runButton, SIGNAL(clicked(bool)), this, SLOT(toRun()));
     connect(this, SIGNAL(isRunning(bool)), this->cw, SLOT(receiveModifAllowed(bool)));
@@ -95,7 +96,10 @@ void RunButtonsWidget::isRun(bool b)
  */
 void RunButtonsWidget::isModified()
 {
+    this->runButton->disconnect();
     connect(this->runButton, SIGNAL(clicked(bool)), this->cp, SLOT(addConfig()));
+    connect(this->runButton, SIGNAL(clicked(bool)), this->cp, SLOT(start()));
+    connect(this->runButton, SIGNAL(clicked(bool)), this, SLOT(toRun()));
     this->runButton->setText("Add and Run");
 }
 
