@@ -15,7 +15,7 @@ public:
     explicit RunButtonsWidget(QWidget *parent = 0);
     ~RunButtonsWidget();
     void isRun(bool b);
-    void isModified();
+    void isModified(bool toUpdate);
     void isNotModified();
 
 private:

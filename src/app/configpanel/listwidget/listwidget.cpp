@@ -34,6 +34,7 @@ ListWidget::ListWidget(QWidget *parent) : QWidget(parent)
     connect(this->deleteButton, SIGNAL(clicked(bool)), this, SLOT(deleteItem()));
     connect(this->clearButton, SIGNAL(clicked(bool)), this->listWidget, SLOT(clear()));
     connect(this->clearButton, SIGNAL(clicked(bool)), this->configPanel->getCentralWidget(), SLOT(clearConfigs()));
+    connect(this->listWidget, SIGNAL(currentRowChanged(int)), this->configPanel, SLOT(loadConfig(int)));
 }
 
 /**
@@ -59,15 +60,4 @@ void ListWidget::deleteItem()
 
     if (this->listWidget->count() == 0)
         this->configPanel->configChanged();
-}
-
-/**
- * @brief Triggers the loading of a the selected config when double click
- * @param e Event of the click
- */
-void ListWidget::mouseDoubleClickEvent(QMouseEvent *e)
-{
-    qDebug() << "ListWidget mouseDoubleClickEvent";
-    if (e->button() == Qt::LeftButton)
-        this->configPanel->loadConfig(this->listWidget->currentRow());
 }

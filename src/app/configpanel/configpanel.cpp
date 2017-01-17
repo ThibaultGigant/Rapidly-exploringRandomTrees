@@ -8,6 +8,7 @@
 ConfigPanel::ConfigPanel(QWidget *parent) : QWidget(parent)
 {
     this->changed = true;
+    this->isConfigFromList = false;
     this->centralWidget = (CentralWidget *) parent;
     this->layout = new QVBoxLayout();
 
@@ -79,6 +80,8 @@ void ConfigPanel::setChanged(bool value)
  */
 void ConfigPanel::addConfig()
 {
+    Config *config;
+
     //qDebug() << "ConfigPanel addConfig : starting generation of config";
     EndMethod *endMethod = this->endMethodWidget->getEndMethod();
     if (endMethod->getMaxNumber() <= 1 && endMethod->getLimitTime() == 0)
@@ -89,22 +92,28 @@ void ConfigPanel::addConfig()
         return;
     }
 
+    //qDebug() << "ConfigPanel addConfig : adding config #" << this->currentConfigID;
     // Creating the config to pass on
-    Config *config = new Config();
+    if (!this->isConfigFromList)
+        config = new Config();
+    else
+        config = this->getCentralWidget()->getConfigs().at(this->currentConfigID);
     config->setCurrentMap(this->centralWidget->getCurrentMap());
     config->setEndMethod(this->endMethodWidget->getEndMethod());
-    //config->setGenerator(this->generatorWidget->getGenerator());
-    //config->setMetric(this->metricWidget->getMetric());
     config->setGeneratorID(this->generatorWidget->getGeneratorID());
     config->setMetricID(this->metricWidget->getMetricID());
     config->setDelta_t(this->additionalInfosWidget->getDeltaT());
     config->setNbRuns(this->additionalInfosWidget->getNbRuns());
     config->setSleepTime(this->additionalInfosWidget->getSleepTime());
 
-    this->centralWidget->addConfig(config);
-    this->listWidget->addItem("config " + QString::number(this->centralWidget->getNbConfigs()));
+    if (!this->isConfigFromList)
+    {
+        this->centralWidget->addConfig(config);
+        this->listWidget->addItem("config " + QString::number(this->centralWidget->getNbConfigs()));
+    }
 
     this->configUnChanged();
+    this->isConfigFromList = false;
 }
 
 /**
@@ -122,8 +131,8 @@ void ConfigPanel::start()
 void ConfigPanel::configChanged()
 {
     this->setChanged(true);
-    this->runButtonsWidget->isModified();
-    this->currentConfigID = this->centralWidget->getNbConfigs();
+    this->runButtonsWidget->isModified(this->isConfigFromList);
+    //this->currentConfigID = this->centralWidget->getNbConfigs();
 }
 
 /**
@@ -141,21 +150,28 @@ void ConfigPanel::configUnChanged()
  */
 void ConfigPanel::loadConfig(int configIndex)
 {
-    qDebug() << "ConfigPanel LoadConfig : loading config #" << configIndex;
-    // Storing the current config if it has changed
-    if (this->changed)
-        this->addConfig();
+    //qDebug() << "ConfigPanel LoadConfig : loading config #" << configIndex;
+    if (configIndex >= 0)
+    {
+        // Storing the current config if it has changed
+        if (this->changed)
+            this->addConfig();
+        this->isConfigFromList = true;
 
-    // Loading of the config
-    this->currentConfigID = configIndex;
+        // Loading of the config
+        this->currentConfigID = configIndex;
 
-    Config *config = this->centralWidget->getConfigs().at(configIndex);
+        Config *config = this->centralWidget->getConfigs().at(configIndex);
 
-    this->endMethodWidget->setMaxNbVertices(config->getNbVerticesLimit());
-    this->endMethodWidget->setTimeLimit(config->getTimeDuration());
-    this->generatorWidget->setGeneratorID(config->getGeneratorID());
-    this->metricWidget->setMetricID(config->getMetricID());
-    this->additionalInfosWidget->setDeltaT(config->getDelta_t());
-    this->additionalInfosWidget->setNbRuns(config->getNbRuns());
-    this->additionalInfosWidget->setSleepTime(config->getNbRuns());
+        this->endMethodWidget->setMaxNbVertices(config->getNbVerticesLimit());
+        this->endMethodWidget->setTimeLimit(config->getTimeDuration());
+        this->generatorWidget->setGeneratorID(config->getGeneratorID());
+        this->metricWidget->setMetricID(config->getMetricID());
+        this->additionalInfosWidget->setDeltaT(config->getDelta_t());
+        this->additionalInfosWidget->setNbRuns(config->getNbRuns());
+        this->additionalInfosWidget->setSleepTime(config->getNbRuns());
+        this->centralWidget->setCurrentMap(config->getCurrentMap());
+        this->centralWidget->receiveClearImage(0);
+        this->configUnChanged();
+    }
 }

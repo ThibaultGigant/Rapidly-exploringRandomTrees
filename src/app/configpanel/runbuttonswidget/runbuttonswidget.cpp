@@ -94,13 +94,18 @@ void RunButtonsWidget::isRun(bool b)
 /**
  * @brief Sets the run button to "Add and Run"
  */
-void RunButtonsWidget::isModified()
+void RunButtonsWidget::isModified(bool toUpdate)
 {
     this->runButton->disconnect();
     connect(this->runButton, SIGNAL(clicked(bool)), this->cp, SLOT(addConfig()));
     connect(this->runButton, SIGNAL(clicked(bool)), this->cp, SLOT(start()));
     connect(this->runButton, SIGNAL(clicked(bool)), this, SLOT(toRun()));
     this->runButton->setText("Add and Run");
+
+    if (toUpdate)
+        this->addButton->setText("Update");
+    else
+        this->addButton->setText("Add to list");
 }
 
 /**
@@ -110,4 +115,6 @@ void RunButtonsWidget::isNotModified()
 {
     disconnect(this->runButton, SIGNAL(clicked(bool)), this->cp, SLOT(addConfig()));
     this->runButton->setText("Run");
+
+    this->addButton->setText("Add to list");
 }

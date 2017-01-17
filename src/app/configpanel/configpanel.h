@@ -37,6 +37,7 @@ private:
     ListWidget *listWidget;
 
     bool changed;
+    bool isConfigFromList;
     int currentConfigID;
 
 signals:

@@ -29,8 +29,6 @@ private:
     QPushButton *clearButton;
     QPushButton *deleteButton;
 
-    void mouseDoubleClickEvent(QMouseEvent *e);
-
 signals:
 
 public slots:
