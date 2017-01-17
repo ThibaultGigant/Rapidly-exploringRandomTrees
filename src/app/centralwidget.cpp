@@ -187,4 +187,5 @@ void CentralWidget::clearConfigs()
 {
     this->configs.clear();
     this->nbConfigs = 0;
+    this->configPanel->configChanged();
 }
