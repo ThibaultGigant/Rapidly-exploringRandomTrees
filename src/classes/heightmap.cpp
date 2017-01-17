@@ -267,7 +267,7 @@ void HeightMap::clearMap(){
     clearObstacles();
 }
 
-QString HeightMap::setName(QString name){
+void HeightMap::setName(QString name){
     this->name = name;
 }
 

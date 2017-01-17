@@ -9,6 +9,9 @@
 
 int main(int argc, char *argv[])
 {
+
+    Vertex::idCount = 0;
+
     QApplication a(argc, argv);
 
     MainWindow *w = new MainWindow();

@@ -1,5 +1,10 @@
 #include "vertex.h"
 
+
+
+int Vertex::idCount;
+
+
 /**
  * @brief Constructor
  * @param position Vertex's Position in the environment
@@ -20,6 +25,8 @@ Vertex::Vertex(QPointF position, Vertex* parent)
     {
         this->connectedComponentPointer = this;
     }
+
+    this->id = getUniqueId();
 }
 
 /**
@@ -67,6 +74,14 @@ QVector<Vertex *> Vertex::getChildren() const
 }
 
 /**
+ * @brief Vertex::getId
+ * @return Returns the id of the vertex
+ */
+int Vertex::getId(){
+    return id;
+}
+
+/**
  * @brief Sets the pointer to the new connected component marker
  * @param vertex Vertex that is the origin of the connected component
  */
@@ -95,3 +110,36 @@ Vertex *Vertex::getConnectedComponentPointer() const
 {
     return connectedComponentPointer;
 }
+
+/**
+ * @brief Vertex::toString
+ * @return A QString representing the Vertes [ id x y parentId childrenIds ]
+ */
+QString Vertex::toString(){
+    QString res =  "";
+
+    res += QString::number(id) + " " + QString::number(position.x()) +" "+QString::number(position.y())+" ";
+    res+= (parent)?(QString::number(parent->getId())+" "):"";
+
+    for(int i = 0;i<children.length();i++){
+        res+=QString::number(children[i]->getId())+" ";
+    }
+    return res;
+}
+
+/**
+ * @brief Vertex::getUniqueId
+ * @return return an id for a vertex
+ */
+int Vertex::getUniqueId(){
+    return idCount++;
+}
+
+/**
+ * @brief Resets the id counter to 0
+ */
+void Vertex::resetVertexId(){
+    idCount = 0;
+}
+
+
