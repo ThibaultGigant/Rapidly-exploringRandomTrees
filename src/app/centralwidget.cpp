@@ -18,7 +18,9 @@ CentralWidget::CentralWidget(QWidget *parent) : QWidget(parent)
     hmFrame = new HeightMapFrame(this);
     this->configPanel = new ConfigPanel(this);
 
-    this->configPanel->setMaximumWidth(300);
+    //this->configPanel->setMaximumWidth(300);
+    this->hmFrame->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Minimum);
+    this->configPanel->setSizePolicy(QSizePolicy::Maximum,QSizePolicy::Maximum);
 
     // Adding widgets to layout
     layout->addWidget(hmFrame);
@@ -174,6 +176,8 @@ int CentralWidget::getNbConfigs()
 void CentralWidget::removeConfig(int index)
 {
     this->configs.removeAt(index);
+    if (this->configs.isEmpty())
+        this->nbConfigs = 0;
 }
 
 /**

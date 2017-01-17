@@ -14,7 +14,7 @@ RunButtonsWidget::RunButtonsWidget(QWidget *parent) : QFrame(parent)
     // Widgets initialization
     this->layout = new QHBoxLayout(this);
     this->addButton = new QPushButton("Add to list");
-    this->runButton = new QPushButton("Run");
+    this->runButton = new QPushButton("Add and Run");
 
     // Adding widgets to the layout
     this->layout->addWidget(this->addButton);

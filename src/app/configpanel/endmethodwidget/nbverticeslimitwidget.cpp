@@ -12,12 +12,14 @@ NbVerticesLimitWidget::NbVerticesLimitWidget(ConfigPanel *cp, QWidget *parent) :
     this->checkBox = new QCheckBox("Maximum number of vertices");
     this->spinBox = new QSpinBox();
 
-    // Setting spinbox values
+    // Setting spinbox and checkbox values
+    this->checkBox->setCheckState(Qt::Checked);
     this->spinBox->setRange(1, 100000);
     this->spinBox->setValue(1000);
 
     // Adding widget
     this->layout->addWidget(this->checkBox);
+    this->layout->addWidget(this->spinBox);
 
     // Adding the connection between the checkbox and the display of the spinbox
     connect(this->checkBox, SIGNAL(stateChanged(int)), this, SLOT(manageSpinbox(int)));

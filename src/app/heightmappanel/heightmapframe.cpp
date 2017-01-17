@@ -30,10 +30,11 @@ HeightMapFrame::HeightMapFrame(CentralWidget *centralWidget, QWidget *parent) :
     hmViewPanel->setMinimumSize(AdjustSize);
     hmViewPanel->setSizePolicy(QSizePolicy::Minimum,QSizePolicy::Minimum);
     viewScroller->setWidget(hmViewPanel);
+    viewScroller->setSizePolicy(QSizePolicy::Minimum,QSizePolicy::Expanding);
     viewScroller->ensureWidgetVisible(hmViewPanel,hmViewPanel->width(),hmViewPanel->height());
     viewScroller->setWidgetResizable(true);
-    viewScroller->setMaximumWidth(this->centralWidget->getCurrentMap()->getWidth());
-    viewScroller->setMaximumHeight(this->centralWidget->getCurrentMap()->getHeight());
+    //viewScroller->setMaximumWidth(this->centralWidget->getCurrentMap()->getWidth());
+    //viewScroller->setMaximumHeight(this->centralWidget->getCurrentMap()->getHeight());
 
     // Creating Pen Panel (Bottom)
     //hmSubPanel = new HeightMapSubPanel;

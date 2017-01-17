@@ -56,4 +56,5 @@ void ListWidget::deleteItem()
     index = this->listWidget->currentRow();
     this->listWidget->removeItemWidget(this->listWidget->takeItem(index));
     this->configPanel->getCentralWidget()->removeConfig(index);
+
 }
