@@ -306,21 +306,26 @@ void Environment::setVertices(const QVector<Vertex *> &value)
 
 QString Environment::toString(){
     QString res = "";
-    res+=vertices.length()+"\n";
+    res+=QString::number(vertices.length())+"\n";
     int edgeCount = 0;
 
     QString vs = "";
     QString edges = "";
+    for(int i = 0; i < vertices.length();i++){
+        Vertex *v = vertices[i];
+        vs+=v->toString()+"\n";
+        edgeCount+=v->getChildren().length();
+        for(int j = 0; j<v->getChildren().length();j++){
+            edges+=QString::number(v->getId())+" "+QString::number(v->getChildren()[j]->getId())+"\n";
+        }
+    }
 
-   for(int i = 0; i < vertices.length();i++){
-
-       Vertex *v = vertices[i];
-
-   }
-
-
+    res+=QString::number(edgeCount)+"\n";
+    res+=vs;
+    res+=edges;
     return res;
 }
+
 
 /**
  * @brief Returns the starting vertex of the environment
@@ -330,6 +335,7 @@ Vertex *Environment::getStartVertex() const
 {
     return startVertex;
 }
+
 
 
 

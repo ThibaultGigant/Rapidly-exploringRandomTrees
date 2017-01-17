@@ -3,6 +3,11 @@
 
 #include <QThread>
 #include <QDir>
+#include <QString>
+#include <QPainter>
+#include <QPen>
+#include <QBrush>
+#include <QPainterPath>
 #include "config.h"
 #include "session.h"
 #include "generators/treegenerator.h"
@@ -33,7 +38,8 @@ private:
     bool saveConfig(Config *conf);
     bool saveRunFile(Session *session);
     bool saveHeightMap(HeightMap *map);
-
+    void drawHeightMap(HeightMap *map, unsigned char *data);
+    bool generateAndSaveResultImage(QVector<Vertex*> vertices, float influence, HeightMap *map, QString path);
 
 protected:
     void run();
