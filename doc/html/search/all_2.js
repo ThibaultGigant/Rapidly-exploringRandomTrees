@@ -13,7 +13,7 @@ var searchData=
   ['clearmap',['clearMap',['../class_height_map.html#aefb4cab1ba13efe4147c89f546f438ff',1,'HeightMap']]],
   ['clearobstacles',['clearObstacles',['../class_height_map.html#a9e5e482398cbed809036d640dd34b98a',1,'HeightMap']]],
   ['combobox',['comboBox',['../class_generator_widget.html#a8b6b354b3c5bb2ac152ddf4dea8c9841',1,'GeneratorWidget::comboBox()'],['../class_metric_widget.html#a17d66bbbe145020bf5115c62c4e11306',1,'MetricWidget::comboBox()']]],
-  ['config',['Config',['../class_config.html',1,'Config'],['../class_session.html#aa00ffb7c122de10b27531446734db082',1,'Session::config()'],['../class_config.html#abd0c571c116924871e30444b192b792a',1,'Config::Config()']]],
+  ['config',['Config',['../class_config.html',1,'Config'],['../class_config.html#abd0c571c116924871e30444b192b792a',1,'Config::Config()'],['../class_session.html#aa00ffb7c122de10b27531446734db082',1,'Session::config()']]],
   ['config_2ecpp',['config.cpp',['../config_8cpp.html',1,'']]],
   ['config_2eh',['config.h',['../config_8h.html',1,'']]],
   ['configchanged',['configChanged',['../class_config_panel.html#a1e2e04453c925bc1224963e623c0deae',1,'ConfigPanel']]],

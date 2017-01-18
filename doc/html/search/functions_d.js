@@ -2,6 +2,7 @@ var searchData=
 [
   ['saveconfig',['saveConfig',['../class_thread_generator.html#af612fde224a12a1d0dcac99ab291d508',1,'ThreadGenerator']]],
   ['saveheightmap',['saveHeightMap',['../class_thread_generator.html#af16d2b121c4c52aff15d07ef6ab1ac49',1,'ThreadGenerator']]],
+  ['saveimageslot',['saveImageSlot',['../class_height_map_sub_panel.html#a509747ebe7af2042a5ad4419bbd38995',1,'HeightMapSubPanel']]],
   ['savemap',['saveMap',['../class_height_map_file_panel.html#a7f26e266472cae88211fa478bdbe6c0c',1,'HeightMapFilePanel']]],
   ['saverunfile',['saveRunFile',['../class_thread_generator.html#a4ea86d3d171a1fbcddfaaf444e9e24d3',1,'ThreadGenerator']]],
   ['sendclearimage',['sendClearImage',['../class_height_map_file_panel.html#acf17f2a4cbc364601e43d99b265f4e31',1,'HeightMapFilePanel']]],
@@ -17,6 +18,7 @@ var searchData=
   ['setendmethod',['setEndMethod',['../class_config.html#a4a920180c2b1959f1ffc5bf338373bb2',1,'Config']]],
   ['setgenerator',['setGenerator',['../class_config.html#aba86fc6b22cbf1016a1be0d8ebe5c1d4',1,'Config']]],
   ['setgeneratorid',['setGeneratorID',['../class_generator_widget.html#ab70bf72205100ede81ae494396fecdda',1,'GeneratorWidget::setGeneratorID()'],['../class_config.html#ac108457dc008c6a3963bed46826d5660',1,'Config::setGeneratorID()']]],
+  ['setisconfigfromlist',['setIsConfigFromList',['../class_config_panel.html#a1fc4634457a9ac3afbd2830d68896742',1,'ConfigPanel']]],
   ['setkforprm',['setKForPRM',['../class_config.html#aa07cfe22a524d8e6cf1c2b1f098a9afb',1,'Config']]],
   ['setmap',['setMap',['../class_height_map.html#a89506d7c24e63c7e464a5f7af349890f',1,'HeightMap']]],
   ['setmappixel',['setMapPixel',['../class_height_map.html#a191f867afea46e5cbd6ded5a253a6dea',1,'HeightMap']]],

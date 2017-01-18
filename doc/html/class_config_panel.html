@@ -144,6 +144,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a663bcf80852e0a9c1fbb3bbccde73ddc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_config_panel.html#a663bcf80852e0a9c1fbb3bbccde73ddc">setChanged</a> (bool value)</td></tr>
 <tr class="memdesc:a663bcf80852e0a9c1fbb3bbccde73ddc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter of the flag stating if the config has been changed since it's been loaded.  <a href="#a663bcf80852e0a9c1fbb3bbccde73ddc">More...</a><br /></td></tr>
 <tr class="separator:a663bcf80852e0a9c1fbb3bbccde73ddc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae31d172720e73818c5aaf359942b8c95"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_config_panel.html#ae31d172720e73818c5aaf359942b8c95">getSave</a> ()</td></tr>
+<tr class="memdesc:ae31d172720e73818c5aaf359942b8c95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether the save checkbox has been checked.  <a href="#ae31d172720e73818c5aaf359942b8c95">More...</a><br /></td></tr>
+<tr class="separator:ae31d172720e73818c5aaf359942b8c95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa884b204b1a280f5d8b5d5b468bba634"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_config_panel.html#aa884b204b1a280f5d8b5d5b468bba634">getIsConfigFromList</a> () const</td></tr>
+<tr class="memdesc:aa884b204b1a280f5d8b5d5b468bba634"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns if the config currently displayed is loaded from the stored list or not.  <a href="#aa884b204b1a280f5d8b5d5b468bba634">More...</a><br /></td></tr>
+<tr class="separator:aa884b204b1a280f5d8b5d5b468bba634"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fc4634457a9ac3afbd2830d68896742"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_config_panel.html#a1fc4634457a9ac3afbd2830d68896742">setIsConfigFromList</a> (bool value)</td></tr>
+<tr class="memdesc:a1fc4634457a9ac3afbd2830d68896742"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the value of the boolean stating if the config loaded from the list.  <a href="#a1fc4634457a9ac3afbd2830d68896742">More...</a><br /></td></tr>
+<tr class="separator:a1fc4634457a9ac3afbd2830d68896742"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -346,6 +355,46 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="aa884b204b1a280f5d8b5d5b468bba634"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa884b204b1a280f5d8b5d5b468bba634">&sect;&nbsp;</a></span>getIsConfigFromList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ConfigPanel::getIsConfigFromList </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns if the config currently displayed is loaded from the stored list or not. </p>
+<dl class="section return"><dt>Returns</dt><dd>True if the displayed config is loaded from the list </dd></dl>
+
+</div>
+</div>
+<a id="ae31d172720e73818c5aaf359942b8c95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae31d172720e73818c5aaf359942b8c95">&sect;&nbsp;</a></span>getSave()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ConfigPanel::getSave </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns whether the save checkbox has been checked. </p>
+<dl class="section return"><dt>Returns</dt><dd>True if checked, false otherwise </dd></dl>
+
+</div>
+</div>
 <a id="a6fb3a4ac4766959efd7b16980306368a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6fb3a4ac4766959efd7b16980306368a">&sect;&nbsp;</a></span>loadConfig</h2>
 
@@ -400,6 +449,32 @@ Private Attributes</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">value</td><td>New value of the flag </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a1fc4634457a9ac3afbd2830d68896742"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fc4634457a9ac3afbd2830d68896742">&sect;&nbsp;</a></span>setIsConfigFromList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ConfigPanel::setIsConfigFromList </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the value of the boolean stating if the config loaded from the list. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>New value of this boolean </td></tr>
   </table>
   </dd>
 </dl>

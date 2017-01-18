@@ -6,5 +6,7 @@ var searchData=
   ['endmethod',['endMethod',['../class_config.html#aa5c245a184029bc29a379d20d5c330df',1,'Config::endMethod()'],['../class_session.html#a0c7ab9a33eb3c2e24a96a8fe56d9e2e7',1,'Session::endMethod()']]],
   ['endmethodwidget',['endMethodWidget',['../class_config_panel.html#a6be45c672781f19c9a004ed623163e5d',1,'ConfigPanel']]],
   ['environment',['environment',['../class_session.html#a6867f0b5ad5535ffd9c9a3b78b7b0fda',1,'Session']]],
+  ['erase',['erase',['../class_height_map_view_panel.html#aba8c527ef55edc97c9ce04b57db2401d',1,'HeightMapViewPanel']]],
+  ['erasemode',['eraseMode',['../class_height_map_sub_panel.html#ad912515c8cb6987ba3c4565b42806972',1,'HeightMapSubPanel']]],
   ['eraserbutton',['eraserButton',['../class_height_map_sub_panel.html#a2006cbb397ff69d73e724114311e0f24',1,'HeightMapSubPanel']]]
 ];

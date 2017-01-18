@@ -3,6 +3,7 @@
 
 /**
  * @brief Constructor
+ * @param cp ConfigPanel, used to centralize informations about the config
  * @param parent Widget's parent
  */
 SleepTimeFrame::SleepTimeFrame(ConfigPanel *cp, QWidget *parent) : QWidget(parent)

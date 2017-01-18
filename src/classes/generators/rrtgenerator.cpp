@@ -4,7 +4,6 @@
 
 /**
  * @brief Constructor
- * @param session Session using this generator
  */
 RRTGenerator::RRTGenerator() : TreeGenerator()
 {

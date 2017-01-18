@@ -2,7 +2,6 @@
 
 /**
  * @brief Constructor
- * @param session Session using this generator
  */
 TreeGenerator::TreeGenerator()
 {

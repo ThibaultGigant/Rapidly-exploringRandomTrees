@@ -1,19 +1,19 @@
 <map id="F:/GitHub/Rapidly&#45;exploringRandomTrees/src/app/mainwindow.h" name="F:/GitHub/Rapidly&#45;exploringRandomTrees/src/app/mainwindow.h">
-<area shape="rect" id="node5" href="$heightmapframe_8h.html" title="src/app/heightmappanel\l/heightmapframe.h" alt="" coords="2741,95,2901,136"/>
-<area shape="rect" id="node27" href="$centralwidget_8h.html" title="src/app/centralwidget.h" alt="" coords="2446,437,2602,464"/>
-<area shape="rect" id="node28" href="$config_8h.html" title="src/classes/config.h" alt="" coords="2785,519,2924,546"/>
-<area shape="rect" id="node11" href="$heightmapsubpanel_8h.html" title="heightmapsubpanel.h" alt="" coords="2811,184,2957,211"/>
-<area shape="rect" id="node14" href="$heightmapviewpanel_8h.html" title="src/app/heightmappanel\l/heightmapviewpanel.h" alt="" coords="2979,259,3139,300"/>
-<area shape="rect" id="node47" href="$heightmapfilepanel_8h.html" title="heightmapfilepanel.h" alt="" coords="967,184,1107,211"/>
-<area shape="rect" id="node23" href="$vertex_8h.html" title="src/classes/environment\l/vertex.h" alt="" coords="3384,512,3547,553"/>
-<area shape="rect" id="node26" href="$dragwidget_8h.html" title="src/app/heightmappanel\l/dragwidget.h" alt="" coords="2979,348,3139,389"/>
-<area shape="rect" id="node30" href="$configpanel_8h.html" title="src/app/configpanel\l/configpanel.h" alt="" coords="1391,512,1526,553"/>
-<area shape="rect" id="node39" href="$heightmap_8h.html" title="src/classes/heightmap.h" alt="" coords="2445,519,2609,546"/>
-<area shape="rect" id="node43" href="$session_8h.html" title="src/classes/session.h" alt="" coords="2133,519,2283,546"/>
-<area shape="rect" id="node32" href="$endmethodwidget_8h.html" title="endmethodwidget/endmethodwidget.h" alt="" coords="1615,609,1854,635"/>
-<area shape="rect" id="node33" href="$generatorwidget_8h.html" title="generatorwidget/generatorwidget.h" alt="" coords="523,609,741,635"/>
-<area shape="rect" id="node34" href="$metricwidget_8h.html" title="metricwidget/metricwidget.h" alt="" coords="817,609,999,635"/>
-<area shape="rect" id="node35" href="$additionalinfoswidget_8h.html" title="additionalinfoswidget\l/additionalinfoswidget.h" alt="" coords="1435,601,1591,643"/>
-<area shape="rect" id="node36" href="$runbuttonswidget_8h.html" title="runbuttonswidget/runbuttonswidget.h" alt="" coords="1126,609,1359,635"/>
-<area shape="rect" id="node37" href="$listwidget_8h.html" title="listwidget/listwidget.h" alt="" coords="1878,609,2023,635"/>
+<area shape="rect" id="node5" href="$heightmapframe_8h.html" title="src/app/heightmappanel\l/heightmapframe.h" alt="" coords="1168,95,1328,136"/>
+<area shape="rect" id="node29" href="$centralwidget_8h.html" title="src/app/centralwidget.h" alt="" coords="1114,437,1270,464"/>
+<area shape="rect" id="node30" href="$config_8h.html" title="src/classes/config.h" alt="" coords="525,519,664,546"/>
+<area shape="rect" id="node11" href="$heightmapsubpanel_8h.html" title="heightmapsubpanel.h" alt="" coords="1103,184,1249,211"/>
+<area shape="rect" id="node16" href="$heightmapviewpanel_8h.html" title="src/app/heightmappanel\l/heightmapviewpanel.h" alt="" coords="965,259,1125,300"/>
+<area shape="rect" id="node49" href="$heightmapfilepanel_8h.html" title="heightmapfilepanel.h" alt="" coords="1489,184,1629,211"/>
+<area shape="rect" id="node25" href="$vertex_8h.html" title="src/classes/environment\l/vertex.h" alt="" coords="339,512,501,553"/>
+<area shape="rect" id="node28" href="$dragwidget_8h.html" title="src/app/heightmappanel\l/dragwidget.h" alt="" coords="781,348,941,389"/>
+<area shape="rect" id="node32" href="$configpanel_8h.html" title="src/app/configpanel\l/configpanel.h" alt="" coords="2625,512,2759,553"/>
+<area shape="rect" id="node41" href="$heightmap_8h.html" title="src/classes/heightmap.h" alt="" coords="1609,519,1773,546"/>
+<area shape="rect" id="node45" href="$session_8h.html" title="src/classes/session.h" alt="" coords="1117,519,1267,546"/>
+<area shape="rect" id="node34" href="$endmethodwidget_8h.html" title="endmethodwidget/endmethodwidget.h" alt="" coords="2091,609,2330,635"/>
+<area shape="rect" id="node35" href="$generatorwidget_8h.html" title="generatorwidget/generatorwidget.h" alt="" coords="3388,609,3607,635"/>
+<area shape="rect" id="node36" href="$metricwidget_8h.html" title="metricwidget/metricwidget.h" alt="" coords="3079,609,3262,635"/>
+<area shape="rect" id="node37" href="$additionalinfoswidget_8h.html" title="additionalinfoswidget\l/additionalinfoswidget.h" alt="" coords="2663,601,2819,643"/>
+<area shape="rect" id="node38" href="$runbuttonswidget_8h.html" title="runbuttonswidget/runbuttonswidget.h" alt="" coords="2354,609,2587,635"/>
+<area shape="rect" id="node39" href="$listwidget_8h.html" title="listwidget/listwidget.h" alt="" coords="1922,609,2067,635"/>
 </map>

@@ -9,11 +9,7 @@
 
 /**
  * @brief Constructor
- * @param delta_t Time (so distance, in our case) between 2 points in the tree
- * @param environment Environment where the tree will be created and stored
- * @param metric Metric to calculate distance between points
- * @param generator Generator of new vertices at every iteration
- * @param map Map of the space
+ * @param config Configuration to follow during the simulation
  */
 Session::Session(Config* config)
 {

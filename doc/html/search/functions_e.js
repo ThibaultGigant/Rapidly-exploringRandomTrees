@@ -3,6 +3,8 @@ var searchData=
   ['threadgenerator',['ThreadGenerator',['../class_thread_generator.html#a36d92711f1e6c9b62ebee4c1ca8da9cf',1,'ThreadGenerator']]],
   ['timelimitwidget',['TimeLimitWidget',['../class_time_limit_widget.html#a4cff62258b569b04f618d0ee40b62633',1,'TimeLimitWidget']]],
   ['tofilestring',['toFileString',['../class_height_map.html#ab971580429d406979847ae7a501ff3c8',1,'HeightMap']]],
+  ['togglemode',['toggleMode',['../class_height_map_sub_panel.html#acea6940f73c85b74962f24709d3947be',1,'HeightMapSubPanel::toggleMode()'],['../class_height_map_view_panel.html#a22bb856e7bbf1ca677f6aad2f79183f9',1,'HeightMapViewPanel::toggleMode()']]],
+  ['togglemodesig',['toggleModeSig',['../class_height_map_sub_panel.html#a05639d75eec763374ba9260551611eef',1,'HeightMapSubPanel']]],
   ['toheightmappoint',['toHeightMapPoint',['../class_height_map_view_panel.html#a67ccc2c5328ba9dcfaf476f6103d4871',1,'HeightMapViewPanel']]],
   ['torun',['toRun',['../class_run_buttons_widget.html#a21347fcce5d379362ff1e92e3205c8bf',1,'RunButtonsWidget']]],
   ['toscale',['toScale',['../class_drag_widget.html#ab7121d002a960bf8d01fc37514fd6eb1',1,'DragWidget']]],

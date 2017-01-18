@@ -6,6 +6,7 @@
  * @brief Constructor
  * @param cw Central Widget, used to connect the simulation and the display
  * @param configs List of configurations to run
+ * @param dirPath Relative or absolute link to the directory where the results will be stored
  */
 ThreadGenerator::ThreadGenerator(CentralWidget *cw, QVector<Config *> configs, QString dirPath)
 {

@@ -6,13 +6,15 @@ var searchData=
   ['saveconfig',['saveConfig',['../class_thread_generator.html#af612fde224a12a1d0dcac99ab291d508',1,'ThreadGenerator']]],
   ['savedmaps',['savedMaps',['../class_thread_generator.html#a0e2bd8bd8f04fecb192632d17762d2b6',1,'ThreadGenerator']]],
   ['saveheightmap',['saveHeightMap',['../class_thread_generator.html#af16d2b121c4c52aff15d07ef6ab1ac49',1,'ThreadGenerator']]],
+  ['saveimagebutton',['saveImageButton',['../class_height_map_sub_panel.html#a807561e1f047838b15e170d4185bc6a0',1,'HeightMapSubPanel']]],
+  ['saveimageslot',['saveImageSlot',['../class_height_map_sub_panel.html#a509747ebe7af2042a5ad4419bbd38995',1,'HeightMapSubPanel']]],
   ['savemap',['saveMap',['../class_height_map_file_panel.html#a7f26e266472cae88211fa478bdbe6c0c',1,'HeightMapFilePanel']]],
   ['saverunfile',['saveRunFile',['../class_thread_generator.html#a4ea86d3d171a1fbcddfaaf444e9e24d3',1,'ThreadGenerator']]],
   ['scribbling',['scribbling',['../class_height_map_view_panel.html#af62ebaae80f87db11b239628d1449df7',1,'HeightMapViewPanel']]],
   ['sendclearimage',['sendClearImage',['../class_height_map_file_panel.html#acf17f2a4cbc364601e43d99b265f4e31',1,'HeightMapFilePanel']]],
   ['sendmodifallowed',['sendModifAllowed',['../class_height_map_view_panel.html#a31b07ffba6c468106e98dc9a4d4e741d',1,'HeightMapViewPanel']]],
   ['sendpensize',['sendPenSize',['../class_height_map_view_panel.html#a16962ac7abbd24a74ea8000594c44bae',1,'HeightMapViewPanel']]],
-  ['session',['Session',['../class_session.html',1,'Session'],['../class_environment.html#a837221f89d549b877a324f5228616976',1,'Environment::session()'],['../class_tree_generator.html#a0d4bf0426d99f232a1b3df1688714445',1,'TreeGenerator::session()'],['../class_thread_generator.html#ad9512df4f4dbca884cd19c355409ccd6',1,'ThreadGenerator::session()'],['../class_session.html#ae7c54d4df36d21ad0d679da0fbe38100',1,'Session::Session()']]],
+  ['session',['Session',['../class_session.html',1,'Session'],['../class_session.html#ae7c54d4df36d21ad0d679da0fbe38100',1,'Session::Session()'],['../class_environment.html#a837221f89d549b877a324f5228616976',1,'Environment::session()'],['../class_tree_generator.html#a0d4bf0426d99f232a1b3df1688714445',1,'TreeGenerator::session()'],['../class_thread_generator.html#ad9512df4f4dbca884cd19c355409ccd6',1,'ThreadGenerator::session()']]],
   ['session_2ecpp',['session.cpp',['../session_8cpp.html',1,'']]],
   ['session_2eh',['session.h',['../session_8h.html',1,'']]],
   ['setchanged',['setChanged',['../class_config_panel.html#a663bcf80852e0a9c1fbb3bbccde73ddc',1,'ConfigPanel']]],
@@ -24,6 +26,7 @@ var searchData=
   ['setendmethod',['setEndMethod',['../class_config.html#a4a920180c2b1959f1ffc5bf338373bb2',1,'Config']]],
   ['setgenerator',['setGenerator',['../class_config.html#aba86fc6b22cbf1016a1be0d8ebe5c1d4',1,'Config']]],
   ['setgeneratorid',['setGeneratorID',['../class_generator_widget.html#ab70bf72205100ede81ae494396fecdda',1,'GeneratorWidget::setGeneratorID()'],['../class_config.html#ac108457dc008c6a3963bed46826d5660',1,'Config::setGeneratorID()']]],
+  ['setisconfigfromlist',['setIsConfigFromList',['../class_config_panel.html#a1fc4634457a9ac3afbd2830d68896742',1,'ConfigPanel']]],
   ['setkforprm',['setKForPRM',['../class_config.html#aa07cfe22a524d8e6cf1c2b1f098a9afb',1,'Config']]],
   ['setmap',['setMap',['../class_height_map.html#a89506d7c24e63c7e464a5f7af349890f',1,'HeightMap']]],
   ['setmappixel',['setMapPixel',['../class_height_map.html#a191f867afea46e5cbd6ded5a253a6dea',1,'HeightMap']]],
@@ -65,5 +68,6 @@ var searchData=
   ['stoprun',['stopRun',['../class_config.html#a1865fc9becc1da0c273db3bf55811e89',1,'Config']]],
   ['stopsimulations',['stopSimulations',['../class_thread_generator.html#a6d1935d542712d83159a92bb1c0473aa',1,'ThreadGenerator']]],
   ['stopthread',['stopThread',['../class_central_widget.html#a1630a54f0506f6362a256998be947c88',1,'CentralWidget']]],
-  ['surfaceratio',['surfaceRatio',['../class_thread_generator.html#aeaa1b371afa4af09451c96db7eef4914',1,'ThreadGenerator']]]
+  ['surfaceratio',['surfaceRatio',['../class_thread_generator.html#aeaa1b371afa4af09451c96db7eef4914',1,'ThreadGenerator']]],
+  ['surfaceratioconnected',['surfaceRatioConnected',['../class_thread_generator.html#a0f1dd3d0fa89c656fa220f7a3591303f',1,'ThreadGenerator']]]
 ];

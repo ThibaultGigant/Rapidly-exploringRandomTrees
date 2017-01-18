@@ -4,6 +4,7 @@ var searchData=
   ['savebutton',['saveButton',['../class_height_map_file_panel.html#a183c5b5846d6897aa5ec670a09850d8b',1,'HeightMapFilePanel::saveButton()'],['../class_height_map_sup_panel.html#af71552e2c42f3212b098ec9bc3e63b6a',1,'HeightMapSupPanel::saveButton()']]],
   ['savecheckbox',['saveCheckBox',['../class_additional_infos_widget.html#ac216738057ac04e1645b910dbab430c5',1,'AdditionalInfosWidget']]],
   ['savedmaps',['savedMaps',['../class_thread_generator.html#a0e2bd8bd8f04fecb192632d17762d2b6',1,'ThreadGenerator']]],
+  ['saveimagebutton',['saveImageButton',['../class_height_map_sub_panel.html#a807561e1f047838b15e170d4185bc6a0',1,'HeightMapSubPanel']]],
   ['scribbling',['scribbling',['../class_height_map_view_panel.html#af62ebaae80f87db11b239628d1449df7',1,'HeightMapViewPanel']]],
   ['session',['session',['../class_environment.html#a837221f89d549b877a324f5228616976',1,'Environment::session()'],['../class_tree_generator.html#a0d4bf0426d99f232a1b3df1688714445',1,'TreeGenerator::session()'],['../class_thread_generator.html#ad9512df4f4dbca884cd19c355409ccd6',1,'ThreadGenerator::session()']]],
   ['size',['size',['../class_height_map_sub_panel.html#aa6454ac9b5c761fd74342125932dceb1',1,'HeightMapSubPanel']]],
@@ -18,5 +19,6 @@ var searchData=
   ['starttime',['startTime',['../class_end_method.html#a19e35db4ac44b6737a6cb6d68855ac1b',1,'EndMethod']]],
   ['startvertex',['startVertex',['../class_environment.html#a0720b64810b39e7f231b67d94d4872aa',1,'Environment']]],
   ['stopsimulations',['stopSimulations',['../class_thread_generator.html#a6d1935d542712d83159a92bb1c0473aa',1,'ThreadGenerator']]],
-  ['surfaceratio',['surfaceRatio',['../class_thread_generator.html#aeaa1b371afa4af09451c96db7eef4914',1,'ThreadGenerator']]]
+  ['surfaceratio',['surfaceRatio',['../class_thread_generator.html#aeaa1b371afa4af09451c96db7eef4914',1,'ThreadGenerator']]],
+  ['surfaceratioconnected',['surfaceRatioConnected',['../class_thread_generator.html#a0f1dd3d0fa89c656fa220f7a3591303f',1,'ThreadGenerator']]]
 ];

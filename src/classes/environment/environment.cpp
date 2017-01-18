@@ -70,6 +70,7 @@ void Environment::addElement(Vertex *vertex)
 /**
  * @brief Returns the closest vertex of a given point in the 9 quadrants around the point (the one it's in, and the 8 surrounding)
  * @param point Point of the environment
+ * @param radius Distance (in numbers of quadrants) separating the point's quadrant and quadrants we want to analyze
  * @return Closest vertex of the given point in those 9 quadrants if it exists, null otherwise
  */
 Vertex* Environment::getClosestAround(QPointF point, int radius)

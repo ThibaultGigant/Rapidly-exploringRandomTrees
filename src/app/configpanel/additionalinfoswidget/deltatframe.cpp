@@ -3,6 +3,7 @@
 
 /**
  * @brief Constructor
+ * @param cp ConfigPanel, used to centralize informations about the config
  * @param parent Widget's parent
  */
 DeltaTFrame::DeltaTFrame(ConfigPanel *cp, QWidget *parent) : QFrame(parent)

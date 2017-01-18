@@ -11,6 +11,8 @@ var searchData=
   ['timelimitwidget_2eh',['timelimitwidget.h',['../timelimitwidget_8h.html',1,'']]],
   ['title',['title',['../class_end_method_widget.html#afe5deda2e8d50aaae699ff62b78778bb',1,'EndMethodWidget::title()'],['../class_generator_widget.html#aeaa14be50b1e432ed54962123a8bfb77',1,'GeneratorWidget::title()'],['../class_metric_widget.html#adc5533f509de17bf3339360bf67bf608',1,'MetricWidget::title()']]],
   ['tofilestring',['toFileString',['../class_height_map.html#ab971580429d406979847ae7a501ff3c8',1,'HeightMap']]],
+  ['togglemode',['toggleMode',['../class_height_map_sub_panel.html#acea6940f73c85b74962f24709d3947be',1,'HeightMapSubPanel::toggleMode()'],['../class_height_map_view_panel.html#a22bb856e7bbf1ca677f6aad2f79183f9',1,'HeightMapViewPanel::toggleMode()']]],
+  ['togglemodesig',['toggleModeSig',['../class_height_map_sub_panel.html#a05639d75eec763374ba9260551611eef',1,'HeightMapSubPanel']]],
   ['toheightmappoint',['toHeightMapPoint',['../class_height_map_view_panel.html#a67ccc2c5328ba9dcfaf476f6103d4871',1,'HeightMapViewPanel']]],
   ['torun',['toRun',['../class_run_buttons_widget.html#a21347fcce5d379362ff1e92e3205c8bf',1,'RunButtonsWidget']]],
   ['toscale',['toScale',['../class_drag_widget.html#ab7121d002a960bf8d01fc37514fd6eb1',1,'DragWidget']]],

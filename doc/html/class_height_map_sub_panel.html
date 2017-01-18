@@ -116,6 +116,10 @@ Public Slots</h2></td></tr>
 <tr class="separator:a4c6b993b12ad9ab66602e2fa19e260ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a368ba1050fa00bbb508a0608e3925a8f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_height_map_sub_panel.html#a368ba1050fa00bbb508a0608e3925a8f">receiveModifAllowed</a> (bool isModifAllowed)</td></tr>
 <tr class="separator:a368ba1050fa00bbb508a0608e3925a8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acea6940f73c85b74962f24709d3947be"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_height_map_sub_panel.html#acea6940f73c85b74962f24709d3947be">toggleMode</a> ()</td></tr>
+<tr class="separator:acea6940f73c85b74962f24709d3947be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a509747ebe7af2042a5ad4419bbd38995"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_height_map_sub_panel.html#a509747ebe7af2042a5ad4419bbd38995">saveImageSlot</a> ()</td></tr>
+<tr class="separator:a509747ebe7af2042a5ad4419bbd38995"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
 Signals</h2></td></tr>
@@ -123,8 +127,8 @@ Signals</h2></td></tr>
 <tr class="separator:a9f2209ddc1472ad8e92f127016ca0c61"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe03466ba1b56ca19514de62f023224a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_height_map_sub_panel.html#afe03466ba1b56ca19514de62f023224a">decreasePenSize</a> ()</td></tr>
 <tr class="separator:afe03466ba1b56ca19514de62f023224a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c443bf43c377cc646233439f1496cd5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_height_map_sub_panel.html#a9c443bf43c377cc646233439f1496cd5">goEraser</a> ()</td></tr>
-<tr class="separator:a9c443bf43c377cc646233439f1496cd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05639d75eec763374ba9260551611eef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_height_map_sub_panel.html#a05639d75eec763374ba9260551611eef">toggleModeSig</a> ()</td></tr>
+<tr class="separator:a05639d75eec763374ba9260551611eef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -145,8 +149,12 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a2f3fb3a0e3305b3ca538069a48691506"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2006cbb397ff69d73e724114311e0f24"><td class="memItemLeft" align="right" valign="top">QPushButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_height_map_sub_panel.html#a2006cbb397ff69d73e724114311e0f24">eraserButton</a></td></tr>
 <tr class="separator:a2006cbb397ff69d73e724114311e0f24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a807561e1f047838b15e170d4185bc6a0"><td class="memItemLeft" align="right" valign="top">QPushButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_height_map_sub_panel.html#a807561e1f047838b15e170d4185bc6a0">saveImageButton</a></td></tr>
+<tr class="separator:a807561e1f047838b15e170d4185bc6a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99c672a99dddf574e533e5dd3f8c8132"><td class="memItemLeft" align="right" valign="top">QHBoxLayout *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_height_map_sub_panel.html#a99c672a99dddf574e533e5dd3f8c8132">layout</a></td></tr>
 <tr class="separator:a99c672a99dddf574e533e5dd3f8c8132"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad912515c8cb6987ba3c4565b42806972"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_height_map_sub_panel.html#ad912515c8cb6987ba3c4565b42806972">eraseMode</a></td></tr>
+<tr class="separator:ad912515c8cb6987ba3c4565b42806972"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a08c49b409938e473acfc215258780c74"></a>
@@ -203,31 +211,6 @@ Private Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">void HeightMapSubPanel::decreasePenSize </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a9c443bf43c377cc646233439f1496cd5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9c443bf43c377cc646233439f1496cd5">&sect;&nbsp;</a></span>goEraser</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void HeightMapSubPanel::goEraser </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -319,6 +302,81 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a509747ebe7af2042a5ad4419bbd38995"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a509747ebe7af2042a5ad4419bbd38995">&sect;&nbsp;</a></span>saveImageSlot</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HeightMapSubPanel::saveImageSlot </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acea6940f73c85b74962f24709d3947be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acea6940f73c85b74962f24709d3947be">&sect;&nbsp;</a></span>toggleMode</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HeightMapSubPanel::toggleMode </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a05639d75eec763374ba9260551611eef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05639d75eec763374ba9260551611eef">&sect;&nbsp;</a></span>toggleModeSig</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HeightMapSubPanel::toggleModeSig </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Field Documentation</h2>
 <a id="a3796bfe4d512548cd86ac10ab7d7e6d0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3796bfe4d512548cd86ac10ab7d7e6d0">&sect;&nbsp;</a></span>centralWidget</h2>
@@ -353,6 +411,28 @@ Private Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">QPushButton* HeightMapSubPanel::decreaseButton</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad912515c8cb6987ba3c4565b42806972"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad912515c8cb6987ba3c4565b42806972">&sect;&nbsp;</a></span>eraseMode</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool HeightMapSubPanel::eraseMode</td>
         </tr>
       </table>
   </td>
@@ -419,6 +499,28 @@ Private Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">QHBoxLayout* HeightMapSubPanel::layout</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a807561e1f047838b15e170d4185bc6a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a807561e1f047838b15e170d4185bc6a0">&sect;&nbsp;</a></span>saveImageButton</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPushButton* HeightMapSubPanel::saveImageButton</td>
         </tr>
       </table>
   </td>

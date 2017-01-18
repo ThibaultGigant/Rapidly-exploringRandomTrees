@@ -24,6 +24,7 @@ var searchData=
   ['getheight',['getHeight',['../class_height_map.html#af7dfd1c52016e685204f4119fb3e5486',1,'HeightMap::getHeight()'],['../class_session.html#a9b9839f3f888c11f503bad6eb3355181',1,'Session::getHeight()']]],
   ['getheightmapviewpanel',['getHeightMapViewPanel',['../class_height_map_frame.html#ae76469d0109056b654bc3afe448baae8',1,'HeightMapFrame']]],
   ['getid',['getId',['../class_vertex.html#a6c98f2ba24da887ae2fe970f7ed45db4',1,'Vertex']]],
+  ['getisconfigfromlist',['getIsConfigFromList',['../class_config_panel.html#aa884b204b1a280f5d8b5d5b468bba634',1,'ConfigPanel']]],
   ['getkforprm',['getKForPRM',['../class_config.html#ad9aa1f0765c7dfb7a7897628c5002b0e',1,'Config']]],
   ['getkreachableclosest',['getKReachableClosest',['../class_environment.html#ae3e9961de5220365558d058da363cd10',1,'Environment::getKReachableClosest()'],['../class_session.html#a4ec8af4b2d43c9b672efd0fb5baaabe8',1,'Session::getKReachableClosest()']]],
   ['getlimittime',['getLimitTime',['../class_end_method.html#a73259df2b4c2e88a6ef8f6cfe5cd856d',1,'EndMethod']]],
@@ -42,7 +43,8 @@ var searchData=
   ['getpensize',['getPenSize',['../class_height_map_view_panel.html#a50d69f8771d63dfa4435804c9eea82d0',1,'HeightMapViewPanel']]],
   ['getposition',['getPosition',['../class_vertex.html#aa958b4a81c5682ae1049644d912dd456',1,'Vertex']]],
   ['getrandomvertex',['getRandomVertex',['../class_environment.html#a0e62d4a4fdb7b97fbf2365a9a7d8828e',1,'Environment::getRandomVertex()'],['../class_session.html#aec316372528360ad27863ad59bf72945',1,'Session::getRandomVertex()']]],
-  ['getsavestate',['getSaveState',['../class_additional_infos_widget.html#af81deba743b1e065cba3425f70f8d756',1,'AdditionalInfosWidget']]],
+  ['getsave',['getSave',['../class_config_panel.html#ae31d172720e73818c5aaf359942b8c95',1,'ConfigPanel']]],
+  ['getsavestate',['getSaveState',['../class_central_widget.html#a051042f41231fce3f05d03cd82bd0215',1,'CentralWidget::getSaveState()'],['../class_additional_infos_widget.html#af81deba743b1e065cba3425f70f8d756',1,'AdditionalInfosWidget::getSaveState()']]],
   ['getsession',['getSession',['../class_tree_generator.html#a237f870c54e07ffa3e5e52d3607fff47',1,'TreeGenerator']]],
   ['getsleeptime',['getSleepTime',['../class_additional_infos_widget.html#aa263c71542109a60e86af52fd566e04e',1,'AdditionalInfosWidget::getSleepTime()'],['../class_sleep_time_frame.html#a42104730c7f5acada1bf7610f03ec061',1,'SleepTimeFrame::getSleepTime()'],['../class_config.html#a475a6e5a0bb29e83990dc79534ce044c',1,'Config::getSleepTime()']]],
   ['getstart',['getStart',['../class_height_map.html#a9957645f20784da16bba3d90b79c692c',1,'HeightMap']]],
@@ -52,6 +54,6 @@ var searchData=
   ['getuniqueid',['getUniqueId',['../class_vertex.html#a3e058fcf545f43287a55dbec93a7a23b',1,'Vertex']]],
   ['getvertexdrawn',['getVertexDrawn',['../class_thread_generator.html#a1efe9833fb30c19e0202297f3a294443',1,'ThreadGenerator']]],
   ['getvertices',['getVertices',['../class_environment.html#a1835ccd4b90c30bc41bef9cbaf51e240',1,'Environment::getVertices()'],['../class_quadrant.html#ae3c7f65b9bb7d2d5330fecf62818f155',1,'Quadrant::getVertices()']]],
-  ['getwidth',['getWidth',['../class_height_map.html#a4dfd463d6be253385ca1a019b838e29d',1,'HeightMap::getWidth()'],['../class_session.html#a2b5e8793254b3b09db74fc3a3a88e356',1,'Session::getWidth()']]],
-  ['goeraser',['goEraser',['../class_height_map_sub_panel.html#a9c443bf43c377cc646233439f1496cd5',1,'HeightMapSubPanel']]]
+  ['getview',['getView',['../class_height_map_view_panel.html#a6745a1b7d67b337e53c32fd4cb6bd981',1,'HeightMapViewPanel']]],
+  ['getwidth',['getWidth',['../class_height_map.html#a4dfd463d6be253385ca1a019b838e29d',1,'HeightMap::getWidth()'],['../class_session.html#a2b5e8793254b3b09db74fc3a3a88e356',1,'Session::getWidth()']]]
 ];
