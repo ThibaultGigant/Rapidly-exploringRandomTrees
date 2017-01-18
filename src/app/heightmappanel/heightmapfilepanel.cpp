@@ -10,21 +10,21 @@ HeightMapFilePanel::HeightMapFilePanel(CentralWidget *centralWidget, HeightMapVi
     layout = new QHBoxLayout;
 
     mapName = new QLabel(cw->getCurrentMap()->getName());
-    mapWidth = new QLabel(QString::number(cw->getCurrentMap()->getWidth()));
-    mapHeight = new QLabel(QString::number(cw->getCurrentMap()->getHeight()));
+   // mapWidth = new QLabel(QString::number(cw->getCurrentMap()->getWidth()));
+    //mapHeight = new QLabel(QString::number(cw->getCurrentMap()->getHeight()));
 
-    saveButton = new QPushButton("Save");
-    newButton = new QPushButton("New");
-    loadButton = new QPushButton("Load");
-    clearButton = new QPushButton("Clear");
+    saveButton = new QPushButton("Save Map");
+    newButton = new QPushButton("Erase Map");
+    loadButton = new QPushButton("Load Map");
+    clearButton = new QPushButton("Clear Tree");
 
     // Interface Construction
 
     layout->setAlignment(Qt::AlignLeft);
 
     layout->addWidget(mapName);
-    layout->addWidget(mapWidth);
-    layout->addWidget(mapHeight);
+   // layout->addWidget(mapWidth);
+    //layout->addWidget(mapHeight);
 
     layout->addWidget(saveButton);
     layout->addWidget(newButton);
