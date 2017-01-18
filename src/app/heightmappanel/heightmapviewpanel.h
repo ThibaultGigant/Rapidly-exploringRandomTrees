@@ -28,7 +28,7 @@ public:
     explicit HeightMapViewPanel(CentralWidget *centralWidget, QWidget *parent = 0);
     void drawImageOnHeightMap();
     int getPenSize();
-
+    QImage getView();
 
 private :
 
@@ -40,6 +40,7 @@ private :
     QVector<Vertex*> vertexList;
 
     bool modifAllowed;
+    bool erase;
 
     QPen hmPen;
     QPen edgePen;
@@ -88,6 +89,8 @@ public slots:
 
     void increasePenSize();
     void decreasePenSize();
+
+    void toggleMode();
 
 };
 
