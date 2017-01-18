@@ -175,3 +175,10 @@ void ConfigPanel::loadConfig(int configIndex)
         this->configUnChanged();
     }
 }
+
+bool ConfigPanel::getSave()
+{
+    if (this->additionalInfosWidget->getSaveState() == Qt::Checked)
+        return true;
+    return false;
+}

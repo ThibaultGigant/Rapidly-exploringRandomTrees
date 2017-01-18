@@ -24,6 +24,7 @@ public:
 
     bool getChanged() const;
     void setChanged(bool value);
+    bool getSave();
 
 private:
     CentralWidget *centralWidget;

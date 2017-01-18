@@ -79,10 +79,14 @@ void CentralWidget::addConfig(Config *config)
 void CentralWidget::start()
 {
 
-    QString path = QFileDialog::getExistingDirectory(this, tr("Open Directory"),
+    QString path = "";
+    if (this->getSaveState())
+    {
+        path = QFileDialog::getExistingDirectory(this, tr("Open Directory"),
                                                     QDir::homePath(),
                                                      QFileDialog::ShowDirsOnly
                                                      | QFileDialog::DontResolveSymlinks);
+    }
 
     t = new ThreadGenerator(this, this->configs,path);
     connect(this, SIGNAL(startThread()), t, SLOT(start()));
@@ -202,4 +206,13 @@ void CentralWidget::clearConfigs()
     this->configs.clear();
     this->nbConfigs = 0;
     this->configPanel->configChanged();
+}
+
+/**
+ * @brief CentralWidget::getSaveState
+ * @return
+ */
+bool CentralWidget::getSaveState()
+{
+    return this->configPanel->getSave();
 }

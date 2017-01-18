@@ -37,6 +37,7 @@ public:
     void addConfig(Config *config);
     void removeConfig(int index);
     void start();
+    bool getSaveState();
 
 private :
     // Interface
