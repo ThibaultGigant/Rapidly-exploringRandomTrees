@@ -275,7 +275,7 @@ bool ThreadGenerator::generateAndSaveResultImage(QVector<Vertex*> vertices, floa
     brush = QBrush(blue);
     pen = QPen(blue);
     pen.setBrush(brush);
-    pen.setWidthF(1);
+    pen.setWidthF(influence);
     painterInflu.setBrush(brush);
     painterInflu.setPen(pen);
     painterInfluConnected.setBrush(brush);
