@@ -154,6 +154,7 @@ bool ThreadGenerator::saveRunFile(Session *session){
 
     QTextStream out(&file);
     out << QString::number(surfaceRatio)+"\n";
+    out << QString::number(surfaceRatioConnected)+"\n";
     out << session->getEnvironment()->toString();
     file.close();
 
