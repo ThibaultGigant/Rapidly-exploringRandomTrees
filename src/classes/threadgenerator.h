@@ -37,6 +37,7 @@ private:
     int runCount = 0;
 
     float surfaceRatio;
+    float surfaceRatioConnected;
 
     bool saveConfig(Config *conf);
     bool saveRunFile(Session *session);

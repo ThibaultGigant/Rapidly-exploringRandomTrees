@@ -149,7 +149,7 @@ bool ThreadGenerator::saveRunFile(Session *session){
         return false;
     }
 
-    QString path = dirPath+"/Config_"+QString::number(configCount)+"/imageResult"+QString::number(runCount)+".png";
+    QString path = dirPath+"/Config_"+QString::number(configCount)+"/";
     bool success = generateAndSaveResultImage(session->getEnvironment()->getVertices(), session->getDeltaT()/2, session->getMap(), path);
 
     QTextStream out(&file);
@@ -163,8 +163,8 @@ bool ThreadGenerator::saveRunFile(Session *session){
 bool ThreadGenerator::generateAndSaveResultImage(QVector<Vertex*> vertices, float influence, HeightMap *map, QString path){
 
     int w, h, count, c, i;
-    unsigned char *data, *dataInflu;
-    QImage view, viewInflu;
+    unsigned char *data, *dataInflu,*dataInfluConnected;
+    QImage view, viewInflu, viewInfluConnected;
 
     QPointF point1;
     QColor blue;
@@ -173,7 +173,10 @@ bool ThreadGenerator::generateAndSaveResultImage(QVector<Vertex*> vertices, floa
     QVector<QPair<QPainterPath,QColor>> vectPathVertices;
     QVector<QPainterPath> vectPathInfuence;
 
+    QVector<QPainterPath> vectPathInfuenceConnected;
+
     QPainterPath pathInfluenceZone;
+    QPainterPath pathInfluenceZoneConnected;
     QPainterPath pathEdgeVertices;
 
     QBrush brush;
@@ -189,9 +192,15 @@ bool ThreadGenerator::generateAndSaveResultImage(QVector<Vertex*> vertices, floa
     dataInflu = new unsigned char[4 * w * h ];
     viewInflu = QImage(dataInflu, w, h, QImage::Format_RGB32);
 
+    dataInfluConnected = new unsigned char[4 * w * h ];
+    viewInfluConnected = QImage(dataInfluConnected, w, h, QImage::Format_RGB32);
+
     pathInfluenceZone = QPainterPath(QPointF(0,0));
+    pathInfluenceZoneConnected = QPainterPath(QPointF(0,0));
 
     count = vertices.length();
+
+    Vertex *marker = vertices[0]->getConnectedComponentPointer();
 
     for(i = 0;i < count; i++){
 
@@ -206,10 +215,16 @@ bool ThreadGenerator::generateAndSaveResultImage(QVector<Vertex*> vertices, floa
         vectPathVertices.append(QPair<QPainterPath,QColor>(pathEdgeVertices,blue));
 
         // Influence Zone
+
         pathInfluenceZone = QPainterPath();
         pathInfluenceZone.addEllipse(point1, influence, influence);
-
         vectPathInfuence.append(pathInfluenceZone);
+
+        if(v->getConnectedComponentPointer()==marker){
+            pathInfluenceZoneConnected = QPainterPath();
+            pathInfluenceZoneConnected.addEllipse(point1, influence, influence);
+            vectPathInfuenceConnected.append(pathInfluenceZone);
+        }
 
         //Edges
         foreach (Vertex *tempVertex, v->getChildren()) {
@@ -221,9 +236,14 @@ bool ThreadGenerator::generateAndSaveResultImage(QVector<Vertex*> vertices, floa
             // Influence Zone
             pathInfluenceZone = QPainterPath(point1);
             pathInfluenceZone.lineTo(tempVertex->getPosition());
-
             vectPathInfuence.append(pathInfluenceZone);
 
+            if(v->getConnectedComponentPointer()==marker){
+                pathInfluenceZoneConnected = QPainterPath(point1);
+                pathInfluenceZoneConnected.lineTo(tempVertex->getPosition());
+                vectPathInfuenceConnected.append(pathInfluenceZone);
+
+            }
 
         }
     }
@@ -235,10 +255,18 @@ bool ThreadGenerator::generateAndSaveResultImage(QVector<Vertex*> vertices, floa
 
     QPainter painterInflu(&viewInflu);
 
+    QPainter painterInfluConnected(&viewInfluConnected);
+
     QPen temp = QPen();
     temp.setWidth((int)influence);
     painterInflu.setPen(temp);
-    painter.setBrush(QBrush());
+    painterInflu.setBrush(QBrush());
+
+    QPen temp2 = QPen();
+    temp2.setWidth((int)influence);
+    painterInfluConnected.setPen(temp2);
+    painterInfluConnected.setBrush(QBrush());
+
 
     painter.setRenderHint(QPainter::Antialiasing);
     blue = QColor(60,60,220,255);
@@ -248,11 +276,17 @@ bool ThreadGenerator::generateAndSaveResultImage(QVector<Vertex*> vertices, floa
     painter.setPen(pen);
 
     painter.fillRect(view.rect(),Qt::white);
+    painterInflu.fillRect(viewInflu.rect(),Qt::white);
+    painterInfluConnected.fillRect(viewInfluConnected.rect(),Qt::white);
 
 
     foreach(QPainterPath pathInfluenceZone, vectPathInfuence){
         painter.drawPath(pathInfluenceZone);
         painterInflu.drawPath(pathInfluenceZone);
+    }
+
+    foreach(QPainterPath pathInfluenceZoneConnected, vectPathInfuenceConnected){
+        painterInfluConnected.drawPath(pathInfluenceZoneConnected);
     }
 
 
@@ -276,18 +310,27 @@ bool ThreadGenerator::generateAndSaveResultImage(QVector<Vertex*> vertices, floa
 
     float totalSize = w*h;
     float covered = 0;
+    float coveredConnected = 0;
 
     for (int x = 0; x < w; x++){
         for(int y = 0; y < h;y++){
             if(viewInflu.pixelColor(x,y).red() < 0.5){
                 covered ++;
             }
+            if(viewInfluConnected.pixelColor(x,y).red() < 0.5){
+                coveredConnected ++;
+            }
         }
     }
 
     surfaceRatio = 100.0 * covered / totalSize;
+    surfaceRatioConnected = 100.0 * coveredConnected / totalSize;
 
-    return view.save(path);
+    bool success  = view.save(path+"view"+QString::number(runCount)+".png");
+    success = success && viewInflu.save(path+"viewInflu"+QString::number(runCount)+".png");
+    success = success && viewInfluConnected.save(path+"viewConnected"+QString::number(runCount)+".png");
+
+    return success;
 
 }
 
