@@ -1,3 +1,35 @@
 <map id="F:/GitHub/Rapidly&#45;exploringRandomTrees/src/classes/metrics/manhattandistance.h" name="F:/GitHub/Rapidly&#45;exploringRandomTrees/src/classes/metrics/manhattandistance.h">
-<area shape="rect" id="node2" href="$manhattandistance_8cpp.html" title="F:/GitHub/Rapidly&#45;exploring\lRandomTrees/src/classes\l/metrics/manhattandistance.cpp" alt="" coords="5,109,213,165"/>
+<area shape="rect" id="node2" href="$metricwidget_8h.html" title="F:/GitHub/Rapidly&#45;exploring\lRandomTrees/src/app/configpanel\l/metricwidget/metricwidget.h" alt="" coords="1523,109,1742,165"/>
+<area shape="rect" id="node33" href="$config_8cpp.html" title="F:/GitHub/Rapidly&#45;exploring\lRandomTrees/src/classes\l/config.cpp" alt="" coords="1766,109,1947,165"/>
+<area shape="rect" id="node34" href="$manhattandistance_8cpp.html" title="F:/GitHub/Rapidly&#45;exploring\lRandomTrees/src/classes\l/metrics/manhattandistance.cpp" alt="" coords="1971,109,2179,165"/>
+<area shape="rect" id="node3" href="$configpanel_8h.html" title="F:/GitHub/Rapidly&#45;exploring\lRandomTrees/src/app/configpanel\l/configpanel.h" alt="" coords="1078,213,1296,269"/>
+<area shape="rect" id="node32" href="$metricwidget_8cpp.html" title="F:/GitHub/Rapidly&#45;exploring\lRandomTrees/src/app/configpanel\l/metricwidget/metricwidget.cpp" alt="" coords="2574,317,2792,373"/>
+<area shape="rect" id="node4" href="$centralwidget_8h.html" title="F:/GitHub/Rapidly&#45;exploring\lRandomTrees/src/app/centralwidget.h" alt="" coords="2310,325,2550,366"/>
+<area shape="rect" id="node6" href="$configpanel_8cpp.html" title="F:/GitHub/Rapidly&#45;exploring\lRandomTrees/src/app/configpanel\l/configpanel.cpp" alt="" coords="19,421,238,477"/>
+<area shape="rect" id="node7" href="$listwidget_8cpp.html" title="F:/GitHub/Rapidly&#45;exploring\lRandomTrees/src/app/configpanel\l/listwidget/listwidget.cpp" alt="" coords="758,421,976,477"/>
+<area shape="rect" id="node8" href="$runbuttonswidget_8cpp.html" title="F:/GitHub/Rapidly&#45;exploring\lRandomTrees/src/app/configpanel\l/runbuttonswidget/runbuttonswidget.cpp" alt="" coords="1248,421,1499,477"/>
+<area shape="rect" id="node24" href="$additionalinfoswidget_8cpp.html" title="F:/GitHub/Rapidly&#45;exploring\lRandomTrees/src/app/configpanel\l/additionalinfoswidget/additionalinfoswidget.cpp" alt="" coords="63,317,356,373"/>
+<area shape="rect" id="node25" href="$deltatframe_8cpp.html" title="F:/GitHub/Rapidly&#45;exploring\lRandomTrees/src/app/configpanel\l/additionalinfoswidget/deltatframe.cpp" alt="" coords="381,317,620,373"/>
+<area shape="rect" id="node26" href="$nbrunsframe_8cpp.html" title="F:/GitHub/Rapidly&#45;exploring\lRandomTrees/src/app/configpanel\l/additionalinfoswidget/nbrunsframe.cpp" alt="" coords="644,317,890,373"/>
+<area shape="rect" id="node27" href="$sleeptimeframe_8cpp.html" title="F:/GitHub/Rapidly&#45;exploring\lRandomTrees/src/app/configpanel\l/additionalinfoswidget/sleeptimeframe.cpp" alt="" coords="914,317,1177,373"/>
+<area shape="rect" id="node28" href="$endmethodwidget_8cpp.html" title="F:/GitHub/Rapidly&#45;exploring\lRandomTrees/src/app/configpanel\l/endmethodwidget/endmethodwidget.cpp" alt="" coords="1201,317,1458,373"/>
+<area shape="rect" id="node29" href="$nbverticeslimitwidget_8cpp.html" title="F:/GitHub/Rapidly&#45;exploring\lRandomTrees/src/app/configpanel\l/endmethodwidget/nbverticeslimitwidget.cpp" alt="" coords="1483,317,1758,373"/>
+<area shape="rect" id="node30" href="$timelimitwidget_8cpp.html" title="F:/GitHub/Rapidly&#45;exploring\lRandomTrees/src/app/configpanel\l/endmethodwidget/timelimitwidget.cpp" alt="" coords="1782,317,2024,373"/>
+<area shape="rect" id="node31" href="$generatorwidget_8cpp.html" title="F:/GitHub/Rapidly&#45;exploring\lRandomTrees/src/app/configpanel\l/generatorwidget/generatorwidget.cpp" alt="" coords="2048,317,2286,373"/>
+<area shape="rect" id="node5" href="$centralwidget_8cpp.html" title="F:/GitHub/Rapidly&#45;exploring\lRandomTrees/src/app/centralwidget.cpp" alt="" coords="2593,845,2848,886"/>
+<area shape="rect" id="node9" href="$dragwidget_8h.html" title="F:/GitHub/Rapidly&#45;exploring\lRandomTrees/src/app/heightmappanel\l/dragwidget.h" alt="" coords="2228,421,2472,477"/>
+<area shape="rect" id="node13" href="$heightmapframe_8cpp.html" title="F:/GitHub/Rapidly&#45;exploring\lRandomTrees/src/app/heightmappanel\l/heightmapframe.cpp" alt="" coords="1593,837,1837,893"/>
+<area shape="rect" id="node14" href="$mainwindow_8h.html" title="F:/GitHub/Rapidly&#45;exploring\lRandomTrees/src/app/mainwindow.h" alt="" coords="1915,845,2150,886"/>
+<area shape="rect" id="node17" href="$heightmapsubpanel_8cpp.html" title="F:/GitHub/Rapidly&#45;exploring\lRandomTrees/src/app/heightmappanel\l/heightmapsubpanel.cpp" alt="" coords="1749,733,1993,789"/>
+<area shape="rect" id="node19" href="$heightmapfilepanel_8cpp.html" title="F:/GitHub/Rapidly&#45;exploring\lRandomTrees/src/app/heightmappanel\l/heightmapfilepanel.cpp" alt="" coords="2362,733,2606,789"/>
+<area shape="rect" id="node20" href="$heightmapviewpanel_8cpp.html" title="F:/GitHub/Rapidly&#45;exploring\lRandomTrees/src/app/heightmappanel\l/heightmapviewpanel.cpp" alt="" coords="2388,629,2632,685"/>
+<area shape="rect" id="node22" href="$threadgenerator_8h.html" title="F:/GitHub/Rapidly&#45;exploring\lRandomTrees/src/classes\l/threadgenerator.h" alt="" coords="2707,525,2888,581"/>
+<area shape="rect" id="node10" href="$heightmapviewpanel_8h.html" title="F:/GitHub/Rapidly&#45;exploring\lRandomTrees/src/app/heightmappanel\l/heightmapviewpanel.h" alt="" coords="1960,525,2204,581"/>
+<area shape="rect" id="node21" href="$dragwidget_8cpp.html" title="F:/GitHub/Rapidly&#45;exploring\lRandomTrees/src/app/heightmappanel\l/dragwidget.cpp" alt="" coords="2228,525,2472,581"/>
+<area shape="rect" id="node11" href="$heightmapsubpanel_8h.html" title="F:/GitHub/Rapidly&#45;exploring\lRandomTrees/src/app/heightmappanel\l/heightmapsubpanel.h" alt="" coords="1800,629,2044,685"/>
+<area shape="rect" id="node12" href="$heightmapframe_8h.html" title="F:/GitHub/Rapidly&#45;exploring\lRandomTrees/src/app/heightmappanel\l/heightmapframe.h" alt="" coords="2017,733,2261,789"/>
+<area shape="rect" id="node18" href="$heightmapfilepanel_8h.html" title="F:/GitHub/Rapidly&#45;exploring\lRandomTrees/src/app/heightmappanel\l/heightmapfilepanel.h" alt="" coords="2120,629,2364,685"/>
+<area shape="rect" id="node15" href="$main_8cpp.html" title="F:/GitHub/Rapidly&#45;exploring\lRandomTrees/src/app/main.cpp" alt="" coords="1804,941,2010,983"/>
+<area shape="rect" id="node16" href="$mainwindow_8cpp.html" title="F:/GitHub/Rapidly&#45;exploring\lRandomTrees/src/app/mainwindow.cpp" alt="" coords="2035,941,2283,983"/>
+<area shape="rect" id="node23" href="$threadgenerator_8cpp.html" title="F:/GitHub/Rapidly&#45;exploring\lRandomTrees/src/classes\l/threadgenerator.cpp" alt="" coords="2758,629,2939,685"/>
 </map>

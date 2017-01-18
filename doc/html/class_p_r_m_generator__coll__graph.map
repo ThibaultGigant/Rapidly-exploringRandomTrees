@@ -1,0 +1,10 @@
+<map id="PRMGenerator" name="PRMGenerator">
+<area shape="rect" id="node2" href="$class_tree_generator.html" title="TreeGenerator" alt="" coords="153,81,257,108"/>
+<area shape="rect" id="node3" href="$class_session.html" title="Session" alt="" coords="393,261,462,288"/>
+<area shape="rect" id="node5" href="$class_config.html" title="Config" alt="" coords="521,171,579,197"/>
+<area shape="rect" id="node9" href="$class_environment.html" title="Environment" alt="" coords="438,352,531,379"/>
+<area shape="rect" id="node7" href="$class_height_map.html" title="HeightMap" alt="" coords="588,81,672,108"/>
+<area shape="rect" id="node6" href="$class_end_method.html" title="EndMethod" alt="" coords="414,81,502,108"/>
+<area shape="rect" id="node8" href="$class_metric.html" title="Metric" alt="" coords="750,81,809,108"/>
+<area shape="rect" id="node10" href="$class_vertex.html" title="Vertex" alt="" coords="535,261,595,288"/>
+</map>

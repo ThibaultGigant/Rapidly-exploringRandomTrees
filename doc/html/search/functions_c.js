@@ -9,6 +9,7 @@ var searchData=
   ['receiveupdateimage',['receiveUpdateImage',['../class_central_widget.html#a81c4e3203bae0506373fe6ee77d6f289',1,'CentralWidget::receiveUpdateImage()'],['../class_config.html#a27cb21af8f1ce92640c215e32df5aea2',1,'Config::receiveUpdateImage()']]],
   ['removeconfig',['removeConfig',['../class_central_widget.html#a92c5ae439a95af536de0458dc007f772',1,'CentralWidget']]],
   ['reset',['reset',['../class_config.html#a2a0e3519e79eaab8352dd810b5af4b22',1,'Config::reset()'],['../class_end_method.html#a146d6b71fc22c9ec13092b438243efd4',1,'EndMethod::reset()']]],
+  ['resetvertexid',['resetVertexId',['../class_vertex.html#aaa83cde87d0cceb7cd87ffb6142ec4db',1,'Vertex']]],
   ['resizemap',['resizeMap',['../class_height_map.html#ac3fa4cdb7999ecd49417e5eb8cac8354',1,'HeightMap']]],
   ['rrtgenerator',['RRTGenerator',['../class_r_r_t_generator.html#a04a211af3399c57908b2b2d0eef2f710',1,'RRTGenerator']]],
   ['run',['run',['../class_thread_generator.html#a40d65a3edd777776d7c5352e91653638',1,'ThreadGenerator']]],

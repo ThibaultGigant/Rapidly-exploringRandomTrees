@@ -73,15 +73,11 @@ $(function() {
 Inheritance diagram for GeneratorWidget:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_generator_widget__inherit__graph.png" border="0" usemap="#_generator_widget_inherit__map" alt="Inheritance graph"/></div>
-<map name="_generator_widget_inherit__map" id="_generator_widget_inherit__map">
-</map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for GeneratorWidget:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_generator_widget__coll__graph.png" border="0" usemap="#_generator_widget_coll__map" alt="Collaboration graph"/></div>
-<map name="_generator_widget_coll__map" id="_generator_widget_coll__map">
-</map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -95,6 +91,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a058a9447ee4a731694a5022e785ed9a1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_tree_generator.html">TreeGenerator</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_generator_widget.html#a058a9447ee4a731694a5022e785ed9a1">getGenerator</a> ()</td></tr>
 <tr class="memdesc:a058a9447ee4a731694a5022e785ed9a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the tree generator chosen by the user.  <a href="#a058a9447ee4a731694a5022e785ed9a1">More...</a><br /></td></tr>
 <tr class="separator:a058a9447ee4a731694a5022e785ed9a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c4d1a2edcff7484e086b273d35b0ed0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_generator_widget.html#a9c4d1a2edcff7484e086b273d35b0ed0">getGeneratorID</a> ()</td></tr>
+<tr class="memdesc:a9c4d1a2edcff7484e086b273d35b0ed0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the ID of the generator.  <a href="#a9c4d1a2edcff7484e086b273d35b0ed0">More...</a><br /></td></tr>
+<tr class="separator:a9c4d1a2edcff7484e086b273d35b0ed0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab70bf72205100ede81ae494396fecdda"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_generator_widget.html#ab70bf72205100ede81ae494396fecdda">setGeneratorID</a> (int value)</td></tr>
+<tr class="memdesc:ab70bf72205100ede81ae494396fecdda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the value of the combobox to the stored one.  <a href="#ab70bf72205100ede81ae494396fecdda">More...</a><br /></td></tr>
+<tr class="separator:ab70bf72205100ede81ae494396fecdda"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -180,6 +182,52 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a9c4d1a2edcff7484e086b273d35b0ed0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c4d1a2edcff7484e086b273d35b0ed0">&sect;&nbsp;</a></span>getGeneratorID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GeneratorWidget::getGeneratorID </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the ID of the generator. </p>
+<dl class="section return"><dt>Returns</dt><dd>ID of the generator </dd></dl>
+
+</div>
+</div>
+<a id="ab70bf72205100ede81ae494396fecdda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab70bf72205100ede81ae494396fecdda">&sect;&nbsp;</a></span>setGeneratorID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeneratorWidget::setGeneratorID </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the value of the combobox to the stored one. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>Index of the generator </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <h2 class="groupheader">Field Documentation</h2>
 <a id="a8b6b354b3c5bb2ac152ddf4dea8c9841"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8b6b354b3c5bb2ac152ddf4dea8c9841">&sect;&nbsp;</a></span>comboBox</h2>
@@ -248,8 +296,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/Users/Tigig/Documents/Travail/M2/Rapidly-exploringRandomTrees/src/app/configpanel/generatorwidget/<a class="el" href="generatorwidget_8h_source.html">generatorwidget.h</a></li>
-<li>/Users/Tigig/Documents/Travail/M2/Rapidly-exploringRandomTrees/src/app/configpanel/generatorwidget/<a class="el" href="generatorwidget_8cpp.html">generatorwidget.cpp</a></li>
+<li>F:/GitHub/Rapidly-exploringRandomTrees/src/app/configpanel/generatorwidget/<a class="el" href="generatorwidget_8h_source.html">generatorwidget.h</a></li>
+<li>F:/GitHub/Rapidly-exploringRandomTrees/src/app/configpanel/generatorwidget/<a class="el" href="generatorwidget_8cpp.html">generatorwidget.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

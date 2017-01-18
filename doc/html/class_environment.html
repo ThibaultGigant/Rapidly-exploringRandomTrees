@@ -74,13 +74,13 @@ Collaboration diagram for Environment:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_environment__coll__graph.png" border="0" usemap="#_environment_coll__map" alt="Collaboration graph"/></div>
 <map name="_environment_coll__map" id="_environment_coll__map">
-<area shape="rect" id="node3" href="class_session.html" title="Session" alt="" coords="272,184,341,211"/>
-<area shape="rect" id="node2" href="class_vertex.html" title="Vertex" alt="" coords="333,5,393,32"/>
-<area shape="rect" id="node7" href="class_tree_generator.html" title="TreeGenerator" alt="" coords="196,273,305,300"/>
-<area shape="rect" id="node5" href="class_config.html" title="Config" alt="" coords="162,363,222,389"/>
-<area shape="rect" id="node8" href="class_height_map.html" title="HeightMap" alt="" coords="47,95,134,121"/>
-<area shape="rect" id="node6" href="class_end_method.html" title="EndMethod" alt="" coords="495,95,585,121"/>
-<area shape="rect" id="node9" href="class_metric.html" title="Metric" alt="" coords="164,95,223,121"/>
+<area shape="rect" id="node3" href="class_session.html" title="Session" alt="" coords="271,187,340,213"/>
+<area shape="rect" id="node2" href="class_vertex.html" title="Vertex" alt="" coords="330,7,390,33"/>
+<area shape="rect" id="node7" href="class_tree_generator.html" title="TreeGenerator" alt="" coords="193,276,297,303"/>
+<area shape="rect" id="node5" href="class_config.html" title="Config" alt="" coords="160,365,219,392"/>
+<area shape="rect" id="node8" href="class_height_map.html" title="HeightMap" alt="" coords="47,97,131,124"/>
+<area shape="rect" id="node6" href="class_end_method.html" title="EndMethod" alt="" coords="489,97,577,124"/>
+<area shape="rect" id="node9" href="class_metric.html" title="Metric" alt="" coords="163,97,221,124"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -95,6 +95,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a19fd3d5851f3331336bb73b344e236ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_environment.html#a19fd3d5851f3331336bb73b344e236ca">addElement</a> (<a class="el" href="class_vertex.html">Vertex</a> *vertex)</td></tr>
 <tr class="memdesc:a19fd3d5851f3331336bb73b344e236ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a vertex to the quadrants he's in.  <a href="#a19fd3d5851f3331336bb73b344e236ca">More...</a><br /></td></tr>
 <tr class="separator:a19fd3d5851f3331336bb73b344e236ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add80b5a87a315404faa421cecb24b238"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_vertex.html">Vertex</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_environment.html#add80b5a87a315404faa421cecb24b238">getClosestAround</a> (QPointF point, int radius=1)</td></tr>
+<tr class="memdesc:add80b5a87a315404faa421cecb24b238"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the closest vertex of a given point in the 9 quadrants around the point (the one it's in, and the 8 surrounding)  <a href="#add80b5a87a315404faa421cecb24b238">More...</a><br /></td></tr>
+<tr class="separator:add80b5a87a315404faa421cecb24b238"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a510ca46a655c154df25a5f8aae534bf9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_vertex.html">Vertex</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_environment.html#a510ca46a655c154df25a5f8aae534bf9">getClosest</a> (QPointF point)</td></tr>
 <tr class="memdesc:a510ca46a655c154df25a5f8aae534bf9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the closest vertex of a given point.  <a href="#a510ca46a655c154df25a5f8aae534bf9">More...</a><br /></td></tr>
 <tr class="separator:a510ca46a655c154df25a5f8aae534bf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -104,6 +107,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:afe89c9be30077016129c6dad4bc2d512"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_vertex.html">Vertex</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_environment.html#afe89c9be30077016129c6dad4bc2d512">getClosestNaive</a> (QPointF point)</td></tr>
 <tr class="memdesc:afe89c9be30077016129c6dad4bc2d512"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the closest vertex of a given point, by going through all of the vertices in the environment.  <a href="#afe89c9be30077016129c6dad4bc2d512">More...</a><br /></td></tr>
 <tr class="separator:afe89c9be30077016129c6dad4bc2d512"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3e9961de5220365558d058da363cd10"><td class="memItemLeft" align="right" valign="top">QVector&lt; <a class="el" href="class_vertex.html">Vertex</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_environment.html#ae3e9961de5220365558d058da363cd10">getKReachableClosest</a> (QPointF point, int k=10)</td></tr>
+<tr class="memdesc:ae3e9961de5220365558d058da363cd10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the k closest vertices of a point that are reachable (no obstacle on the path) and not in the same connected component.  <a href="#ae3e9961de5220365558d058da363cd10">More...</a><br /></td></tr>
+<tr class="separator:ae3e9961de5220365558d058da363cd10"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e62d4a4fdb7b97fbf2365a9a7d8828e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_vertex.html">Vertex</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_environment.html#a0e62d4a4fdb7b97fbf2365a9a7d8828e">getRandomVertex</a> ()</td></tr>
 <tr class="memdesc:a0e62d4a4fdb7b97fbf2365a9a7d8828e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a random vertex of the tree.  <a href="#a0e62d4a4fdb7b97fbf2365a9a7d8828e">More...</a><br /></td></tr>
 <tr class="separator:a0e62d4a4fdb7b97fbf2365a9a7d8828e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -113,6 +119,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae0d5ed65dd5ecaa20fba7859139347b0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_environment.html#ae0d5ed65dd5ecaa20fba7859139347b0">setVertices</a> (const QVector&lt; <a class="el" href="class_vertex.html">Vertex</a> *&gt; &amp;value)</td></tr>
 <tr class="memdesc:ae0d5ed65dd5ecaa20fba7859139347b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the vertices of the environment.  <a href="#ae0d5ed65dd5ecaa20fba7859139347b0">More...</a><br /></td></tr>
 <tr class="separator:ae0d5ed65dd5ecaa20fba7859139347b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14a1e995cf9e20870e46980c41394e22"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_vertex.html">Vertex</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_environment.html#a14a1e995cf9e20870e46980c41394e22">getStartVertex</a> () const</td></tr>
+<tr class="memdesc:a14a1e995cf9e20870e46980c41394e22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the starting vertex of the environment.  <a href="#a14a1e995cf9e20870e46980c41394e22">More...</a><br /></td></tr>
+<tr class="separator:a14a1e995cf9e20870e46980c41394e22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04adb14e4cf723bc60fae746725d68d6"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_environment.html#a04adb14e4cf723bc60fae746725d68d6">toString</a> ()</td></tr>
+<tr class="memdesc:a04adb14e4cf723bc60fae746725d68d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a string with the environment's info.  <a href="#a04adb14e4cf723bc60fae746725d68d6">More...</a><br /></td></tr>
+<tr class="separator:a04adb14e4cf723bc60fae746725d68d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -285,6 +297,43 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="add80b5a87a315404faa421cecb24b238"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add80b5a87a315404faa421cecb24b238">&sect;&nbsp;</a></span>getClosestAround()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_vertex.html">Vertex</a> * Environment::getClosestAround </td>
+          <td>(</td>
+          <td class="paramtype">QPointF&#160;</td>
+          <td class="paramname"><em>point</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>radius</em> = <code>1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the closest vertex of a given point in the 9 quadrants around the point (the one it's in, and the 8 surrounding) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">point</td><td>Point of the environment </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Closest vertex of the given point in those 9 quadrants if it exists, null otherwise </dd></dl>
+
+</div>
+</div>
 <a id="afe89c9be30077016129c6dad4bc2d512"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afe89c9be30077016129c6dad4bc2d512">&sect;&nbsp;</a></span>getClosestNaive()</h2>
 
@@ -312,6 +361,44 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="ae3e9961de5220365558d058da363cd10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3e9961de5220365558d058da363cd10">&sect;&nbsp;</a></span>getKReachableClosest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVector&lt; <a class="el" href="class_vertex.html">Vertex</a> * &gt; Environment::getKReachableClosest </td>
+          <td>(</td>
+          <td class="paramtype">QPointF&#160;</td>
+          <td class="paramname"><em>point</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>k</em> = <code>10</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Finds the k closest vertices of a point that are reachable (no obstacle on the path) and not in the same connected component. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">point</td><td>Point of </td></tr>
+    <tr><td class="paramname">k</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
 <a id="a0e62d4a4fdb7b97fbf2365a9a7d8828e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0e62d4a4fdb7b97fbf2365a9a7d8828e">&sect;&nbsp;</a></span>getRandomVertex()</h2>
 
@@ -329,6 +416,26 @@ Private Attributes</h2></td></tr>
 
 <p>Returns a random vertex of the tree. </p>
 <dl class="section return"><dt>Returns</dt><dd>Random <a class="el" href="class_vertex.html">Vertex</a> </dd></dl>
+
+</div>
+</div>
+<a id="a14a1e995cf9e20870e46980c41394e22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14a1e995cf9e20870e46980c41394e22">&sect;&nbsp;</a></span>getStartVertex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_vertex.html">Vertex</a> * Environment::getStartVertex </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the starting vertex of the environment. </p>
+<dl class="section return"><dt>Returns</dt><dd>Starting <a class="el" href="class_vertex.html">Vertex</a> </dd></dl>
 
 </div>
 </div>
@@ -375,6 +482,26 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a04adb14e4cf723bc60fae746725d68d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04adb14e4cf723bc60fae746725d68d6">&sect;&nbsp;</a></span>toString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString Environment::toString </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns a string with the environment's info. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_environment.html">Environment</a>'s info </dd></dl>
 
 </div>
 </div>
@@ -556,8 +683,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/Users/Tigig/Documents/Travail/M2/Rapidly-exploringRandomTrees/src/classes/environment/<a class="el" href="environment_8h_source.html">environment.h</a></li>
-<li>/Users/Tigig/Documents/Travail/M2/Rapidly-exploringRandomTrees/src/classes/environment/<a class="el" href="environment_8cpp.html">environment.cpp</a></li>
+<li>F:/GitHub/Rapidly-exploringRandomTrees/src/classes/environment/<a class="el" href="environment_8h_source.html">environment.h</a></li>
+<li>F:/GitHub/Rapidly-exploringRandomTrees/src/classes/environment/<a class="el" href="environment_8cpp.html">environment.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

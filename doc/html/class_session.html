@@ -74,21 +74,19 @@ $(function() {
 Inheritance diagram for Session:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_session__inherit__graph.png" border="0" usemap="#_session_inherit__map" alt="Inheritance graph"/></div>
-<map name="_session_inherit__map" id="_session_inherit__map">
-</map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for Session:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_session__coll__graph.png" border="0" usemap="#_session_coll__map" alt="Collaboration graph"/></div>
 <map name="_session_coll__map" id="_session_coll__map">
-<area shape="rect" id="node5" href="class_tree_generator.html" title="TreeGenerator" alt="" coords="416,260,525,287"/>
-<area shape="rect" id="node8" href="class_environment.html" title="Environment" alt="" coords="209,260,306,287"/>
-<area shape="rect" id="node3" href="class_config.html" title="Config" alt="" coords="497,349,557,376"/>
-<area shape="rect" id="node6" href="class_height_map.html" title="HeightMap" alt="" coords="666,81,753,108"/>
-<area shape="rect" id="node4" href="class_end_method.html" title="EndMethod" alt="" coords="132,81,223,108"/>
-<area shape="rect" id="node7" href="class_metric.html" title="Metric" alt="" coords="519,81,577,108"/>
-<area shape="rect" id="node9" href="class_vertex.html" title="Vertex" alt="" coords="127,171,187,197"/>
+<area shape="rect" id="node5" href="class_tree_generator.html" title="TreeGenerator" alt="" coords="415,263,519,289"/>
+<area shape="rect" id="node8" href="class_environment.html" title="Environment" alt="" coords="209,263,303,289"/>
+<area shape="rect" id="node3" href="class_config.html" title="Config" alt="" coords="492,352,551,379"/>
+<area shape="rect" id="node6" href="class_height_map.html" title="HeightMap" alt="" coords="661,81,745,108"/>
+<area shape="rect" id="node4" href="class_end_method.html" title="EndMethod" alt="" coords="131,81,219,108"/>
+<area shape="rect" id="node7" href="class_metric.html" title="Metric" alt="" coords="513,81,572,108"/>
+<area shape="rect" id="node9" href="class_vertex.html" title="Vertex" alt="" coords="126,172,186,199"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -121,8 +119,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae5885c98d7b141cf6a0f08de946ca878"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_height_map.html">HeightMap</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_session.html#ae5885c98d7b141cf6a0f08de946ca878">getMap</a> ()</td></tr>
 <tr class="memdesc:ae5885c98d7b141cf6a0f08de946ca878"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the map of the space.  <a href="#ae5885c98d7b141cf6a0f08de946ca878">More...</a><br /></td></tr>
 <tr class="separator:ae5885c98d7b141cf6a0f08de946ca878"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1787a909d4098ff1e701e3ebb02aa6f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_session.html#ae1787a909d4098ff1e701e3ebb02aa6f">isObstacle</a> (QPointF point)</td></tr>
+<tr class="memdesc:ae1787a909d4098ff1e701e3ebb02aa6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uses the heightmap to determine if a point is an obstacle.  <a href="#ae1787a909d4098ff1e701e3ebb02aa6f">More...</a><br /></td></tr>
+<tr class="separator:ae1787a909d4098ff1e701e3ebb02aa6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac1b2f793bac64f1d6eb064dac2dc5837"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_session.html#ac1b2f793bac64f1d6eb064dac2dc5837">isPathFree</a> (QPointF point1, QPointF point2)</td></tr>
-<tr class="memdesc:ac1b2f793bac64f1d6eb064dac2dc5837"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uses the heightmap to determine if a point is an obstacle.  <a href="#ac1b2f793bac64f1d6eb064dac2dc5837">More...</a><br /></td></tr>
+<tr class="memdesc:ac1b2f793bac64f1d6eb064dac2dc5837"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uses the heightmap to determine if a path is free of obstacles.  <a href="#ac1b2f793bac64f1d6eb064dac2dc5837">More...</a><br /></td></tr>
 <tr class="separator:ac1b2f793bac64f1d6eb064dac2dc5837"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec316372528360ad27863ad59bf72945"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_vertex.html">Vertex</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_session.html#aec316372528360ad27863ad59bf72945">getRandomVertex</a> ()</td></tr>
 <tr class="memdesc:aec316372528360ad27863ad59bf72945"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a random vertex of the tree, using the environment.  <a href="#aec316372528360ad27863ad59bf72945">More...</a><br /></td></tr>
@@ -130,6 +131,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae058d4c36d94b1e6351496c0a1892842"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_vertex.html">Vertex</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_session.html#ae058d4c36d94b1e6351496c0a1892842">getClosestVertex</a> (QPointF point)</td></tr>
 <tr class="memdesc:ae058d4c36d94b1e6351496c0a1892842"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the closest vertex of the tree from the given point.  <a href="#ae058d4c36d94b1e6351496c0a1892842">More...</a><br /></td></tr>
 <tr class="separator:ae058d4c36d94b1e6351496c0a1892842"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ec8af4b2d43c9b672efd0fb5baaabe8"><td class="memItemLeft" align="right" valign="top">QVector&lt; <a class="el" href="class_vertex.html">Vertex</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_session.html#a4ec8af4b2d43c9b672efd0fb5baaabe8">getKReachableClosest</a> (QPointF point, int k=10)</td></tr>
+<tr class="separator:a4ec8af4b2d43c9b672efd0fb5baaabe8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b5e8793254b3b09db74fc3a3a88e356"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_session.html#a2b5e8793254b3b09db74fc3a3a88e356">getWidth</a> ()</td></tr>
 <tr class="memdesc:a2b5e8793254b3b09db74fc3a3a88e356"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the map's width.  <a href="#a2b5e8793254b3b09db74fc3a3a88e356">More...</a><br /></td></tr>
 <tr class="separator:a2b5e8793254b3b09db74fc3a3a88e356"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -378,6 +381,34 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a4ec8af4b2d43c9b672efd0fb5baaabe8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ec8af4b2d43c9b672efd0fb5baaabe8">&sect;&nbsp;</a></span>getKReachableClosest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVector&lt; <a class="el" href="class_vertex.html">Vertex</a> * &gt; Session::getKReachableClosest </td>
+          <td>(</td>
+          <td class="paramtype">QPointF&#160;</td>
+          <td class="paramname"><em>point</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>k</em> = <code>10</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ae5885c98d7b141cf6a0f08de946ca878"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae5885c98d7b141cf6a0f08de946ca878">&sect;&nbsp;</a></span>getMap()</h2>
 
@@ -458,6 +489,32 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="ae1787a909d4098ff1e701e3ebb02aa6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1787a909d4098ff1e701e3ebb02aa6f">&sect;&nbsp;</a></span>isObstacle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Session::isObstacle </td>
+          <td>(</td>
+          <td class="paramtype">QPointF&#160;</td>
+          <td class="paramname"><em>point</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Uses the heightmap to determine if a point is an obstacle. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">point</td><td>Point to test </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="ac1b2f793bac64f1d6eb064dac2dc5837"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac1b2f793bac64f1d6eb064dac2dc5837">&sect;&nbsp;</a></span>isPathFree()</h2>
 
@@ -484,10 +541,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Uses the heightmap to determine if a point is an obstacle. </p>
+<p>Uses the heightmap to determine if a path is free of obstacles. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">point</td><td>Point to test Uses the heightmap to determine if a path is free of obstacles </td></tr>
     <tr><td class="paramname">point1</td><td>Starting point of the path </td></tr>
     <tr><td class="paramname">point2</td><td>Arrival point of the path </td></tr>
   </table>
@@ -702,8 +758,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/Users/Tigig/Documents/Travail/M2/Rapidly-exploringRandomTrees/src/classes/<a class="el" href="session_8h_source.html">session.h</a></li>
-<li>/Users/Tigig/Documents/Travail/M2/Rapidly-exploringRandomTrees/src/classes/<a class="el" href="session_8cpp.html">session.cpp</a></li>
+<li>F:/GitHub/Rapidly-exploringRandomTrees/src/classes/<a class="el" href="session_8h_source.html">session.h</a></li>
+<li>F:/GitHub/Rapidly-exploringRandomTrees/src/classes/<a class="el" href="session_8cpp.html">session.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -64,16 +64,23 @@ $(function() {
 
 <h3><a id="index_g"></a>- g -</h3><ul>
 <li>generate()
-: <a class="el" href="class_random_tree_generator.html#adec913001da775c6d1955ed510d2e572">RandomTreeGenerator</a>
+: <a class="el" href="class_p_r_m_generator.html#a54b1dfdfe541e45af061c873209d1f1d">PRMGenerator</a>
+, <a class="el" href="class_random_tree_generator.html#adec913001da775c6d1955ed510d2e572">RandomTreeGenerator</a>
 , <a class="el" href="class_r_r_t_generator.html#ab4b2b7aeaa5223a0a4b73891d47f72da">RRTGenerator</a>
 , <a class="el" href="class_session.html#a2b76a56d8979d6c5c0735680fd86a069">Session</a>
 , <a class="el" href="class_tree_generator.html#a3181ad96338631258583b1f176991469">TreeGenerator</a>
+</li>
+<li>generateAndSaveResultImage()
+: <a class="el" href="class_thread_generator.html#ac168b306b046f38c10a6c268c74f8602">ThreadGenerator</a>
 </li>
 <li>GeneratorWidget()
 : <a class="el" href="class_generator_widget.html#a0c9722c89a1b0f4bc8319eac5ebc98db">GeneratorWidget</a>
 </li>
 <li>getCentralWidget()
 : <a class="el" href="class_config_panel.html#a93454fcaed9c777e8849b1fdf9f73dee">ConfigPanel</a>
+</li>
+<li>getChanged()
+: <a class="el" href="class_config_panel.html#a446b7344ee72687993a0504beeff71a1">ConfigPanel</a>
 </li>
 <li>getChildren()
 : <a class="el" href="class_vertex.html#ab4ddc346d16650fbb2f38b0c86e09d71">Vertex</a>
@@ -84,11 +91,20 @@ $(function() {
 <li>getClosestAlmostNaive()
 : <a class="el" href="class_environment.html#a5311bb9b1cddc7bbea1bf367cce32dc7">Environment</a>
 </li>
+<li>getClosestAround()
+: <a class="el" href="class_environment.html#add80b5a87a315404faa421cecb24b238">Environment</a>
+</li>
 <li>getClosestNaive()
 : <a class="el" href="class_environment.html#afe89c9be30077016129c6dad4bc2d512">Environment</a>
 </li>
 <li>getClosestVertex()
 : <a class="el" href="class_session.html#ae058d4c36d94b1e6351496c0a1892842">Session</a>
+</li>
+<li>getConfigs()
+: <a class="el" href="class_central_widget.html#ac3bde222cf0c628119433ff3b4501cf2">CentralWidget</a>
+</li>
+<li>getConnectedComponentPointer()
+: <a class="el" href="class_vertex.html#a92872e5fb63dd24f9d3b426bf80558fb">Vertex</a>
 </li>
 <li>getCurrentMap()
 : <a class="el" href="class_central_widget.html#a9a0f4f09637890b97463120f7c216b64">CentralWidget</a>
@@ -103,7 +119,7 @@ $(function() {
 , <a class="el" href="class_session.html#a821a472956941686be78077f55aa69dc">Session</a>
 </li>
 <li>getEnd()
-: <a class="el" href="class_height_map.html#a48724df0b4d6ca402dafd1d6aebeab53">HeightMap</a>
+: <a class="el" href="class_height_map.html#a77b07a36a2bffe138cda923d231e0a34">HeightMap</a>
 </li>
 <li>getEndMethod()
 : <a class="el" href="class_config.html#af50ba90c85b1f4c98a4aafcfe0be7562">Config</a>
@@ -117,12 +133,26 @@ $(function() {
 , <a class="el" href="class_generator_widget.html#a058a9447ee4a731694a5022e785ed9a1">GeneratorWidget</a>
 , <a class="el" href="class_session.html#a1ef0df6aa28747cc8dc1120ab555069c">Session</a>
 </li>
+<li>getGeneratorID()
+: <a class="el" href="class_config.html#a8ccd4c544f16207d18de883527a53da9">Config</a>
+, <a class="el" href="class_generator_widget.html#a9c4d1a2edcff7484e086b273d35b0ed0">GeneratorWidget</a>
+</li>
 <li>getHeight()
 : <a class="el" href="class_height_map.html#af7dfd1c52016e685204f4119fb3e5486">HeightMap</a>
 , <a class="el" href="class_session.html#a9b9839f3f888c11f503bad6eb3355181">Session</a>
 </li>
 <li>getHeightMapViewPanel()
 : <a class="el" href="class_height_map_frame.html#ae76469d0109056b654bc3afe448baae8">HeightMapFrame</a>
+</li>
+<li>getId()
+: <a class="el" href="class_vertex.html#a6c98f2ba24da887ae2fe970f7ed45db4">Vertex</a>
+</li>
+<li>getKForPRM()
+: <a class="el" href="class_config.html#ad9aa1f0765c7dfb7a7897628c5002b0e">Config</a>
+</li>
+<li>getKReachableClosest()
+: <a class="el" href="class_environment.html#ae3e9961de5220365558d058da363cd10">Environment</a>
+, <a class="el" href="class_session.html#a4ec8af4b2d43c9b672efd0fb5baaabe8">Session</a>
 </li>
 <li>getLimitTime()
 : <a class="el" href="class_end_method.html#a73259df2b4c2e88a6ef8f6cfe5cd856d">EndMethod</a>
@@ -143,6 +173,10 @@ $(function() {
 , <a class="el" href="class_metric_widget.html#ad3a36030350c6a95c4639ac7d8ed498d">MetricWidget</a>
 , <a class="el" href="class_session.html#a92ea6811996167daa0d2bf91e6502ab2">Session</a>
 </li>
+<li>getMetricID()
+: <a class="el" href="class_config.html#a0535f025b387bd3eb39601603296f81d">Config</a>
+, <a class="el" href="class_metric_widget.html#aaf5f8a92d3106b0ce7b568cf8607ea05">MetricWidget</a>
+</li>
 <li>getName()
 : <a class="el" href="class_height_map.html#aaed968713d85a019e5d4fdac716382cf">HeightMap</a>
 </li>
@@ -154,8 +188,14 @@ $(function() {
 , <a class="el" href="class_config.html#a516dc0aa3de4149a204ec3f8e7f3120c">Config</a>
 , <a class="el" href="class_nb_runs_frame.html#a35829ebe75e34076d7bea23d2c27ea42">NbRunsFrame</a>
 </li>
+<li>getNbToExamine()
+: <a class="el" href="class_p_r_m_generator.html#abca11431e610afcccbb2368e9fec941f">PRMGenerator</a>
+</li>
 <li>getNbVertices()
 : <a class="el" href="class_end_method.html#a640b7e56ca82fd7c53a34cdaf1b55924">EndMethod</a>
+</li>
+<li>getNbVerticesLimit()
+: <a class="el" href="class_config.html#aebb91bf1a0c93435bf7b8fb79fa8dde1">Config</a>
 </li>
 <li>getParent()
 : <a class="el" href="class_vertex.html#ae148d787e1342ea883abfc48d89e1d8e">Vertex</a>
@@ -170,6 +210,9 @@ $(function() {
 : <a class="el" href="class_environment.html#a0e62d4a4fdb7b97fbf2365a9a7d8828e">Environment</a>
 , <a class="el" href="class_session.html#aec316372528360ad27863ad59bf72945">Session</a>
 </li>
+<li>getSaveState()
+: <a class="el" href="class_additional_infos_widget.html#af81deba743b1e065cba3425f70f8d756">AdditionalInfosWidget</a>
+</li>
 <li>getSession()
 : <a class="el" href="class_tree_generator.html#a237f870c54e07ffa3e5e52d3607fff47">TreeGenerator</a>
 </li>
@@ -179,11 +222,20 @@ $(function() {
 , <a class="el" href="class_sleep_time_frame.html#a42104730c7f5acada1bf7610f03ec061">SleepTimeFrame</a>
 </li>
 <li>getStart()
-: <a class="el" href="class_height_map.html#adf4ed4ec70363688edf51edf77408148">HeightMap</a>
+: <a class="el" href="class_height_map.html#a9957645f20784da16bba3d90b79c692c">HeightMap</a>
+</li>
+<li>getStartVertex()
+: <a class="el" href="class_environment.html#a14a1e995cf9e20870e46980c41394e22">Environment</a>
+</li>
+<li>getTimeDuration()
+: <a class="el" href="class_config.html#a2c94fa0bde3d28cd655a59a5738c7906">Config</a>
 </li>
 <li>getTimeLimit()
 : <a class="el" href="class_end_method_widget.html#ac377cc7154fde558d70e399e2139ed33">EndMethodWidget</a>
 , <a class="el" href="class_time_limit_widget.html#a1646e43b4a41b85269a6d9cd4b6bc872">TimeLimitWidget</a>
+</li>
+<li>getUniqueId()
+: <a class="el" href="class_vertex.html#a3e058fcf545f43287a55dbec93a7a23b">Vertex</a>
 </li>
 <li>getVertexDrawn()
 : <a class="el" href="class_thread_generator.html#a1efe9833fb30c19e0202297f3a294443">ThreadGenerator</a>

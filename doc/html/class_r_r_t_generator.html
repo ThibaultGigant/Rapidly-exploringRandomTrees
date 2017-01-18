@@ -81,14 +81,14 @@ Collaboration diagram for RRTGenerator:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_r_r_t_generator__coll__graph.png" border="0" usemap="#_r_r_t_generator_coll__map" alt="Collaboration graph"/></div>
 <map name="_r_r_t_generator_coll__map" id="_r_r_t_generator_coll__map">
-<area shape="rect" id="node2" href="class_tree_generator.html" title="TreeGenerator" alt="" coords="151,81,260,108"/>
-<area shape="rect" id="node3" href="class_session.html" title="Session" alt="" coords="397,260,467,287"/>
-<area shape="rect" id="node5" href="class_config.html" title="Config" alt="" coords="527,171,587,197"/>
-<area shape="rect" id="node9" href="class_environment.html" title="Environment" alt="" coords="442,349,539,376"/>
-<area shape="rect" id="node7" href="class_height_map.html" title="HeightMap" alt="" coords="595,81,682,108"/>
-<area shape="rect" id="node6" href="class_end_method.html" title="EndMethod" alt="" coords="419,81,509,108"/>
-<area shape="rect" id="node8" href="class_metric.html" title="Metric" alt="" coords="760,81,819,108"/>
-<area shape="rect" id="node10" href="class_vertex.html" title="Vertex" alt="" coords="541,260,601,287"/>
+<area shape="rect" id="node2" href="class_tree_generator.html" title="TreeGenerator" alt="" coords="148,81,252,108"/>
+<area shape="rect" id="node3" href="class_session.html" title="Session" alt="" coords="388,261,457,288"/>
+<area shape="rect" id="node5" href="class_config.html" title="Config" alt="" coords="516,171,575,197"/>
+<area shape="rect" id="node9" href="class_environment.html" title="Environment" alt="" coords="433,352,527,379"/>
+<area shape="rect" id="node7" href="class_height_map.html" title="HeightMap" alt="" coords="583,81,667,108"/>
+<area shape="rect" id="node6" href="class_end_method.html" title="EndMethod" alt="" coords="409,81,497,108"/>
+<area shape="rect" id="node8" href="class_metric.html" title="Metric" alt="" coords="745,81,804,108"/>
+<area shape="rect" id="node10" href="class_vertex.html" title="Vertex" alt="" coords="530,261,590,288"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -103,6 +103,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab4b2b7aeaa5223a0a4b73891d47f72da"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_vertex.html">Vertex</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_r_t_generator.html#ab4b2b7aeaa5223a0a4b73891d47f72da">generate</a> ()</td></tr>
 <tr class="memdesc:ab4b2b7aeaa5223a0a4b73891d47f72da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a new vertex according to the RRT algorithm.  <a href="#ab4b2b7aeaa5223a0a4b73891d47f72da">More...</a><br /></td></tr>
 <tr class="separator:ab4b2b7aeaa5223a0a4b73891d47f72da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb13c56f806a8f3e53c63bd5220d0437"><td class="memItemLeft" align="right" valign="top">virtual QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_r_t_generator.html#acb13c56f806a8f3e53c63bd5220d0437">toString</a> ()</td></tr>
+<tr class="memdesc:acb13c56f806a8f3e53c63bd5220d0437"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays the type of algorithm used for the generation of the tree.  <a href="#acb13c56f806a8f3e53c63bd5220d0437">More...</a><br /></td></tr>
+<tr class="separator:acb13c56f806a8f3e53c63bd5220d0437"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_tree_generator"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_tree_generator')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_tree_generator.html">TreeGenerator</a></td></tr>
 <tr class="memitem:a8518734522e931e70d7c52f6f4960939 inherit pub_methods_class_tree_generator"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tree_generator.html#a8518734522e931e70d7c52f6f4960939">TreeGenerator</a> ()</td></tr>
 <tr class="memdesc:a8518734522e931e70d7c52f6f4960939 inherit pub_methods_class_tree_generator"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="class_tree_generator.html#a8518734522e931e70d7c52f6f4960939">More...</a><br /></td></tr>
@@ -197,9 +200,39 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="acb13c56f806a8f3e53c63bd5220d0437"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb13c56f806a8f3e53c63bd5220d0437">&sect;&nbsp;</a></span>toString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString RRTGenerator::toString </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Displays the type of algorithm used for the generation of the tree. </p>
+<dl class="section return"><dt>Returns</dt><dd>String of the generation algorithm </dd></dl>
+
+<p>Reimplemented from <a class="el" href="class_tree_generator.html#a4cbc72f5ff8b8716c4405ad0bab6ca16">TreeGenerator</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/Users/Tigig/Documents/Travail/M2/Rapidly-exploringRandomTrees/src/classes/generators/<a class="el" href="rrtgenerator_8h_source.html">rrtgenerator.h</a></li>
-<li>/Users/Tigig/Documents/Travail/M2/Rapidly-exploringRandomTrees/src/classes/generators/<a class="el" href="rrtgenerator_8cpp.html">rrtgenerator.cpp</a></li>
+<li>F:/GitHub/Rapidly-exploringRandomTrees/src/classes/generators/<a class="el" href="rrtgenerator_8h_source.html">rrtgenerator.h</a></li>
+<li>F:/GitHub/Rapidly-exploringRandomTrees/src/classes/generators/<a class="el" href="rrtgenerator_8cpp.html">rrtgenerator.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

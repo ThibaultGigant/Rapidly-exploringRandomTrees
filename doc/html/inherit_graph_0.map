@@ -1,5 +1,11 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$class_end_method.html" title="EndMethod" alt="" coords="5,31,93,57"/>
-<area shape="rect" id="node2" href="$class_time_limit.html" title="TimeLimit" alt="" coords="159,5,238,32"/>
-<area shape="rect" id="node3" href="$class_vertices_number.html" title="VerticesNumber" alt="" coords="141,56,256,83"/>
+<area shape="rect" id="node2" href="$class_additional_infos_widget.html" title="AdditionalInfosWidget" alt="" coords="127,5,273,32"/>
+<area shape="rect" id="node3" href="$class_delta_t_frame.html" title="DeltaTFrame" alt="" coords="152,56,248,83"/>
+<area shape="rect" id="node4" href="$class_end_method_widget.html" title="EndMethodWidget" alt="" coords="135,107,265,133"/>
+<area shape="rect" id="node5" href="$class_generator_widget.html" title="GeneratorWidget" alt="" coords="140,157,260,184"/>
+<area shape="rect" id="node6" href="$class_metric_widget.html" title="MetricWidget" alt="" coords="151,208,249,235"/>
+<area shape="rect" id="node7" href="$class_nb_runs_frame.html" title="NbRunsFrame" alt="" coords="147,259,253,285"/>
+<area shape="rect" id="node8" href="$class_nb_vertices_limit_widget.html" title="NbVerticesLimitWidget" alt="" coords="123,309,277,336"/>
+<area shape="rect" id="node9" href="$class_run_buttons_widget.html" title="RunButtonsWidget" alt="" coords="135,360,265,387"/>
+<area shape="rect" id="node10" href="$class_time_limit_widget.html" title="TimeLimitWidget" alt="" coords="141,411,259,437"/>
 </map>

@@ -74,8 +74,9 @@ Inheritance diagram for TreeGenerator:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_tree_generator__inherit__graph.png" border="0" usemap="#_tree_generator_inherit__map" alt="Inheritance graph"/></div>
 <map name="_tree_generator_inherit__map" id="_tree_generator_inherit__map">
-<area shape="rect" id="node2" href="class_random_tree_generator.html" title="RandomTreeGenerator" alt="" coords="5,80,165,107"/>
-<area shape="rect" id="node3" href="class_r_r_t_generator.html" title="RRTGenerator" alt="" coords="189,80,299,107"/>
+<area shape="rect" id="node2" href="class_p_r_m_generator.html" title="PRMGenerator" alt="" coords="5,80,113,107"/>
+<area shape="rect" id="node3" href="class_random_tree_generator.html" title="RandomTreeGenerator" alt="" coords="138,80,290,107"/>
+<area shape="rect" id="node4" href="class_r_r_t_generator.html" title="RRTGenerator" alt="" coords="314,80,418,107"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -83,13 +84,13 @@ Collaboration diagram for TreeGenerator:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_tree_generator__coll__graph.png" border="0" usemap="#_tree_generator_coll__map" alt="Collaboration graph"/></div>
 <map name="_tree_generator_coll__map" id="_tree_generator_coll__map">
-<area shape="rect" id="node2" href="class_session.html" title="Session" alt="" coords="249,260,318,287"/>
-<area shape="rect" id="node4" href="class_config.html" title="Config" alt="" coords="367,171,427,197"/>
-<area shape="rect" id="node8" href="class_environment.html" title="Environment" alt="" coords="294,349,391,376"/>
-<area shape="rect" id="node6" href="class_height_map.html" title="HeightMap" alt="" coords="262,81,348,108"/>
-<area shape="rect" id="node5" href="class_end_method.html" title="EndMethod" alt="" coords="462,81,553,108"/>
-<area shape="rect" id="node7" href="class_metric.html" title="Metric" alt="" coords="580,81,638,108"/>
-<area shape="rect" id="node9" href="class_vertex.html" title="Vertex" alt="" coords="392,260,452,287"/>
+<area shape="rect" id="node2" href="class_session.html" title="Session" alt="" coords="242,261,311,288"/>
+<area shape="rect" id="node4" href="class_config.html" title="Config" alt="" coords="358,171,417,197"/>
+<area shape="rect" id="node8" href="class_environment.html" title="Environment" alt="" coords="287,352,381,379"/>
+<area shape="rect" id="node6" href="class_height_map.html" title="HeightMap" alt="" coords="256,81,340,108"/>
+<area shape="rect" id="node5" href="class_end_method.html" title="EndMethod" alt="" coords="453,81,541,108"/>
+<area shape="rect" id="node7" href="class_metric.html" title="Metric" alt="" coords="567,81,626,108"/>
+<area shape="rect" id="node9" href="class_vertex.html" title="Vertex" alt="" coords="384,261,444,288"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -108,6 +109,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a237f870c54e07ffa3e5e52d3607fff47"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a931d4f860b77665f3aad380602bdc575"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tree_generator.html#a931d4f860b77665f3aad380602bdc575">setSession</a> (<a class="el" href="class_session.html">Session</a> *value)</td></tr>
 <tr class="separator:a931d4f860b77665f3aad380602bdc575"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4cbc72f5ff8b8716c4405ad0bab6ca16"><td class="memItemLeft" align="right" valign="top">virtual QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tree_generator.html#a4cbc72f5ff8b8716c4405ad0bab6ca16">toString</a> ()</td></tr>
+<tr class="memdesc:a4cbc72f5ff8b8716c4405ad0bab6ca16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays the type of algorithm used for the generation of the tree.  <a href="#a4cbc72f5ff8b8716c4405ad0bab6ca16">More...</a><br /></td></tr>
+<tr class="separator:a4cbc72f5ff8b8716c4405ad0bab6ca16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -186,7 +190,7 @@ Protected Attributes</h2></td></tr>
 <p>Generates a new vertex according to the wanted strategy. </p>
 <dl class="section return"><dt>Returns</dt><dd>New <a class="el" href="class_vertex.html">Vertex</a> generated, to be added </dd></dl>
 
-<p>Reimplemented in <a class="el" href="class_random_tree_generator.html#adec913001da775c6d1955ed510d2e572">RandomTreeGenerator</a>, and <a class="el" href="class_r_r_t_generator.html#ab4b2b7aeaa5223a0a4b73891d47f72da">RRTGenerator</a>.</p>
+<p>Reimplemented in <a class="el" href="class_p_r_m_generator.html#a54b1dfdfe541e45af061c873209d1f1d">PRMGenerator</a>, <a class="el" href="class_random_tree_generator.html#adec913001da775c6d1955ed510d2e572">RandomTreeGenerator</a>, and <a class="el" href="class_r_r_t_generator.html#ab4b2b7aeaa5223a0a4b73891d47f72da">RRTGenerator</a>.</p>
 
 </div>
 </div>
@@ -225,6 +229,36 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a4cbc72f5ff8b8716c4405ad0bab6ca16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4cbc72f5ff8b8716c4405ad0bab6ca16">&sect;&nbsp;</a></span>toString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString TreeGenerator::toString </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Displays the type of algorithm used for the generation of the tree. </p>
+<dl class="section return"><dt>Returns</dt><dd>String of the generation algorithm </dd></dl>
+
+<p>Reimplemented in <a class="el" href="class_p_r_m_generator.html#a7fe35e05faf413539c02555455cd36f4">PRMGenerator</a>, <a class="el" href="class_random_tree_generator.html#a0dc196d96fe560294c1f94a82bd93b7d">RandomTreeGenerator</a>, and <a class="el" href="class_r_r_t_generator.html#acb13c56f806a8f3e53c63bd5220d0437">RRTGenerator</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Field Documentation</h2>
 <a id="a0d4bf0426d99f232a1b3df1688714445"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0d4bf0426d99f232a1b3df1688714445">&sect;&nbsp;</a></span>session</h2>
@@ -249,8 +283,8 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/Users/Tigig/Documents/Travail/M2/Rapidly-exploringRandomTrees/src/classes/generators/<a class="el" href="treegenerator_8h_source.html">treegenerator.h</a></li>
-<li>/Users/Tigig/Documents/Travail/M2/Rapidly-exploringRandomTrees/src/classes/generators/<a class="el" href="treegenerator_8cpp.html">treegenerator.cpp</a></li>
+<li>F:/GitHub/Rapidly-exploringRandomTrees/src/classes/generators/<a class="el" href="treegenerator_8h_source.html">treegenerator.h</a></li>
+<li>F:/GitHub/Rapidly-exploringRandomTrees/src/classes/generators/<a class="el" href="treegenerator_8cpp.html">treegenerator.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

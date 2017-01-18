@@ -1,9 +1,9 @@
 <map id="Session" name="Session">
-<area shape="rect" id="node5" href="$class_tree_generator.html" title="TreeGenerator" alt="" coords="416,260,525,287"/>
-<area shape="rect" id="node8" href="$class_environment.html" title="Environment" alt="" coords="209,260,306,287"/>
-<area shape="rect" id="node3" href="$class_config.html" title="Config" alt="" coords="497,349,557,376"/>
-<area shape="rect" id="node6" href="$class_height_map.html" title="HeightMap" alt="" coords="666,81,753,108"/>
-<area shape="rect" id="node4" href="$class_end_method.html" title="EndMethod" alt="" coords="132,81,223,108"/>
-<area shape="rect" id="node7" href="$class_metric.html" title="Metric" alt="" coords="519,81,577,108"/>
-<area shape="rect" id="node9" href="$class_vertex.html" title="Vertex" alt="" coords="127,171,187,197"/>
+<area shape="rect" id="node5" href="$class_tree_generator.html" title="TreeGenerator" alt="" coords="415,263,519,289"/>
+<area shape="rect" id="node8" href="$class_environment.html" title="Environment" alt="" coords="209,263,303,289"/>
+<area shape="rect" id="node3" href="$class_config.html" title="Config" alt="" coords="492,352,551,379"/>
+<area shape="rect" id="node6" href="$class_height_map.html" title="HeightMap" alt="" coords="661,81,745,108"/>
+<area shape="rect" id="node4" href="$class_end_method.html" title="EndMethod" alt="" coords="131,81,219,108"/>
+<area shape="rect" id="node7" href="$class_metric.html" title="Metric" alt="" coords="513,81,572,108"/>
+<area shape="rect" id="node9" href="$class_vertex.html" title="Vertex" alt="" coords="126,172,186,199"/>
 </map>

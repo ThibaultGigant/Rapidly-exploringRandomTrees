@@ -1,21 +1,22 @@
-<map id="/Users/Tigig/Documents/Travail/M2/Rapidly&#45;exploringRandomTrees/src/app/configpanel/configpanel.h" name="/Users/Tigig/Documents/Travail/M2/Rapidly&#45;exploringRandomTrees/src/app/configpanel/configpanel.h">
-<area shape="rect" id="node5" href="$endmethodwidget_8h.html" title="endmethodwidget/endmethodwidget.h" alt="" coords="461,131,709,158"/>
-<area shape="rect" id="node17" href="$generatorwidget_8h.html" title="generatorwidget/generatorwidget.h" alt="" coords="1854,221,2082,247"/>
-<area shape="rect" id="node28" href="$metricwidget_8h.html" title="metricwidget/metricwidget.h" alt="" coords="2107,221,2293,247"/>
-<area shape="rect" id="node32" href="$additionalinfoswidget_8h.html" title="additionalinfoswidget\l/additionalinfoswidget.h" alt="" coords="980,124,1140,165"/>
-<area shape="rect" id="node38" href="$runbuttonswidget_8h.html" title="runbuttonswidget/runbuttonswidget.h" alt="" coords="1164,131,1404,158"/>
-<area shape="rect" id="node40" href="$listwidget_8h.html" title="listwidget/listwidget.h" alt="" coords="1428,131,1575,158"/>
-<area shape="rect" id="node8" href="$nbverticeslimitwidget_8h.html" title="nbverticeslimitwidget.h" alt="" coords="589,221,745,247"/>
-<area shape="rect" id="node12" href="$timelimitwidget_8h.html" title="timelimitwidget.h" alt="" coords="444,221,564,247"/>
-<area shape="rect" id="node14" href="$endmethod_8h.html" title="src/classes/endmethods\l/endmethod.h" alt="" coords="52,213,217,255"/>
-<area shape="rect" id="node19" href="$randomtreegenerator_8h.html" title="src/classes/generators\l/randomtreegenerator.h" alt="" coords="1727,303,1889,344"/>
-<area shape="rect" id="node27" href="$rrtgenerator_8h.html" title="src/classes/generators\l/rrtgenerator.h" alt="" coords="1914,303,2070,344"/>
-<area shape="rect" id="node20" href="$treegenerator_8h.html" title="treegenerator.h" alt="" coords="1937,392,2050,419"/>
-<area shape="rect" id="node21" href="$vertex_8h.html" title="src/classes/environment\l/vertex.h" alt="" coords="1911,467,2076,508"/>
-<area shape="rect" id="node29" href="$euclidiandistance_8h.html" title="src/classes/metrics\l/euclidiandistance.h" alt="" coords="2217,303,2356,344"/>
-<area shape="rect" id="node31" href="$manhattandistance_8h.html" title="src/classes/metrics\l/manhattandistance.h" alt="" coords="2380,303,2529,344"/>
-<area shape="rect" id="node30" href="$metric_8h.html" title="metric.h" alt="" coords="2251,392,2320,419"/>
-<area shape="rect" id="node33" href="$deltatframe_8h.html" title="deltatframe.h" alt="" coords="1559,221,1659,247"/>
-<area shape="rect" id="node36" href="$nbrunsframe_8h.html" title="nbrunsframe.h" alt="" coords="1098,221,1206,247"/>
-<area shape="rect" id="node37" href="$sleeptimeframe_8h.html" title="sleeptimeframe.h" alt="" coords="898,221,1022,247"/>
+<map id="F:/GitHub/Rapidly&#45;exploringRandomTrees/src/app/configpanel/configpanel.h" name="F:/GitHub/Rapidly&#45;exploringRandomTrees/src/app/configpanel/configpanel.h">
+<area shape="rect" id="node5" href="$endmethodwidget_8h.html" title="endmethodwidget/endmethodwidget.h" alt="" coords="375,117,613,143"/>
+<area shape="rect" id="node17" href="$generatorwidget_8h.html" title="generatorwidget/generatorwidget.h" alt="" coords="1971,206,2190,233"/>
+<area shape="rect" id="node29" href="$metricwidget_8h.html" title="metricwidget/metricwidget.h" alt="" coords="2215,206,2397,233"/>
+<area shape="rect" id="node33" href="$additionalinfoswidget_8h.html" title="additionalinfoswidget\l/additionalinfoswidget.h" alt="" coords="1120,109,1276,151"/>
+<area shape="rect" id="node39" href="$runbuttonswidget_8h.html" title="runbuttonswidget/runbuttonswidget.h" alt="" coords="1711,117,1944,143"/>
+<area shape="rect" id="node41" href="$listwidget_8h.html" title="listwidget/listwidget.h" alt="" coords="1361,117,1507,143"/>
+<area shape="rect" id="node8" href="$nbverticeslimitwidget_8h.html" title="nbverticeslimitwidget.h" alt="" coords="493,206,645,233"/>
+<area shape="rect" id="node12" href="$timelimitwidget_8h.html" title="timelimitwidget.h" alt="" coords="349,206,468,233"/>
+<area shape="rect" id="node14" href="$endmethod_8h.html" title="src/classes/endmethods\l/endmethod.h" alt="" coords="8,199,172,240"/>
+<area shape="rect" id="node19" href="$randomtreegenerator_8h.html" title="src/classes/generators\l/randomtreegenerator.h" alt="" coords="1823,288,1979,329"/>
+<area shape="rect" id="node27" href="$rrtgenerator_8h.html" title="src/classes/generators\l/rrtgenerator.h" alt="" coords="2003,288,2158,329"/>
+<area shape="rect" id="node28" href="$prmgenerator_8h.html" title="src/classes/generators\l/prmgenerator.h" alt="" coords="1643,288,1798,329"/>
+<area shape="rect" id="node20" href="$treegenerator_8h.html" title="treegenerator.h" alt="" coords="2026,377,2135,404"/>
+<area shape="rect" id="node21" href="$vertex_8h.html" title="src/classes/environment\l/vertex.h" alt="" coords="1999,452,2162,493"/>
+<area shape="rect" id="node30" href="$euclidiandistance_8h.html" title="src/classes/metrics\l/euclidiandistance.h" alt="" coords="2303,288,2440,329"/>
+<area shape="rect" id="node32" href="$manhattandistance_8h.html" title="src/classes/metrics\l/manhattandistance.h" alt="" coords="2465,288,2611,329"/>
+<area shape="rect" id="node31" href="$metric_8h.html" title="metric.h" alt="" coords="2334,377,2403,404"/>
+<area shape="rect" id="node34" href="$deltatframe_8h.html" title="deltatframe.h" alt="" coords="1275,206,1372,233"/>
+<area shape="rect" id="node37" href="$nbrunsframe_8h.html" title="nbrunsframe.h" alt="" coords="1146,206,1250,233"/>
+<area shape="rect" id="node38" href="$sleeptimeframe_8h.html" title="sleeptimeframe.h" alt="" coords="949,206,1071,233"/>
 </map>

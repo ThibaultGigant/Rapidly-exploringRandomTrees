@@ -81,14 +81,14 @@ Collaboration diagram for RandomTreeGenerator:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_random_tree_generator__coll__graph.png" border="0" usemap="#_random_tree_generator_coll__map" alt="Collaboration graph"/></div>
 <map name="_random_tree_generator_coll__map" id="_random_tree_generator_coll__map">
-<area shape="rect" id="node2" href="class_tree_generator.html" title="TreeGenerator" alt="" coords="203,81,312,108"/>
-<area shape="rect" id="node3" href="class_session.html" title="Session" alt="" coords="448,260,517,287"/>
-<area shape="rect" id="node5" href="class_config.html" title="Config" alt="" coords="578,171,638,197"/>
-<area shape="rect" id="node9" href="class_environment.html" title="Environment" alt="" coords="493,349,590,376"/>
-<area shape="rect" id="node7" href="class_height_map.html" title="HeightMap" alt="" coords="646,81,733,108"/>
-<area shape="rect" id="node6" href="class_end_method.html" title="EndMethod" alt="" coords="469,81,560,108"/>
-<area shape="rect" id="node8" href="class_metric.html" title="Metric" alt="" coords="811,81,869,108"/>
-<area shape="rect" id="node10" href="class_vertex.html" title="Vertex" alt="" coords="591,260,651,287"/>
+<area shape="rect" id="node2" href="class_tree_generator.html" title="TreeGenerator" alt="" coords="196,81,300,108"/>
+<area shape="rect" id="node3" href="class_session.html" title="Session" alt="" coords="436,261,505,288"/>
+<area shape="rect" id="node5" href="class_config.html" title="Config" alt="" coords="564,171,623,197"/>
+<area shape="rect" id="node9" href="class_environment.html" title="Environment" alt="" coords="480,352,573,379"/>
+<area shape="rect" id="node7" href="class_height_map.html" title="HeightMap" alt="" coords="631,81,715,108"/>
+<area shape="rect" id="node6" href="class_end_method.html" title="EndMethod" alt="" coords="457,81,545,108"/>
+<area shape="rect" id="node8" href="class_metric.html" title="Metric" alt="" coords="793,81,852,108"/>
+<area shape="rect" id="node10" href="class_vertex.html" title="Vertex" alt="" coords="577,261,637,288"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -103,6 +103,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:adec913001da775c6d1955ed510d2e572"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_vertex.html">Vertex</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_random_tree_generator.html#adec913001da775c6d1955ed510d2e572">generate</a> ()</td></tr>
 <tr class="memdesc:adec913001da775c6d1955ed510d2e572"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a new vertex connected to a random vertex of the tree.  <a href="#adec913001da775c6d1955ed510d2e572">More...</a><br /></td></tr>
 <tr class="separator:adec913001da775c6d1955ed510d2e572"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0dc196d96fe560294c1f94a82bd93b7d"><td class="memItemLeft" align="right" valign="top">virtual QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_random_tree_generator.html#a0dc196d96fe560294c1f94a82bd93b7d">toString</a> ()</td></tr>
+<tr class="memdesc:a0dc196d96fe560294c1f94a82bd93b7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays the type of algorithm used for the generation of the tree.  <a href="#a0dc196d96fe560294c1f94a82bd93b7d">More...</a><br /></td></tr>
+<tr class="separator:a0dc196d96fe560294c1f94a82bd93b7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_tree_generator"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_tree_generator')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_tree_generator.html">TreeGenerator</a></td></tr>
 <tr class="memitem:a8518734522e931e70d7c52f6f4960939 inherit pub_methods_class_tree_generator"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tree_generator.html#a8518734522e931e70d7c52f6f4960939">TreeGenerator</a> ()</td></tr>
 <tr class="memdesc:a8518734522e931e70d7c52f6f4960939 inherit pub_methods_class_tree_generator"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="class_tree_generator.html#a8518734522e931e70d7c52f6f4960939">More...</a><br /></td></tr>
@@ -197,9 +200,39 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="a0dc196d96fe560294c1f94a82bd93b7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0dc196d96fe560294c1f94a82bd93b7d">&sect;&nbsp;</a></span>toString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString RandomTreeGenerator::toString </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Displays the type of algorithm used for the generation of the tree. </p>
+<dl class="section return"><dt>Returns</dt><dd>String of the generation algorithm </dd></dl>
+
+<p>Reimplemented from <a class="el" href="class_tree_generator.html#a4cbc72f5ff8b8716c4405ad0bab6ca16">TreeGenerator</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/Users/Tigig/Documents/Travail/M2/Rapidly-exploringRandomTrees/src/classes/generators/<a class="el" href="randomtreegenerator_8h_source.html">randomtreegenerator.h</a></li>
-<li>/Users/Tigig/Documents/Travail/M2/Rapidly-exploringRandomTrees/src/classes/generators/<a class="el" href="randomtreegenerator_8cpp.html">randomtreegenerator.cpp</a></li>
+<li>F:/GitHub/Rapidly-exploringRandomTrees/src/classes/generators/<a class="el" href="randomtreegenerator_8h_source.html">randomtreegenerator.h</a></li>
+<li>F:/GitHub/Rapidly-exploringRandomTrees/src/classes/generators/<a class="el" href="randomtreegenerator_8cpp.html">randomtreegenerator.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

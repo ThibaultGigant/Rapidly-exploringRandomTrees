@@ -7,7 +7,7 @@ var searchData=
   ['manhattandistance',['ManhattanDistance',['../class_manhattan_distance.html#ab65010f7898e6d03e681cfc2cad6bd10',1,'ManhattanDistance']]],
   ['metric',['Metric',['../class_metric.html#a5a3d74daf5dcaf419ef9e58360d7bfe7',1,'Metric']]],
   ['metricwidget',['MetricWidget',['../class_metric_widget.html#a193b8d9b614016faa781ca82e1b13581',1,'MetricWidget']]],
-  ['mousemoveevent',['mouseMoveEvent',['../class_height_map_view_panel.html#a82586298642410d677aff766973e678a',1,'HeightMapViewPanel']]],
-  ['mousepressevent',['mousePressEvent',['../class_height_map_view_panel.html#a08fd601d875f68fe8589a150bbf22c63',1,'HeightMapViewPanel']]],
-  ['mousereleaseevent',['mouseReleaseEvent',['../class_height_map_view_panel.html#a5e0884f456aa7198472c061a47d4bf54',1,'HeightMapViewPanel']]]
+  ['mousemoveevent',['mouseMoveEvent',['../class_drag_widget.html#ad800b07081ab69552a78ae33a28f20d3',1,'DragWidget::mouseMoveEvent()'],['../class_height_map_view_panel.html#a82586298642410d677aff766973e678a',1,'HeightMapViewPanel::mouseMoveEvent()']]],
+  ['mousepressevent',['mousePressEvent',['../class_drag_widget.html#a098920fc9b4fb2eb1b9333b580d0b9f5',1,'DragWidget::mousePressEvent()'],['../class_height_map_view_panel.html#a08fd601d875f68fe8589a150bbf22c63',1,'HeightMapViewPanel::mousePressEvent()']]],
+  ['mousereleaseevent',['mouseReleaseEvent',['../class_drag_widget.html#aa3049e9cbb101a5d27dc9d736faef3ba',1,'DragWidget::mouseReleaseEvent()'],['../class_height_map_view_panel.html#a5e0884f456aa7198472c061a47d4bf54',1,'HeightMapViewPanel::mouseReleaseEvent()']]]
 ];

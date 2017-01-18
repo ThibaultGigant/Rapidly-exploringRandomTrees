@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['quadrant',['Quadrant',['../class_quadrant.html',1,'']]]
+  ['prmgenerator',['PRMGenerator',['../class_p_r_m_generator.html',1,'']]]
 ];

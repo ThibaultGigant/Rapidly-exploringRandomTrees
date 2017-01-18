@@ -62,6 +62,8 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">Vertex Class Reference</div>  </div>
@@ -91,12 +93,38 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae148d787e1342ea883abfc48d89e1d8e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_vertex.html">Vertex</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vertex.html#ae148d787e1342ea883abfc48d89e1d8e">getParent</a> ()</td></tr>
 <tr class="memdesc:ae148d787e1342ea883abfc48d89e1d8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter of the parent.  <a href="#ae148d787e1342ea883abfc48d89e1d8e">More...</a><br /></td></tr>
 <tr class="separator:ae148d787e1342ea883abfc48d89e1d8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c98f2ba24da887ae2fe970f7ed45db4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vertex.html#a6c98f2ba24da887ae2fe970f7ed45db4">getId</a> ()</td></tr>
+<tr class="memdesc:a6c98f2ba24da887ae2fe970f7ed45db4"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_vertex.html#a6c98f2ba24da887ae2fe970f7ed45db4" title="Vertex::getId. ">Vertex::getId</a>.  <a href="#a6c98f2ba24da887ae2fe970f7ed45db4">More...</a><br /></td></tr>
+<tr class="separator:a6c98f2ba24da887ae2fe970f7ed45db4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abacbbbc7fb83c6615bd0a541f37bf51b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vertex.html#abacbbbc7fb83c6615bd0a541f37bf51b">addChild</a> (<a class="el" href="class_vertex.html">Vertex</a> *child)</td></tr>
 <tr class="memdesc:abacbbbc7fb83c6615bd0a541f37bf51b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a child to the vertex.  <a href="#abacbbbc7fb83c6615bd0a541f37bf51b">More...</a><br /></td></tr>
 <tr class="separator:abacbbbc7fb83c6615bd0a541f37bf51b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab4ddc346d16650fbb2f38b0c86e09d71"><td class="memItemLeft" align="right" valign="top">QVector&lt; <a class="el" href="class_vertex.html">Vertex</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vertex.html#ab4ddc346d16650fbb2f38b0c86e09d71">getChildren</a> () const</td></tr>
 <tr class="memdesc:ab4ddc346d16650fbb2f38b0c86e09d71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the list of children of the vertex.  <a href="#ab4ddc346d16650fbb2f38b0c86e09d71">More...</a><br /></td></tr>
 <tr class="separator:ab4ddc346d16650fbb2f38b0c86e09d71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdc5a5cab34f5bfc45bae8153fe3aa4e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vertex.html#abdc5a5cab34f5bfc45bae8153fe3aa4e">setConnectedComponentPointer</a> (<a class="el" href="class_vertex.html">Vertex</a> *vertex)</td></tr>
+<tr class="memdesc:abdc5a5cab34f5bfc45bae8153fe3aa4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the pointer to the new connected component marker.  <a href="#abdc5a5cab34f5bfc45bae8153fe3aa4e">More...</a><br /></td></tr>
+<tr class="separator:abdc5a5cab34f5bfc45bae8153fe3aa4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92872e5fb63dd24f9d3b426bf80558fb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_vertex.html">Vertex</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vertex.html#a92872e5fb63dd24f9d3b426bf80558fb">getConnectedComponentPointer</a> () const</td></tr>
+<tr class="memdesc:a92872e5fb63dd24f9d3b426bf80558fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the pointer of the root of the connected component.  <a href="#a92872e5fb63dd24f9d3b426bf80558fb">More...</a><br /></td></tr>
+<tr class="separator:a92872e5fb63dd24f9d3b426bf80558fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6c11f06ad1b1f409f42cb0d44862d86"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vertex.html#ab6c11f06ad1b1f409f42cb0d44862d86">toString</a> ()</td></tr>
+<tr class="memdesc:ab6c11f06ad1b1f409f42cb0d44862d86"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_vertex.html#ab6c11f06ad1b1f409f42cb0d44862d86" title="Vertex::toString. ">Vertex::toString</a>.  <a href="#ab6c11f06ad1b1f409f42cb0d44862d86">More...</a><br /></td></tr>
+<tr class="separator:ab6c11f06ad1b1f409f42cb0d44862d86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a3e058fcf545f43287a55dbec93a7a23b"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vertex.html#a3e058fcf545f43287a55dbec93a7a23b">getUniqueId</a> ()</td></tr>
+<tr class="memdesc:a3e058fcf545f43287a55dbec93a7a23b"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_vertex.html#a3e058fcf545f43287a55dbec93a7a23b" title="Vertex::getUniqueId. ">Vertex::getUniqueId</a>.  <a href="#a3e058fcf545f43287a55dbec93a7a23b">More...</a><br /></td></tr>
+<tr class="separator:a3e058fcf545f43287a55dbec93a7a23b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa83cde87d0cceb7cd87ffb6142ec4db"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vertex.html#aaa83cde87d0cceb7cd87ffb6142ec4db">resetVertexId</a> ()</td></tr>
+<tr class="memdesc:aaa83cde87d0cceb7cd87ffb6142ec4db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the id counter to 0.  <a href="#aaa83cde87d0cceb7cd87ffb6142ec4db">More...</a><br /></td></tr>
+<tr class="separator:aaa83cde87d0cceb7cd87ffb6142ec4db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:ae46e1aecc337a1057f73ba1f39c6fef4"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vertex.html#ae46e1aecc337a1057f73ba1f39c6fef4">idCount</a></td></tr>
+<tr class="separator:ae46e1aecc337a1057f73ba1f39c6fef4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -106,6 +134,10 @@ Private Attributes</h2></td></tr>
 <tr class="separator:afb92de2e5329acfe640cbf771b5ce197"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1674c2fc4ee4057d2bc0c4e0cb85b8b"><td class="memItemLeft" align="right" valign="top">QVector&lt; <a class="el" href="class_vertex.html">Vertex</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vertex.html#ab1674c2fc4ee4057d2bc0c4e0cb85b8b">children</a></td></tr>
 <tr class="separator:ab1674c2fc4ee4057d2bc0c4e0cb85b8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac68e1f88dfd3904fe00d76a037207db0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_vertex.html">Vertex</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vertex.html#ac68e1f88dfd3904fe00d76a037207db0">connectedComponentPointer</a></td></tr>
+<tr class="separator:ac68e1f88dfd3904fe00d76a037207db0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e69697726190f50c7fc040fb1ddac7a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vertex.html#a2e69697726190f50c7fc040fb1ddac7a">id</a></td></tr>
+<tr class="separator:a2e69697726190f50c7fc040fb1ddac7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="af56e873f8701bfed75e89391c91aae03"></a>
@@ -211,6 +243,46 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a92872e5fb63dd24f9d3b426bf80558fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92872e5fb63dd24f9d3b426bf80558fb">&sect;&nbsp;</a></span>getConnectedComponentPointer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_vertex.html">Vertex</a> * Vertex::getConnectedComponentPointer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the pointer of the root of the connected component. </p>
+<dl class="section return"><dt>Returns</dt><dd>Pointer of the root </dd></dl>
+
+</div>
+</div>
+<a id="a6c98f2ba24da887ae2fe970f7ed45db4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c98f2ba24da887ae2fe970f7ed45db4">&sect;&nbsp;</a></span>getId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Vertex::getId </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_vertex.html#a6c98f2ba24da887ae2fe970f7ed45db4" title="Vertex::getId. ">Vertex::getId</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns the id of the vertex </dd></dl>
+
+</div>
+</div>
 <a id="ae148d787e1342ea883abfc48d89e1d8e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae148d787e1342ea883abfc48d89e1d8e">&sect;&nbsp;</a></span>getParent()</h2>
 
@@ -251,6 +323,107 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a3e058fcf545f43287a55dbec93a7a23b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e058fcf545f43287a55dbec93a7a23b">&sect;&nbsp;</a></span>getUniqueId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Vertex::getUniqueId </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_vertex.html#a3e058fcf545f43287a55dbec93a7a23b" title="Vertex::getUniqueId. ">Vertex::getUniqueId</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>return an id for a vertex </dd></dl>
+
+</div>
+</div>
+<a id="aaa83cde87d0cceb7cd87ffb6142ec4db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa83cde87d0cceb7cd87ffb6142ec4db">&sect;&nbsp;</a></span>resetVertexId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Vertex::resetVertexId </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Resets the id counter to 0. </p>
+
+</div>
+</div>
+<a id="abdc5a5cab34f5bfc45bae8153fe3aa4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abdc5a5cab34f5bfc45bae8153fe3aa4e">&sect;&nbsp;</a></span>setConnectedComponentPointer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Vertex::setConnectedComponentPointer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_vertex.html">Vertex</a> *&#160;</td>
+          <td class="paramname"><em>vertex</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the pointer to the new connected component marker. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vertex</td><td><a class="el" href="class_vertex.html">Vertex</a> that is the origin of the connected component </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab6c11f06ad1b1f409f42cb0d44862d86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6c11f06ad1b1f409f42cb0d44862d86">&sect;&nbsp;</a></span>toString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString Vertex::toString </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_vertex.html#ab6c11f06ad1b1f409f42cb0d44862d86" title="Vertex::toString. ">Vertex::toString</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>A QString representing the Vertes [ id x y parentId childrenIds ] </dd></dl>
+
+</div>
+</div>
 <h2 class="groupheader">Field Documentation</h2>
 <a id="ab1674c2fc4ee4057d2bc0c4e0cb85b8b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab1674c2fc4ee4057d2bc0c4e0cb85b8b">&sect;&nbsp;</a></span>children</h2>
@@ -268,6 +441,72 @@ Private Attributes</h2></td></tr>
   </td>
   <td class="mlabels-right">
 <span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac68e1f88dfd3904fe00d76a037207db0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac68e1f88dfd3904fe00d76a037207db0">&sect;&nbsp;</a></span>connectedComponentPointer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_vertex.html">Vertex</a>* Vertex::connectedComponentPointer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2e69697726190f50c7fc040fb1ddac7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e69697726190f50c7fc040fb1ddac7a">&sect;&nbsp;</a></span>id</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Vertex::id</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae46e1aecc337a1057f73ba1f39c6fef4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae46e1aecc337a1057f73ba1f39c6fef4">&sect;&nbsp;</a></span>idCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Vertex::idCount</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -319,8 +558,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/Users/Tigig/Documents/Travail/M2/Rapidly-exploringRandomTrees/src/classes/environment/<a class="el" href="vertex_8h_source.html">vertex.h</a></li>
-<li>/Users/Tigig/Documents/Travail/M2/Rapidly-exploringRandomTrees/src/classes/environment/<a class="el" href="vertex_8cpp.html">vertex.cpp</a></li>
+<li>F:/GitHub/Rapidly-exploringRandomTrees/src/classes/environment/<a class="el" href="vertex_8h_source.html">vertex.h</a></li>
+<li>F:/GitHub/Rapidly-exploringRandomTrees/src/classes/environment/<a class="el" href="vertex_8cpp.html">vertex.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

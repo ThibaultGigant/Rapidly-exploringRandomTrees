@@ -1,10 +1,10 @@
 <map id="RandomTreeGenerator" name="RandomTreeGenerator">
-<area shape="rect" id="node2" href="$class_tree_generator.html" title="TreeGenerator" alt="" coords="203,81,312,108"/>
-<area shape="rect" id="node3" href="$class_session.html" title="Session" alt="" coords="448,260,517,287"/>
-<area shape="rect" id="node5" href="$class_config.html" title="Config" alt="" coords="578,171,638,197"/>
-<area shape="rect" id="node9" href="$class_environment.html" title="Environment" alt="" coords="493,349,590,376"/>
-<area shape="rect" id="node7" href="$class_height_map.html" title="HeightMap" alt="" coords="646,81,733,108"/>
-<area shape="rect" id="node6" href="$class_end_method.html" title="EndMethod" alt="" coords="469,81,560,108"/>
-<area shape="rect" id="node8" href="$class_metric.html" title="Metric" alt="" coords="811,81,869,108"/>
-<area shape="rect" id="node10" href="$class_vertex.html" title="Vertex" alt="" coords="591,260,651,287"/>
+<area shape="rect" id="node2" href="$class_tree_generator.html" title="TreeGenerator" alt="" coords="196,81,300,108"/>
+<area shape="rect" id="node3" href="$class_session.html" title="Session" alt="" coords="436,261,505,288"/>
+<area shape="rect" id="node5" href="$class_config.html" title="Config" alt="" coords="564,171,623,197"/>
+<area shape="rect" id="node9" href="$class_environment.html" title="Environment" alt="" coords="480,352,573,379"/>
+<area shape="rect" id="node7" href="$class_height_map.html" title="HeightMap" alt="" coords="631,81,715,108"/>
+<area shape="rect" id="node6" href="$class_end_method.html" title="EndMethod" alt="" coords="457,81,545,108"/>
+<area shape="rect" id="node8" href="$class_metric.html" title="Metric" alt="" coords="793,81,852,108"/>
+<area shape="rect" id="node10" href="$class_vertex.html" title="Vertex" alt="" coords="577,261,637,288"/>
 </map>

@@ -1,3 +1,12 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$class_environment.html" title="Environment" alt="" coords="5,5,99,32"/>
+<area shape="rect" id="node2" href="$class_central_widget.html" title="CentralWidget" alt="" coords="147,5,251,32"/>
+<area shape="rect" id="node3" href="$class_config_panel.html" title="ConfigPanel" alt="" coords="154,56,245,83"/>
+<area shape="rect" id="node4" href="$class_drag_widget.html" title="DragWidget" alt="" coords="154,107,245,133"/>
+<area shape="rect" id="node5" href="$class_height_map_file_panel.html" title="HeightMapFilePanel" alt="" coords="130,157,269,184"/>
+<area shape="rect" id="node6" href="$class_height_map_frame.html" title="HeightMapFrame" alt="" coords="139,208,260,235"/>
+<area shape="rect" id="node7" href="$class_height_map_sub_panel.html" title="HeightMapSubPanel" alt="" coords="129,259,269,285"/>
+<area shape="rect" id="node8" href="$class_height_map_sup_panel.html" title="HeightMapSupPanel" alt="" coords="129,309,269,336"/>
+<area shape="rect" id="node9" href="$class_height_map_view_panel.html" title="HeightMapViewPanel" alt="" coords="127,360,272,387"/>
+<area shape="rect" id="node10" href="$class_list_widget.html" title="ListWidget" alt="" coords="157,411,241,437"/>
+<area shape="rect" id="node11" href="$class_sleep_time_frame.html" title="SleepTimeFrame" alt="" coords="139,461,259,488"/>
 </map>

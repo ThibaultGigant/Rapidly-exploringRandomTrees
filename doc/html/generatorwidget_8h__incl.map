@@ -1,6 +1,7 @@
-<map id="/Users/Tigig/Documents/Travail/M2/Rapidly&#45;exploringRandomTrees/src/app/configpanel/generatorwidget/generatorwidget.h" name="/Users/Tigig/Documents/Travail/M2/Rapidly&#45;exploringRandomTrees/src/app/configpanel/generatorwidget/generatorwidget.h">
-<area shape="rect" id="node6" href="$randomtreegenerator_8h.html" title="src/classes/generators\l/randomtreegenerator.h" alt="" coords="443,124,606,165"/>
-<area shape="rect" id="node14" href="$rrtgenerator_8h.html" title="src/classes/generators\l/rrtgenerator.h" alt="" coords="631,124,787,165"/>
-<area shape="rect" id="node7" href="$treegenerator_8h.html" title="treegenerator.h" alt="" coords="560,213,673,240"/>
-<area shape="rect" id="node8" href="$vertex_8h.html" title="src/classes/environment\l/vertex.h" alt="" coords="414,288,579,329"/>
+<map id="F:/GitHub/Rapidly&#45;exploringRandomTrees/src/app/configpanel/generatorwidget/generatorwidget.h" name="F:/GitHub/Rapidly&#45;exploringRandomTrees/src/app/configpanel/generatorwidget/generatorwidget.h">
+<area shape="rect" id="node6" href="$randomtreegenerator_8h.html" title="src/classes/generators\l/randomtreegenerator.h" alt="" coords="434,109,590,151"/>
+<area shape="rect" id="node14" href="$rrtgenerator_8h.html" title="src/classes/generators\l/rrtgenerator.h" alt="" coords="615,109,769,151"/>
+<area shape="rect" id="node15" href="$prmgenerator_8h.html" title="src/classes/generators\l/prmgenerator.h" alt="" coords="793,109,948,151"/>
+<area shape="rect" id="node7" href="$treegenerator_8h.html" title="treegenerator.h" alt="" coords="637,199,747,225"/>
+<area shape="rect" id="node8" href="$vertex_8h.html" title="src/classes/environment\l/vertex.h" alt="" coords="492,273,655,315"/>
 </map>
