@@ -20,6 +20,7 @@ HeightMapViewPanel::HeightMapViewPanel(CentralWidget *centralWidget, QWidget *pa
     setupImage();
     clear(0);
     this->scribbling = false;
+    this->erase = false;
 
     //Connexions
     connect(this->centralWidget, SIGNAL(emitDrawElement(Vertex*)), this, SLOT(addElement(Vertex*)));
@@ -45,7 +46,7 @@ void HeightMapViewPanel::setupImage(){
     data = new unsigned char[4 * w * h ];
 
     this->view = QImage(this->data, w, h, QImage::Format_RGB32);
-
+    view.fill(Qt::white);
 }
 
 
@@ -99,6 +100,10 @@ void HeightMapViewPanel::drawLineTo(const QPoint &endPoint)
 {
     QPainter painter(&this->view);
     painter.setRenderHint(QPainter::Antialiasing);
+
+    brush.setColor((erase)?Qt::white:Qt::black);
+    hmPen.setColor((erase)?Qt::white:Qt::black);
+
     painter.setBrush(brush);
     painter.setPen(hmPen);
     painter.drawLine(lastPoint, endPoint);
@@ -172,7 +177,7 @@ void HeightMapViewPanel::addElement(Vertex *vertex){
     if(vertexList.size()==1){
         r = 255;
     }
-    int g = 200.0 / count  *  vertexList.size(); //( 1.0 + (count * ));
+    int g = 1 + 200.0 / count  *  vertexList.size(); //( 1.0 + (count * ));
 
     QColor red = QColor(r,g,0,255);
 
@@ -242,6 +247,10 @@ void HeightMapViewPanel::decreasePenSize(){
     emit sendPenSize(penSize);
 }
 
+void HeightMapViewPanel::toggleMode(){
+    erase = !erase;
+}
+
 
 
 //@@@@@@@@@@@@@@@@@@@@@ GET / SET @@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -250,6 +259,9 @@ int HeightMapViewPanel::getPenSize(){
     return penSize;
 }
 
+QImage HeightMapViewPanel::getView(){
+    return view;
+}
 
 
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

@@ -4,6 +4,8 @@
 #include <QWidget>
 #include <QLabel>
 #include <QPushButton>
+#include <QFileDialog>
+#include <QDir>
 #include <QHBoxLayout>
 #include "src/app/heightmappanel/heightmapviewpanel.h"
 
@@ -23,21 +25,24 @@ private:
     QPushButton *increaseButton;
     QPushButton *decreaseButton;
     QPushButton *eraserButton;
+    QPushButton *saveImageButton;
 
-   QHBoxLayout *layout;
+    QHBoxLayout *layout;
 
+   bool eraseMode;
 
 
 signals:
     void increasePenSize();
     void decreasePenSize();
-    void goEraser();
+    void toggleModeSig();
 
 public slots:
 
     void majSizeLabel(int s);
     void receiveModifAllowed(bool isModifAllowed);
-
+    void toggleMode();
+    void saveImageSlot();
 };
 
 #endif // HEIGHTMAPSUBPANEL_H
