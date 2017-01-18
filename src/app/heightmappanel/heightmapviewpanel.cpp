@@ -25,6 +25,7 @@ HeightMapViewPanel::HeightMapViewPanel(CentralWidget *centralWidget, QWidget *pa
     connect(this->centralWidget, SIGNAL(emitDrawElement(Vertex*)), this, SLOT(addElement(Vertex*)));
     connect(this->centralWidget, SIGNAL(clearImage(int)), this, SLOT(clear(int)));
     connect(this->centralWidget,SIGNAL(emitModifAllowed(bool)),this,SLOT(setModifPermission(bool)));
+    connect(this, SIGNAL(heightMapChanged()), this->centralWidget, SLOT(heightMapModified()));
 }
 
 
@@ -97,6 +98,7 @@ void HeightMapViewPanel::mouseReleaseEvent(QMouseEvent *event)
 
 void HeightMapViewPanel::drawLineTo(const QPoint &endPoint)
 {
+    emit heightMapChanged();
     QPainter painter(&this->view);
     painter.setRenderHint(QPainter::Antialiasing);
     painter.setBrush(brush);

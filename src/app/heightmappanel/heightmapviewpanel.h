@@ -78,6 +78,7 @@ signals:
     void sendPenSize(int);
     void sendModifAllowed(bool);
     void lastVertexDrawn(Vertex *);
+    void heightMapChanged();
 
 public slots:
 

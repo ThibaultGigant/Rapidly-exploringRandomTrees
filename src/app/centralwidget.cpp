@@ -216,3 +216,11 @@ bool CentralWidget::getSaveState()
 {
     return this->configPanel->getSave();
 }
+
+/**
+ * @brief Receives a signal informing that the heightmap has been modified
+ */
+void CentralWidget::heightMapModified()
+{
+    this->configPanel->configChanged();
+}

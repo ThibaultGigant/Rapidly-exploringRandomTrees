@@ -97,10 +97,15 @@ void RunButtonsWidget::isRun(bool b)
 void RunButtonsWidget::isModified(bool toUpdate)
 {
     this->runButton->disconnect();
+    connect(this->runButton, SIGNAL(clicked(bool)), this->cw, SLOT(receiveImageToHeightMap()));
     connect(this->runButton, SIGNAL(clicked(bool)), this->cp, SLOT(addConfig()));
     connect(this->runButton, SIGNAL(clicked(bool)), this->cp, SLOT(start()));
     connect(this->runButton, SIGNAL(clicked(bool)), this, SLOT(toRun()));
-    this->runButton->setText("Add and Run");
+
+    if (toUpdate)
+        this->runButton->setText("Update and Run");
+    else
+        this->runButton->setText("Add and Run");
 
     if (toUpdate)
         this->addButton->setText("Update");
@@ -113,6 +118,7 @@ void RunButtonsWidget::isModified(bool toUpdate)
  */
 void RunButtonsWidget::isNotModified()
 {
+    disconnect(this->runButton, SIGNAL(clicked(bool)), this->cw, SLOT(receiveImageToHeightMap()));
     disconnect(this->runButton, SIGNAL(clicked(bool)), this->cp, SLOT(addConfig()));
     this->runButton->setText("Run");
 

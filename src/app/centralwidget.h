@@ -70,6 +70,7 @@ public slots:
     void nextSimulation();
     void stop();
     void clearConfigs();
+    void heightMapModified();
 };
 
 #endif // CENTRALWIDGET_H

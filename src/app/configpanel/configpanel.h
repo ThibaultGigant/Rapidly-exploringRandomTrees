@@ -25,6 +25,8 @@ public:
     bool getChanged() const;
     void setChanged(bool value);
     bool getSave();
+    bool getIsConfigFromList() const;
+    void setIsConfigFromList(bool value);
 
 private:
     CentralWidget *centralWidget;

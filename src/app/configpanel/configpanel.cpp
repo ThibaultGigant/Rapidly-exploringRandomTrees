@@ -82,9 +82,15 @@ void ConfigPanel::addConfig()
 {
     Config *config;
 
+    //qDebug() << "ConfigPanel addConfig : adding config #" << this->currentConfigID;
+    // Creating the config to pass on
+    if (!this->isConfigFromList)
+        config = new Config();
+    else
+        config = this->getCentralWidget()->getConfigs().at(this->currentConfigID);
+
     //qDebug() << "ConfigPanel addConfig : starting generation of config";
-    EndMethod *endMethod = this->endMethodWidget->getEndMethod();
-    if (endMethod->getMaxNumber() <= 1 && endMethod->getLimitTime() == 0)
+    if (config->getNbVerticesLimit() <= 1 && config->getTimeDuration() == 0)
     {
         QMessageBox msgBox(QMessageBox::Critical, "Error: Wrong End Method",
                            "Please select a correct End Method", QMessageBox::Close);
@@ -92,12 +98,7 @@ void ConfigPanel::addConfig()
         return;
     }
 
-    //qDebug() << "ConfigPanel addConfig : adding config #" << this->currentConfigID;
-    // Creating the config to pass on
-    if (!this->isConfigFromList)
-        config = new Config();
-    else
-        config = this->getCentralWidget()->getConfigs().at(this->currentConfigID);
+    this->centralWidget->receiveClearImage(0);
     config->setCurrentMap(this->centralWidget->getCurrentMap());
     config->setEndMethod(this->endMethodWidget->getEndMethod());
     config->setGeneratorID(this->generatorWidget->getGeneratorID());
@@ -132,7 +133,6 @@ void ConfigPanel::configChanged()
 {
     this->setChanged(true);
     this->runButtonsWidget->isModified(this->isConfigFromList);
-    //this->currentConfigID = this->centralWidget->getNbConfigs();
 }
 
 /**
@@ -176,9 +176,31 @@ void ConfigPanel::loadConfig(int configIndex)
     }
 }
 
+/**
+ * @brief Returns whether the save checkbox has been checked
+ * @return True if checked, false otherwise
+ */
 bool ConfigPanel::getSave()
 {
     if (this->additionalInfosWidget->getSaveState() == Qt::Checked)
         return true;
     return false;
+}
+
+/**
+ * @brief Returns if the config currently displayed is loaded from the stored list or not
+ * @return True if the displayed config is loaded from the list
+ */
+bool ConfigPanel::getIsConfigFromList() const
+{
+    return isConfigFromList;
+}
+
+/**
+ * @brief Sets the value of the boolean stating if the config loaded from the list
+ * @param value New value of this boolean
+ */
+void ConfigPanel::setIsConfigFromList(bool value)
+{
+    isConfigFromList = value;
 }
