@@ -222,8 +222,6 @@ bool ThreadGenerator::generateAndSaveResultImage(QVector<Vertex*> vertices, floa
         vectPathInfuence.append(pathInfluenceZone);
 
         if(v->getConnectedComponentPointer()==marker){
-            pathInfluenceZoneConnected = QPainterPath();
-            pathInfluenceZoneConnected.addEllipse(point1, influence, influence);
             vectPathInfuenceConnected.append(pathInfluenceZone);
         }
 
@@ -249,7 +247,7 @@ bool ThreadGenerator::generateAndSaveResultImage(QVector<Vertex*> vertices, floa
         }
     }
 
-    count = vertices.length();
+    //count = vertices.length();
 
 
     QPainter painter(&view);
@@ -258,21 +256,30 @@ bool ThreadGenerator::generateAndSaveResultImage(QVector<Vertex*> vertices, floa
 
     QPainter painterInfluConnected(&viewInfluConnected);
 
+    /*
     QPen temp = QPen();
+    QBrush tempBrush ();
     temp.setWidth((int)influence);
     painterInflu.setPen(temp);
-    painterInflu.setBrush(QBrush());
+    painterInflu.setBrush(tempBrush);
 
     QPen temp2 = QPen();
     temp2.setWidth((int)influence);
     painterInfluConnected.setPen(temp2);
     painterInfluConnected.setBrush(QBrush());
-
+    */
 
     painter.setRenderHint(QPainter::Antialiasing);
     blue = QColor(60,60,220,255);
     brush = QBrush(blue);
     pen = QPen(blue);
+    pen.setBrush(brush);
+    pen.setWidthF(1);
+    painterInflu.setBrush(brush);
+    painterInflu.setPen(pen);
+    painterInfluConnected.setBrush(brush);
+    painterInfluConnected.setPen(pen);
+
     painter.setBrush(brush);
     painter.setPen(pen);
 
@@ -281,12 +288,12 @@ bool ThreadGenerator::generateAndSaveResultImage(QVector<Vertex*> vertices, floa
     painterInfluConnected.fillRect(viewInfluConnected.rect(),Qt::white);
 
 
-    foreach(QPainterPath pathInfluenceZone, vectPathInfuence){
+    foreach(pathInfluenceZone, vectPathInfuence){
         painter.drawPath(pathInfluenceZone);
         painterInflu.drawPath(pathInfluenceZone);
     }
 
-    foreach(QPainterPath pathInfluenceZoneConnected, vectPathInfuenceConnected){
+    foreach(pathInfluenceZoneConnected, vectPathInfuenceConnected){
         painterInfluConnected.drawPath(pathInfluenceZoneConnected);
     }
 
@@ -315,10 +322,10 @@ bool ThreadGenerator::generateAndSaveResultImage(QVector<Vertex*> vertices, floa
 
     for (int x = 0; x < w; x++){
         for(int y = 0; y < h;y++){
-            if(viewInflu.pixelColor(x,y).red() < 0.5){
+            if(viewInflu.pixelColor(x,y).red() < 70){
                 covered ++;
             }
-            if(viewInfluConnected.pixelColor(x,y).red() < 0.5){
+            if(viewInfluConnected.pixelColor(x,y).red() < 70){
                 coveredConnected ++;
             }
         }
