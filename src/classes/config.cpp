@@ -27,6 +27,7 @@ QString Config::toString(){
     res+=currentMap->getName()+"\n";
     res+=endMethod->toString()+"\n";
     res+=generator->toString()+"\n";
+    res+=metric->toString()+"\n";
     res+=QString::number(delta_t)+"\n";
 
     return res;

@@ -9,6 +9,7 @@ public:
     ManhattanDistance();
     ~ManhattanDistance();
     virtual double distance(QPointF point1, QPointF point2);
+    virtual QString toString(void);
 };
 
 #endif // MANHATTANDISTANCE_H

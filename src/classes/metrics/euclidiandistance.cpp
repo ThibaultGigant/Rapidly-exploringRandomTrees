@@ -17,3 +17,4 @@ double EuclidianDistance::distance(QPointF point1, QPointF point2)
     QPointF temp = point2-point1;
     return sqrt(pow(temp.x(), 2) + pow(temp.y(), 2));
 }
+

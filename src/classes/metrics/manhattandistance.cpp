@@ -24,3 +24,6 @@ double ManhattanDistance::distance(QPointF point1, QPointF point2)
     return temp.manhattanLength();
 }
 
+QString ManhattanDistance::toString(){
+    return "Manhattan Distance";
+}
