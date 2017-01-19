@@ -18,3 +18,7 @@ double EuclidianDistance::distance(QPointF point1, QPointF point2)
     return sqrt(pow(temp.x(), 2) + pow(temp.y(), 2));
 }
 
+
+QString EuclidianDistance::toString(){
+    return "Euclidian Distance";
+}

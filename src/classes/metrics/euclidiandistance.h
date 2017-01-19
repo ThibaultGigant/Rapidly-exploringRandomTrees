@@ -1,6 +1,8 @@
 #ifndef EUCLIDIANDISTANCE_H
 #define EUCLIDIANDISTANCE_H
 
+#include <QString>
+
 #include "metric.h"
 
 class EuclidianDistance : public Metric

@@ -116,5 +116,5 @@ void EndMethod::reset()
 
 QString EndMethod::toString()
 {
-    return "Max Vertices : "+maxNumber+" Duration : "+duration;
+    return "Max Vertices : "+QString::number(maxNumber)+" Duration : "+QString::number(duration);
 }

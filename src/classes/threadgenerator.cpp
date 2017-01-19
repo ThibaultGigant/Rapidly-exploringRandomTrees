@@ -257,19 +257,6 @@ bool ThreadGenerator::generateAndSaveResultImage(QVector<Vertex*> vertices, floa
 
     QPainter painterInfluConnected(&viewInfluConnected);
 
-    /*
-    QPen temp = QPen();
-    QBrush tempBrush ();
-    temp.setWidth((int)influence);
-    painterInflu.setPen(temp);
-    painterInflu.setBrush(tempBrush);
-
-    QPen temp2 = QPen();
-    temp2.setWidth((int)influence);
-    painterInfluConnected.setPen(temp2);
-    painterInfluConnected.setBrush(QBrush());
-    */
-
     painter.setRenderHint(QPainter::Antialiasing);
     blue = QColor(60,60,220,255);
     brush = QBrush(blue);

@@ -3,6 +3,8 @@
 
 #include "metric.h"
 
+#include <QString>
+
 class ManhattanDistance : public Metric
 {
 public:

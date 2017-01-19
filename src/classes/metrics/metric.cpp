@@ -23,3 +23,7 @@ double Metric::distance(QPointF point1, QPointF point2)
     QPointF temp = point2-point1;
     return sqrt(pow(temp.x(), 2) + pow(temp.y(), 2));
 }
+
+QString Metric::toString(){
+    return "DEFAULT";
+}
