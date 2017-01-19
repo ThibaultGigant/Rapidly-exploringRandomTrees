@@ -46,7 +46,7 @@ void ThreadGenerator::run()
         if (!saveConfig(config)){
             qDebug() << "Config Directory Creation Failed";
         }
-
+        runCount = 0;
         // Launching the correct number of simulations
         for (int i = 0; i < config->getNbRuns(); i++)
         {
@@ -325,6 +325,10 @@ bool ThreadGenerator::generateAndSaveResultImage(QVector<Vertex*> vertices, floa
     bool success  = view.save(path+"view"+QString::number(runCount)+".png");
     success = success && viewInflu.save(path+"viewInflu"+QString::number(runCount)+".png");
     success = success && viewInfluConnected.save(path+"viewConnected"+QString::number(runCount)+".png");
+
+    delete(data);
+    delete(dataInflu);
+    delete(dataInfluConnected);
 
     return success;
 
